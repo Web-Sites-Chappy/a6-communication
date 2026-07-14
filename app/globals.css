@@ -1,34 +1,118 @@
 @import "tailwindcss";
 
 :root {
-  --terra: #C4522A;
-  --sand: #EDE0C4;
-  --olive: #5C6B2E;
-  --ochre: #C89A2E;
-  --clay: #9B4A22;
-  --sea: #2B5F70;
-  --dark: #1C1410;
-  --off-white: #F5F0E8;
+  /* A6 palette mapped from halledelamachine design system */
+  --c-fond:       #EDE0C4;   /* sand — their cream #f3eee8 */
+  --c-rouge:      #C4522A;   /* terra cotta — their red #ea3322 */
+  --c-navy:       #1B2E3C;   /* dark navy — their #001b2c */
+  --c-sea:        #2B5F70;   /* sea accent */
+  --c-olive:      #5C6B2E;
+  --c-ochre:      #C89A2E;
+
+  /* Easing — exact match */
+  --e-basic: 500ms cubic-bezier(0.035, 0.625, 0.000, 1.000);
+  --e-slow:  1500ms cubic-bezier(0.035, 0.625, 0.000, 1.000);
+
+  /* Layout */
+  --w-max: 96vw;
+  --w-limit-text: 820px;
+  --block-margin: 35px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--off-white);
-  color: var(--dark);
+  background-color: var(--c-fond);
+  color: var(--c-navy);
+  font-family: var(--font-body), "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.05em;
+  line-height: 1.3em;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--sand); }
-::-webkit-scrollbar-thumb { background: var(--terra); border-radius: 3px; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), "Barlow Condensed", "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+  cursor: default;
+}
 
+h2 {
+  text-align: center;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: .85em;
+  color: var(--c-rouge);
+}
+
+h3 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: .85em;
+  color: var(--c-rouge);
+}
+
+a { color: inherit; text-decoration: none; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--c-fond); }
+::-webkit-scrollbar-thumb { background: var(--c-rouge); }
+
+/* Embla carousel */
 .embla { overflow: hidden; }
-.embla__container { display: flex; gap: 16px; }
-.embla__slide { flex: 0 0 auto; }
+.embla__container { display: flex; }
+.embla__slide { flex: 0 0 auto; min-width: 0; }
+
+/* Reusable hover utilities — avoids JS event handlers in server components */
+.btn-rouge {
+  background-color: var(--c-rouge);
+  border-radius: 4px;
+  padding: 10px 24px 11px;
+  color: white;
+  font-family: var(--font-display), "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.4);
+  display: inline-block;
+  transition: background-color var(--e-basic);
+  cursor: pointer;
+  border: none;
+}
+.btn-rouge:hover { background-color: var(--c-navy); }
+
+.btn-blanc {
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px 24px 11px;
+  color: var(--c-rouge);
+  font-family: var(--font-display), "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.4);
+  display: inline-block;
+  transition: all var(--e-basic);
+}
+.btn-blanc:hover { background-color: var(--c-navy); color: white; }
+
+.footer-link { color: rgba(255,255,255,0.75); transition: color 0.2s; font-family: var(--font-body), sans-serif; font-size: 0.85rem; }
+.footer-link:hover { color: white; }
+
+.input-field {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(27,46,60,0.2);
+  border-radius: 4px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.9rem;
+  color: var(--c-navy);
+  background-color: white;
+  outline: none;
+  transition: border-color var(--e-basic);
+}
+.input-field:focus { border-color: var(--c-rouge); }

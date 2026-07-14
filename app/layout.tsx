@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
-const cormorant = Cormorant_Garamond({
+const jakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-dm-sans",
+  weight: ["100", "200", "300", "400"],
+  variable: "--font-display",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "A6 Communication & Événementiel",
   description:
-    "Agence de communication et événementiel. Alchimie, Audace, Acceptation, Agilité, Authenticité, Assurance.",
+    "Agence de communication et événementiel dirigée par Manuel et Eric. Alchimie, Audace, Acceptation, Agilité, Authenticité, Assurance.",
 };
 
 export default function RootLayout({
@@ -29,8 +30,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${dmSans.variable} antialiased`}>
-      <body>{children}</body>
+    <html lang="fr" className={`${jakartaSans.variable} ${barlowCondensed.variable} antialiased`}>
+      <body>
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
