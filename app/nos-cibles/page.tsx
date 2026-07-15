@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
+import Reveal from "@/components/Reveal";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,57 +27,52 @@ export default function NosCiblesPage() {
         ctaHref="/nos-services"
       />
 
-      <div
-        style={{
-          width: "var(--w-max)",
-          maxWidth: "var(--w-limit-text)",
-          margin: "0 auto",
-          padding: "60px 0 20px",
-          textAlign: "center",
-        }}
-      >
+      <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
         <h2>Nos cibles</h2>
         <p style={{ marginTop: "24px", fontSize: "1rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
           A6 travaille au cœur des secteurs qui font vivre les territoires — bâtisseurs, gardiens
           du patrimoine, vignerons, élus locaux. Des acteurs essentiels qui méritent une communication
           à la hauteur de leur engagement.
         </p>
-      </div>
+      </Reveal>
 
-      {/* Target cards — image + text like HdlM alternating */}
       <div style={{ width: "90vw", maxWidth: "1000px", margin: "0 auto", paddingBottom: "80px" }}>
         {targets.map((target, i) => (
-          <div
-            key={target.title}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "40px",
-              flexDirection: i % 2 === 0 ? "row" : "row-reverse",
-              marginBottom: "50px",
-              paddingBottom: "50px",
-              borderBottom: "1px solid rgba(27,46,60,0.1)",
-            }}
-          >
-            <div style={{ width: "40%", height: "260px", flexShrink: 0 }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={target.img}
-                alt={target.title}
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-              />
+          <Reveal key={target.title} delay={0} direction={i % 2 === 0 ? "left" : "right"}>
+            <div
+              className="alt-row"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "40px",
+                flexDirection: i % 2 === 0 ? "row" : "row-reverse",
+                marginBottom: "50px",
+                paddingBottom: "50px",
+                borderBottom: "1px solid rgba(27,46,60,0.1)",
+              }}
+            >
+              <div className="alt-row-img" style={{ width: "40%", height: "260px", flexShrink: 0 }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={target.img}
+                  alt={target.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+              </div>
+              <div className="alt-row-text" style={{ flex: 1 }}>
+                <h3 style={{ color: "var(--c-rouge)", marginBottom: "16px" }}>{target.title}</h3>
+                <p style={{ fontSize: "0.9rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)" }}>
+                  {target.desc}
+                </p>
+              </div>
             </div>
-            <div style={{ flex: 1 }}>
-              <h3 style={{ color: "var(--c-rouge)", marginBottom: "16px" }}>{target.title}</h3>
-              <p style={{ fontSize: "0.9rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)" }}>
-                {target.desc}
-              </p>
-            </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 
-      <CTABanner title={"Vous vous\nreconnaissez ?"} ctaLabel="Contactez-nous" ctaHref="/contact" />
+      <Reveal>
+        <CTABanner title={"Vous vous\nreconnaissez ?"} ctaLabel="Contactez-nous" ctaHref="/contact" />
+      </Reveal>
     </main>
   );
 }

@@ -3,6 +3,9 @@ import { Plus_Jakarta_Sans, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const jakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -32,9 +35,14 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${jakartaSans.variable} ${barlowCondensed.variable} antialiased`}>
       <body>
-        <Nav />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <Nav />
+          {children}
+          <Reveal direction="up" distance={30} threshold={0.05}>
+            <Footer />
+          </Reveal>
+          <ThemeSwitcher />
+        </ThemeProvider>
       </body>
     </html>
   );

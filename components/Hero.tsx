@@ -78,6 +78,7 @@ export default function Hero({
             color: "white",
             letterSpacing: "0.02em",
             marginBottom: subtitle ? "0.4em" : "0.6em",
+            animation: "fadeInUp 0.9s var(--e-basic) 0.1s both",
           }}
         >
           {title}
@@ -93,14 +94,18 @@ export default function Hero({
               maxWidth: "520px",
               lineHeight: "1.5em",
               marginBottom: "1.8em",
+              animation: "fadeInUp 0.9s var(--e-basic) 0.35s both",
             }}
           >
             {subtitle}
           </p>
         )}
 
-        {/* CTA */}
-        <Link href={ctaHref} className="btn-rouge">
+        <Link
+          href={ctaHref}
+          className="btn-rouge"
+          style={{ animation: "fadeInUp 0.9s var(--e-basic) 0.55s both" }}
+        >
           {ctaLabel}
         </Link>
       </div>

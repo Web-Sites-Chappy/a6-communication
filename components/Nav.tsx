@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
@@ -36,7 +37,7 @@ export default function Nav() {
   const [shy, setShy] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLUListElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setShy(window.scrollY > 40);
@@ -46,13 +47,13 @@ export default function Nav() {
 
   return (
     <>
-      {/* Gradient support layer — fades from navy to transparent */}
+      {/* Gradient support layer — fades from navy to transparent, only on hero top */}
       <div
         id="nav-gradient"
-        className="fixed top-0 left-0 w-full z-40 pointer-events-none transition-all"
+        className="fixed top-0 left-0 w-full z-40 pointer-events-none"
         style={{
-          height: shy ? "80px" : "120px",
-          background: "linear-gradient(180deg, rgba(27,46,60,1) 0%, rgba(27,46,60,0) 100%)",
+          height: shy ? "0px" : "140px",
+          background: "linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0) 100%)",
           transition: "height var(--e-basic)",
         }}
       />
@@ -61,8 +62,11 @@ export default function Nav() {
       <header
         className="fixed top-0 left-0 z-50 flex justify-between items-center"
         style={{
-          width: shy ? "calc(100vw - 75px)" : "calc(100vw - 90px)",
-          padding: shy ? "15px 30px" : "30px",
+          width: "100%",
+          padding: shy ? "12px 30px" : "28px 30px",
+          backgroundColor: shy ? "rgba(var(--c-navy-rgb),0.97)" : "transparent",
+          backdropFilter: shy ? "blur(8px)" : "none",
+          boxShadow: shy ? "0 2px 20px rgba(0,0,0,0.35)" : "none",
           transition: "all var(--e-basic)",
         }}
       >
@@ -91,6 +95,7 @@ export default function Nav() {
               fontWeight: 200,
               letterSpacing: "0.15em",
               transition: "font-size var(--e-basic)",
+              textShadow: shy ? "none" : "0 1px 6px rgba(0,0,0,0.6)",
             }}
           >
             Communication
@@ -99,11 +104,12 @@ export default function Nav() {
 
         {/* Desktop links */}
         <ul
-          ref={dropdownRef}
           className="hidden lg:flex items-center"
           style={{ gap: "0", listStyle: "none", padding: 0 }}
         >
-          {navLinks.map((link, i) => (
+          {navLinks.map((link, i) => {
+            const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
+            return (
             <li
               key={link.href}
               className="relative"
@@ -113,15 +119,20 @@ export default function Nav() {
             >
               <Link
                 href={link.href}
-                className="text-white transition-opacity duration-200 hover:opacity-60"
+                className={`nav-link${isActive ? " nav-link-active" : ""}`}
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "0.82rem",
-                  fontWeight: 500,
+                  fontWeight: isActive ? 700 : 500,
                   letterSpacing: "0.02em",
                   padding: "4px 0",
                   marginRight: "15px",
+                  color: "white",
+                  transition: "opacity 0.2s",
+                  textShadow: shy ? "none" : "0 1px 6px rgba(0,0,0,0.65)",
                 }}
+                onMouseEnter={(e) => { if (!isActive) (e.currentTarget as HTMLAnchorElement).style.opacity = "0.6"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
               >
                 {link.label}
               </Link>
@@ -154,20 +165,23 @@ export default function Nav() {
                     <li key={sub.href}>
                       <Link
                         href={sub.href}
-                        className="block text-center text-white transition-colors duration-200"
+                        className="block text-center transition-colors duration-200"
                         style={{
                           padding: "8px 15px",
                           backgroundColor: "var(--c-navy)",
                           fontFamily: "var(--font-body)",
                           fontSize: "0.8rem",
+                          color: "white",
                           boxShadow: "0px 3px 3px rgba(0,0,0,0.2)",
                         }}
-                        onMouseEnter={(e) =>
-                          ((e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-rouge)")
-                        }
-                        onMouseLeave={(e) =>
-                          ((e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-navy)")
-                        }
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-rouge)";
+                          (e.currentTarget as HTMLAnchorElement).style.color = "white";
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-navy)";
+                          (e.currentTarget as HTMLAnchorElement).style.color = "white";
+                        }}
                       >
                         {sub.label}
                       </Link>
@@ -176,7 +190,8 @@ export default function Nav() {
                 </ul>
               )}
             </li>
-          ))}
+          );
+          })}
 
           {/* CTA */}
           <li>

@@ -12,12 +12,13 @@ const footerNav = [
 export default function Footer() {
   return (
     <footer
+      className="footer-inner"
       style={{
         backgroundColor: "var(--c-navy)",
         color: "white",
         display: "flex",
         gap: "20px",
-        padding: "60px 100px",
+        padding: "60px clamp(24px, 6vw, 100px)",
         alignItems: "flex-start",
         flexWrap: "wrap",
         marginTop: "0",
