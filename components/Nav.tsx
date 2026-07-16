@@ -31,6 +31,11 @@ const navLinks = [
     href: "/nos-cibles",
     sub: [],
   },
+  {
+    label: "Actualités",
+    href: "/actualites",
+    sub: [],
+  },
 ];
 
 export default function Nav() {
