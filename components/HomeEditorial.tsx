@@ -24,6 +24,8 @@ export default function HomeEditorial() {
     <main>
       <HeroSlider
         images={heroImages}
+        video="/video/cerbere.mp4"
+        poster="/video/cerbere-poster.jpg"
         title={"L'Alchimie\nentre l'image\net son histoire"}
         subtitle="Agence de communication et d'événementiel au service des territoires, du patrimoine et des acteurs qui les font vivre."
         ctaLabel="Nos réalisations"

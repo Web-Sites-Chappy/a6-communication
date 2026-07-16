@@ -11,6 +11,8 @@ interface HeroSliderProps {
   ctaLabel?: string;
   ctaHref?: string;
   interval?: number; // ms between slides
+  video?: string; // optional background video src (overrides image slider)
+  poster?: string; // poster shown while video loads / fallback
 }
 
 export default function HeroSlider({
@@ -20,15 +22,18 @@ export default function HeroSlider({
   ctaLabel = "Découvrir",
   ctaHref = "/realisations",
   interval = 5000,
+  video,
+  poster,
 }: HeroSliderProps) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
+    if (video) return; // no slideshow when a background video is used
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, interval);
     return () => clearInterval(timer);
-  }, [images.length, interval]);
+  }, [images.length, interval, video]);
 
   return (
     <section
@@ -40,37 +45,60 @@ export default function HeroSlider({
         minHeight: "600px",
       }}
     >
-      {/* Slides */}
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={current}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.4, ease: "easeInOut" }}
+      {/* Background: video (if provided) or image slideshow */}
+      {video ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={poster}
           style={{
             position: "absolute",
             inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
             zIndex: 0,
+            display: "block",
           }}
         >
-          {/* Ken Burns zoom */}
-          <motion.img
-            src={images[current]}
-            alt=""
-            initial={{ scale: 1.08 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: interval / 1000 + 1.4, ease: "linear" }}
+          <source src={video} type="video/mp4" />
+        </video>
+      ) : (
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.4, ease: "easeInOut" }}
             style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
-              display: "block",
+              position: "absolute",
+              inset: 0,
+              zIndex: 0,
             }}
-          />
-        </motion.div>
-      </AnimatePresence>
+          >
+            {/* Ken Burns zoom */}
+            <motion.img
+              src={images[current]}
+              alt=""
+              initial={{ scale: 1.08 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: interval / 1000 + 1.4, ease: "linear" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center",
+                display: "block",
+              }}
+            />
+          </motion.div>
+        </AnimatePresence>
+      )}
 
       {/* Dark gradient overlay */}
       <div
@@ -141,6 +169,7 @@ export default function HeroSlider({
         </Link>
 
         {/* Dot indicators */}
+        {!video && (
         <div
           style={{
             display: "flex",
@@ -166,6 +195,7 @@ export default function HeroSlider({
             />
           ))}
         </div>
+        )}
       </div>
     </section>
   );
