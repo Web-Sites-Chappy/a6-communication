@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useCallback, useEffect, useMemo, useState, ReactNode } from "react";
 
-export type Theme = "a" | "b" | "c";
+export type Theme = "a" | "b" | "c" | "d";
 export type Layout = "1" | "2" | "3";
 
 interface ThemeContextType {

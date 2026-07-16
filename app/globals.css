@@ -27,6 +27,14 @@
   --c-navy-rgb:  30, 56, 40;
 }
 
+/* D — Nuit & Or */
+[data-theme="d"] {
+  --c-fond:      #F7E9D2;
+  --c-rouge:     #F2B705;
+  --c-navy:      #1E2F44;
+  --c-navy-rgb:  30, 47, 68;
+}
+
 :root {
   /* Easing */
   --e-basic: 500ms cubic-bezier(0.035, 0.625, 0.000, 1.000);

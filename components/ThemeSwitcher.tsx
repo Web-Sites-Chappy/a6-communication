@@ -7,6 +7,7 @@ const palettes: { id: Theme; name: string; fond: string; accent: string; dark: s
   { id: "a", name: "Terre & Lumière", fond: "#EDE0C4", accent: "#C4522A", dark: "#1B2E3C" },
   { id: "b", name: "Ardoise & Or",    fond: "#F2F0EB", accent: "#B8972E", dark: "#2A2D35" },
   { id: "c", name: "Forêt & Feu",     fond: "#E9EDE7", accent: "#CC3E18", dark: "#1E3828" },
+  { id: "d", name: "Nuit & Or",       fond: "#F7E9D2", accent: "#F2B705", dark: "#1E2F44" },
 ];
 
 const layouts: { id: Layout; name: string; label: string; icon: string }[] = [
