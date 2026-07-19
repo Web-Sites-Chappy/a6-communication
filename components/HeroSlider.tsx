@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import SpotlightTitle from "@/components/SpotlightTitle";
 
@@ -27,6 +27,13 @@ export default function HeroSlider({
   poster,
 }: HeroSliderProps) {
   const [current, setCurrent] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const fadeOverlayOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   useEffect(() => {
     if (video) return; // no slideshow when a background video is used
@@ -38,6 +45,7 @@ export default function HeroSlider({
 
   return (
     <section
+      ref={sectionRef}
       style={{
         position: "relative",
         overflow: "hidden",
@@ -110,6 +118,20 @@ export default function HeroSlider({
           zIndex: 1,
         }}
       />
+
+      {/* Scroll-linked fade to dark — the video sinks into black as you scroll past the hero */}
+      {video && (
+        <motion.div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "var(--c-navy)",
+            zIndex: 1,
+            opacity: fadeOverlayOpacity,
+            pointerEvents: "none",
+          }}
+        />
+      )}
 
       {/* Content */}
       <div
