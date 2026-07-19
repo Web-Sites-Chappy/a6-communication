@@ -6,17 +6,20 @@
   --c-rouge:      #C4522A;
   --c-navy:       #1B2E3C;
   --c-navy-rgb:   27, 46, 60;
-  --c-sea:        #2B5F70;
-  --c-olive:      #5C6B2E;
-  --c-ochre:      #C89A2E;
+  /* Accent secondaire — complémentaire quasi exact du rouge (195° / 16°) */
+  --c-accent2:    #2B5F70;
 }
 
 /* B — Ardoise & Or */
 [data-theme="b"] {
   --c-fond:      #F2F0EB;
-  --c-rouge:     #B8972E;
+  /* Rouge assombri (L 45%→34%) : le doré d'origine échouait le contraste
+     AA à la fois sur fond clair (2.46:1) et en texte blanc (2.8:1). */
+  --c-rouge:     #866027;
   --c-navy:      #2A2D35;
   --c-navy-rgb:  42, 45, 53;
+  /* Bordeaux sourd — contraste bijou contre le gris-ardoise */
+  --c-accent2:   #7A2E3C;
 }
 
 /* C — Forêt & Feu */
@@ -25,14 +28,41 @@
   --c-rouge:     #CC3E18;
   --c-navy:      #1E3828;
   --c-navy-rgb:  30, 56, 40;
+  /* Olive — analogue vert-jaune, renforce l'identité "Forêt" */
+  --c-accent2:   #5C6B2E;
 }
 
 /* D — Nuit & Or */
 [data-theme="d"] {
   --c-fond:      #F7E9D2;
-  --c-rouge:     #F2B705;
+  /* Ambre assombri (L 48%→33%) : le doré vif d'origine échouait gravement
+     le contraste AA sur fond clair (1.52:1) et en texte blanc (1.82:1),
+     malgré un excellent contraste sur navy (7.48:1). */
+  --c-rouge:     #9E680A;
   --c-navy:      #1E2F44;
   --c-navy-rgb:  30, 47, 68;
+  /* Indigo profond — ciel nocturne, contrepoint de l'or */
+  --c-accent2:   #3D2A6B;
+}
+
+/* E — Lin & Cobalt */
+[data-theme="e"] {
+  --c-fond:      #E2E6E9;
+  --c-rouge:     #2753A5;
+  --c-navy:      #31241C;
+  --c-navy-rgb:  49, 36, 28;
+  /* Rouille chaude — contrepoint du cobalt froid */
+  --c-accent2:   #B25534;
+}
+
+/* F — Craie & Encre */
+[data-theme="f"] {
+  --c-fond:      #EDEBE8;
+  --c-rouge:     #AD1F36;
+  --c-navy:      #1C1C1C;
+  --c-navy-rgb:  28, 28, 28;
+  /* Graphite bleuté — sourdine, reste dans le registre quasi monochrome */
+  --c-accent2:   #657581;
 }
 
 :root {
@@ -90,6 +120,37 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: 200;
   cursor: default;
+}
+
+/* Spotlight reveal — les lettres passent à la couleur d'accent du thème autour du curseur, sur le titre "L'Alchimie..." */
+.title-spotlight {
+  position: relative;
+  display: block;
+}
+.title-spotlight-base {
+  display: block;
+  color: white;
+}
+.title-spotlight-glow {
+  display: block;
+  position: absolute;
+  /* top étendu + padding-top égal : agrandit la zone masquable (pour couvrir les jambages
+     hauts qui dépassent à cause du line-height serré) sans décaler le texte, qui retombe
+     exactement à sa position d'origine grâce au padding. */
+  top: -0.25em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 0.25em;
+  color: var(--c-rouge);
+  -webkit-mask-image: radial-gradient(circle var(--spotlight-radius, 160px) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%);
+  mask-image: radial-gradient(circle var(--spotlight-radius, 160px) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.title-spotlight:hover .title-spotlight-glow {
+  opacity: 1;
 }
 
 h2 {

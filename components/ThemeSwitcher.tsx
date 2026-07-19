@@ -5,9 +5,11 @@ import { useTheme, type Theme, type Layout, type Font, type BodyFont } from "./T
 
 const palettes: { id: Theme; name: string; fond: string; accent: string; dark: string }[] = [
   { id: "a", name: "Terre & Lumière", fond: "#EDE0C4", accent: "#C4522A", dark: "#1B2E3C" },
-  { id: "b", name: "Ardoise & Or",    fond: "#F2F0EB", accent: "#B8972E", dark: "#2A2D35" },
+  { id: "b", name: "Ardoise & Or",    fond: "#F2F0EB", accent: "#866027", dark: "#2A2D35" },
   { id: "c", name: "Forêt & Feu",     fond: "#E9EDE7", accent: "#CC3E18", dark: "#1E3828" },
-  { id: "d", name: "Nuit & Or",       fond: "#F7E9D2", accent: "#F2B705", dark: "#1E2F44" },
+  { id: "d", name: "Nuit & Or",       fond: "#F7E9D2", accent: "#9E680A", dark: "#1E2F44" },
+  { id: "e", name: "Lin & Cobalt",    fond: "#E2E6E9", accent: "#2753A5", dark: "#31241C" },
+  { id: "f", name: "Craie & Encre",   fond: "#EDEBE8", accent: "#AD1F36", dark: "#1C1C1C" },
 ];
 
 const layouts: { id: Layout; name: string; label: string; icon: string }[] = [

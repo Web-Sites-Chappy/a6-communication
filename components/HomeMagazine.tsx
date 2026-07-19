@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
+import SpotlightTitle from "@/components/SpotlightTitle";
 
 const featured = [
   { title: "Congrès de l'Ordre des Architectes d'Occitanie", dates: "Octobre 2025", category: "Événementiel", img: "/photos/DSC_0802.jpg", desc: "Organisation et communication complète du congrès annuel, rassemblant plus de 300 professionnels." },
@@ -56,14 +57,13 @@ export default function HomeMagazine() {
           >
             Agence de communication &amp; événementiel
           </p>
-          <h1
+          <SpotlightTitle
             style={{
               fontFamily: "var(--font-display)",
               fontWeight: 200,
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
               lineHeight: "0.88em",
               textTransform: "uppercase",
-              color: "white",
               letterSpacing: "0.02em",
               marginBottom: "32px",
               animation: "fadeInUp 0.9s var(--e-basic) 0.55s both",
@@ -74,7 +74,7 @@ export default function HomeMagazine() {
             entre l&apos;image
             <br />
             et son histoire
-          </h1>
+          </SpotlightTitle>
           <p
             style={{
               color: "rgba(255,255,255,0.6)",

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import SpotlightTitle from "@/components/SpotlightTitle";
 
 interface HeroSliderProps {
   images: string[];
@@ -126,14 +127,13 @@ export default function HeroSlider({
           zIndex: 2,
         }}
       >
-        <h1
+        <SpotlightTitle
           style={{
             fontFamily: "var(--font-display)",
             fontWeight: 400,
             fontSize: "clamp(4rem, 10vw, 9rem)",
             lineHeight: "0.85em",
             textTransform: "uppercase",
-            color: "white",
             letterSpacing: "0.02em",
             marginBottom: subtitle ? "0.4em" : "0.6em",
             textShadow: "0 2px 8px rgba(0,0,0,0.6), 0 4px 32px rgba(0,0,0,0.5)",
@@ -141,7 +141,7 @@ export default function HeroSlider({
           }}
         >
           {title}
-        </h1>
+        </SpotlightTitle>
 
         {subtitle && (
           <p

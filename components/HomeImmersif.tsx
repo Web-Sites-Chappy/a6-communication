@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SpotlightTitle from "@/components/SpotlightTitle";
 
 const immersifSections = [
   {
@@ -158,21 +159,38 @@ export default function HomeImmersif() {
               </p>
             )}
 
-            <h1
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 200,
-                fontSize: "clamp(3.5rem, 8vw, 8rem)",
-                lineHeight: "0.88em",
-                textTransform: "uppercase",
-                color: "white",
-                letterSpacing: "0.02em",
-                marginBottom: "28px",
-                whiteSpace: "pre-line",
-              }}
-            >
-              {section.title}
-            </h1>
+            {section.id === "hero" ? (
+              <SpotlightTitle
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 200,
+                  fontSize: "clamp(3.5rem, 8vw, 8rem)",
+                  lineHeight: "0.88em",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.02em",
+                  marginBottom: "28px",
+                  whiteSpace: "pre-line",
+                }}
+              >
+                {section.title}
+              </SpotlightTitle>
+            ) : (
+              <h1
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 200,
+                  fontSize: "clamp(3.5rem, 8vw, 8rem)",
+                  lineHeight: "0.88em",
+                  textTransform: "uppercase",
+                  color: "white",
+                  letterSpacing: "0.02em",
+                  marginBottom: "28px",
+                  whiteSpace: "pre-line",
+                }}
+              >
+                {section.title}
+              </h1>
+            )}
 
             <p
               style={{
