@@ -38,7 +38,7 @@ const NAME_STYLE: React.CSSProperties = {
   display: "flex",
   alignItems: "center",
   height: ROW_H,
-  fontFamily: "var(--font-display), 'Barlow Condensed', sans-serif",
+  fontFamily: "var(--font-display), sans-serif",
   fontWeight: 200,
   textTransform: "uppercase",
   letterSpacing: "0.02em",

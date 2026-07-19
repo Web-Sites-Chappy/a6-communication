@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, ReactNode } from "react";
-import { useTheme, type Theme, type Layout } from "./ThemeProvider";
+import { useTheme, type Theme, type Layout, type Font } from "./ThemeProvider";
 
 const palettes: { id: Theme; name: string; fond: string; accent: string; dark: string }[] = [
   { id: "a", name: "Terre & Lumière", fond: "#EDE0C4", accent: "#C4522A", dark: "#1B2E3C" },
@@ -14,6 +14,15 @@ const layouts: { id: Layout; name: string; label: string; icon: string }[] = [
   { id: "1", name: "Editorial",  label: "Cards + Carrusel",     icon: "▤" },
   { id: "2", name: "Magazine",   label: "Split + Lista",         icon: "▥" },
   { id: "3", name: "Immersif",   label: "Pantallas completas",   icon: "▦" },
+];
+
+const fonts: { id: Font; name: string }[] = [
+  { id: "bierika", name: "Bierika" },
+  { id: "barlow",  name: "Barlow Condensed" },
+  { id: "quffer",  name: "Quffer" },
+  { id: "locatro", name: "Locatro" },
+  { id: "apoc",    name: "Apoc Revelations" },
+  { id: "palmore", name: "Palmore" },
 ];
 
 function SwitcherButton({ active, onClick, children }: { active: boolean; onClick: () => void; children: ReactNode }) {
@@ -60,7 +69,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
 }
 
 export default function ThemeSwitcher() {
-  const { theme, layout, setTheme, setLayout } = useTheme();
+  const { theme, layout, font, setTheme, setLayout, setFont } = useTheme();
   const [open, setOpen] = useState(false);
 
   return (
@@ -83,6 +92,8 @@ export default function ThemeSwitcher() {
             borderRadius: "8px",
             padding: "20px",
             width: "260px",
+            maxHeight: "80vh",
+            overflowY: "auto",
             boxShadow: "0 8px 40px rgba(0,0,0,0.45)",
           }}
         >
@@ -104,6 +115,38 @@ export default function ThemeSwitcher() {
                   }}
                 >
                   {p.name}
+                </span>
+              </SwitcherButton>
+            ))}
+          </div>
+
+          <div style={{ height: "1px", backgroundColor: "rgba(255,255,255,0.1)", marginBottom: "20px" }} />
+
+          <SectionLabel>Police des titres</SectionLabel>
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginBottom: "20px" }}>
+            {fonts.map((f) => (
+              <SwitcherButton key={f.id} active={font === f.id} onClick={() => setFont(f.id)}>
+                <span
+                  style={{
+                    fontFamily: `var(--font-display-${f.id})`,
+                    fontSize: "1.3rem",
+                    lineHeight: 1,
+                    width: "28px",
+                    flexShrink: 0,
+                    color: font === f.id ? "var(--c-rouge)" : "rgba(255,255,255,0.6)",
+                  }}
+                >
+                  Aa
+                </span>
+                <span
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.78rem",
+                    color: font === f.id ? "white" : "rgba(255,255,255,0.6)",
+                    fontWeight: font === f.id ? 600 : 400,
+                  }}
+                >
+                  {f.name}
                 </span>
               </SwitcherButton>
             ))}
