@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Barlow_Condensed } from "next/font/google";
+import { Plus_Jakarta_Sans, Barlow_Condensed, Inter, Work_Sans, IBM_Plex_Sans, Archivo } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -8,12 +8,50 @@ import Reveal from "@/components/Reveal";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
+// Body fonts (texte courant) — sélectionnables via le ThemeSwitcher.
+// Même logique que les display fonts : chaque police a sa propre variable CSS,
+// globals.css choisit laquelle alimente `--font-body` selon `data-body-font`.
+// "Arial / Helvetica" n'a pas besoin de loader : c'est une pile de polices système.
+
 const jakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
+  variable: "--font-body-jakarta",
   display: "swap",
 });
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body-inter",
+  display: "swap",
+});
+
+const workSans = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-body-work",
+  display: "swap",
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body-plex",
+  display: "swap",
+});
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-body-archivo",
+  display: "swap",
+});
+
+const bodyFontVariables = [
+  jakartaSans.variable,
+  inter.variable,
+  workSans.variable,
+  ibmPlexSans.variable,
+  archivo.variable,
+].join(" ");
 
 // Display fonts (titres) — sélectionnables via le ThemeSwitcher.
 // Chaque police expose sa propre variable CSS ; globals.css choisit laquelle
@@ -88,7 +126,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${jakartaSans.variable} ${displayFontVariables} antialiased`}>
+    <html lang="fr" className={`${bodyFontVariables} ${displayFontVariables} antialiased`}>
       <body>
         <ThemeProvider>
           <Nav />

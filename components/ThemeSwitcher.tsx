@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, ReactNode } from "react";
-import { useTheme, type Theme, type Layout, type Font } from "./ThemeProvider";
+import { useTheme, type Theme, type Layout, type Font, type BodyFont } from "./ThemeProvider";
 
 const palettes: { id: Theme; name: string; fond: string; accent: string; dark: string }[] = [
   { id: "a", name: "Terre & Lumière", fond: "#EDE0C4", accent: "#C4522A", dark: "#1B2E3C" },
@@ -24,6 +24,19 @@ const fonts: { id: Font; name: string }[] = [
   { id: "apoc",    name: "Apoc Revelations" },
   { id: "palmore", name: "Palmore" },
 ];
+
+const bodyFonts: { id: BodyFont; name: string }[] = [
+  { id: "jakarta", name: "Plus Jakarta Sans" },
+  { id: "inter",   name: "Inter" },
+  { id: "system",  name: "Arial / Helvetica" },
+  { id: "work",    name: "Work Sans" },
+  { id: "plex",    name: "IBM Plex Sans" },
+  { id: "archivo", name: "Archivo" },
+];
+
+function bodyFontPreviewFamily(id: BodyFont): string {
+  return id === "system" ? `Arial, "Helvetica Neue", Helvetica, sans-serif` : `var(--font-body-${id})`;
+}
 
 function SwitcherButton({ active, onClick, children }: { active: boolean; onClick: () => void; children: ReactNode }) {
   return (
@@ -69,7 +82,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
 }
 
 export default function ThemeSwitcher() {
-  const { theme, layout, font, setTheme, setLayout, setFont } = useTheme();
+  const { theme, layout, font, bodyFont, setTheme, setLayout, setFont, setBodyFont } = useTheme();
   const [open, setOpen] = useState(false);
 
   return (
@@ -144,6 +157,38 @@ export default function ThemeSwitcher() {
                     fontSize: "0.78rem",
                     color: font === f.id ? "white" : "rgba(255,255,255,0.6)",
                     fontWeight: font === f.id ? 600 : 400,
+                  }}
+                >
+                  {f.name}
+                </span>
+              </SwitcherButton>
+            ))}
+          </div>
+
+          <div style={{ height: "1px", backgroundColor: "rgba(255,255,255,0.1)", marginBottom: "20px" }} />
+
+          <SectionLabel>Police du texte</SectionLabel>
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginBottom: "20px" }}>
+            {bodyFonts.map((f) => (
+              <SwitcherButton key={f.id} active={bodyFont === f.id} onClick={() => setBodyFont(f.id)}>
+                <span
+                  style={{
+                    fontFamily: bodyFontPreviewFamily(f.id),
+                    fontSize: "1.1rem",
+                    lineHeight: 1,
+                    width: "28px",
+                    flexShrink: 0,
+                    color: bodyFont === f.id ? "var(--c-rouge)" : "rgba(255,255,255,0.6)",
+                  }}
+                >
+                  Aa
+                </span>
+                <span
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.78rem",
+                    color: bodyFont === f.id ? "white" : "rgba(255,255,255,0.6)",
+                    fontWeight: bodyFont === f.id ? 600 : 400,
                   }}
                 >
                   {f.name}

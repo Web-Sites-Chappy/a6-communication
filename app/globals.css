@@ -48,6 +48,18 @@
 [data-font="palmore"] { --font-display: var(--font-display-palmore); }
 
 :root {
+  /* Police du corps de texte — Plus Jakarta Sans par défaut */
+  --font-body: var(--font-body-jakarta);
+}
+
+[data-body-font="jakarta"] { --font-body: var(--font-body-jakarta); }
+[data-body-font="inter"]   { --font-body: var(--font-body-inter); }
+[data-body-font="system"]  { --font-body: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+[data-body-font="work"]    { --font-body: var(--font-body-work); }
+[data-body-font="plex"]    { --font-body: var(--font-body-plex); }
+[data-body-font="archivo"] { --font-body: var(--font-body-archivo); }
+
+:root {
   /* Easing */
   --e-basic: 500ms cubic-bezier(0.035, 0.625, 0.000, 1.000);
   --e-slow:  1500ms cubic-bezier(0.035, 0.625, 0.000, 1.000);
