@@ -352,7 +352,7 @@ export function CardStack<T extends CardStackItem>({
                   className={cn(
                     "h-2 w-2 rounded-full transition",
                     on
-                      ? "bg-[var(--c-rouge)]"
+                      ? "bg-[var(--c-btn-accent)]"
                       : "bg-[rgba(var(--c-navy-rgb),0.3)] hover:bg-[rgba(var(--c-navy-rgb),0.55)]",
                   )}
                   aria-label={`Aller à ${it.title}`}
@@ -365,7 +365,7 @@ export function CardStack<T extends CardStackItem>({
               href={activeItem.href}
               target={activeIsExternal ? "_blank" : undefined}
               rel={activeIsExternal ? "noreferrer" : undefined}
-              className="text-[rgba(var(--c-navy-rgb),0.5)] hover:text-[var(--c-rouge)] transition"
+              className="text-[rgba(var(--c-navy-rgb),0.5)] hover:text-[var(--c-rouge-fg)] transition"
               aria-label={`Ouvrir ${activeItem.title}`}
             >
               <SquareArrowOutUpRight className="h-4 w-4" />

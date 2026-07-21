@@ -2,9 +2,9 @@
 
 import { createContext, useContext, useCallback, useEffect, useMemo, useState, ReactNode } from "react";
 
-export type Theme = "a" | "b" | "c" | "d" | "e" | "f";
+export type Theme = "a" | "b" | "c" | "d" | "e" | "f" | "g";
 export type Layout = "1" | "2" | "3";
-export type Font = "bierika" | "barlow" | "quffer" | "locatro" | "apoc" | "palmore";
+export type Font = "bierika" | "barlow" | "quffer" | "locatro" | "apoc" | "palmore" | "vesterbro";
 export type BodyFont = "jakarta" | "inter" | "system" | "work" | "plex" | "archivo";
 
 interface ThemeContextType {

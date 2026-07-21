@@ -45,7 +45,7 @@ const immersifSections = [
   {
     id: "contact",
     img: null,
-    bgColor: "var(--c-rouge)",
+    bgColor: "var(--c-btn-accent)",
     align: "center" as const,
     eyebrow: null,
     title: "Parlons de\nvotre projet.",
@@ -122,7 +122,7 @@ export default function HomeImmersif() {
               fontSize: "0.75rem",
               textTransform: "uppercase",
               letterSpacing: "0.25em",
-              color: section.bgColor === "var(--c-rouge)" ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.35)",
+              color: section.bgColor === "var(--c-btn-accent)" ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.35)",
               zIndex: 2,
             }}
           >
@@ -151,7 +151,7 @@ export default function HomeImmersif() {
                   fontSize: "0.8rem",
                   textTransform: "uppercase",
                   letterSpacing: "0.25em",
-                  color: section.bgColor === "var(--c-rouge)" ? "rgba(255,255,255,0.7)" : "var(--c-rouge)",
+                  color: section.bgColor === "var(--c-btn-accent)" ? "rgba(255,255,255,0.7)" : "var(--c-btn-accent)",
                   marginBottom: "24px",
                 }}
               >
@@ -194,7 +194,7 @@ export default function HomeImmersif() {
 
             <p
               style={{
-                color: section.bgColor === "var(--c-rouge)" ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.65)",
+                color: section.bgColor === "var(--c-btn-accent)" ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.65)",
                 fontSize: "clamp(0.9rem, 1.3vw, 1.05rem)",
                 fontFamily: "var(--font-body)",
                 lineHeight: "1.6em",

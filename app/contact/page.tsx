@@ -52,7 +52,7 @@ export default function ContactPage() {
                 key={item.label}
                 style={{ textAlign: "center", flex: "1", minWidth: "min(180px, 100%)" }}
               >
-                <p style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 200, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--c-rouge)", marginBottom: "6px" }}>
+                <p style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 200, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--c-rouge-fg)", marginBottom: "6px" }}>
                   {item.label}
                 </p>
                 <p style={{ fontSize: "0.85rem", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>

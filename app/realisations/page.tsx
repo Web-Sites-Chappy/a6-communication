@@ -57,13 +57,13 @@ export default function RealisationsPage() {
                 <p style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 200, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--c-navy)", marginBottom: "8px" }}>
                   {project.dates}
                 </p>
-                <h3 style={{ color: "var(--c-rouge)", marginBottom: "16px", lineHeight: "0.9em" }}>
+                <h3 style={{ color: "var(--c-rouge-fg)", marginBottom: "16px", lineHeight: "0.9em" }}>
                   {project.title}
                 </h3>
                 <p style={{ fontSize: "0.9rem", lineHeight: "1.6em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)", marginBottom: "20px" }}>
                   {project.desc}
                 </p>
-                <span style={{ display: "inline-block", backgroundColor: "var(--c-rouge)", borderRadius: "4px", padding: "6px 14px 7px", color: "white", fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "0.95rem", letterSpacing: "0.08em" }}>
+                <span style={{ display: "inline-block", backgroundColor: "var(--c-btn-accent)", borderRadius: "4px", padding: "6px 14px 7px", color: "var(--c-on-accent)", fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "0.95rem", letterSpacing: "0.08em" }}>
                   {project.category}
                 </span>
               </div>

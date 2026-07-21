@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .gstack/
+
+# TRY Vesterbro — licence "Personal Use Only" (befonts.com), preview local
+# uniquement tant qu'une licence web commerciale n'est pas acquise.
+/app/fonts/vesterbro/

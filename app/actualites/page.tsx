@@ -108,7 +108,7 @@ export default function ActualitesPage() {
                 flexDirection: "column",
                 height: "100%",
                 backgroundColor: "rgba(var(--c-navy-rgb),0.03)",
-                borderBottom: "3px solid var(--c-rouge)",
+                borderBottom: "3px solid var(--c-rouge-fg)",
               }}
             >
               <div style={{ width: "100%", height: "220px", flexShrink: 0, overflow: "hidden" }}>
@@ -138,10 +138,10 @@ export default function ActualitesPage() {
                 >
                   <span
                     style={{
-                      backgroundColor: "var(--c-rouge)",
+                      backgroundColor: "var(--c-btn-accent)",
                       borderRadius: "4px",
                       padding: "4px 11px 5px",
-                      color: "white",
+                      color: "var(--c-on-accent)",
                       fontFamily: "var(--font-display)",
                       textTransform: "uppercase",
                       fontWeight: 200,
@@ -166,7 +166,7 @@ export default function ActualitesPage() {
                   style={{
                     fontSize: "clamp(1.4rem, 2.2vw, 1.8rem)",
                     lineHeight: "0.95em",
-                    color: "var(--c-rouge)",
+                    color: "var(--c-rouge-fg)",
                     marginBottom: "14px",
                   }}
                 >

@@ -105,7 +105,7 @@ export function RollingList({ items, defaultOpenId }: RollingListProps) {
                 >
                   <span style={{ ...NAME_STYLE, color: "var(--c-navy)" }}>{item.title}</span>
                   <span
-                    style={{ ...NAME_STYLE, color: "var(--c-rouge)", fontStyle: "italic" }}
+                    style={{ ...NAME_STYLE, color: "var(--c-rouge-fg)", fontStyle: "italic" }}
                   >
                     {item.title}
                   </span>

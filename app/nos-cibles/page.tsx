@@ -60,7 +60,7 @@ export default function NosCiblesPage() {
                 />
               </div>
               <div className="alt-row-text" style={{ flex: 1 }}>
-                <h3 style={{ color: "var(--c-rouge)", marginBottom: "16px" }}>{target.title}</h3>
+                <h3 style={{ color: "var(--c-rouge-fg)", marginBottom: "16px" }}>{target.title}</h3>
                 <p style={{ fontSize: "0.9rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)" }}>
                   {target.desc}
                 </p>

@@ -66,7 +66,7 @@ export default function QuiSommesNousPage() {
               alt={person.name}
               style={{ width: "100%", height: "280px", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: "20px" }}
             />
-            <h3 style={{ color: "var(--c-rouge)", marginBottom: "4px" }}>{person.name}</h3>
+            <h3 style={{ color: "var(--c-rouge-fg)", marginBottom: "4px" }}>{person.name}</h3>
             <p style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", fontWeight: 200, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--c-navy)", marginBottom: "12px" }}>
               {person.role}
             </p>

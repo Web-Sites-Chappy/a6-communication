@@ -59,10 +59,10 @@ export default function EventsCarousel() {
                   <p style={{ fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "1.5rem", lineHeight: "0.9em", color: "var(--c-navy)", marginBottom: "0.5em" }}>
                     {ev.dates}
                   </p>
-                  <h3 style={{ fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: "0.9em", color: "var(--c-rouge)", marginBottom: "1em" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: "0.9em", color: "var(--c-rouge-fg)", marginBottom: "1em" }}>
                     {ev.title}
                   </h3>
-                  <span style={{ backgroundColor: "var(--c-rouge)", borderRadius: "4px", padding: "7px 15px 8px", color: "white", fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "1rem", letterSpacing: "0.08em" }}>
+                  <span style={{ backgroundColor: "var(--c-btn-accent)", borderRadius: "4px", padding: "7px 15px 8px", color: "var(--c-on-accent)", fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "1rem", letterSpacing: "0.08em" }}>
                     {ev.category}
                   </span>
                 </div>
@@ -76,7 +76,7 @@ export default function EventsCarousel() {
         <button
           onClick={() => emblaApi?.scrollPrev()}
           className="carousel-btn"
-          style={{ width: "35px", height: "35px", backgroundColor: "var(--c-rouge)", border: "none", borderRadius: "50%", color: "var(--c-fond)", cursor: "pointer", fontSize: "1rem", display: "flex", alignItems: "center", justifyContent: "center" }}
+          style={{ width: "35px", height: "35px", backgroundColor: "var(--c-btn-accent)", border: "none", borderRadius: "50%", color: "var(--c-on-accent)", cursor: "pointer", fontSize: "1rem", display: "flex", alignItems: "center", justifyContent: "center" }}
           aria-label="Précédent"
         >
           ‹
@@ -84,7 +84,7 @@ export default function EventsCarousel() {
         <button
           onClick={() => emblaApi?.scrollNext()}
           className="carousel-btn"
-          style={{ width: "35px", height: "35px", backgroundColor: "var(--c-rouge)", border: "none", borderRadius: "50%", color: "var(--c-fond)", cursor: "pointer", fontSize: "1rem", display: "flex", alignItems: "center", justifyContent: "center" }}
+          style={{ width: "35px", height: "35px", backgroundColor: "var(--c-btn-accent)", border: "none", borderRadius: "50%", color: "var(--c-on-accent)", cursor: "pointer", fontSize: "1rem", display: "flex", alignItems: "center", justifyContent: "center" }}
           aria-label="Suivant"
         >
           ›

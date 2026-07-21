@@ -125,7 +125,7 @@ export default function HomeMagazine() {
           alignItems: "baseline",
           flexWrap: "wrap",
           gap: "12px 40px",
-          borderBottom: "2px solid var(--c-rouge)",
+          borderBottom: "2px solid var(--c-rouge-fg)",
           paddingBottom: "24px",
         }}
       >
@@ -136,7 +136,7 @@ export default function HomeMagazine() {
             fontSize: "1rem",
             textTransform: "uppercase",
             letterSpacing: "0.2em",
-            color: "var(--c-rouge)",
+            color: "var(--c-rouge-fg)",
             flexShrink: 0,
           }}
         >
@@ -162,7 +162,7 @@ export default function HomeMagazine() {
             fontWeight: 200,
             textTransform: "uppercase",
             letterSpacing: "0.1em",
-            color: "var(--c-rouge)",
+            color: "var(--c-rouge-fg)",
             whiteSpace: "nowrap",
           }}
         >
@@ -210,10 +210,10 @@ export default function HomeMagazine() {
               <span
                 style={{
                   display: "inline-block",
-                  backgroundColor: "var(--c-rouge)",
+                  backgroundColor: "var(--c-btn-accent)",
                   borderRadius: "3px",
                   padding: "4px 10px 5px",
-                  color: "white",
+                  color: "var(--c-on-accent)",
                   fontFamily: "var(--font-display)",
                   textTransform: "uppercase",
                   fontWeight: 200,

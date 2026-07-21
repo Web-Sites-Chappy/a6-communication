@@ -8,6 +8,15 @@
   --c-navy-rgb:   27, 46, 60;
   /* Accent secondaire — complémentaire quasi exact du rouge (195° / 16°) */
   --c-accent2:    #2B5F70;
+  /* Texte posé SUR un fond --c-rouge (badges, boutons pleins, logo nav) */
+  --c-on-accent:  white;
+  /* --c-rouge utilisé comme couleur de TEXTE sur fond clair (titres, liens) —
+     identique à --c-rouge partout sauf quand celui-ci est trop clair pour
+     rester lisible (voir palette G). */
+  --c-rouge-fg:   var(--c-rouge);
+  /* Fond des boutons pleins (.btn-rouge, CTA nav) — distinct de --c-rouge
+     pour permettre une couleur bouton différente de l'accent "badges". */
+  --c-btn-accent: var(--c-rouge);
 }
 
 /* B — Ardoise & Or */
@@ -65,6 +74,26 @@
   --c-accent2:   #657581;
 }
 
+/* G — Indigo & Sauge */
+[data-theme="g"] {
+  --c-fond:      #D2E6DC;
+  /* Prune — assombri (L 53%→~19%) pour passer le contraste AA sur le fond
+     clair (5.7:1) et en texte blanc (7.4:1), tout en restant distinct des
+     autres accents rouge/or déjà utilisés. */
+  --c-rouge:     #93325A;
+  --c-navy:      #112250;
+  --c-navy-rgb:  17, 34, 80;
+  /* Or doux — contrepoint chaud de l'indigo et de la sauge */
+  --c-accent2:   #B9954A;
+  /* --c-rouge est ici identique au fond (D2E6DC) : illisible en texte blanc
+     ou en texte sur fond clair. On bascule ces deux rôles sur le navy. */
+  --c-on-accent: var(--c-navy);
+  --c-rouge-fg:  var(--c-navy);
+  /* Celeste claro — uniquement pour les boutons pleins (.btn-rouge, CTA),
+     distinct du sauge D2E6DC utilisé pour badges/logo/soulignés. */
+  --c-btn-accent: #BEE3F5;
+}
+
 :root {
   /* Police des titres — Bierika par défaut */
   --font-display: var(--font-display-bierika);
@@ -76,6 +105,7 @@
 [data-font="locatro"] { --font-display: var(--font-display-locatro); }
 [data-font="apoc"]    { --font-display: var(--font-display-apoc); }
 [data-font="palmore"] { --font-display: var(--font-display-palmore); }
+[data-font="vesterbro"] { --font-display: var(--font-display-vesterbro); }
 
 :root {
   /* Police du corps de texte — Plus Jakarta Sans par défaut */
@@ -157,20 +187,20 @@ h2 {
   text-align: center;
   font-size: clamp(3rem, 7vw, 5rem);
   line-height: .85em;
-  color: var(--c-rouge);
+  color: var(--c-rouge-fg);
 }
 
 h3 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: .85em;
-  color: var(--c-rouge);
+  color: var(--c-rouge-fg);
 }
 
 a { color: inherit; text-decoration: none; }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--c-fond); }
-::-webkit-scrollbar-thumb { background: var(--c-rouge); }
+::-webkit-scrollbar-thumb { background: var(--c-rouge-fg); }
 
 /* ─── Keyframes ──────────────────────────────────────────────── */
 @keyframes fadeInUp {
@@ -324,10 +354,10 @@ a { color: inherit; text-decoration: none; }
 
 /* Reusable hover utilities — avoids JS event handlers in server components */
 .btn-rouge {
-  background-color: var(--c-rouge);
+  background-color: var(--c-btn-accent);
   border-radius: 4px;
   padding: 10px 24px 11px;
-  color: white;
+  color: var(--c-on-accent);
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
   font-weight: 200;
@@ -345,7 +375,7 @@ a { color: inherit; text-decoration: none; }
   background-color: white;
   border-radius: 4px;
   padding: 10px 24px 11px;
-  color: var(--c-rouge);
+  color: var(--c-rouge-fg);
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
   font-weight: 200;
@@ -372,4 +402,4 @@ a { color: inherit; text-decoration: none; }
   outline: none;
   transition: border-color var(--e-basic);
 }
-.input-field:focus { border-color: var(--c-rouge); }
+.input-field:focus { border-color: var(--c-rouge-fg); }

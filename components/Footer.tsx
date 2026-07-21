@@ -35,7 +35,7 @@ export default function Footer() {
               width: "56px",
               height: "56px",
               backgroundColor: "var(--c-rouge)",
-              color: "white",
+              color: "var(--c-on-accent)",
               fontFamily: "var(--font-display)",
               fontSize: "1.8rem",
               fontWeight: 200,

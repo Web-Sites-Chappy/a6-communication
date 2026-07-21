@@ -54,8 +54,8 @@ export default function NosServicesPage() {
       >
         {communication.map(([service, desc], i) => (
           <Reveal key={service} delay={i * 80}>
-            <div style={{ borderTop: "2px solid var(--c-rouge)", paddingTop: "20px" }}>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 200, fontSize: "2rem", textTransform: "uppercase", color: "var(--c-rouge)", lineHeight: "0.9em", marginBottom: "12px" }}>
+            <div style={{ borderTop: "2px solid var(--c-rouge-fg)", paddingTop: "20px" }}>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 200, fontSize: "2rem", textTransform: "uppercase", color: "var(--c-rouge-fg)", lineHeight: "0.9em", marginBottom: "12px" }}>
                 {service}
               </h3>
               <p style={{ fontSize: "0.85rem", lineHeight: "1.6em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)" }}>

@@ -22,7 +22,7 @@ export default function SmallCarousel({ title }: { title: string }) {
           fontFamily: "var(--font-display)",
           fontSize: "clamp(3rem, 7vw, 5rem)",
           fontWeight: 200,
-          color: "var(--c-rouge)",
+          color: "var(--c-rouge-fg)",
           textTransform: "uppercase",
           textAlign: "center",
           lineHeight: "0.85em",
@@ -48,7 +48,7 @@ export default function SmallCarousel({ title }: { title: string }) {
                 />
                 <p
                   style={{
-                    color: "var(--c-rouge)",
+                    color: "var(--c-rouge-fg)",
                     fontSize: "1.7rem",
                     textTransform: "uppercase",
                     fontFamily: "var(--font-display)",

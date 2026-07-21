@@ -8,7 +8,7 @@ interface CTABannerProps {
 
 export default function CTABanner({ title, ctaLabel, ctaHref }: CTABannerProps) {
   return (
-    <div style={{ backgroundColor: "var(--c-rouge)", padding: "50px 0" }}>
+    <div style={{ backgroundColor: "var(--c-btn-accent)", padding: "50px 0" }}>
       <div
         style={{
           display: "flex",
@@ -27,7 +27,7 @@ export default function CTABanner({ title, ctaLabel, ctaHref }: CTABannerProps) 
             fontWeight: 200,
             fontSize: "clamp(2rem, 5vw, 3.5rem)",
             lineHeight: "0.9em",
-            color: "white",
+            color: "var(--c-on-accent)",
             textTransform: "uppercase",
             textAlign: "left",
             flex: 1,

@@ -105,6 +105,22 @@ const palmore = localFont({
   display: "swap",
 });
 
+// TRY Vesterbro — licence "Personal Use Only" (befonts.com). Preview local
+// uniquement : fichiers ignorés par git tant qu'une licence web commerciale
+// n'est pas acquise (voir .gitignore).
+const vesterbro = localFont({
+  src: [
+    { path: "./fonts/vesterbro/TRYVesterbro-Light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/vesterbro/TRYVesterbro-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/vesterbro/TRYVesterbro-Medium.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/vesterbro/TRYVesterbro-Bold.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/vesterbro/TRYVesterbro-ExtraBold.ttf", weight: "800", style: "normal" },
+    { path: "./fonts/vesterbro/TRYVesterbro-Poster.ttf", weight: "900", style: "normal" },
+  ],
+  variable: "--font-display-vesterbro",
+  display: "swap",
+});
+
 const displayFontVariables = [
   barlowCondensed.variable,
   bierika.variable,
@@ -112,6 +128,7 @@ const displayFontVariables = [
   locatro.variable,
   apoc.variable,
   palmore.variable,
+  vesterbro.variable,
 ].join(" ");
 
 export const metadata: Metadata = {

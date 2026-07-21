@@ -10,6 +10,7 @@ const palettes: { id: Theme; name: string; fond: string; accent: string; dark: s
   { id: "d", name: "Nuit & Or",       fond: "#F7E9D2", accent: "#9E680A", dark: "#1E2F44" },
   { id: "e", name: "Lin & Cobalt",    fond: "#E2E6E9", accent: "#2753A5", dark: "#31241C" },
   { id: "f", name: "Craie & Encre",   fond: "#EDEBE8", accent: "#AD1F36", dark: "#1C1C1C" },
+  { id: "g", name: "Indigo & Sauge",  fond: "#D2E6DC", accent: "#93325A", dark: "#112250" },
 ];
 
 const layouts: { id: Layout; name: string; label: string; icon: string }[] = [
@@ -25,6 +26,7 @@ const fonts: { id: Font; name: string }[] = [
   { id: "locatro", name: "Locatro" },
   { id: "apoc",    name: "Apoc Revelations" },
   { id: "palmore", name: "Palmore" },
+  { id: "vesterbro", name: "Vesterbro Sans (preview)" },
 ];
 
 const bodyFonts: { id: BodyFont; name: string }[] = [
