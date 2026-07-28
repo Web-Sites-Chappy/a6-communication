@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
+import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,14 +22,24 @@ export default function NosCiblesPage() {
     <main>
       <Hero
         imageSrc="/photos/DSC_1091.jpg"
-        title={"Ceux pour\nqui nous\nœuvrons"}
+        title={
+          <>
+            Ceux pour
+            <br />
+            qui nous
+            <br />
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+              œuvrons
+            </span>
+          </>
+        }
         height="half"
         ctaLabel="Nos services"
         ctaHref="/nos-services"
       />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
-        <h2>Nos cibles</h2>
+        <AccentHeading lead="Nos" accent="cibles" />
         <p style={{ marginTop: "24px", fontSize: "1rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
           A6 travaille au cœur des secteurs qui font vivre les territoires — bâtisseurs, gardiens
           du patrimoine, vignerons, élus locaux. Des acteurs essentiels qui méritent une communication
@@ -71,7 +82,19 @@ export default function NosCiblesPage() {
       </div>
 
       <Reveal>
-        <CTABanner title={"Vous vous\nreconnaissez ?"} ctaLabel="Contactez-nous" ctaHref="/contact" />
+        <CTABanner
+          title={
+            <>
+              Vous vous{" "}
+              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+                reconnaissez ?
+              </span>
+            </>
+          }
+          titleStyle={{ textTransform: "none" }}
+          ctaLabel="Contactez-nous"
+          ctaHref="/contact"
+        />
       </Reveal>
     </main>
   );

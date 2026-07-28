@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
+import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,7 +19,15 @@ export default function ContactPage() {
     <main>
       <Hero
         imageSrc="/photos/DSC_0836.jpg"
-        title={"Parlons de\nvotre projet"}
+        title={
+          <>
+            Parlons de
+            <br />
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+              votre projet
+            </span>
+          </>
+        }
         height="half"
         ctaLabel="Nous écrire"
         ctaHref="#form"
@@ -34,7 +43,7 @@ export default function ContactPage() {
         }}
       >
         <Reveal>
-          <h2 style={{ marginBottom: "40px" }}>Contact</h2>
+          <AccentHeading lead="Contact" style={{ marginBottom: "40px" }} />
         </Reveal>
 
         <Reveal delay={100}>

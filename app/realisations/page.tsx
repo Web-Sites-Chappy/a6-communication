@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
+import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,14 +21,23 @@ export default function RealisationsPage() {
     <main>
       <Hero
         imageSrc="/photos/DSC_0855.jpg"
-        title={"Nos\nréalisations"}
+        title={
+          <>
+            Nos
+            <br />
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+              réalisations
+            </span>
+          </>
+        }
         height="half"
         ctaLabel="Nous contacter"
         ctaHref="/contact"
+        ctaVariant="bleu"
       />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
-        <h2>Événements qui marquent</h2>
+        <AccentHeading lead="Événements qui" accent="marquent" />
       </Reveal>
 
       <div style={{ width: "90vw", maxWidth: "1000px", margin: "0 auto", paddingBottom: "80px" }}>
@@ -63,7 +73,7 @@ export default function RealisationsPage() {
                 <p style={{ fontSize: "0.9rem", lineHeight: "1.6em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)", marginBottom: "20px" }}>
                   {project.desc}
                 </p>
-                <span style={{ display: "inline-block", backgroundColor: "var(--c-btn-accent)", borderRadius: "4px", padding: "6px 14px 7px", color: "var(--c-on-accent)", fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "0.95rem", letterSpacing: "0.08em" }}>
+                <span style={{ display: "inline-block", backgroundColor: "var(--c-navy)", borderRadius: "4px", padding: "6px 14px 7px", color: "white", fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "0.95rem", letterSpacing: "0.08em" }}>
                   {project.category}
                 </span>
               </div>
@@ -73,7 +83,19 @@ export default function RealisationsPage() {
       </div>
 
       <Reveal>
-        <CTABanner title={"Votre projet,\nnos idées"} ctaLabel="Nous contacter" ctaHref="/contact" />
+        <CTABanner
+          title={
+            <>
+              Votre projet,{" "}
+              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+                nos idées
+              </span>
+            </>
+          }
+          titleStyle={{ textTransform: "none" }}
+          ctaLabel="Nous contacter"
+          ctaHref="/contact"
+        />
       </Reveal>
     </main>
   );

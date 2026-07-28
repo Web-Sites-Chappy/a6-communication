@@ -28,7 +28,7 @@ export default function HomeEditorial() {
             <br />et son <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>histoire</span>
           </>
         }
-        subtitle="Agence de communication et d'événementiel au service des territoires, du patrimoine et des acteurs qui les font vivre."
+        subtitle="Agence de Communication et d'Événementiel au service des professionnels de l’Acte et Art de Bâtir, Institutions, Collectivités, Mairies, monde de la Culture et Associatif qui font vivre nos Territoires, notre Patrimoine."
         ctaLabel="Nos réalisations"
         ctaHref="/realisations"
         interval={5000}
@@ -77,7 +77,7 @@ export default function HomeEditorial() {
           titleStyle={{ textTransform: "none", fontSize: "clamp(2.4rem, 6vw, 4.2rem)" }}
           compact
           ctaVariant="bleu"
-          ctaLabel="Contacter"
+          ctaLabel="Commencer"
           ctaHref="/contact"
         />
       </Reveal>

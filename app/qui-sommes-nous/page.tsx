@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
+import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,14 +27,21 @@ export default function QuiSommesNousPage() {
     <main>
       <Hero
         imageSrc="/photos/DSC_0802.jpg"
-        title={"Qui\nsommes-nous"}
+        title={
+          <>
+            Qui<br />
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+              sommes-nous
+            </span>
+          </>
+        }
         height="half"
         ctaLabel="Nos réalisations"
         ctaHref="/realisations"
       />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 40px", textAlign: "center" }}>
-        <h2 id="equipe">Deux esprits,{"\n"}une vision</h2>
+        <AccentHeading id="equipe" lead="Deux esprits," accent="une vision" />
         <p style={{ marginTop: "24px", fontSize: "1rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
           A6 Communication &amp; Événementiel se targue d&apos;être dirigée par deux associés
           complémentaires et atypiques. Manuel, pas encore la trentaine et son incontournable
@@ -80,9 +88,12 @@ export default function QuiSommesNousPage() {
       <div style={{ backgroundColor: "var(--c-navy)", padding: "60px 0" }}>
         <div style={{ width: "var(--w-max)", maxWidth: "900px", margin: "0 auto" }}>
           <Reveal>
-            <h2 id="valeurs" style={{ color: "var(--c-rouge)", marginBottom: "50px" }}>
-              Les 6 valeurs
-            </h2>
+            <AccentHeading
+              id="valeurs"
+              lead="Les 6"
+              accent="valeurs"
+              style={{ color: "var(--c-rouge)", marginBottom: "50px" }}
+            />
           </Reveal>
           <div
             style={{
@@ -107,7 +118,19 @@ export default function QuiSommesNousPage() {
       </div>
 
       <Reveal>
-        <CTABanner title={"Parlons de\nvotre projet"} ctaLabel="Contact" ctaHref="/contact" />
+        <CTABanner
+          title={
+            <>
+              Parlons de{" "}
+              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+                votre projet
+              </span>
+            </>
+          }
+          titleStyle={{ textTransform: "none" }}
+          ctaLabel="Contact"
+          ctaHref="/contact"
+        />
       </Reveal>
     </main>
   );

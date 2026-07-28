@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
+import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -57,7 +58,15 @@ export default function ActualitesPage() {
     <main>
       <Hero
         imageSrc="/photos/DSC_0802.jpg"
-        title={"Nos\nactualités"}
+        title={
+          <>
+            Nos
+            <br />
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+              actualités
+            </span>
+          </>
+        }
         height="half"
         ctaLabel="Nous contacter"
         ctaHref="/contact"
@@ -72,7 +81,7 @@ export default function ActualitesPage() {
           textAlign: "center",
         }}
       >
-        <h2>Coulisses & temps forts</h2>
+        <AccentHeading lead="Coulisses &" accent="temps forts" />
         <p
           style={{
             marginTop: "24px",
@@ -191,7 +200,15 @@ export default function ActualitesPage() {
 
       <Reveal>
         <CTABanner
-          title={"Une actualité\nà partager ?"}
+          title={
+            <>
+              Une actualité{" "}
+              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+                à partager ?
+              </span>
+            </>
+          }
+          titleStyle={{ textTransform: "none" }}
           ctaLabel="Nous contacter"
           ctaHref="/contact"
         />

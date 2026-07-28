@@ -1,5 +1,9 @@
 "use client";
 
+import { useState } from "react";
+
+type SubmitStatus = "idle" | "sending" | "sent" | "error";
+
 const labelStyle = {
   display: "block",
   fontFamily: "var(--font-display)",
@@ -34,8 +38,39 @@ const serviceOptions = [
 ];
 
 export default function ContactForm() {
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          org: data.get("org"),
+          service: data.get("service"),
+          message: data.get("message"),
+        }),
+      });
+
+      if (!response.ok) throw new Error("Request failed");
+
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
-    <form style={{ maxWidth: "600px", margin: "0 auto" }} onSubmit={(e) => e.preventDefault()}>
+    <form style={{ maxWidth: "600px", margin: "0 auto" }} onSubmit={handleSubmit}>
       {[
         { label: "Votre nom", type: "text", name: "name", placeholder: "Manuel Dupont" },
         { label: "Email", type: "email", name: "email", placeholder: "contact@exemple.fr" },
@@ -47,6 +82,7 @@ export default function ContactForm() {
             type={field.type}
             name={field.name}
             placeholder={field.placeholder}
+            required={field.name !== "org"}
             className="input-field"
           />
         </div>
@@ -77,14 +113,31 @@ export default function ContactForm() {
           name="message"
           rows={6}
           placeholder="Décrivez votre projet..."
+          required
           className="input-field"
           style={{ resize: "vertical" }}
         />
       </div>
 
-      <button type="submit" className="btn-rouge" style={{ width: "100%", fontSize: "1.4rem" }}>
-        Envoyer le message
+      <button
+        type="submit"
+        className="btn-rouge"
+        disabled={status === "sending"}
+        style={{ width: "100%", fontSize: "1.4rem", opacity: status === "sending" ? 0.6 : 1 }}
+      >
+        {status === "sending" ? "Envoi..." : "Envoyer le message"}
       </button>
+
+      {status === "sent" && (
+        <p style={{ marginTop: "16px", textAlign: "center", color: "var(--c-navy)", fontFamily: "var(--font-body)" }}>
+          Merci, votre message a bien été envoyé. Nous vous répondrons rapidement.
+        </p>
+      )}
+      {status === "error" && (
+        <p style={{ marginTop: "16px", textAlign: "center", color: "var(--c-rouge-fg)", fontFamily: "var(--font-body)" }}>
+          Une erreur est survenue. Merci de réessayer ou de nous écrire directement à contact@a6communication.fr.
+        </p>
+      )}
     </form>
   );
 }

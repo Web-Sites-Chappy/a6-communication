@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
+import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,14 +27,22 @@ export default function NosServicesPage() {
     <main>
       <Hero
         imageSrc="/photos/DSC_1019.jpg"
-        title={"Nos\nservices"}
+        title={
+          <>
+            Nos
+            <br />
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+              services
+            </span>
+          </>
+        }
         height="half"
         ctaLabel="Voir nos réalisations"
         ctaHref="/realisations"
       />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 40px", textAlign: "center" }} className="communication-section">
-        <h2>Communication</h2>
+        <AccentHeading lead="Communication" />
         <p style={{ marginTop: "24px", fontSize: "1rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
           Stratégie de communication digitale et print, identité visuelle, production de contenus,
           relations presse, community management — A6 accompagne les structures dans leur mutation
@@ -69,7 +78,7 @@ export default function NosServicesPage() {
       <div id="evenementiel" style={{ backgroundColor: "var(--c-navy)", padding: "60px 0" }}>
         <div style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", textAlign: "center" }}>
           <Reveal>
-            <h2 style={{ color: "var(--c-rouge)" }}>Événementiel</h2>
+            <AccentHeading lead="Événementiel" style={{ color: "var(--c-rouge)" }} />
             <p style={{ marginTop: "24px", fontSize: "1rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(255,255,255,0.75)" }}>
               Conception, organisation et coordination d&apos;événements — congrès, forums, journées
               thématiques, assemblées générales, célébrations institutionnelles. A6 prend en charge
@@ -103,7 +112,19 @@ export default function NosServicesPage() {
       </div>
 
       <Reveal>
-        <CTABanner title={"Un projet ?\nParlons-en."} ctaLabel="Contact" ctaHref="/contact" />
+        <CTABanner
+          title={
+            <>
+              Un projet ?{" "}
+              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+                Parlons-en.
+              </span>
+            </>
+          }
+          titleStyle={{ textTransform: "none" }}
+          ctaLabel="Contact"
+          ctaHref="/contact"
+        />
       </Reveal>
     </main>
   );

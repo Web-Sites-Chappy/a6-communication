@@ -152,7 +152,7 @@ const displayFontVariables = [
 export const metadata: Metadata = {
   title: "A6 Communication & Événementiel",
   description:
-    "Agence de communication et événementiel dirigée par Manuel et Eric. Alchimie, Audace, Acceptation, Agilité, Authenticité, Assurance.",
+    "Agence de Communication et événementiel dirigée par Manuel et Eric. Alchimie, Audace, Acceptation, Agilité, Authenticité, Assurance.",
 };
 
 export default function RootLayout({

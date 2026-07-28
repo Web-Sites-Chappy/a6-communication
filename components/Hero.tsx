@@ -1,14 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 interface HeroProps {
   imageSrc?: string;
-  title: string;
+  title: ReactNode;
   subtitle?: string;
   ctaLabel?: string;
   ctaHref?: string;
   height?: "full" | "half";
+  ctaVariant?: "rouge" | "bleu";
 }
 
 export default function Hero({
@@ -18,6 +20,7 @@ export default function Hero({
   ctaLabel = "Découvrir",
   ctaHref = "/realisations",
   height = "full",
+  ctaVariant = "rouge",
 }: HeroProps) {
   return (
     <section
@@ -70,13 +73,14 @@ export default function Hero({
         {/* Main title */}
         <h1
           style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 200,
-            fontSize: "clamp(4rem, 10vw, 9rem)",
+            fontFamily: "var(--font-display-bricolage)",
+            fontWeight: 700,
+            fontSize: "clamp(2.2rem, 9vw, 9rem)",
             lineHeight: "0.85em",
             textTransform: "uppercase",
             color: "white",
             letterSpacing: "0.02em",
+            overflowWrap: "break-word",
             marginBottom: subtitle ? "0.4em" : "0.6em",
             animation: "fadeInUp 0.9s var(--e-basic) 0.1s both",
           }}
@@ -103,7 +107,7 @@ export default function Hero({
 
         <Link
           href={ctaHref}
-          className="btn-rouge"
+          className={ctaVariant === "bleu" ? "btn-bleu" : "btn-rouge"}
           style={{ animation: "fadeInUp 0.9s var(--e-basic) 0.55s both" }}
         >
           {ctaLabel}
