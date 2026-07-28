@@ -5,15 +5,15 @@ import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Réalisations — A6 Communication",
+  title: "Réalisations | A6 Communication",
 };
 
 const projects = [
   { title: "Congrès de l'Ordre des Architectes d'Occitanie", dates: "Octobre 2025", category: "Événementiel", img: "/photos/DSC_0802.jpg", desc: "Organisation et communication complète du congrès annuel de l'Ordre des Architectes d'Occitanie, rassemblant plus de 300 professionnels." },
-  { title: "Forum Artisans du Bâtiment", dates: "Juin 2025", category: "Événementiel", img: "/photos/DSC_0836.jpg", desc: "Conception et mise en œuvre d'un forum dédié aux artisans du bâtiment — communication digitale, logistique et animation de journée." },
-  { title: "Journées du Patrimoine — Occitanie", dates: "Septembre 2024", category: "Communication", img: "/photos/DSC_0855.jpg", desc: "Stratégie de communication et production de contenus pour les Journées Européennes du Patrimoine en région Occitanie." },
+  { title: "Forum Artisans du Bâtiment", dates: "Juin 2025", category: "Événementiel", img: "/photos/DSC_0836.jpg", desc: "Conception et mise en œuvre d'un forum dédié aux artisans du bâtiment : communication digitale, logistique et animation de journée." },
+  { title: "Journées du Patrimoine, Occitanie", dates: "Septembre 2024", category: "Communication", img: "/photos/DSC_0855.jpg", desc: "Stratégie de communication et production de contenus pour les Journées Européennes du Patrimoine en région Occitanie." },
   { title: "Assemblée Domaines Viticoles Sud", dates: "Novembre 2024", category: "Événementiel", img: "/photos/DSC_1019.jpg", desc: "Organisation de l'assemblée générale annuelle d'un syndicat de vignerons, incluant communication interne et relations presse." },
-  { title: "Colloque Associations Culturelles", dates: "Mars 2024", category: "Communication", img: "/photos/DSC_1091.jpg", desc: "Accompagnement en communication pour une fédération d'associations culturelles de la région — identité visuelle et plan de communication annuel." },
+  { title: "Colloque Associations Culturelles", dates: "Mars 2024", category: "Communication", img: "/photos/DSC_1091.jpg", desc: "Accompagnement en communication pour une fédération d'associations culturelles de la région : identité visuelle et plan de communication annuel." },
 ];
 
 export default function RealisationsPage() {

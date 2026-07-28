@@ -5,7 +5,7 @@ import SpotlightTitle from "@/components/SpotlightTitle";
 
 const featured = [
   { title: "Congrès de l'Ordre des Architectes d'Occitanie", dates: "Octobre 2025", category: "Événementiel", img: "/photos/DSC_0802.jpg", desc: "Organisation et communication complète du congrès annuel, rassemblant plus de 300 professionnels." },
-  { title: "Forum Artisans du Bâtiment", dates: "Juin 2025", category: "Communication", img: "/photos/DSC_1019.jpg", desc: "Conception et mise en œuvre d'un forum dédié aux artisans — communication digitale, logistique et animation." },
+  { title: "Forum Artisans du Bâtiment", dates: "Juin 2025", category: "Communication", img: "/photos/DSC_1019.jpg", desc: "Conception et mise en œuvre d'un forum dédié aux artisans : communication digitale, logistique et animation." },
 ];
 
 const services = [
@@ -150,7 +150,7 @@ export default function HomeMagazine() {
             lineHeight: "1.5em",
           }}
         >
-          Événements marquants, communications impactantes — notre travail en images.
+          Événements marquants, communications impactantes : notre travail en images.
         </p>
         <Link
           href="/realisations"

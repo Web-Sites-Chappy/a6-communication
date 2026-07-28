@@ -29,7 +29,7 @@ const immersifSections = [
     align: "right" as const,
     eyebrow: "Nos services",
     title: "Communication.\nÉvénementiel.\nAlchimie.",
-    body: "Stratégie digitale, identité visuelle, organisation d'événements — A6 prend en charge chaque étape pour des projets qui marquent.",
+    body: "Stratégie digitale, identité visuelle, organisation d'événements : A6 prend en charge chaque étape pour des projets qui marquent.",
     cta: { label: "Nos services", href: "/nos-services", style: "rouge" as const },
   },
   {
@@ -39,7 +39,7 @@ const immersifSections = [
     align: "left" as const,
     eyebrow: "Réalisations",
     title: "Des événements\nqui marquent\nles esprits.",
-    body: "Congrès, forums, journées thématiques, assemblées — des projets menés de la scénographie à la logistique.",
+    body: "Congrès, forums, journées thématiques, assemblées : des projets menés de la scénographie à la logistique.",
     cta: { label: "Voir nos réalisations", href: "/realisations", style: "rouge" as const },
   },
   {
@@ -49,7 +49,7 @@ const immersifSections = [
     align: "center" as const,
     eyebrow: null,
     title: "Parlons de\nvotre projet.",
-    body: "Artisans, architectes, communes, domaines viticoles, monde associatif — A6 est à votre écoute.",
+    body: "Artisans, architectes, communes, domaines viticoles, monde associatif : A6 est à votre écoute.",
     cta: { label: "Nous contacter", href: "/contact", style: "blanc" as const },
   },
 ];

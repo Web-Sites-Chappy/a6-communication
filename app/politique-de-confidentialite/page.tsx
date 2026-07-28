@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — A6 Communication",
+  title: "Politique de confidentialité | A6 Communication",
 };
 
 export default function PolitiqueConfidentialitePage() {
@@ -55,9 +55,9 @@ export default function PolitiqueConfidentialitePage() {
 
             <h2>3. Finalités et base légale</h2>
             <ul>
-              <li>Répondre à vos demandes de contact — base légale : intérêt légitime / exécution de mesures précontractuelles.</li>
-              <li>Mémoriser vos préférences d&apos;affichage — base légale : intérêt légitime (fonctionnement du site).</li>
-              <li>Mesure d&apos;audience éventuelle — base légale : consentement, recueilli via le bandeau cookies.</li>
+              <li>Répondre à vos demandes de contact (base légale : intérêt légitime / exécution de mesures précontractuelles).</li>
+              <li>Mémoriser vos préférences d&apos;affichage (base légale : intérêt légitime, fonctionnement du site).</li>
+              <li>Mesure d&apos;audience éventuelle (base légale : consentement, recueilli via le bandeau cookies).</li>
             </ul>
 
             <h2>4. Durée de conservation</h2>

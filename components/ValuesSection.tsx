@@ -39,7 +39,7 @@ const values = [
     letter: "A",
     name: "Assurance",
     color: "var(--terra)",
-    text: "Au service de l'humain avant tout, l'Assurance rapproche la théorie de la pratique. En gardant un œil dans le réel et un autre dans le numérique — un outil digital n'est qu'un outil, ce qui compte c'est l'usage.",
+    text: "Au service de l'humain avant tout, l'Assurance rapproche la théorie de la pratique. En gardant un œil dans le réel et un autre dans le numérique : un outil digital n'est qu'un outil, ce qui compte c'est l'usage.",
   },
 ];
 

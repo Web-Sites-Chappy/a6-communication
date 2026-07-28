@@ -5,16 +5,16 @@ import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nos Cibles — A6 Communication",
+  title: "Nos Clients | A6 Communication",
 };
 
 const targets = [
-  { title: "Artisans du Bâtiment", img: "/photos/DSC_0802.jpg", desc: "Maçons, charpentiers, menuisiers, plombiers — tous ceux qui construisent et rénovent le patrimoine bâti ont besoin d'une communication qui valorise leur savoir-faire et leur ancrage local." },
-  { title: "Architectes", img: "/photos/DSC_0836.jpg", desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles — A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle." },
+  { title: "Artisans du Bâtiment", img: "/photos/DSC_0802.jpg", desc: "Maçons, charpentiers, menuisiers, plombiers : tous ceux qui construisent et rénovent le patrimoine bâti ont besoin d'une communication qui valorise leur savoir-faire et leur ancrage local." },
+  { title: "Architectes", img: "/photos/DSC_0836.jpg", desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles : A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle." },
   { title: "Communes & Mairies", img: "/photos/DSC_0855.jpg", desc: "Particulièrement les communes de moins de 1 000 habitants, les intercommunalités et collectivités qui ont besoin d'une communication de proximité, efficace et abordable." },
-  { title: "Patrimoine & Culture", img: "/photos/DSC_1019.jpg", desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire — partout où l'histoire et la culture méritent d'être racontées et valorisées." },
-  { title: "Monde Associatif", img: "/photos/DSC_1091.jpg", desc: "Associations politiques, sportives, sociales — A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes." },
-  { title: "Domaines Viticoles", img: "/photos/DSC_0836.jpg", desc: "Vignerons, coopératives, syndicats d'appellation — la communication au service du terroir, de la filière et des hommes et femmes qui font vivre le vin de nos régions." },
+  { title: "Patrimoine & Culture", img: "/photos/DSC_1019.jpg", desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées." },
+  { title: "Monde Associatif", img: "/photos/DSC_1091.jpg", desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes." },
+  { title: "Domaines Viticoles", img: "/photos/DSC_0836.jpg", desc: "Vignerons, coopératives, syndicats d'appellation : la communication au service du terroir, de la filière et des hommes et femmes qui font vivre le vin de nos régions." },
 ];
 
 export default function NosCiblesPage() {
@@ -39,9 +39,9 @@ export default function NosCiblesPage() {
       />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
-        <AccentHeading lead="Nos" accent="cibles" />
+        <AccentHeading lead="Nos" accent="clients" />
         <p style={{ marginTop: "24px", fontSize: "1rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
-          A6 travaille au cœur des secteurs qui font vivre les territoires — bâtisseurs, gardiens
+          A6 travaille au cœur des secteurs qui font vivre les territoires : bâtisseurs, gardiens
           du patrimoine, vignerons, élus locaux. Des acteurs essentiels qui méritent une communication
           à la hauteur de leur engagement.
         </p>

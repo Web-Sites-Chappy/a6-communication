@@ -11,7 +11,7 @@ const footerNav = [
   { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
   { label: "Nos services", href: "/nos-services" },
   { label: "Réalisations", href: "/realisations" },
-  { label: "Nos cibles", href: "/nos-cibles" },
+  { label: "Nos clients", href: "/nos-cibles" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -151,7 +151,7 @@ export default function Footer() {
             fontFamily: "var(--font-body), sans-serif",
           }}
         >
-          {`© ${new Date().getFullYear()} `}A6 Communication &amp; Événementiel — Tous droits réservés
+          {`© ${new Date().getFullYear()} `}A6 Communication &amp; Événementiel · Tous droits réservés
           {" · "}
           Site réalisé par{" "}
           <a href="https://chappygo.com" target="_blank" rel="noopener" style={{ color: "inherit", textDecoration: "underline" }}>

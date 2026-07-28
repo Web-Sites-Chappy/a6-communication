@@ -48,7 +48,7 @@ export default function AboutSection() {
                 style={{ color: "rgba(28,20,16,0.7)", fontFamily: "var(--font-dm-sans)" }}
               >
                 A6 Communication &amp; Événementiel se targue d&apos;être dirigée par deux associés
-                complémentaires et atypiques — une association née non pas du hasard, mais du goût
+                complémentaires et atypiques, une association née non pas du hasard, mais du goût
                 et de la volonté mutuels de participer à la mutation de la communication et de
                 l&apos;événementiel.
               </p>

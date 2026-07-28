@@ -5,7 +5,7 @@ import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Actualités — A6 Communication",
+  title: "Actualités | A6 Communication",
   description:
     "Coulisses de l'agence, événements à venir et temps forts d'A6 Communication.",
 };
@@ -94,7 +94,7 @@ export default function ActualitesPage() {
           }}
         >
           Événements à venir, projets en cours et regards sur le travail de
-          l&apos;agence — suivez la vie d&apos;A6 Communication.
+          l&apos;agence, suivez la vie d&apos;A6 Communication.
         </p>
       </Reveal>
 

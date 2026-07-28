@@ -1,14 +1,18 @@
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
-import { RollingList, type RollingListItem } from "@/components/ui/rolling-list";
 
-const sixA: RollingListItem[] = [
+interface SixAItem {
+  id: string;
+  title: string;
+  label: string;
+  description: string;
+}
+
+const sixA: SixAItem[] = [
   {
     id: "alchimie",
     title: "Alchimie",
     label: "01",
-    imageSrc: "/photos/DSC_0855.jpg",
-    imageAlt: "Alchimie",
     description:
       "Les regards ont un langage que les mots ne peuvent pas capturer et quand ces mots quittent le silence par une réelle connexion, ils coulent naturellement vers une Alchimie intellectuelle, émotionnelle et créatrice qui va bien au-delà des apparences.",
   },
@@ -16,8 +20,6 @@ const sixA: RollingListItem[] = [
     id: "audace",
     title: "Audace",
     label: "02",
-    imageSrc: "/photos/DSC_1019.jpg",
-    imageAlt: "Audace",
     description:
       "Le courage est de croire en ce qui n’est pas encore visible mais aussi celui d’examiner la vérité sans se fier aux idées reçues. Ainsi l’Audace propulse à l’évidence d’être soi-même, dans ses doutes, ses décisions, sa sensibilité, et permet de sortir de sa zone de confort.",
   },
@@ -25,17 +27,13 @@ const sixA: RollingListItem[] = [
     id: "acceptation",
     title: "Acceptation",
     label: "03",
-    imageSrc: "/photos/DSC_0802.jpg",
-    imageAlt: "Acceptation",
     description:
-      "L’Acceptation ne se commande pas, elle ne se force pas, elle fait simplement partie du chemin qu’il faut emprunter pour avancer. Conscientiser et accueillir qu’on est dans la résistance libère, allège, nous remet en contact avec nos ressources et notre pouvoir d’action — et permet de lâcher prise pour créer.",
+      "L’Acceptation ne se commande pas, elle ne se force pas, elle fait simplement partie du chemin qu’il faut emprunter pour avancer. Conscientiser et accueillir qu’on est dans la résistance libère, allège, nous remet en contact avec nos ressources et notre pouvoir d’action, et permet de lâcher prise pour créer.",
   },
   {
     id: "agilite",
     title: "Agilité",
     label: "04",
-    imageSrc: "/photos/DSC_1091.jpg",
-    imageAlt: "Agilité",
     description:
       "Perçue comme un accélérateur d’innovation, l’Agilité est une évidence de nos jours et doit être un facteur proactif, collaboratif et fondamentalement numérique. L’entreprise mène sa transition culturelle en s’appuyant sur un socle technologique capable de faciliter cette gestion du changement.",
   },
@@ -43,8 +41,6 @@ const sixA: RollingListItem[] = [
     id: "authenticite",
     title: "Authenticité",
     label: "05",
-    imageSrc: "/photos/DSC_0836.jpg",
-    imageAlt: "Authenticité",
     description:
       "Communiquer avec honnêteté et ouverture pour accepter sa vulnérabilité procure une transparence constructive, en accord avec son identité et ses valeurs. Cette authenticité génère l’efficacité et l’éthique, et crée des relations humaines et durables.",
   },
@@ -52,8 +48,6 @@ const sixA: RollingListItem[] = [
     id: "assurance",
     title: "Assurance",
     label: "06",
-    imageSrc: "/photos/DSC_0855.jpg",
-    imageAlt: "Assurance",
     description:
       "Au service de l’humain avant tout, l’Assurance rapproche la théorie de la pratique. En gardant un œil dans le réel et un autre dans le numérique, elle effectue une veille constante et évite de sacraliser l’innovation pour l’innovation. Un outil digital n’est qu’un outil : ce qui compte, c’est l’usage.",
   },
@@ -101,7 +95,8 @@ export default function A6EnBref() {
           Leurs parcours respectifs et leur association n’appartiennent pas au hasard, mais bien à
           ce goût et cette volonté mutuels de participer à cette incontestable mutation, tant dans
           la communication que dans l’événementiel, où l’image et son histoire s’identifient dans
-          les&nbsp;6&nbsp;A.
+          les&nbsp;
+          <span style={{ fontWeight: 700, fontSize: "1.3em", color: "var(--c-rouge-fg)" }}>6&nbsp;A</span>.
         </p>
       </Reveal>
 
@@ -113,7 +108,50 @@ export default function A6EnBref() {
           padding: "10px 0 40px",
         }}
       >
-        <RollingList items={sixA} />
+        <div
+          className="grid-2col"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "50px 60px",
+          }}
+        >
+          {sixA.map((item, i) => (
+            <Reveal key={item.id} delay={i * 70}>
+              <div style={{ borderTop: "2px solid var(--c-rouge-fg)", paddingTop: "20px" }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: "14px", marginBottom: "10px" }}>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-display), 'Barlow Condensed', sans-serif",
+                      fontSize: "0.8rem",
+                      fontWeight: 400,
+                      letterSpacing: "0.3em",
+                      color: "rgba(var(--c-navy-rgb), 0.45)",
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-display-dmserif), serif",
+                      fontStyle: "italic",
+                      fontWeight: 400,
+                      textTransform: "none",
+                      fontSize: "2.2rem",
+                      lineHeight: "0.9em",
+                      color: "var(--c-rouge-fg)",
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                </div>
+                <p style={{ fontSize: "0.92rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(var(--c-navy-rgb), 0.75)" }}>
+                  {item.description}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </Reveal>
     </section>
   );

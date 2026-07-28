@@ -5,7 +5,7 @@ import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Qui sommes-nous — A6 Communication",
+  title: "Qui sommes-nous | A6 Communication",
 };
 
 const values = [
@@ -14,7 +14,7 @@ const values = [
   { name: "Acceptation",  text: "L'Acceptation ne se commande pas, elle ne se force pas, elle fait simplement partie du chemin qu'il faut emprunter pour avancer. Conscientiser et accueillir qu'on est dans la résistance libère, allège et nous remet en contact avec nos ressources." },
   { name: "Agilité",      text: "Perçue comme un accélérateur d'innovation, l'Agilité est une évidence de nos jours et doit être un facteur proactif, collaboratif et fondamentalement numérique. L'entreprise doit mener sa transition culturelle et s'appuyer sur un socle technologique capable." },
   { name: "Authenticité", text: "Communiquer avec honnêteté et ouverture pour accepter sa vulnérabilité procure une transparence constructive en accord avec son identité et ses valeurs. Cette authenticité génère l'efficacité et l'éthique et crée des relations humaines et durables." },
-  { name: "Assurance",    text: "Au service de l'humain avant tout, l'Assurance se positionne dans l'évidence de rapprocher la théorie de la pratique. En gardant un œil dans le réel et un autre dans le numérique — un outil digital n'est qu'un outil, ce qui compte c'est l'usage." },
+  { name: "Assurance",    text: "Au service de l'humain avant tout, l'Assurance se positionne dans l'évidence de rapprocher la théorie de la pratique. En gardant un œil dans le réel et un autre dans le numérique : un outil digital n'est qu'un outil, ce qui compte c'est l'usage." },
 ];
 
 const team = [
@@ -85,7 +85,7 @@ export default function QuiSommesNousPage() {
         ))}
       </div>
 
-      <div style={{ backgroundColor: "var(--c-navy)", padding: "60px 0" }}>
+      <div style={{ backgroundColor: "var(--c-fond)", padding: "60px 0" }}>
         <div style={{ width: "var(--w-max)", maxWidth: "900px", margin: "0 auto" }}>
           <Reveal>
             <AccentHeading
@@ -108,7 +108,7 @@ export default function QuiSommesNousPage() {
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 200, fontSize: "2.5rem", textTransform: "uppercase", color: "var(--c-rouge)", lineHeight: "0.9em", marginBottom: "12px" }}>
                   {v.name}
                 </h3>
-                <p style={{ fontSize: "0.85rem", lineHeight: "1.6em", color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-body)" }}>
+                <p style={{ fontSize: "0.85rem", lineHeight: "1.6em", color: "rgba(var(--c-navy-rgb), 0.75)", fontFamily: "var(--font-body)" }}>
                   {v.text}
                 </p>
               </Reveal>
@@ -121,14 +121,16 @@ export default function QuiSommesNousPage() {
         <CTABanner
           title={
             <>
-              Parlons de{" "}
+              <span style={{ fontFamily: "var(--font-display-bricolage)", fontWeight: 700 }}>A6</span>{" "}
               <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                votre projet
+                j&apos;osais...
               </span>
             </>
           }
-          titleStyle={{ textTransform: "none" }}
-          ctaLabel="Contact"
+          titleStyle={{ textTransform: "none", fontSize: "clamp(2.4rem, 6vw, 4.2rem)" }}
+          compact
+          ctaVariant="bleu"
+          ctaLabel="Commencer"
           ctaHref="/contact"
         />
       </Reveal>

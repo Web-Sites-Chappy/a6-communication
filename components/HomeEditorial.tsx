@@ -4,6 +4,7 @@ import HeroSlider from "@/components/HeroSlider";
 import Reveal from "@/components/Reveal";
 import SectionsCardStack from "@/components/SectionsCardStack";
 import A6EnBref from "@/components/A6EnBref";
+import TrustedByCloud from "@/components/TrustedByCloud";
 import AccentHeading from "@/components/AccentHeading";
 
 const heroImages = [
@@ -47,7 +48,7 @@ export default function HomeEditorial() {
             margin: "24px auto 0",
           }}
         >
-          Deux associés complémentaires — l&apos;esprit numérique et l&apos;esprit poétique —
+          Deux associés complémentaires, l&apos;un à l'esprit numérique, l'autre à l&apos;esprit poétique,
           au service d&apos;une communication authentique et d&apos;événements qui marquent les esprits.
         </p>
       </Reveal>
@@ -57,8 +58,12 @@ export default function HomeEditorial() {
         <SectionsCardStack />
       </Reveal>
 
-      {/* A6 en bref — the two associates + the interactive 6A */}
+      {/* A6 en bref — the two associates + the 6A grid */}
       <A6EnBref />
+
+      <Reveal>
+        <TrustedByCloud />
+      </Reveal>
 
       <Reveal>
         <EventsMarquee />

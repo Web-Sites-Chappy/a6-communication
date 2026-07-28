@@ -6,7 +6,7 @@ const targets = [
   {
     icon: "⬡",
     title: "Artisans du Bâtiment",
-    desc: "Maçons, charpentiers, menuisiers, plombiers — tous ceux qui construisent et rénovent le patrimoine bâti.",
+    desc: "Maçons, charpentiers, menuisiers, plombiers : tous ceux qui construisent et rénovent le patrimoine bâti.",
     color: "var(--terra)",
   },
   {
@@ -30,13 +30,13 @@ const targets = [
   {
     icon: "⬡",
     title: "Monde Associatif",
-    desc: "Associations politiques, sportives, sociales — partout où la communication crée du lien et de la mobilisation.",
+    desc: "Associations politiques, sportives, sociales : partout où la communication crée du lien et de la mobilisation.",
     color: "var(--clay)",
   },
   {
     icon: "⬡",
     title: "Domaines Viticoles",
-    desc: "Vignerons, coopératives, syndicats d'appellation — la communication au service du terroir et de la filière.",
+    desc: "Vignerons, coopératives, syndicats d'appellation : la communication au service du terroir et de la filière.",
     color: "var(--terra)",
   },
 ];
@@ -56,7 +56,7 @@ export default function TargetsSection() {
               className="text-xs tracking-widest uppercase mb-4"
               style={{ color: "var(--terra)", fontFamily: "var(--font-dm-sans)" }}
             >
-              Nos cibles
+              Nos clients
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
@@ -84,7 +84,7 @@ export default function TargetsSection() {
             className="self-end text-base leading-relaxed"
             style={{ color: "rgba(28,20,16,0.65)", fontFamily: "var(--font-dm-sans)" }}
           >
-            A6 travaille au cœur des secteurs qui font vivre les territoires — bâtisseurs, gardiens
+            A6 travaille au cœur des secteurs qui font vivre les territoires : bâtisseurs, gardiens
             du patrimoine, vignerons, élus locaux. Des acteurs essentiels qui méritent une communication
             à la hauteur de leur engagement.
           </motion.p>

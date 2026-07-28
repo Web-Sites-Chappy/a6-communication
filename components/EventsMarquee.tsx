@@ -5,7 +5,7 @@ const events: MarqueeCardData[] = [
   {
     id: "congres-architectes",
     title: "Congrès de l'Ordre des Architectes",
-    description: "Octobre — Décembre 2025 · Événementiel",
+    description: "Octobre à décembre 2025 · Événementiel",
     image: "/photos/DSC_0802.jpg",
     href: "/realisations",
     accentColor: "#003DDE",

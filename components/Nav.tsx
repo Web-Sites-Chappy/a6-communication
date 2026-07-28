@@ -27,7 +27,7 @@ const navLinks = [
     sub: [],
   },
   {
-    label: "Nos cibles",
+    label: "Nos clients",
     href: "/nos-cibles",
     sub: [],
   },

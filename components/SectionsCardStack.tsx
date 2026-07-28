@@ -5,10 +5,10 @@ import Link from "next/link";
 import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
 
 const sections: CardStackItem[] = [
-  { id: "qui", title: "Qui sommes-nous", description: "Manuel & Eric — deux esprits complémentaires, six valeurs fondatrices.", imageSrc: "/photos/DSC_0836.jpg", href: "/qui-sommes-nous" },
+  { id: "qui", title: "Qui sommes-nous", description: "Manuel & Eric, deux esprits complémentaires, six valeurs fondatrices.", imageSrc: "/photos/DSC_0836.jpg", href: "/qui-sommes-nous" },
   { id: "services", title: "Nos services", description: "Communication digitale, identité visuelle, organisation d'événements.", imageSrc: "/photos/DSC_1019.jpg", href: "/nos-services" },
-  { id: "real", title: "Réalisations", description: "Congrès, forums, journées thématiques — des événements qui marquent.", imageSrc: "/photos/DSC_0855.jpg", href: "/realisations" },
-  { id: "cibles", title: "Nos cibles", description: "Artisans, architectes, communes, culture et monde associatif.", imageSrc: "/photos/DSC_1091.jpg", href: "/nos-cibles" },
+  { id: "real", title: "Réalisations", description: "Congrès, forums, journées thématiques : des événements qui marquent.", imageSrc: "/photos/DSC_0855.jpg", href: "/realisations" },
+  { id: "cibles", title: "Nos clients", description: "Artisans, architectes, communes, culture et monde associatif.", imageSrc: "/photos/DSC_1091.jpg", href: "/nos-cibles" },
   { id: "actualites", title: "Actualités", description: "Coulisses, événements à venir et temps forts de l'agence.", imageSrc: "/photos/DSC_0802.jpg", href: "/actualites" },
 ];
 

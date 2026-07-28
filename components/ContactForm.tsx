@@ -23,7 +23,7 @@ const serviceOptions = [
       "Identité visuelle",
       "Photographie",
       "Vidéo",
-      "Relations presse",
+      "Impressions/Signalétique",
     ],
   },
   {

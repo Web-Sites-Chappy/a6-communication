@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — A6 Communication",
+  title: "Mentions légales | A6 Communication",
 };
 
 export default function MentionsLegalesPage() {
@@ -30,7 +30,7 @@ export default function MentionsLegalesPage() {
               <li>Siège social : 73 Allée Kléber, 34000 Montpellier, France</li>
               <li>SIREN : 105 781 751</li>
               <li>SIRET (siège) : 105 781 751 00018</li>
-              <li>Code APE/NAF : 73.11Z — Activités des agences de publicité</li>
+              <li>Code APE/NAF : 73.11Z (Activités des agences de publicité)</li>
               <li>Président : Manuel Dalla Zanna</li>
               <li>Directeur général : Eric Gibaja</li>
               <li>

@@ -5,13 +5,12 @@ import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — A6 Communication",
+  title: "Contact | A6 Communication",
 };
 
 const info = [
   { label: "Région",           value: "Occitanie, France" },
   { label: "Email",            value: "contact@a6communication.fr" },
-  { label: "Cibles principales", value: "Architectes · Artisans · Communes · Patrimoine · Viticoles" },
 ];
 
 export default function ContactPage() {

@@ -8,7 +8,7 @@ const projects = [
   {
     id: 1,
     title: "Congrès de l'Ordre des Architectes",
-    subtitle: "Occitanie — 2025",
+    subtitle: "Occitanie, 2025",
     category: "Événementiel",
     color: "var(--terra)",
     img: "/photos/DSC_0802.jpg",
@@ -16,7 +16,7 @@ const projects = [
   {
     id: 2,
     title: "Journées du Patrimoine",
-    subtitle: "Sud de France — 2025",
+    subtitle: "Sud de France, 2025",
     category: "Communication",
     color: "var(--sea)",
     img: "/photos/DSC_0836.jpg",
@@ -24,7 +24,7 @@ const projects = [
   {
     id: 3,
     title: "Forum des Artisans du Bâtiment",
-    subtitle: "Languedoc — 2024",
+    subtitle: "Languedoc, 2024",
     category: "Événementiel",
     color: "var(--olive)",
     img: "/photos/DSC_0855.jpg",
@@ -32,7 +32,7 @@ const projects = [
   {
     id: 4,
     title: "Conférence Domaines Viticoles",
-    subtitle: "Saint-Drézéry — 2024",
+    subtitle: "Saint-Drézéry, 2024",
     category: "Communication",
     color: "var(--ochre)",
     img: "/photos/DSC_1019.jpg",
@@ -40,7 +40,7 @@ const projects = [
   {
     id: 5,
     title: "Assemblée des Associations Culturelles",
-    subtitle: "Occitanie — 2024",
+    subtitle: "Occitanie, 2024",
     category: "Événementiel",
     color: "var(--clay)",
     img: "/photos/DSC_1091.jpg",
