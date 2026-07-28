@@ -1,9 +1,10 @@
-import EventsCarousel from "@/components/EventsCarousel";
+import EventsMarquee from "@/components/EventsMarquee";
 import CTABanner from "@/components/CTABanner";
 import HeroSlider from "@/components/HeroSlider";
 import Reveal from "@/components/Reveal";
 import SectionsCardStack from "@/components/SectionsCardStack";
 import A6EnBref from "@/components/A6EnBref";
+import AccentHeading from "@/components/AccentHeading";
 
 const heroImages = [
   "/photos/DSC_0836.jpg",
@@ -34,7 +35,7 @@ export default function HomeEditorial() {
       />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
-        <h2>A6 Communication</h2>
+        <AccentHeading lead="A6" accent="Communication & Événementiel" />
         <p
           style={{
             marginTop: "24px",
@@ -60,7 +61,7 @@ export default function HomeEditorial() {
       <A6EnBref />
 
       <Reveal>
-        <EventsCarousel />
+        <EventsMarquee />
       </Reveal>
 
       <Reveal>
@@ -73,8 +74,9 @@ export default function HomeEditorial() {
               </span>
             </>
           }
-          titleStyle={{ textTransform: "none" }}
+          titleStyle={{ textTransform: "none", fontSize: "clamp(2.4rem, 6vw, 4.2rem)" }}
           compact
+          ctaVariant="bleu"
           ctaLabel="Contacter"
           ctaHref="/contact"
         />
