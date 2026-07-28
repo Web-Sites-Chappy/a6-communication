@@ -152,11 +152,12 @@ export default function HeroSlider({
           style={{
             fontFamily: "var(--font-display-bricolage)",
             fontWeight: 700,
-            fontSize: "clamp(4rem, 10vw, 9rem)",
+            fontSize: "clamp(2.2rem, 9vw, 9rem)",
             lineHeight: "0.85em",
             textTransform: "uppercase",
             letterSpacing: "0.02em",
             color: "white",
+            overflowWrap: "break-word",
             marginBottom: subtitle ? "0.4em" : "0.6em",
             animation: "fadeInUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s both",
           }}
