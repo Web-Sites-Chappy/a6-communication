@@ -17,11 +17,6 @@
   /* Fond des boutons pleins (.btn-rouge, CTA nav) — distinct de --c-rouge
      pour permettre une couleur bouton différente de l'accent "badges". */
   --c-btn-accent: var(--c-rouge);
-  /* Couleur spécifique à la barre de nav (CTA "Contact", dropdown, menu
-     mobile) — distincte de --c-btn-accent pour permettre un ton différent
-     juste sur la navigation. Par défaut identique à --c-btn-accent. */
-  --c-nav-accent:    var(--c-btn-accent);
-  --c-nav-on-accent: var(--c-on-accent);
 }
 
 /* B — Ardoise & Or */
@@ -95,11 +90,6 @@
   /* Orange — boutons pleins (.btn-rouge, CTA, badges), distinct du bleu roi
      utilisé pour titres/liens et du vert eau utilisé pour fond/soulignés. */
   --c-btn-accent: #FB8500;
-  /* Jaune — juste la barre de nav (CTA "Contact", dropdown, menu mobile),
-     pour la distinguer des autres boutons pleins qui restent en orange.
-     Texte navy : le blanc échoue le contraste sur le jaune (1.3:1). */
-  --c-nav-accent:    #FFE35B;
-  --c-nav-on-accent: var(--c-navy);
 }
 
 :root {

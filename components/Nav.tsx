@@ -182,8 +182,8 @@ export default function Nav() {
                           boxShadow: "0px 3px 3px rgba(0,0,0,0.2)",
                         }}
                         onMouseEnter={(e) => {
-                          (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-nav-accent)";
-                          (e.currentTarget as HTMLAnchorElement).style.color = "var(--c-nav-on-accent)";
+                          (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-btn-accent)";
+                          (e.currentTarget as HTMLAnchorElement).style.color = "var(--c-on-accent)";
                         }}
                         onMouseLeave={(e) => {
                           (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-navy)";
@@ -206,8 +206,8 @@ export default function Nav() {
               href="/contact"
               className="transition-colors duration-300"
               style={{
-                backgroundColor: "var(--c-nav-accent)",
-                color: "var(--c-nav-on-accent)",
+                backgroundColor: "var(--c-btn-accent)",
+                color: "var(--c-on-accent)",
                 borderRadius: "4px",
                 padding: "9px 20px 10px",
                 fontFamily: "var(--font-display)",
@@ -224,8 +224,8 @@ export default function Nav() {
                 (e.currentTarget as HTMLAnchorElement).style.color = "white";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-nav-accent)";
-                (e.currentTarget as HTMLAnchorElement).style.color = "var(--c-nav-on-accent)";
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-btn-accent)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "var(--c-on-accent)";
               }}
             >
               Contact
@@ -275,8 +275,8 @@ export default function Nav() {
           onClick={() => setMobileOpen(false)}
           className="absolute top-5 right-5"
           style={{
-            backgroundColor: "var(--c-nav-accent)",
-            color: "var(--c-nav-on-accent)",
+            backgroundColor: "var(--c-btn-accent)",
+            color: "var(--c-on-accent)",
             borderRadius: "4px",
             border: "none",
             padding: "9px 20px 10px",
