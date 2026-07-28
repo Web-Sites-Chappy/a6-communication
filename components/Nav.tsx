@@ -80,7 +80,7 @@ export default function Nav() {
           <div
             className="flex-shrink-0"
             style={{
-              height: shy ? "42px" : "48px",
+              height: shy ? "50px" : "58px",
               width: "auto",
               aspectRatio: "632 / 580",
               transition: "all var(--e-basic)",
