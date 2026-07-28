@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import SpotlightTitle from "@/components/SpotlightTitle";
 
 interface HeroSliderProps {
   images: string[];
-  title: string;
+  title: ReactNode;
   subtitle?: string;
   ctaLabel?: string;
   ctaHref?: string;
@@ -151,14 +151,13 @@ export default function HeroSlider({
       >
         <SpotlightTitle
           style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 400,
+            fontFamily: "var(--font-display-bricolage)",
+            fontWeight: 700,
             fontSize: "clamp(4rem, 10vw, 9rem)",
             lineHeight: "0.85em",
             textTransform: "uppercase",
             letterSpacing: "0.02em",
             marginBottom: subtitle ? "0.4em" : "0.6em",
-            textShadow: "0 2px 8px rgba(0,0,0,0.6), 0 4px 32px rgba(0,0,0,0.5)",
             animation: "fadeInUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s both",
           }}
         >

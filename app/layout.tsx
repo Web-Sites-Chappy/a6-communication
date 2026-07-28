@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Barlow_Condensed, Inter, Work_Sans, IBM_Plex_Sans, Archivo } from "next/font/google";
+import { Plus_Jakarta_Sans, Barlow_Condensed, Inter, Work_Sans, IBM_Plex_Sans, Archivo, Bricolage_Grotesque, DM_Serif_Display } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -121,6 +121,21 @@ const vesterbro = localFont({
   display: "swap",
 });
 
+const bricolageGrotesque = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display-bricolage",
+  display: "swap",
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-display-dmserif",
+  display: "swap",
+});
+
 const displayFontVariables = [
   barlowCondensed.variable,
   bierika.variable,
@@ -129,6 +144,8 @@ const displayFontVariables = [
   apoc.variable,
   palmore.variable,
   vesterbro.variable,
+  bricolageGrotesque.variable,
+  dmSerifDisplay.variable,
 ].join(" ");
 
 export const metadata: Metadata = {

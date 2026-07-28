@@ -20,7 +20,13 @@ export default function HomeEditorial() {
         images={heroImages}
         video="/video/cerbere.mp4"
         poster="/video/cerbere-poster.jpg"
-        title={"L'Alchimie\nentre l'image\net son histoire"}
+        title={
+          <>
+            L&apos;Alchimie{"\n"}entre l&apos;
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, color: "#BEE3F5" }}>image</span>
+            {"\n"}et son <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, color: "#BEE3F5" }}>histoire</span>
+          </>
+        }
         subtitle="Agence de communication et d'événementiel au service des territoires, du patrimoine et des acteurs qui les font vivre."
         ctaLabel="Nos réalisations"
         ctaHref="/realisations"
