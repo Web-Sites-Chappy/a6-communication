@@ -23,8 +23,8 @@ export default function HomeEditorial() {
         title={
           <>
             L&apos;Alchimie{"\n"}entre l&apos;
-            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, color: "#BEE3F5" }}>image</span>
-            {"\n"}et son <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, color: "#BEE3F5" }}>histoire</span>
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>image</span>
+            {"\n"}et son <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>histoire</span>
           </>
         }
         subtitle="Agence de communication et d'événementiel au service des territoires, du patrimoine et des acteurs qui les font vivre."

@@ -32,18 +32,16 @@ export default function Footer() {
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
-              width: "56px",
-              height: "56px",
-              backgroundColor: "var(--c-rouge)",
-              color: "var(--c-on-accent)",
-              fontFamily: "var(--font-display)",
-              fontSize: "1.8rem",
-              fontWeight: 200,
-              letterSpacing: "0.05em",
+              width: "76px",
+              height: "76px",
               marginBottom: "12px",
             }}
           >
-            A6
+            <img
+              src="/logo-a6.svg"
+              alt="A6"
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
           </div>
           <p
             style={{

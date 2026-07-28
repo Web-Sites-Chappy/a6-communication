@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import SpotlightTitle from "@/components/SpotlightTitle";
 
 interface HeroSliderProps {
   images: string[];
@@ -114,7 +113,7 @@ export default function HeroSlider({
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(0deg, rgba(27,46,60,0.88) 0%, rgba(27,46,60,0.18) 55%, rgba(27,46,60,0.06) 100%)",
+          background: "linear-gradient(0deg, rgba(27,46,60,1) 0%, rgba(27,46,60,0.21) 55%, rgba(27,46,60,0.07) 100%)",
           zIndex: 1,
         }}
       />
@@ -149,7 +148,7 @@ export default function HeroSlider({
           zIndex: 2,
         }}
       >
-        <SpotlightTitle
+        <h1
           style={{
             fontFamily: "var(--font-display-bricolage)",
             fontWeight: 700,
@@ -157,12 +156,13 @@ export default function HeroSlider({
             lineHeight: "0.85em",
             textTransform: "uppercase",
             letterSpacing: "0.02em",
+            color: "white",
             marginBottom: subtitle ? "0.4em" : "0.6em",
             animation: "fadeInUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s both",
           }}
         >
           {title}
-        </SpotlightTitle>
+        </h1>
 
         {subtitle && (
           <p

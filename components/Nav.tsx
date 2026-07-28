@@ -78,33 +78,34 @@ export default function Nav() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 flex-shrink-0">
           <div
-            className="flex items-center justify-center font-bold"
+            className="flex-shrink-0"
             style={{
-              width: shy ? "36px" : "48px",
-              height: shy ? "36px" : "48px",
-              backgroundColor: "var(--c-rouge)",
-              color: "var(--c-on-accent)",
-              fontFamily: "var(--font-display)",
-              fontSize: shy ? "1.2rem" : "1.5rem",
-              fontWeight: 300,
-              letterSpacing: "0.05em",
+              height: shy ? "42px" : "48px",
+              width: "auto",
+              aspectRatio: "632 / 580",
               transition: "all var(--e-basic)",
             }}
           >
-            A6
+            <img
+              src="/logo-a6.svg"
+              alt="A6"
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
           </div>
           <span
             className="text-white uppercase hidden md:block"
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: shy ? "1rem" : "1.2rem",
+              fontSize: shy ? "0.75rem" : "0.85rem",
               fontWeight: 200,
               letterSpacing: "0.15em",
+              lineHeight: "1.15em",
+              whiteSpace: "nowrap",
               transition: "font-size var(--e-basic)",
               textShadow: shy ? "none" : "0 1px 6px rgba(0,0,0,0.6)",
             }}
           >
-            Communication
+            Communication<br />&amp;<br />Événementiel
           </span>
         </Link>
 
@@ -181,8 +182,8 @@ export default function Nav() {
                           boxShadow: "0px 3px 3px rgba(0,0,0,0.2)",
                         }}
                         onMouseEnter={(e) => {
-                          (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-btn-accent)";
-                          (e.currentTarget as HTMLAnchorElement).style.color = "var(--c-on-accent)";
+                          (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-nav-accent)";
+                          (e.currentTarget as HTMLAnchorElement).style.color = "var(--c-nav-on-accent)";
                         }}
                         onMouseLeave={(e) => {
                           (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-navy)";
@@ -205,8 +206,8 @@ export default function Nav() {
               href="/contact"
               className="transition-colors duration-300"
               style={{
-                backgroundColor: "var(--c-btn-accent)",
-                color: "var(--c-on-accent)",
+                backgroundColor: "var(--c-nav-accent)",
+                color: "var(--c-nav-on-accent)",
                 borderRadius: "4px",
                 padding: "9px 20px 10px",
                 fontFamily: "var(--font-display)",
@@ -218,12 +219,14 @@ export default function Nav() {
                 display: "inline-block",
                 marginLeft: "20px",
               }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-navy)")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-btn-accent)")
-              }
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-navy)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--c-nav-accent)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "var(--c-nav-on-accent)";
+              }}
             >
               Contact
             </Link>
@@ -272,8 +275,8 @@ export default function Nav() {
           onClick={() => setMobileOpen(false)}
           className="absolute top-5 right-5"
           style={{
-            backgroundColor: "var(--c-btn-accent)",
-            color: "var(--c-on-accent)",
+            backgroundColor: "var(--c-nav-accent)",
+            color: "var(--c-nav-on-accent)",
             borderRadius: "4px",
             border: "none",
             padding: "9px 20px 10px",

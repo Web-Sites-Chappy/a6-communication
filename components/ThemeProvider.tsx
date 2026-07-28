@@ -4,7 +4,7 @@ import { createContext, useContext, useCallback, useEffect, useMemo, useState, R
 
 export type Theme = "a" | "b" | "c" | "d" | "e" | "f" | "g";
 export type Layout = "1" | "2" | "3";
-export type Font = "bierika" | "barlow" | "quffer" | "locatro" | "apoc" | "palmore" | "vesterbro";
+export type Font = "bierika" | "barlow" | "quffer" | "locatro" | "apoc" | "palmore" | "vesterbro" | "bricolage" | "dmserif";
 export type BodyFont = "jakarta" | "inter" | "system" | "work" | "plex" | "archivo";
 
 interface ThemeContextType {
@@ -21,7 +21,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType>({
   theme: "a",
   layout: "1",
-  font: "bierika",
+  font: "bricolage",
   bodyFont: "jakarta",
   setTheme: () => {},
   setLayout: () => {},
@@ -37,7 +37,7 @@ function readStorage<T extends string>(key: string, fallback: T): T {
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => readStorage("a6-theme", "a"));
   const [layout, setLayoutState] = useState<Layout>(() => readStorage("a6-layout", "1"));
-  const [font, setFontState] = useState<Font>(() => readStorage("a6-font", "bierika"));
+  const [font, setFontState] = useState<Font>(() => readStorage("a6-font", "bricolage"));
   const [bodyFont, setBodyFontState] = useState<BodyFont>(() => readStorage("a6-body-font", "jakarta"));
 
   // Sync HTML attribute whenever theme changes (including initial mount)
