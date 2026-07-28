@@ -1,5 +1,11 @@
 // Server component — no "use client" needed
 import Link from "next/link";
+import CookieSettingsLink from "@/components/CookieSettingsLink";
+
+const legalNav = [
+  { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
+];
 
 const footerNav = [
   { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
@@ -117,19 +123,42 @@ export default function Footer() {
       </div>
 
       {/* Mention */}
-      <p
+      <div
         style={{
-          display: "block",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "10px",
           width: "100%",
-          textAlign: "center",
-          fontSize: "0.7rem",
-          opacity: 0.4,
           marginTop: "30px",
-          fontFamily: "var(--font-body)",
         }}
       >
-        © {new Date().getFullYear()} A6 Communication &amp; Événementiel — Tous droits réservés
-      </p>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "16px" }}>
+          {legalNav.map((link) => (
+            <Link key={link.href} href={link.href} className="footer-link" style={{ fontSize: "0.7rem", opacity: 0.55 }}>
+              {link.label}
+            </Link>
+          ))}
+          <span style={{ fontSize: "0.7rem", opacity: 0.55 }}>
+            <CookieSettingsLink />
+          </span>
+        </div>
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "0.7rem",
+            opacity: 0.55,
+            fontFamily: "var(--font-body), sans-serif",
+          }}
+        >
+          {`© ${new Date().getFullYear()} `}A6 Communication &amp; Événementiel — Tous droits réservés
+          {" · "}
+          Site réalisé par{" "}
+          <a href="https://chappygo.com" target="_blank" rel="noopener" style={{ color: "inherit", textDecoration: "underline" }}>
+            Chappygo
+          </a>
+        </p>
+      </div>
     </footer>
   );
 }

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import CookieBanner from "@/components/CookieBanner";
 
 // Body fonts (texte courant) — sélectionnables via le ThemeSwitcher.
 // Même logique que les display fonts : chaque police a sa propre variable CSS,
@@ -169,6 +170,7 @@ export default function RootLayout({
             <Footer />
           </Reveal>
           <ThemeSwitcher />
+          <CookieBanner />
         </ThemeProvider>
       </body>
     </html>

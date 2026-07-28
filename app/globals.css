@@ -421,3 +421,50 @@ a { color: inherit; text-decoration: none; }
   transition: border-color var(--e-basic);
 }
 .input-field:focus { border-color: var(--c-rouge-fg); }
+
+/* Pages légales (mentions légales, confidentialité) — texte courant, pas les
+   titres géants du reste du site. */
+.legal-content h1 {
+  text-align: left;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1em;
+  color: var(--c-navy);
+  margin-bottom: 8px;
+}
+.legal-content .legal-meta {
+  font-family: var(--font-body), sans-serif;
+  text-transform: none;
+  font-size: 0.85rem;
+  color: rgba(var(--c-navy-rgb), 0.55);
+  margin-bottom: 40px;
+}
+.legal-content h2 {
+  text-align: left;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  line-height: 1.2em;
+  color: var(--c-rouge-fg);
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+.legal-content h3 {
+  text-align: left;
+  text-transform: none;
+  font-weight: 600;
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.3em;
+  color: var(--c-navy);
+  margin-top: 22px;
+  margin-bottom: 8px;
+}
+.legal-content p,
+.legal-content li {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7em;
+  color: rgba(var(--c-navy-rgb), 0.8);
+  margin-bottom: 14px;
+}
+.legal-content ul { padding-left: 20px; margin-bottom: 14px; }
+.legal-content a { color: var(--c-rouge-fg); text-decoration: underline; }
+.legal-content strong { color: var(--c-navy); }
