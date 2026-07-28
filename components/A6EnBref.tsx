@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import AccentHeading from "@/components/AccentHeading";
 import { RollingList, type RollingListItem } from "@/components/ui/rolling-list";
 
 const sixA: RollingListItem[] = [
@@ -70,7 +71,7 @@ export default function A6EnBref() {
           textAlign: "center",
         }}
       >
-        <h2>A6 en bref…</h2>
+        <AccentHeading lead="A6 en" accent="bref…" />
         <p
           style={{
             marginTop: "24px",

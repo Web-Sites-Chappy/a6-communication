@@ -65,8 +65,17 @@ export default function HomeEditorial() {
 
       <Reveal>
         <CTABanner
-          title={"Parlons de\nvotre projet"}
-          ctaLabel="Nous contacter"
+          title={
+            <>
+              <span style={{ fontFamily: "var(--font-display-bricolage)", fontWeight: 700 }}>A6</span>{" "}
+              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
+                j&apos;osais...
+              </span>
+            </>
+          }
+          titleStyle={{ textTransform: "none" }}
+          compact
+          ctaLabel="Contacter"
           ctaHref="/contact"
         />
       </Reveal>

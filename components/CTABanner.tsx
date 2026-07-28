@@ -1,20 +1,24 @@
+import type { CSSProperties, ReactNode } from "react";
 import Link from "next/link";
 
 interface CTABannerProps {
-  title: string;
+  title: ReactNode;
+  titleStyle?: CSSProperties;
   ctaLabel: string;
   ctaHref: string;
+  /** Rapproche le bouton CTA du titre au lieu de les répartir sur toute la largeur. */
+  compact?: boolean;
 }
 
-export default function CTABanner({ title, ctaLabel, ctaHref }: CTABannerProps) {
+export default function CTABanner({ title, titleStyle, ctaLabel, ctaHref, compact }: CTABannerProps) {
   return (
     <div style={{ backgroundColor: "var(--c-btn-accent)", padding: "50px 0" }}>
       <div
         style={{
           display: "flex",
-          justifyContent: "space-evenly",
+          justifyContent: compact ? "center" : "space-evenly",
           alignItems: "center",
-          gap: "20px",
+          gap: compact ? "36px" : "20px",
           width: "90%",
           maxWidth: "820px",
           margin: "0 auto",
@@ -30,8 +34,9 @@ export default function CTABanner({ title, ctaLabel, ctaHref }: CTABannerProps) 
             color: "var(--c-on-accent)",
             textTransform: "uppercase",
             textAlign: "left",
-            flex: 1,
+            flex: compact ? "0 1 auto" : 1,
             minWidth: "200px",
+            ...titleStyle,
           }}
         >
           {title}
