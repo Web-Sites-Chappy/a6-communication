@@ -1,5 +1,38 @@
 "use client";
 
+const labelStyle = {
+  display: "block",
+  fontFamily: "var(--font-display)",
+  fontSize: "1rem",
+  fontWeight: 200,
+  textTransform: "uppercase" as const,
+  letterSpacing: "0.1em",
+  color: "var(--c-navy)",
+  marginBottom: "8px",
+};
+
+const serviceOptions = [
+  {
+    group: "Communication",
+    options: [
+      "Stratégie digitale",
+      "Identité visuelle",
+      "Photographie",
+      "Vidéo",
+      "Relations presse",
+    ],
+  },
+  {
+    group: "Événementiel",
+    options: [
+      "Conception & scénographie",
+      "Logistique",
+      "Animation",
+      "Communication événementielle",
+    ],
+  },
+];
+
 export default function ContactForm() {
   return (
     <form style={{ maxWidth: "600px", margin: "0 auto" }} onSubmit={(e) => e.preventDefault()}>
@@ -9,20 +42,7 @@ export default function ContactForm() {
         { label: "Organisation", type: "text", name: "org", placeholder: "Mairie de Saint-Drézéry" },
       ].map((field) => (
         <div key={field.name} style={{ marginBottom: "20px" }}>
-          <label
-            style={{
-              display: "block",
-              fontFamily: "var(--font-display)",
-              fontSize: "1rem",
-              fontWeight: 200,
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              color: "var(--c-navy)",
-              marginBottom: "8px",
-            }}
-          >
-            {field.label}
-          </label>
+          <label style={labelStyle}>{field.label}</label>
           <input
             type={field.type}
             name={field.name}
@@ -32,21 +52,27 @@ export default function ContactForm() {
         </div>
       ))}
 
+      <div style={{ marginBottom: "20px" }}>
+        <label style={labelStyle}>Service concerné</label>
+        <select name="service" className="input-field" defaultValue="">
+          <option value="" disabled>
+            Sélectionnez un service
+          </option>
+          {serviceOptions.map((section) => (
+            <optgroup key={section.group} label={section.group}>
+              {section.options.map((service) => (
+                <option key={service} value={service}>
+                  {service}
+                </option>
+              ))}
+            </optgroup>
+          ))}
+          <option value="Autre / je ne sais pas encore">Autre / je ne sais pas encore</option>
+        </select>
+      </div>
+
       <div style={{ marginBottom: "28px" }}>
-        <label
-          style={{
-            display: "block",
-            fontFamily: "var(--font-display)",
-            fontSize: "1rem",
-            fontWeight: 200,
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            color: "var(--c-navy)",
-            marginBottom: "8px",
-          }}
-        >
-          Votre message
-        </label>
+        <label style={labelStyle}>Votre message</label>
         <textarea
           name="message"
           rows={6}
