@@ -38,19 +38,31 @@ const NAME_STYLE: React.CSSProperties = {
   display: "flex",
   alignItems: "center",
   height: ROW_H,
-  fontFamily: "var(--font-display), sans-serif",
-  fontWeight: 200,
   textTransform: "uppercase",
   letterSpacing: "0.02em",
   lineHeight: "0.9em",
   fontSize: "clamp(2.3rem, 7.5vw, 5rem)",
   whiteSpace: "nowrap",
 };
+/** État au repos — DM Serif Display italique, Bleu Roi. */
+const NAME_STYLE_REST: React.CSSProperties = {
+  ...NAME_STYLE,
+  fontFamily: "var(--font-display-dmserif), serif",
+  fontWeight: 400,
+  fontStyle: "italic",
+};
+/** État actif (hover / tap) — Bricolage Grotesque bold, Bleu Nuit. */
+const NAME_STYLE_ACTIVE: React.CSSProperties = {
+  ...NAME_STYLE,
+  fontFamily: "var(--font-display-bricolage), sans-serif",
+  fontWeight: 700,
+};
 
 /**
- * Interactive "rolling" list. Each row shows a headline that rolls from navy
- * to an italic accent state when active; activating a row expands a panel with
- * its full description (width-constrained so it never overflows) and an image.
+ * Interactive "rolling" list. Each row shows a headline that rolls from an
+ * italic Bleu Roi state to a bold Bleu Nuit state when active; activating a
+ * row expands a panel with its full description (width-constrained so it
+ * never overflows) and an image.
  * Hover-driven on desktop, tap-to-toggle on touch.
  */
 export function RollingList({ items, defaultOpenId }: RollingListProps) {
@@ -103,12 +115,8 @@ export function RollingList({ items, defaultOpenId }: RollingListProps) {
                     willChange: "transform",
                   }}
                 >
-                  <span style={{ ...NAME_STYLE, color: "var(--c-navy)" }}>{item.title}</span>
-                  <span
-                    style={{ ...NAME_STYLE, color: "var(--c-rouge-fg)", fontStyle: "italic" }}
-                  >
-                    {item.title}
-                  </span>
+                  <span style={{ ...NAME_STYLE_REST, color: "#003DDE" }}>{item.title}</span>
+                  <span style={{ ...NAME_STYLE_ACTIVE, color: "#112250" }}>{item.title}</span>
                 </div>
               </div>
 

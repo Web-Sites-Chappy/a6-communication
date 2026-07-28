@@ -71,7 +71,7 @@ export default function A6EnBref() {
           textAlign: "center",
         }}
       >
-        <AccentHeading lead="A6 en" accent="bref…" />
+        <AccentHeading lead="A6" accent="en bref…" />
         <p
           style={{
             marginTop: "24px",
