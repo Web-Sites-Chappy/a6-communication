@@ -105,7 +105,7 @@ export default function Nav() {
               textShadow: shy ? "none" : "0 1px 6px rgba(0,0,0,0.6)",
             }}
           >
-            Communication<br />&amp;<br />Événementiel
+            Communication<br />&amp; Événementiel
           </span>
         </Link>
 
