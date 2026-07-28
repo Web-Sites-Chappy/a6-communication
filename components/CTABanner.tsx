@@ -8,9 +8,11 @@ interface CTABannerProps {
   ctaHref: string;
   /** Rapproche le bouton CTA du titre au lieu de les répartir sur toute la largeur. */
   compact?: boolean;
+  /** "blanc" (défaut) : blanc au repos, bleu au survol. "bleu" : l'inverse. */
+  ctaVariant?: "blanc" | "bleu";
 }
 
-export default function CTABanner({ title, titleStyle, ctaLabel, ctaHref, compact }: CTABannerProps) {
+export default function CTABanner({ title, titleStyle, ctaLabel, ctaHref, compact, ctaVariant = "blanc" }: CTABannerProps) {
   return (
     <div style={{ backgroundColor: "var(--c-btn-accent)", padding: "50px 0" }}>
       <div
@@ -41,7 +43,7 @@ export default function CTABanner({ title, titleStyle, ctaLabel, ctaHref, compac
         >
           {title}
         </h2>
-        <Link href={ctaHref} className="btn-blanc" style={{ whiteSpace: "nowrap" }}>
+        <Link href={ctaHref} className={ctaVariant === "bleu" ? "btn-bleu" : "btn-blanc"} style={{ whiteSpace: "nowrap" }}>
           {ctaLabel}
         </Link>
       </div>
