@@ -76,7 +76,7 @@ export default function Footer() {
             textTransform: "uppercase",
             letterSpacing: "0.1em",
             marginBottom: "14px",
-            color: "var(--c-rouge)",
+            color: "var(--c-btn-accent)",
           }}
         >
           Navigation
@@ -102,7 +102,7 @@ export default function Footer() {
             textTransform: "uppercase",
             letterSpacing: "0.1em",
             marginBottom: "14px",
-            color: "var(--c-rouge)",
+            color: "var(--c-btn-accent)",
           }}
         >
           Contact
