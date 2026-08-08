@@ -1,5 +1,5 @@
-import HomeLayout from "@/components/HomeLayout";
+import HomeEditorial from "@/components/HomeEditorial";
 
 export default function Home() {
-  return <HomeLayout />;
+  return <HomeEditorial />;
 }

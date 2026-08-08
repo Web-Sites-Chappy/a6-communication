@@ -1,127 +1,15 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Barlow_Condensed, Inter, Work_Sans, IBM_Plex_Sans, Archivo, Bricolage_Grotesque, DM_Serif_Display } from "next/font/google";
-import localFont from "next/font/local";
+import { Bricolage_Grotesque, DM_Serif_Display, Work_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 import CookieBanner from "@/components/CookieBanner";
 
-// Body fonts (texte courant) — sélectionnables via le ThemeSwitcher.
-// Même logique que les display fonts : chaque police a sa propre variable CSS,
-// globals.css choisit laquelle alimente `--font-body` selon `data-body-font`.
-// "Arial / Helvetica" n'a pas besoin de loader : c'est une pile de polices système.
-
-const jakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body-jakarta",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body-inter",
-  display: "swap",
-});
-
-const workSans = Work_Sans({
-  subsets: ["latin"],
-  variable: "--font-body-work",
-  display: "swap",
-});
-
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body-plex",
-  display: "swap",
-});
-
-const archivo = Archivo({
-  subsets: ["latin"],
-  variable: "--font-body-archivo",
-  display: "swap",
-});
-
-const bodyFontVariables = [
-  jakartaSans.variable,
-  inter.variable,
-  workSans.variable,
-  ibmPlexSans.variable,
-  archivo.variable,
-].join(" ");
-
-// Display fonts (titres) — sélectionnables via le ThemeSwitcher.
-// Chaque police expose sa propre variable CSS ; globals.css choisit laquelle
-// alimente `--font-display` selon l'attribut `data-font` (même logique que les palettes).
-
-const barlowCondensed = Barlow_Condensed({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400"],
-  variable: "--font-display-barlow",
-  display: "swap",
-});
-
-const bierika = localFont({
-  src: "./fonts/bierika.ttf",
-  variable: "--font-display-bierika",
-  display: "swap",
-});
-
-const quffer = localFont({
-  src: "./fonts/quffer.otf",
-  variable: "--font-display-quffer",
-  display: "swap",
-});
-
-const locatro = localFont({
-  src: "./fonts/locatro.otf",
-  variable: "--font-display-locatro",
-  display: "swap",
-});
-
-const apoc = localFont({
-  src: [
-    { path: "./fonts/apoc/Apoc-Revelations-Trial-Hairline.otf", weight: "100", style: "normal" },
-    { path: "./fonts/apoc/Apoc-Revelations-Trial-Light.otf", weight: "300", style: "normal" },
-    { path: "./fonts/apoc/Apoc-Revelations-Trial-Regular.otf", weight: "400", style: "normal" },
-    { path: "./fonts/apoc/Apoc-Revelations-Trial-Bold.otf", weight: "700", style: "normal" },
-    { path: "./fonts/apoc/Apoc-Revelations-Trial-UltraBold.otf", weight: "900", style: "normal" },
-  ],
-  variable: "--font-display-apoc",
-  display: "swap",
-});
-
-const palmore = localFont({
-  src: [
-    { path: "./fonts/palmore/palmore-light.ttf", weight: "300", style: "normal" },
-    { path: "./fonts/palmore/palmore-regular.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/palmore/palmore-semibold.ttf", weight: "600", style: "normal" },
-    { path: "./fonts/palmore/palmore-bold.ttf", weight: "700", style: "normal" },
-  ],
-  variable: "--font-display-palmore",
-  display: "swap",
-});
-
-// TRY Vesterbro — licence "Personal Use Only" (befonts.com). Preview local
-// uniquement : fichiers ignorés par git tant qu'une licence web commerciale
-// n'est pas acquise (voir .gitignore).
-const vesterbro = localFont({
-  src: [
-    { path: "./fonts/vesterbro/TRYVesterbro-Light.ttf", weight: "300", style: "normal" },
-    { path: "./fonts/vesterbro/TRYVesterbro-Regular.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/vesterbro/TRYVesterbro-Medium.ttf", weight: "500", style: "normal" },
-    { path: "./fonts/vesterbro/TRYVesterbro-Bold.ttf", weight: "700", style: "normal" },
-    { path: "./fonts/vesterbro/TRYVesterbro-ExtraBold.ttf", weight: "800", style: "normal" },
-    { path: "./fonts/vesterbro/TRYVesterbro-Poster.ttf", weight: "900", style: "normal" },
-  ],
-  variable: "--font-display-vesterbro",
-  display: "swap",
-});
-
+// Charte A6 — trois polices seulement :
+//  - Bricolage Grotesque : titres grotesque (var(--font-display-bricolage))
+//  - DM Serif Display    : accents italiques dans les titres (var(--font-display-dmserif))
+//  - Work Sans           : corps de texte (var(--font-body-work))
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -137,16 +25,17 @@ const dmSerifDisplay = DM_Serif_Display({
   display: "swap",
 });
 
-const displayFontVariables = [
-  barlowCondensed.variable,
-  bierika.variable,
-  quffer.variable,
-  locatro.variable,
-  apoc.variable,
-  palmore.variable,
-  vesterbro.variable,
+const workSans = Work_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body-work",
+  display: "swap",
+});
+
+const fontVariables = [
   bricolageGrotesque.variable,
   dmSerifDisplay.variable,
+  workSans.variable,
 ].join(" ");
 
 export const metadata: Metadata = {
@@ -161,17 +50,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${bodyFontVariables} ${displayFontVariables} antialiased`}>
+    <html lang="fr" className={`${fontVariables} antialiased`}>
       <body>
-        <ThemeProvider>
-          <Nav />
-          {children}
-          <Reveal direction="up" distance={30} threshold={0.05}>
-            <Footer />
-          </Reveal>
-          <ThemeSwitcher />
-          <CookieBanner />
-        </ThemeProvider>
+        <Nav />
+        {children}
+        <Reveal direction="up" distance={30} threshold={0.05}>
+          <Footer />
+        </Reveal>
+        <CookieBanner />
       </body>
     </html>
   );

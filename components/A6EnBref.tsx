@@ -122,7 +122,7 @@ export default function A6EnBref() {
                 <div style={{ display: "flex", alignItems: "baseline", gap: "14px", marginBottom: "10px" }}>
                   <span
                     style={{
-                      fontFamily: "var(--font-display), 'Barlow Condensed', sans-serif",
+                      fontFamily: "var(--font-display), sans-serif",
                       fontSize: "0.8rem",
                       fontWeight: 400,
                       letterSpacing: "0.3em",

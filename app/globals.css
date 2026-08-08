@@ -1,125 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* A — Terre & Lumière (default) */
-  --c-fond:       #EDE0C4;
-  --c-rouge:      #C4522A;
-  --c-navy:       #1B2E3C;
-  --c-navy-rgb:   27, 46, 60;
-  /* Accent secondaire — complémentaire quasi exact du rouge (195° / 16°) */
-  --c-accent2:    #2B5F70;
-  /* Texte posé SUR un fond --c-rouge (badges, boutons pleins, logo nav) */
-  --c-on-accent:  white;
-  /* --c-rouge utilisé comme couleur de TEXTE sur fond clair (titres, liens) —
-     identique à --c-rouge partout sauf quand celui-ci est trop clair pour
-     rester lisible (voir palette G). */
+  /* ── Palette — Bleu Roi & Vert Eau (charte officielle A6) ── */
+  --c-fond:       #D2E6DC; /* Vert Eau — fond */
+  --c-rouge:      #003DDE; /* Bleu Roi — accent titres/liens (5.9:1 sur fond, 7.7:1 en blanc) */
+  --c-navy:       #112250; /* Bleu Nuit — texte principal */
+  --c-navy-rgb:   17, 34, 80;
+  --c-accent2:    #FFE35B; /* Jaune — contrepoint chaud du bleu roi et du vert eau */
   --c-rouge-fg:   var(--c-rouge);
-  /* Fond des boutons pleins (.btn-rouge, CTA nav) — distinct de --c-rouge
-     pour permettre une couleur bouton différente de l'accent "badges". */
-  --c-btn-accent: var(--c-rouge);
-}
-
-/* B — Ardoise & Or */
-[data-theme="b"] {
-  --c-fond:      #F2F0EB;
-  /* Rouge assombri (L 45%→34%) : le doré d'origine échouait le contraste
-     AA à la fois sur fond clair (2.46:1) et en texte blanc (2.8:1). */
-  --c-rouge:     #866027;
-  --c-navy:      #2A2D35;
-  --c-navy-rgb:  42, 45, 53;
-  /* Bordeaux sourd — contraste bijou contre le gris-ardoise */
-  --c-accent2:   #7A2E3C;
-}
-
-/* C — Forêt & Feu */
-[data-theme="c"] {
-  --c-fond:      #E9EDE7;
-  --c-rouge:     #CC3E18;
-  --c-navy:      #1E3828;
-  --c-navy-rgb:  30, 56, 40;
-  /* Olive — analogue vert-jaune, renforce l'identité "Forêt" */
-  --c-accent2:   #5C6B2E;
-}
-
-/* D — Nuit & Or */
-[data-theme="d"] {
-  --c-fond:      #F7E9D2;
-  /* Ambre assombri (L 48%→33%) : le doré vif d'origine échouait gravement
-     le contraste AA sur fond clair (1.52:1) et en texte blanc (1.82:1),
-     malgré un excellent contraste sur navy (7.48:1). */
-  --c-rouge:     #9E680A;
-  --c-navy:      #1E2F44;
-  --c-navy-rgb:  30, 47, 68;
-  /* Indigo profond — ciel nocturne, contrepoint de l'or */
-  --c-accent2:   #3D2A6B;
-}
-
-/* E — Lin & Cobalt */
-[data-theme="e"] {
-  --c-fond:      #E2E6E9;
-  --c-rouge:     #2753A5;
-  --c-navy:      #31241C;
-  --c-navy-rgb:  49, 36, 28;
-  /* Rouille chaude — contrepoint du cobalt froid */
-  --c-accent2:   #B25534;
-}
-
-/* F — Craie & Encre */
-[data-theme="f"] {
-  --c-fond:      #EDEBE8;
-  --c-rouge:     #AD1F36;
-  --c-navy:      #1C1C1C;
-  --c-navy-rgb:  28, 28, 28;
-  /* Graphite bleuté — sourdine, reste dans le registre quasi monochrome */
-  --c-accent2:   #657581;
-}
-
-/* G — Bleu Roi & Vert Eau (charte officielle) */
-[data-theme="g"] {
-  --c-fond:      #D2E6DC; /* Vert Eau */
-  /* Bleu Roi — contraste 5.9:1 sur le fond Vert Eau, 7.7:1 en texte blanc :
-     pas besoin de bascule vers le navy comme sur l'ancienne palette Prune. */
-  --c-rouge:     #003DDE;
-  --c-navy:      #112250; /* Bleu Nuit */
-  --c-navy-rgb:  17, 34, 80;
-  /* Jaune — contrepoint chaud du bleu roi et du vert eau */
-  --c-accent2:   #FFE35B;
-  /* --c-btn-accent (Orange) échoue le contraste en texte blanc (2.5:1) :
-     on bascule le texte des boutons pleins vers le navy (6.2:1). */
-  --c-on-accent: var(--c-navy);
-  /* Orange — boutons pleins (.btn-rouge, CTA, badges), distinct du bleu roi
-     utilisé pour titres/liens et du vert eau utilisé pour fond/soulignés. */
+  /* Texte posé SUR un bouton plein : le navy (6.2:1) plutôt que le blanc (2.5:1 sur l'orange). */
+  --c-on-accent:  var(--c-navy);
+  /* Orange — boutons pleins (.btn-rouge, CTA, badges). */
   --c-btn-accent: #FB8500;
-}
 
-:root {
-  /* Police des titres — Bricolage Grotesque par défaut */
+  /* ── Polices ── */
+  /* Titres grotesque — Bricolage Grotesque. Le serif DM Serif Display est utilisé
+     en accent italique dans les composants via var(--font-display-dmserif). */
   --font-display: var(--font-display-bricolage);
-}
+  /* Corps de texte — Work Sans. */
+  --font-body:    var(--font-body-work);
 
-[data-font="barlow"]  { --font-display: var(--font-display-barlow); }
-[data-font="bierika"] { --font-display: var(--font-display-bierika); }
-[data-font="quffer"]  { --font-display: var(--font-display-quffer); }
-[data-font="locatro"] { --font-display: var(--font-display-locatro); }
-[data-font="apoc"]    { --font-display: var(--font-display-apoc); }
-[data-font="palmore"] { --font-display: var(--font-display-palmore); }
-[data-font="vesterbro"] { --font-display: var(--font-display-vesterbro); }
-[data-font="bricolage"] { --font-display: var(--font-display-bricolage); }
-[data-font="dmserif"]   { --font-display: var(--font-display-dmserif); }
-
-:root {
-  /* Police du corps de texte — Plus Jakarta Sans par défaut */
-  --font-body: var(--font-body-jakarta);
-}
-
-[data-body-font="jakarta"] { --font-body: var(--font-body-jakarta); }
-[data-body-font="inter"]   { --font-body: var(--font-body-inter); }
-[data-body-font="system"]  { --font-body: Arial, "Helvetica Neue", Helvetica, sans-serif; }
-[data-body-font="work"]    { --font-body: var(--font-body-work); }
-[data-body-font="plex"]    { --font-body: var(--font-body-plex); }
-[data-body-font="archivo"] { --font-body: var(--font-body-archivo); }
-
-:root {
   /* Easing */
   --e-basic: 500ms cubic-bezier(0.035, 0.625, 0.000, 1.000);
   --e-slow:  1500ms cubic-bezier(0.035, 0.625, 0.000, 1.000);
@@ -137,7 +37,7 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--c-fond);
   color: var(--c-navy);
-  font-family: var(--font-body), "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-body), sans-serif;
   font-weight: 500;
   font-size: 1.05em;
   line-height: 1.3em;
@@ -150,37 +50,6 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: 200;
   cursor: default;
-}
-
-/* Spotlight reveal — les lettres passent à la couleur d'accent du thème autour du curseur, sur le titre "L'Alchimie..." */
-.title-spotlight {
-  position: relative;
-  display: block;
-}
-.title-spotlight-base {
-  display: block;
-  color: white;
-}
-.title-spotlight-glow {
-  display: block;
-  position: absolute;
-  /* top étendu + padding-top égal : agrandit la zone masquable (pour couvrir les jambages
-     hauts qui dépassent à cause du line-height serré) sans décaler le texte, qui retombe
-     exactement à sa position d'origine grâce au padding. */
-  top: -0.25em;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding-top: 0.25em;
-  color: var(--c-rouge);
-  -webkit-mask-image: radial-gradient(circle var(--spotlight-radius, 160px) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%);
-  mask-image: radial-gradient(circle var(--spotlight-radius, 160px) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-}
-.title-spotlight:hover .title-spotlight-glow {
-  opacity: 1;
 }
 
 h2 {
