@@ -4,7 +4,7 @@ import SpotlightTitle from "@/components/SpotlightTitle";
 const immersifSections = [
   {
     id: "hero",
-    img: "/photos/DSC_0836.jpg",
+    img: "/photos/DSC_0836.webp",
     bgColor: null,
     align: "center" as const,
     eyebrow: "Agence de communication & événementiel",
@@ -24,7 +24,7 @@ const immersifSections = [
   },
   {
     id: "services",
-    img: "/photos/DSC_1019.jpg",
+    img: "/photos/DSC_1019.webp",
     bgColor: null,
     align: "right" as const,
     eyebrow: "Nos services",
@@ -34,7 +34,7 @@ const immersifSections = [
   },
   {
     id: "realisations",
-    img: "/photos/DSC_0802.jpg",
+    img: "/photos/DSC_0802.webp",
     bgColor: null,
     align: "left" as const,
     eyebrow: "Réalisations",

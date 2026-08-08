@@ -1,91 +1,87 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { cn } from "@/lib/utils";
+import AccentHeading from "@/components/AccentHeading";
 
 interface PartnerLogo {
   id: string;
   name: string;
-  logo: string;
   href?: string;
-  width?: number;
   featured?: boolean;
 }
 
-/**
- * Placeholder roster — swap `logo` for real client wordmarks/SVGs under
- * /public/logos/ once available. Falls back to a styled text wordmark
- * when the image is missing, so the section stays presentable either way.
- */
 const partners: PartnerLogo[] = [
-  { id: "communes", name: "Communes & Mairies", logo: "/logos/communes.svg", width: 140 },
-  { id: "architectes", name: "Cabinets d'Architecture", logo: "/logos/architectes.svg", width: 160 },
-  { id: "patrimoine", name: "Fondations du Patrimoine", logo: "/logos/patrimoine.svg", width: 160 },
-  { id: "viticole", name: "Domaines Viticoles", logo: "/logos/viticole.svg", width: 150 },
-  { id: "associatif", name: "Monde Associatif", logo: "/logos/associatif.svg", width: 150 },
-  { id: "artisans", name: "Artisans du Bâtiment", logo: "/logos/artisans.svg", width: 150 },
-  { id: "culture", name: "Institutions Culturelles", logo: "/logos/culture.svg", width: 160 },
-  { id: "collectivites", name: "Collectivités Territoriales", logo: "/logos/collectivites.svg", width: 170, featured: true },
+  { id: "communes", name: "Communes & Mairies" },
+  { id: "architectes", name: "Cabinets d'Architecture" },
+  { id: "patrimoine", name: "Fondations du Patrimoine" },
+  { id: "viticole", name: "Domaines Viticoles" },
+  { id: "associatif", name: "Monde Associatif" },
+  { id: "artisans", name: "Artisans du Bâtiment" },
+  { id: "culture", name: "Institutions Culturelles" },
+  { id: "collectivites", name: "Collectivités Territoriales", featured: true },
 ];
 
 function LogoMark({ partner }: { partner: PartnerLogo }) {
-  const [imgFailed, setImgFailed] = useState(false);
-
-  // The <img> can finish (and fail) loading before React hydrates and attaches
-  // onError, so the error event fires and is missed. Catch that race on mount.
-  const checkAlreadyFailed = (img: HTMLImageElement | null) => {
-    if (img && img.complete && img.naturalWidth === 0) setImgFailed(true);
-  };
-
-  const content = imgFailed ? (
-    <span
+  const content = (
+    <div
       style={{
-        fontFamily: "var(--font-display), sans-serif",
-        fontWeight: 200,
-        fontSize: "1.05rem",
-        letterSpacing: "0.06em",
-        textTransform: "uppercase",
-        color: "rgba(17, 34, 80, 0.55)",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "16px",
+        padding: "8px 16px",
         whiteSpace: "nowrap",
       }}
     >
-      {partner.name}
-    </span>
-  ) : (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      ref={checkAlreadyFailed}
-      src={partner.logo}
-      alt={partner.name}
-      onError={() => setImgFailed(true)}
-      style={{ maxHeight: "100%", width: "100%", objectFit: "contain", display: "block" }}
-    />
+      <span
+        style={{
+          fontFamily: "var(--font-display), sans-serif",
+          fontWeight: partner.featured ? 400 : 200,
+          fontSize: "clamp(1.05rem, 2vw, 1.3rem)",
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          color: partner.featured ? "var(--c-rouge)" : "var(--c-navy)",
+          whiteSpace: "nowrap",
+          transition: "color 0.25s ease, opacity 0.25s ease",
+        }}
+        className="hover:text-[var(--c-rouge)]"
+      >
+        {partner.name}
+      </span>
+      <span
+        style={{
+          width: "5px",
+          height: "5px",
+          borderRadius: "50%",
+          backgroundColor: "rgba(17, 34, 80, 0.25)",
+          display: "inline-block",
+          flexShrink: 0,
+        }}
+        aria-hidden="true"
+      />
+    </div>
   );
 
   const wrapperStyle = {
-    display: "flex",
+    display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "48px",
-    width: partner.width ? `${partner.width}px` : "140px",
     flexShrink: 0,
-    filter: "grayscale(1) opacity(0.55)",
-    transition: "filter 0.3s var(--e-basic), opacity 0.3s var(--e-basic)",
+    width: "max-content",
   } as const;
 
   return partner.href ? (
     <Link
       href={partner.href}
       aria-label={partner.name}
-      className="trusted-by-logo"
+      className="trusted-by-logo group"
       style={wrapperStyle}
     >
       {content}
     </Link>
   ) : (
-    <div aria-label={partner.name} className="trusted-by-logo" style={wrapperStyle}>
+    <div aria-label={partner.name} className="trusted-by-logo group" style={wrapperStyle}>
       {content}
     </div>
   );
@@ -99,8 +95,8 @@ interface TrustedByCloudProps {
 }
 
 export default function TrustedByCloud({
-  eyebrow = "Ils nous font confiance",
-  heading = "Des entreprises qui avancent avec nous",
+  eyebrow,
+  heading = "Nous avons créé l'évidence ensemble...",
   subheading,
   className,
 }: TrustedByCloudProps) {
@@ -109,39 +105,40 @@ export default function TrustedByCloud({
       className={cn(className)}
       style={{
         width: "100%",
-        backgroundColor: "#F6F6F6",
-        padding: "clamp(64px, 8vw, 96px) 0",
+        backgroundColor: "#D2E6DC",
+        padding: "clamp(50px, 6vw, 80px) 0",
+        overflow: "hidden",
       }}
     >
       <div style={{ width: "92%", maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(0px, 2vw, 20px)" }}>
-        <div style={{ textAlign: "center", marginBottom: "clamp(40px, 6vw, 56px)" }}>
-          <p
+        <div style={{ textAlign: "center", marginBottom: "clamp(30px, 4vw, 44px)" }}>
+          {eyebrow ? (
+            <p
+              style={{
+                fontFamily: "var(--font-display), sans-serif",
+                fontWeight: 200,
+                fontSize: "0.8rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.28em",
+                color: "var(--c-rouge)",
+                marginBottom: "12px",
+              }}
+            >
+              {eyebrow}
+            </p>
+          ) : null}
+          <AccentHeading
+            lead="Nous avons créé"
+            accent="l'évidence ensemble..."
             style={{
-              fontFamily: "var(--font-display), sans-serif",
-              fontWeight: 200,
-              fontSize: "0.8rem",
-              textTransform: "uppercase",
-              letterSpacing: "0.28em",
-              color: "#003DDE",
-              marginBottom: "16px",
-            }}
-          >
-            {eyebrow}
-          </p>
-          <h2
-            style={{
-              fontFamily: "var(--font-display-bricolage), sans-serif",
-              fontWeight: 700,
-              fontSize: "clamp(1.6rem, 3.4vw, 2.5rem)",
+              color: "var(--c-rouge-fg)",
+              fontSize: "clamp(1.8rem, 3.8vw, 2.8rem)",
               lineHeight: "1.15em",
-              textTransform: "none",
-              color: "#112250",
-              maxWidth: "620px",
+              textAlign: "center",
+              maxWidth: "750px",
               margin: "0 auto",
             }}
-          >
-            {heading}
-          </h2>
+          />
           {subheading ? (
             <p
               style={{
@@ -160,11 +157,11 @@ export default function TrustedByCloud({
         </div>
 
         <InfiniteSlider
-          gap={48}
-          duration={38}
-          durationOnHover={75}
+          gap={16}
+          duration={32}
+          durationOnHover={70}
           reverse
-          className="trusted-by-slider"
+          className="trusted-by-slider py-2"
         >
           {partners.map((partner) => (
             <LogoMark key={partner.id} partner={partner} />

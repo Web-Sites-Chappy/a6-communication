@@ -4,11 +4,11 @@ import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 
 const items = [
-  { title: "Architectes", img: "/photos/DSC_0855.jpg", href: "/nos-cibles" },
-  { title: "Artisans", img: "/photos/DSC_1091.jpg", href: "/nos-cibles" },
-  { title: "Communes", img: "/photos/DSC_0836.jpg", href: "/nos-cibles" },
-  { title: "Patrimoine", img: "/photos/DSC_0802.jpg", href: "/nos-cibles" },
-  { title: "Viticoles", img: "/photos/DSC_1019.jpg", href: "/nos-cibles" },
+  { title: "Architectes", img: "/photos/DSC_0855.webp", href: "/nos-clients" },
+  { title: "Artisans", img: "/photos/DSC_1091.webp", href: "/nos-clients" },
+  { title: "Communes", img: "/photos/DSC_0836.webp", href: "/nos-clients" },
+  { title: "Patrimoine", img: "/photos/DSC_0802.webp", href: "/nos-clients" },
+  { title: "Viticoles", img: "/photos/DSC_1019.webp", href: "/nos-clients" },
 ];
 
 export default function SmallCarousel({ title }: { title: string }) {

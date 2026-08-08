@@ -8,11 +8,11 @@ import TrustedByCloud from "@/components/TrustedByCloud";
 import AccentHeading from "@/components/AccentHeading";
 
 const heroImages = [
-  "/photos/DSC_0836.jpg",
-  "/photos/DSC_0802.jpg",
-  "/photos/DSC_0855.jpg",
-  "/photos/DSC_1019.jpg",
-  "/photos/DSC_1091.jpg",
+  "/photos/DSC_0836.webp",
+  "/photos/DSC_0802.webp",
+  "/photos/DSC_0855.webp",
+  "/photos/DSC_1019.webp",
+  "/photos/DSC_1091.webp",
 ];
 
 export default function HomeEditorial() {
@@ -25,8 +25,8 @@ export default function HomeEditorial() {
         title={
           <>
             L&apos;Alchimie<br />entre l&apos;
-            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>image</span>
-            <br />et son <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>histoire</span>
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "none", color: "#D2E6DC" }}>image</span>
+            <br />et son <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "none", color: "#D2E6DC" }}>histoire</span>
           </>
         }
         subtitle="Agence de Communication et d'Événementiel au service des professionnels de l’Acte et Art de Bâtir, Institutions, Collectivités, Mairies, monde de la Culture et Associatif qui font vivre nos Territoires, notre Patrimoine."

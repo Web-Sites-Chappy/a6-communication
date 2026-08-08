@@ -17,8 +17,14 @@ const navLinks = [
     label: "Nos services",
     href: "/nos-services",
     sub: [
-      { label: "Communication", href: "/nos-services#communication" },
-      { label: "Événementiel", href: "/nos-services#evenementiel" },
+      { label: "Stratégie digitale", href: "/nos-services/strategie-digitale" },
+      { label: "Identité visuelle", href: "/nos-services/identite-visuelle" },
+      { label: "Production de contenus", href: "/nos-services/production-de-contenus" },
+      { label: "Impressions & Signalétique", href: "/nos-services/impressions-signaletique" },
+      { label: "Conception & scénographie", href: "/nos-services/conception-et-scenographie" },
+      { label: "Logistique", href: "/nos-services/logistique" },
+      { label: "Animation", href: "/nos-services/animation" },
+      { label: "Relations presse", href: "/nos-services/relations-presse" },
     ],
   },
   {
@@ -28,12 +34,12 @@ const navLinks = [
   },
   {
     label: "Nos clients",
-    href: "/nos-cibles",
+    href: "/nos-clients",
     sub: [],
   },
   {
-    label: "Actualités",
-    href: "/actualites",
+    label: "Blog",
+    href: "/blog",
     sub: [],
   },
 ];

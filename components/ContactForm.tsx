@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 type SubmitStatus = "idle" | "sending" | "sent" | "error";
 
@@ -21,8 +22,7 @@ const serviceOptions = [
     options: [
       "Stratégie digitale",
       "Identité visuelle",
-      "Photographie",
-      "Vidéo",
+      "Production de contenus",
       "Impressions/Signalétique",
     ],
   },
@@ -37,8 +37,17 @@ const serviceOptions = [
   },
 ];
 
-export default function ContactForm() {
+function ContactFormInner() {
   const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [selectedService, setSelectedService] = useState<string>("");
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const serviceParam = searchParams.get("service");
+    if (serviceParam) {
+      setSelectedService(serviceParam);
+    }
+  }, [searchParams]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -90,8 +99,13 @@ export default function ContactForm() {
 
       <div style={{ marginBottom: "20px" }}>
         <label style={labelStyle}>Service concerné</label>
-        <select name="service" className="input-field" defaultValue="">
-          <option value="" disabled>
+        <select
+          name="service"
+          className="input-field"
+          value={selectedService}
+          onChange={(e) => setSelectedService(e.target.value)}
+        >
+          <option value="">
             Sélectionnez un service
           </option>
           {serviceOptions.map((section) => (
@@ -139,5 +153,13 @@ export default function ContactForm() {
         </p>
       )}
     </form>
+  );
+}
+
+export default function ContactForm() {
+  return (
+    <Suspense fallback={<div style={{ textAlign: "center", padding: "40px 0" }}>Chargement du formulaire...</div>}>
+      <ContactFormInner />
+    </Suspense>
   );
 }

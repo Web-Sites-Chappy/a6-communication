@@ -3,30 +3,69 @@ import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
+import { getServicesByCategory } from "@/lib/servicesData";
+import { FeaturesSectionWithHoverEffects, FeatureItem } from "@/components/ui/feature-section-with-hover-effects";
+import {
+  IconRouteAltLeft,
+  IconAdjustmentsBolt,
+  IconTerminal2,
+  IconCloud,
+  IconEaseInOut,
+  IconCurrencyDollar,
+  IconHeart,
+  IconHelp,
+} from "@tabler/icons-react";
 
 export const metadata: Metadata = {
   title: "Nos Services | A6 Communication",
+  description: "Découvrez l'ensemble de nos expertises en Communication (stratégie digitale, identité visuelle, contenu, print) et Événementiel (conception, logistique, animation, promotion).",
 };
 
-const communication = [
-  ["Stratégie digitale",     "Audit, plan de communication, présence sur les réseaux sociaux adaptée à vos cibles."],
-  ["Identité visuelle",      "Création ou refonte de logo, charte graphique, supports de communication print et web."],
-  ["Production de contenus", "Rédaction, photographie, vidéo : des contenus qui racontent votre histoire."],
-  ["Impressions/Signalétique", "Supports imprimés, panneaux, habillage de sites et signalétique événementielle."],
-];
-
-const evenementiel = [
-  ["Conception & scénographie",    "Création du concept, du programme et de l'identité visuelle de l'événement."],
-  ["Logistique",                   "Gestion des prestataires, des espaces, de la technique et de l'accueil."],
-  ["Animation",                    "Modération, animation de tables rondes, intervenants, moments conviviaux."],
-  ["Communication événementielle", "Promotion avant, pendant et après : digitale, presse et institutionnelle."],
-];
+function getServiceIcon(slug: string) {
+  switch (slug) {
+    case "strategie-digitale":
+      return <IconRouteAltLeft className="w-7 h-7" />;
+    case "identite-visuelle":
+      return <IconAdjustmentsBolt className="w-7 h-7" />;
+    case "production-de-contenus":
+      return <IconTerminal2 className="w-7 h-7" />;
+    case "impressions-signaletique":
+      return <IconCloud className="w-7 h-7" />;
+    case "conception-et-scenographie":
+      return <IconEaseInOut className="w-7 h-7" />;
+    case "logistique":
+      return <IconCurrencyDollar className="w-7 h-7" />;
+    case "animation":
+      return <IconHeart className="w-7 h-7" />;
+    case "relations-presse":
+      return <IconHelp className="w-7 h-7" />;
+    default:
+      return <IconTerminal2 className="w-7 h-7" />;
+  }
+}
 
 export default function NosServicesPage() {
+  const communicationServices = getServicesByCategory("Communication");
+  const evenementielServices = getServicesByCategory("Événementiel");
+
+  const commFeatures: FeatureItem[] = communicationServices.map((service) => ({
+    title: service.title,
+    description: service.shortDescription,
+    href: `/nos-services/${service.slug}`,
+    icon: getServiceIcon(service.slug),
+  }));
+
+  const evenFeatures: FeatureItem[] = evenementielServices.map((service) => ({
+    title: service.title,
+    description: service.shortDescription,
+    href: `/nos-services/${service.slug}`,
+    icon: getServiceIcon(service.slug),
+  }));
+
   return (
     <main>
       <Hero
-        imageSrc="/photos/DSC_1019.jpg"
+        imageSrc="/photos/DSC_1019.webp"
         title={
           <>
             Nos
@@ -41,75 +80,37 @@ export default function NosServicesPage() {
         ctaHref="/realisations"
       />
 
-      <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 40px", textAlign: "center" }} className="communication-section">
-        <AccentHeading lead="Communication" />
-        <p style={{ marginTop: "24px", fontSize: "1rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
-          Stratégie de communication digitale et print, identité visuelle, production de contenus,
-          impressions et signalétique, community management : A6 accompagne les structures dans leur mutation
-          vers une communication authentique et efficace.
-        </p>
-      </Reveal>
+      {/* Section Communication */}
+      <div id="communication" className="py-12">
+        <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "40px 0 20px", textAlign: "center" }} className="communication-section">
+          <AccentHeading lead="Communication" />
+          <p style={{ marginTop: "24px", fontSize: "1.05rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
+            Stratégie de communication digitale et print, identité visuelle, production de contenus,
+            impressions et signalétique, community management : A6 accompagne les structures dans leur mutation
+            vers une communication authentique et efficace.
+          </p>
+        </Reveal>
 
-      <div
-        style={{
-          width: "90vw",
-          maxWidth: "900px",
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-          gap: "30px",
-          marginBottom: "60px",
-        }}
-      >
-        {communication.map(([service, desc], i) => (
-          <Reveal key={service} delay={i * 80}>
-            <div style={{ borderTop: "2px solid var(--c-rouge-fg)", paddingTop: "20px" }}>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 200, fontSize: "2rem", textTransform: "uppercase", color: "var(--c-rouge-fg)", lineHeight: "0.9em", marginBottom: "12px" }}>
-                {service}
-              </h3>
-              <p style={{ fontSize: "0.85rem", lineHeight: "1.6em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)" }}>
-                {desc}
-              </p>
-            </div>
-          </Reveal>
-        ))}
+        <Reveal>
+          <FeaturesSectionWithHoverEffects features={commFeatures} />
+        </Reveal>
       </div>
 
+      {/* Section Événementiel */}
       <div id="evenementiel" style={{ backgroundColor: "var(--c-fond)", padding: "60px 0" }}>
-        <div style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", textAlign: "center" }}>
+        <div style={{ width: "90vw", maxWidth: "1280px", margin: "0 auto", textAlign: "center" }}>
           <Reveal>
             <AccentHeading lead="Événementiel" style={{ color: "var(--c-rouge)" }} />
-            <p style={{ marginTop: "24px", fontSize: "1rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(var(--c-navy-rgb), 0.75)" }}>
+            <p style={{ marginTop: "24px", fontSize: "1.05rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(var(--c-navy-rgb), 0.75)" }}>
               Conception, organisation et coordination d&apos;événements : congrès, forums, journées
               thématiques, assemblées générales, célébrations institutionnelles. A6 prend en charge
               chaque étape, de la scénographie à la logistique, pour des événements qui marquent.
             </p>
           </Reveal>
 
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "nowrap",
-              gap: "24px",
-              marginTop: "40px",
-              textAlign: "left",
-              overflowX: "auto",
-              paddingBottom: "8px",
-            }}
-          >
-            {evenementiel.map(([service, desc], i) => (
-              <Reveal key={service} delay={i * 80} style={{ flex: "1 1 0", minWidth: "220px" }}>
-                <div style={{ borderTop: "2px solid var(--c-rouge)", paddingTop: "20px" }}>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 200, fontSize: "2rem", textTransform: "uppercase", color: "var(--c-rouge)", lineHeight: "0.9em", marginBottom: "12px" }}>
-                    {service}
-                  </h3>
-                  <p style={{ fontSize: "0.85rem", lineHeight: "1.6em", fontFamily: "var(--font-body)", color: "rgba(var(--c-navy-rgb), 0.7)" }}>
-                    {desc}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <FeaturesSectionWithHoverEffects features={evenFeatures} />
+          </Reveal>
         </div>
       </div>
 
@@ -117,19 +118,20 @@ export default function NosServicesPage() {
         <CTABanner
           title={
             <>
-              <span style={{ fontFamily: "var(--font-display-bricolage)", fontWeight: 700 }}>A6</span>{" "}
+              Un projet de{" "}
               <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                j&apos;osais...
+                communication ou d&apos;événementiel ?
               </span>
             </>
           }
-          titleStyle={{ textTransform: "none", fontSize: "clamp(2.4rem, 6vw, 4.2rem)" }}
+          titleStyle={{ textTransform: "none", fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
           compact
           ctaVariant="bleu"
-          ctaLabel="Commencer"
+          ctaLabel="Parlons de votre projet"
           ctaHref="/contact"
         />
       </Reveal>
     </main>
   );
 }
+

@@ -198,14 +198,14 @@ export function CardStack<T extends CardStackItem>({
 
   return (
     <div
-      className={cn("w-full", className)}
+      className={cn("w-full overflow-visible", className)}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >
       {/* Stage */}
       <div
-        className="relative w-full overflow-hidden"
-        style={{ height: Math.max(380, cardHeight + 80) }}
+        className="relative w-full overflow-visible"
+        style={{ height: Math.max(420, cardHeight + 90) }}
         tabIndex={0}
         onKeyDown={onKeyDown}
       >
@@ -275,7 +275,7 @@ export function CardStack<T extends CardStackItem>({
                 <motion.div
                   key={item.id}
                   className={cn(
-                    "absolute bottom-0 rounded-2xl border-4 border-black/10 dark:border-white/10 overflow-hidden shadow-xl",
+                    "absolute bottom-0 rounded-2xl overflow-hidden shadow-2xl",
                     "will-change-transform select-none",
                     isActive
                       ? "cursor-grab active:cursor-grabbing"

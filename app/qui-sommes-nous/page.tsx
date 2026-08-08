@@ -9,24 +9,24 @@ export const metadata: Metadata = {
 };
 
 const values = [
-  { name: "Alchimie",     text: "Les regards ont un langage que les mots ne peuvent pas capturer et quand ces mots quittent le silence par une réelle connexion, ils coulent naturellement vers une Alchimie intellectuelle, émotionnelle et créatrice qui va bien au-delà des apparences." },
-  { name: "Audace",       text: "Le courage est de croire en ce qui n'est pas encore visible mais aussi celui d'examiner la vérité sans se fier aux idées reçues et ainsi l'Audace propulse à l'évidence d'être soi-même, dans ses doutes, ses décisions, sa sensibilité." },
-  { name: "Acceptation",  text: "L'Acceptation ne se commande pas, elle ne se force pas, elle fait simplement partie du chemin qu'il faut emprunter pour avancer. Conscientiser et accueillir qu'on est dans la résistance libère, allège et nous remet en contact avec nos ressources." },
-  { name: "Agilité",      text: "Perçue comme un accélérateur d'innovation, l'Agilité est une évidence de nos jours et doit être un facteur proactif, collaboratif et fondamentalement numérique. L'entreprise doit mener sa transition culturelle et s'appuyer sur un socle technologique capable." },
+  { name: "Alchimie", text: "Les regards ont un langage que les mots ne peuvent pas capturer et quand ces mots quittent le silence par une réelle connexion, ils coulent naturellement vers une Alchimie intellectuelle, émotionnelle et créatrice qui va bien au-delà des apparences." },
+  { name: "Audace", text: "Le courage est de croire en ce qui n'est pas encore visible mais aussi celui d'examiner la vérité sans se fier aux idées reçues et ainsi l'Audace propulse à l'évidence d'être soi-même, dans ses doutes, ses décisions, sa sensibilité." },
+  { name: "Acceptation", text: "L'Acceptation ne se commande pas, elle ne se force pas, elle fait simplement partie du chemin qu'il faut emprunter pour avancer. Conscientiser et accueillir qu'on est dans la résistance libère, allège et nous remet en contact avec nos ressources." },
+  { name: "Agilité", text: "Perçue comme un accélérateur d'innovation, l'Agilité est une évidence de nos jours et doit être un facteur proactif, collaboratif et fondamentalement numérique. L'entreprise doit mener sa transition culturelle et s'appuyer sur un socle technologique capable." },
   { name: "Authenticité", text: "Communiquer avec honnêteté et ouverture pour accepter sa vulnérabilité procure une transparence constructive en accord avec son identité et ses valeurs. Cette authenticité génère l'efficacité et l'éthique et crée des relations humaines et durables." },
-  { name: "Assurance",    text: "Au service de l'humain avant tout, l'Assurance se positionne dans l'évidence de rapprocher la théorie de la pratique. En gardant un œil dans le réel et un autre dans le numérique : un outil digital n'est qu'un outil, ce qui compte c'est l'usage." },
+  { name: "Assurance", text: "Au service de l'humain avant tout, l'Assurance se positionne dans l'évidence de rapprocher la théorie de la pratique. En gardant un œil dans le réel et un autre dans le numérique : un outil digital n'est qu'un outil, ce qui compte c'est l'usage." },
 ];
 
 const team = [
-  { name: "Manuel", role: "L'esprit numérique", desc: "Pas encore la trentaine, Manuel incarne l'incontournable maîtrise des outils digitaux, des réseaux sociaux et des nouvelles formes de communication. Sa vision agile et sa créativité numérique propulsent A6 dans les usages de demain.", img: "/photos/DSC_1091.jpg" },
-  { name: "Eric",   role: "L'esprit poétique",  desc: "La cinquantaine passée, Eric apporte son indéfectible sens du récit, de l'image et de ce qui fait vibrer un événement. Son expérience et sa sensibilité créent le socle sur lequel se construisent les projets les plus ambitieux.", img: "/photos/DSC_0836.jpg" },
+  { name: "Manuel", subtitle: "L'esprit numérique", img: "/photos/manuel.webp" },
+  { name: "Eric",   subtitle: "L'esprit poétique",  img: "/photos/eric.webp" },
 ];
 
 export default function QuiSommesNousPage() {
   return (
     <main>
       <Hero
-        imageSrc="/photos/DSC_0802.jpg"
+        imageSrc="/photos/DSC_0802.webp"
         title={
           <>
             Qui<br />
@@ -42,14 +42,29 @@ export default function QuiSommesNousPage() {
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 40px", textAlign: "center" }}>
         <AccentHeading id="equipe" lead="Deux esprits," accent="une vision" />
-        <p style={{ marginTop: "24px", fontSize: "1rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
-          A6 Communication &amp; Événementiel se targue d&apos;être dirigée par deux associés
-          complémentaires et atypiques. Manuel, pas encore la trentaine et son incontournable
-          esprit numérique, et Eric, la cinquantaine passée et son indéfectible esprit poétique.
-          Leur association n&apos;appartient pas au hasard mais bien à ce goût et volonté mutuels
-          de participer à cette incontestable mutation dans le domaine de la communication et de
-          l&apos;événementiel.
-        </p>
+        <div
+          style={{
+            marginTop: "28px",
+            fontSize: "1.05rem",
+            lineHeight: "1.8em",
+            fontFamily: "var(--font-body)",
+            color: "var(--c-navy)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "18px",
+            textAlign: "center",
+          }}
+        >
+          <p style={{ margin: 0 }}>
+            A6 Communication &amp; Événementiel est portée par deux associés aux personnalités singulières, unis par une complémentarité aussi évidente qu’inattendue.
+          </p>
+          <p style={{ margin: 0 }}>
+            Manuel, animé par un esprit résolument numérique, imagine de nouvelles passerelles entre la technologie, les idées et les usages. Éric, profondément attaché à la poésie des mots, des images et des émotions, insuffle une dimension sensible à chaque projet.
+          </p>
+          <p style={{ margin: 0 }}>
+            Leur rencontre ne doit rien au hasard. Elle est née d’une même envie : faire dialoguer l’innovation et la créativité, la précision et l’émotion, afin de prendre pleinement part à la profonde métamorphose que connaît aujourd’hui le monde de la communication et de l’événementiel.
+          </p>
+        </div>
       </Reveal>
 
       <div
@@ -72,14 +87,39 @@ export default function QuiSommesNousPage() {
             <img
               src={person.img}
               alt={person.name}
-              style={{ width: "100%", height: "280px", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: "20px" }}
+              style={{
+                width: "100%",
+                height: "360px",
+                objectFit: person.name === "Manuel" ? "contain" : "cover",
+                objectPosition: "center",
+                display: "block",
+                marginBottom: "20px",
+              }}
             />
-            <h3 style={{ color: "var(--c-rouge-fg)", marginBottom: "4px" }}>{person.name}</h3>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", fontWeight: 200, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--c-navy)", marginBottom: "12px" }}>
-              {person.role}
-            </p>
-            <p style={{ fontSize: "0.9rem", lineHeight: "1.6em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)" }}>
-              {person.desc}
+            <h3
+              style={{
+                color: "var(--c-rouge-fg)",
+                fontFamily: "var(--font-display-bricolage), sans-serif",
+                fontWeight: 700,
+                fontSize: "1.75rem",
+                letterSpacing: "0.02em",
+                textTransform: "uppercase",
+                marginBottom: "2px",
+              }}
+            >
+              {person.name}
+            </h3>
+            <p
+              style={{
+                color: "var(--c-navy)",
+                fontFamily: "var(--font-display-dmserif), serif",
+                fontStyle: "italic",
+                fontSize: "1.15rem",
+                marginTop: "0",
+                marginBottom: "0",
+              }}
+            >
+              {person.subtitle}
             </p>
           </Reveal>
         ))}
@@ -90,8 +130,8 @@ export default function QuiSommesNousPage() {
           <Reveal>
             <AccentHeading
               id="valeurs"
-              lead="Les 6"
-              accent="valeurs"
+              lead="Nos 6"
+              accent="engagements"
               style={{ color: "var(--c-rouge)", marginBottom: "50px" }}
             />
           </Reveal>
@@ -121,16 +161,16 @@ export default function QuiSommesNousPage() {
         <CTABanner
           title={
             <>
-              <span style={{ fontFamily: "var(--font-display-bricolage)", fontWeight: 700 }}>A6</span>{" "}
+              Envie de collaborer{" "}
               <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                j&apos;osais...
+                avec notre équipe ?
               </span>
             </>
           }
-          titleStyle={{ textTransform: "none", fontSize: "clamp(2.4rem, 6vw, 4.2rem)" }}
+          titleStyle={{ textTransform: "none", fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
           compact
           ctaVariant="bleu"
-          ctaLabel="Commencer"
+          ctaLabel="Rencontrons-nous"
           ctaHref="/contact"
         />
       </Reveal>

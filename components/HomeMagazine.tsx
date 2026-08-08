@@ -4,8 +4,8 @@ import Reveal from "@/components/Reveal";
 import SpotlightTitle from "@/components/SpotlightTitle";
 
 const featured = [
-  { title: "Congrès de l'Ordre des Architectes d'Occitanie", dates: "Octobre 2025", category: "Événementiel", img: "/photos/DSC_0802.jpg", desc: "Organisation et communication complète du congrès annuel, rassemblant plus de 300 professionnels." },
-  { title: "Forum Artisans du Bâtiment", dates: "Juin 2025", category: "Communication", img: "/photos/DSC_1019.jpg", desc: "Conception et mise en œuvre d'un forum dédié aux artisans : communication digitale, logistique et animation." },
+  { title: "Congrès de l'Ordre des Architectes d'Occitanie", dates: "Octobre 2025", category: "Événementiel", img: "/photos/DSC_0802.webp", desc: "Organisation et communication complète du congrès annuel, rassemblant plus de 300 professionnels." },
+  { title: "Forum Artisans du Bâtiment", dates: "Juin 2025", category: "Communication", img: "/photos/DSC_1019.webp", desc: "Conception et mise en œuvre d'un forum dédié aux artisans : communication digitale, logistique et animation." },
 ];
 
 const services = [
@@ -13,8 +13,8 @@ const services = [
   ["02", "Identité visuelle", "Logo, charte graphique, supports print et web."],
   ["03", "Production de contenus", "Rédaction, photographie, vidéo."],
   ["04", "Événementiel", "Congrès, forums, assemblées, journées thématiques."],
-  ["05", "Relations presse", "Communiqués, dossiers de presse, médias régionaux."],
-  ["06", "Communication événementielle", "Promotion avant, pendant et après l'événement."],
+  ["05", "Relations presse", "Communiqués, dossiers de presse, médias."],
+  ["06", "Logistique & Scénographie", "Régie générale, espaces, autorisations administratives."],
 ];
 
 export default function HomeMagazine() {
@@ -71,9 +71,9 @@ export default function HomeMagazine() {
           >
             L&apos;Alchimie
             <br />
-            entre l&apos;image
+            entre l&apos;<span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "none", color: "#D2E6DC" }}>image</span>
             <br />
-            et son histoire
+            et son <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "none", color: "#D2E6DC" }}>histoire</span>
           </SpotlightTitle>
           <p
             style={{

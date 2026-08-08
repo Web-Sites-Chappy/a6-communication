@@ -5,7 +5,7 @@ import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Actualités | A6 Communication",
+  title: "Blog | A6 Communication",
   description:
     "Coulisses de l'agence, événements à venir et temps forts d'A6 Communication.",
 };
@@ -15,7 +15,7 @@ const articles = [
     title: "A6 Communication accompagne le prochain Congrès des Architectes",
     date: "Juillet 2026",
     category: "Événementiel",
-    img: "/photos/DSC_0802.jpg",
+    img: "/photos/DSC_0802.webp",
     excerpt:
       "Nous préparons l'édition 2026 du congrès régional : scénographie, communication digitale et logistique d'un événement qui réunira plus de 300 professionnels.",
   },
@@ -23,7 +23,7 @@ const articles = [
     title: "Nouvelle identité visuelle pour un domaine viticole du Sud",
     date: "Juin 2026",
     category: "Identité visuelle",
-    img: "/photos/DSC_1019.jpg",
+    img: "/photos/DSC_1019.webp",
     excerpt:
       "De la charte graphique aux étiquettes, retour sur un projet de refonte complète mené main dans la main avec les vignerons.",
   },
@@ -31,7 +31,7 @@ const articles = [
     title: "Les coulisses des Journées du Patrimoine en Occitanie",
     date: "Mai 2026",
     category: "Communication",
-    img: "/photos/DSC_0855.jpg",
+    img: "/photos/DSC_0855.webp",
     excerpt:
       "Comment nous avons imaginé la stratégie de contenus et l'animation des réseaux sociaux pour faire rayonner le patrimoine régional.",
   },
@@ -39,7 +39,7 @@ const articles = [
     title: "Forum Artisans du Bâtiment : les inscriptions sont ouvertes",
     date: "Avril 2026",
     category: "Événementiel",
-    img: "/photos/DSC_0836.jpg",
+    img: "/photos/DSC_0836.webp",
     excerpt:
       "Rendez-vous incontournable des professionnels du bâtiment, le forum revient avec un format repensé et de nouveaux temps d'échange.",
   },
@@ -47,23 +47,23 @@ const articles = [
     title: "A6 s'engage auprès du monde associatif culturel",
     date: "Mars 2026",
     category: "Communication",
-    img: "/photos/DSC_1091.jpg",
+    img: "/photos/DSC_1091.webp",
     excerpt:
       "Un accompagnement au long cours pour aider les associations culturelles à structurer et diffuser leur message.",
   },
 ];
 
-export default function ActualitesPage() {
+export default function BlogPage() {
   return (
     <main>
       <Hero
-        imageSrc="/photos/DSC_0802.jpg"
+        imageSrc="/photos/DSC_0802.webp"
         title={
           <>
-            Nos
+            Notre
             <br />
             <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-              actualités
+              blog
             </span>
           </>
         }
@@ -202,9 +202,9 @@ export default function ActualitesPage() {
         <CTABanner
           title={
             <>
-              Une actualité{" "}
+              Un projet{" "}
               <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                à partager ?
+                en tête ?
               </span>
             </>
           }
