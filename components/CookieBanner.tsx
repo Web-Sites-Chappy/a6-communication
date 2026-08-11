@@ -1,11 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   getCookieConsent,
   setCookieConsent,
   OPEN_COOKIE_SETTINGS_EVENT,
 } from "@/lib/cookieConsent";
+
+/** Le bandeau est en position fixed : sans cette variable il recouvre le CTA du
+ *  hero à la première visite. Les héros s'en servent pour dégager le bas. */
+const BANNER_HEIGHT_VAR = "--cookie-banner-h";
 
 const outlineBtnStyle: React.CSSProperties = {
   background: "none",
@@ -17,12 +21,38 @@ const outlineBtnStyle: React.CSSProperties = {
   padding: "10px 18px",
   cursor: "pointer",
   transition: "border-color 0.2s",
+  // Sans cela, les trois boutons débordaient du bord droit en 390px.
+  flex: "1 1 auto",
+  whiteSpace: "nowrap",
 };
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const [customizing, setCustomizing] = useState(false);
   const [analytics, setAnalytics] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
+
+  // Publie la hauteur réelle du bandeau tant qu'il est affiché.
+  useEffect(() => {
+    const root = document.documentElement;
+    if (!visible) {
+      root.style.removeProperty(BANNER_HEIGHT_VAR);
+      return;
+    }
+
+    const publish = () => {
+      const height = bannerRef.current?.offsetHeight ?? 0;
+      root.style.setProperty(BANNER_HEIGHT_VAR, `${height}px`);
+    };
+    publish();
+
+    const observer = new ResizeObserver(publish);
+    if (bannerRef.current) observer.observe(bannerRef.current);
+    return () => {
+      observer.disconnect();
+      root.style.removeProperty(BANNER_HEIGHT_VAR);
+    };
+  }, [visible, customizing]);
 
   useEffect(() => {
     const consent = getCookieConsent();
@@ -51,6 +81,7 @@ export default function CookieBanner() {
 
   return (
     <div
+      ref={bannerRef}
       role="dialog"
       aria-label="Gestion des cookies"
       style={{
@@ -61,7 +92,8 @@ export default function CookieBanner() {
         zIndex: 9999,
         backgroundColor: "var(--c-navy)",
         color: "white",
-        padding: "24px clamp(20px, 5vw, 60px)",
+        // 143px de haut mangeaient la place du hero : bandeau resserré.
+        padding: "16px clamp(20px, 5vw, 60px)",
         boxShadow: "0 -8px 30px rgba(0,0,0,0.35)",
       }}
     >
@@ -144,7 +176,15 @@ export default function CookieBanner() {
           )}
         </div>
 
-        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", flexShrink: 0 }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            flexWrap: "wrap",
+            justifyContent: "flex-end",
+            flex: "1 1 auto",
+          }}
+        >
           {customizing ? (
             <button
               className="btn-rouge"
@@ -164,7 +204,7 @@ export default function CookieBanner() {
               <button
                 className="btn-rouge"
                 onClick={() => saveConsent(true)}
-                style={{ fontSize: "0.85rem", padding: "10px 20px" }}
+                style={{ fontSize: "0.85rem", padding: "10px 20px", flex: "1 1 auto", whiteSpace: "nowrap" }}
               >
                 Accepter tout
               </button>

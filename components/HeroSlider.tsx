@@ -113,7 +113,8 @@ export default function HeroSlider({
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(0deg, rgba(27,46,60,1) 0%, rgba(27,46,60,0.21) 55%, rgba(27,46,60,0.07) 100%)",
+          background:
+            "linear-gradient(0deg, rgba(var(--c-navy-rgb),1) 0%, rgba(var(--c-navy-rgb),0.21) 55%, rgba(var(--c-navy-rgb),0.07) 100%)",
           zIndex: 1,
         }}
       />
@@ -142,7 +143,11 @@ export default function HeroSlider({
           alignItems: "center",
           justifyContent: "flex-end",
           textAlign: "center",
-          paddingBottom: "10vh",
+          // Dégage la hauteur du bandeau cookies quand il est affiché, sinon il
+          // recouvre le CTA à la première visite.
+          paddingBottom: "calc(10vh + var(--cookie-banner-h, 0px))",
+          // Réserve la hauteur exacte du header fixe.
+          paddingTop: "var(--header-h)",
           paddingLeft: "5vw",
           paddingRight: "5vw",
           zIndex: 2,
@@ -152,7 +157,12 @@ export default function HeroSlider({
           style={{
             fontFamily: "var(--font-display-bricolage)",
             fontWeight: 700,
-            fontSize: "clamp(2.2rem, 9vw, 9rem)",
+            // Le corps est plafonné par la place réellement disponible : la
+            // fenêtre moins le header et moins le bandeau cookies. Un plafond
+            // en vw seul faisait remonter le titre sous la navigation dès que
+            // la fenêtre était basse ou le bandeau affiché.
+            fontSize:
+              "clamp(2.2rem, min(9vw, calc((100svh - var(--header-h) - var(--cookie-banner-h, 0px)) * 0.125)), 9rem)",
             lineHeight: "0.85em",
             textTransform: "uppercase",
             letterSpacing: "0.02em",
@@ -172,9 +182,9 @@ export default function HeroSlider({
               fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)",
               fontFamily: "var(--font-body)",
               fontWeight: 400,
-              maxWidth: "520px",
-              lineHeight: "1.6em",
-              marginBottom: "1.8em",
+              maxWidth: "620px",
+              lineHeight: "1.55em",
+              marginBottom: "1.3em",
               animation: "fadeInUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s both",
             }}
           >

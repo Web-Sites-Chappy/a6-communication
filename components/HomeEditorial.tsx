@@ -6,6 +6,7 @@ import SectionsCardStack from "@/components/SectionsCardStack";
 import A6EnBref from "@/components/A6EnBref";
 import TrustedByCloud from "@/components/TrustedByCloud";
 import AccentHeading from "@/components/AccentHeading";
+import LogosMarquee from "@/components/LogosMarquee";
 
 const heroImages = [
   "/photos/DSC_0836.webp",
@@ -34,6 +35,9 @@ export default function HomeEditorial() {
         ctaHref="/realisations"
         interval={5000}
       />
+
+      {/* Carrusel de logos — inmediatamente después del hero */}
+      <LogosMarquee />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
         <AccentHeading lead="A6" accent="Communication & Événementiel" />

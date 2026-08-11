@@ -65,7 +65,25 @@ export default function A6EnBref() {
           textAlign: "center",
         }}
       >
-        <AccentHeading lead="A6" accent="en bref…" />
+        {/* Le « A6 » du titre est remplacé par le logo (variante Bleu Roi pour
+            fond clair). L'attribut alt garde le titre lisible : « A6 en bref… ». */}
+        <AccentHeading
+          lead={
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src="/logo-a6-bleu.svg"
+              alt="A6"
+              style={{
+                height: "1.6em",
+                width: "auto",
+                display: "inline-block",
+                verticalAlign: "-0.42em",
+                marginRight: "0.08em",
+              }}
+            />
+          }
+          accent="en bref…"
+        />
         <p
           style={{
             marginTop: "24px",

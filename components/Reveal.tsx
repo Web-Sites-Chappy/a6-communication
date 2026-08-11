@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, useReducedMotion, Variants } from "framer-motion";
 import { ReactNode, CSSProperties } from "react";
 
 interface RevealProps {
@@ -29,6 +29,19 @@ export default function Reveal({
   threshold = 0.08,
   duration = 0.72,
 }: RevealProps) {
+  const prefersReducedMotion = useReducedMotion();
+
+  // Ce composant enveloppe la quasi-totalité du site : sans cette sortie, un
+  // visiteur qui demande moins d'animation voit tout de même chaque section
+  // entrer en mouvement. Le contenu s'affiche alors simplement, déjà visible.
+  if (prefersReducedMotion) {
+    return (
+      <div className={className} style={style}>
+        {children}
+      </div>
+    );
+  }
+
   const hidden: Variants["hidden"] = {
     opacity: 0,
     ...(direction === "up"    && { y: distance }),

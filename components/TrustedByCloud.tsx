@@ -1,89 +1,84 @@
-"use client";
-
 import Link from "next/link";
-import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { cn } from "@/lib/utils";
 import AccentHeading from "@/components/AccentHeading";
 
 interface PartnerLogo {
   id: string;
+  /** Nom complet de la marque — sert de texte alternatif et d'aria-label. */
   name: string;
+  src: string;
+  /** Dimensions intrinsèques du fichier, pour éviter tout décalage de mise en page. */
+  width: number;
+  height: number;
+  /**
+   * Hauteur d'affichage en px sur desktop. Réglée marque par marque : les logos
+   * sont de formats très différents (bandeau horizontal, carré, portrait), une
+   * hauteur unique déséquilibrerait visuellement la rangée.
+   */
+  displayHeight: number;
+  /** Absent si le site de la marque n'est pas accessible. */
   href?: string;
-  featured?: boolean;
 }
 
 const partners: PartnerLogo[] = [
-  { id: "communes", name: "Communes & Mairies" },
-  { id: "architectes", name: "Cabinets d'Architecture" },
-  { id: "patrimoine", name: "Fondations du Patrimoine" },
-  { id: "viticole", name: "Domaines Viticoles" },
-  { id: "associatif", name: "Monde Associatif" },
-  { id: "artisans", name: "Artisans du Bâtiment" },
-  { id: "culture", name: "Institutions Culturelles" },
-  { id: "collectivites", name: "Collectivités Territoriales", featured: true },
+  {
+    id: "ordre-architectes",
+    name: "Ordre des Architectes Occitanie",
+    src: "/logos/ordre-architectes.svg",
+    width: 247,
+    height: 48,
+    displayHeight: 48,
+    href: "https://www.architectes.org/occitanie",
+  },
+  {
+    id: "groupe-seuil",
+    name: "Groupe Seuil",
+    src: "/logos/groupe-seuil.png",
+    width: 620,
+    height: 891,
+    displayHeight: 96,
+  },
+  {
+    id: "archipreneurs",
+    name: "Archipreneurs",
+    src: "/logos/archipreneurs.png",
+    width: 425,
+    height: 438,
+    displayHeight: 84,
+    href: "https://archipreneurs.com/",
+  },
 ];
 
 function LogoMark({ partner }: { partner: PartnerLogo }) {
-  const content = (
-    <div
+  const image = (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={partner.src}
+      alt={partner.name}
+      width={partner.width}
+      height={partner.height}
+      loading="lazy"
       style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "16px",
-        padding: "8px 16px",
-        whiteSpace: "nowrap",
+        height: `calc(var(--partner-scale) * ${partner.displayHeight}px)`,
+        width: "auto",
+        objectFit: "contain",
+        display: "block",
       }}
-    >
-      <span
-        style={{
-          fontFamily: "var(--font-display), sans-serif",
-          fontWeight: partner.featured ? 400 : 200,
-          fontSize: "clamp(1.05rem, 2vw, 1.3rem)",
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color: partner.featured ? "var(--c-rouge)" : "var(--c-navy)",
-          whiteSpace: "nowrap",
-          transition: "color 0.25s ease, opacity 0.25s ease",
-        }}
-        className="hover:text-[var(--c-rouge)]"
-      >
-        {partner.name}
-      </span>
-      <span
-        style={{
-          width: "5px",
-          height: "5px",
-          borderRadius: "50%",
-          backgroundColor: "rgba(17, 34, 80, 0.25)",
-          display: "inline-block",
-          flexShrink: 0,
-        }}
-        aria-hidden="true"
-      />
-    </div>
+    />
   );
-
-  const wrapperStyle = {
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexShrink: 0,
-    width: "max-content",
-  } as const;
 
   return partner.href ? (
     <Link
       href={partner.href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={partner.name}
-      className="trusted-by-logo group"
-      style={wrapperStyle}
+      className="partner-logo"
     >
-      {content}
+      {image}
     </Link>
   ) : (
-    <div aria-label={partner.name} className="trusted-by-logo group" style={wrapperStyle}>
-      {content}
-    </div>
+    <div className="partner-logo">{image}</div>
   );
 }
 
@@ -96,7 +91,6 @@ interface TrustedByCloudProps {
 
 export default function TrustedByCloud({
   eyebrow,
-  heading = "Nous avons créé l'évidence ensemble...",
   subheading,
   className,
 }: TrustedByCloudProps) {
@@ -156,17 +150,13 @@ export default function TrustedByCloud({
           ) : null}
         </div>
 
-        <InfiniteSlider
-          gap={16}
-          duration={32}
-          durationOnHover={70}
-          reverse
-          className="trusted-by-slider py-2"
-        >
+        <ul className="partner-logo-row">
           {partners.map((partner) => (
-            <LogoMark key={partner.id} partner={partner} />
+            <li key={partner.id} style={{ display: "flex", alignItems: "center" }}>
+              <LogoMark partner={partner} />
+            </li>
           ))}
-        </InfiniteSlider>
+        </ul>
       </div>
     </section>
   );

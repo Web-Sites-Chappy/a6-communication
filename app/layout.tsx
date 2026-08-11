@@ -12,7 +12,10 @@ import CookieBanner from "@/components/CookieBanner";
 //  - Work Sans           : corps de texte (var(--font-body-work))
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  // Le 200 est indispensable : globals.css et les composants déclarent
+  // font-weight 200 pour les titres. Sans lui le navigateur synthétisait
+  // le poids depuis le 400.
+  weight: ["200", "400", "500", "600", "700", "800"],
   variable: "--font-display-bricolage",
   display: "swap",
 });

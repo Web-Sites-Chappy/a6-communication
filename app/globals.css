@@ -25,6 +25,9 @@
   --e-slow:  1500ms cubic-bezier(0.035, 0.625, 0.000, 1.000);
 
   /* Layout */
+  /* Hauteur du header fixe au repos (28px de padding × 2 + 58px de logo).
+     Les héros s'en servent pour ne jamais passer sous la navigation. */
+  --header-h: 114px;
   --w-max: 96vw;
   --w-limit-text: 820px;
   --block-margin: 35px;
@@ -33,6 +36,19 @@
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+
+/* Respect de prefers-reduced-motion : les keyframes (fadeInUp du hero, marquees
+   infinis, shimmer des boutons) tournaient sans condition. Le composant Reveal
+   fait la même sortie côté JS. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
 body {
   background-color: var(--c-fond);
@@ -154,12 +170,15 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   bottom: -3px;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
   background-color: var(--c-rouge);
-  transition: width 0.3s var(--e-basic);
+  /* scaleX plutôt que width : la largeur déclenche un recalcul de layout. */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s var(--e-basic);
 }
-.nav-link:not(.nav-link-active):hover::after { width: 100%; }
+.nav-link:not(.nav-link-active):hover::after { transform: scaleX(1); }
 
 /* ─── Footer link hover ──────────────────────────────────────── */
 .footer-link {
@@ -171,12 +190,14 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 1px;
   background: white;
-  transition: width 0.25s ease;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
 }
-.footer-link:hover::after { width: 100%; }
+.footer-link:hover::after { transform: scaleX(1); }
 
 /* ─── Embla carousel ─────────────────────────────────────────── */
 .embla { overflow: hidden; }
@@ -292,16 +313,41 @@ a { color: inherit; text-decoration: none; }
 .footer-link { color: rgba(255,255,255,0.75); transition: color 0.2s; font-family: var(--font-body), sans-serif; font-size: 0.85rem; }
 .footer-link:hover { color: white; }
 
-/* ─── Trusted-by logo cloud ──────────────────────────────────── */
-.trusted-by-logo:hover { filter: grayscale(0) opacity(1) !important; }
+/* ─── Mur de logos partenaires ───────────────────────────────── */
+/* --partner-scale pilote la taille de tous les logos d'un seul endroit :
+   chaque logo garde sa hauteur propre (les formats sont trop différents pour
+   une hauteur unique) et l'échelle globale s'ajuste au format d'écran. */
+.partner-logo-row {
+  --partner-scale: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(36px, 6vw, 80px);
+}
+.partner-logo {
+  display: block;
+  opacity: 0.8;
+  transition: opacity var(--e-basic), transform var(--e-basic);
+}
+/* Pas de grayscale : l'or du Groupe Seuil et d'Archipreneurs porte
+   l'identité des marques, le désaturer les banaliserait. */
+.partner-logo:hover { opacity: 1; transform: translateY(-2px); }
 @media (max-width: 767px) {
-  .trusted-by-slider > div { gap: 24px !important; }
+  .partner-logo-row { --partner-scale: 0.72; gap: 32px 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .partner-logo { transition: opacity var(--e-basic); }
+  .partner-logo:hover { transform: none; }
 }
 
 .input-field {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid rgba(27,46,60,0.2);
+  border: 1px solid rgba(var(--c-navy-rgb),0.2);
   border-radius: 4px;
   font-family: var(--font-body), sans-serif;
   font-size: 0.9rem;

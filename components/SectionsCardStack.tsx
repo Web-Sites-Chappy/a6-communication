@@ -35,7 +35,7 @@ export default function SectionsCardStack() {
   const cardHeight = isMobile ? 380 : isTablet ? 320 : 340;
 
   return (
-    <div style={{ width: "94vw", maxWidth: "1100px", margin: "40px auto 60px" }}>
+    <div style={{ width: "94vw", maxWidth: "1320px", margin: "40px auto 60px" }}>
       <CardStack
         items={sections}
         initialIndex={0}
@@ -43,7 +43,9 @@ export default function SectionsCardStack() {
         cardWidth={cardWidth}
         cardHeight={cardHeight}
         overlap={isMobile ? 0.62 : 0.5}
-        spreadDeg={isMobile ? 26 : 40}
+        // 40° débordait du conteneur : les titres des cartes latérales
+        // étaient rognés par les bords de la fenêtre.
+        spreadDeg={isMobile ? 26 : 30}
         autoAdvance
         intervalMs={4000}
         pauseOnHover
@@ -120,7 +122,9 @@ export default function SectionsCardStack() {
               <span
                 style={{
                   display: "inline-block",
-                  color: "var(--c-rouge)",
+                  // Le Bleu Roi sur le dégradé navy tombait à ~2:1 : illisible.
+                  // Le Vert Eau de la charte remonte à ~11:1.
+                  color: "var(--c-fond)",
                   fontFamily: "var(--font-display)",
                   fontSize: "0.95rem",
                   fontWeight: 200,
