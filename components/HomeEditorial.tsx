@@ -1,5 +1,5 @@
-import EventsMarquee from "@/components/EventsMarquee";
-import CTABanner from "@/components/CTABanner";
+import ServicesCarousel from "@/components/ServicesCarousel";
+import CTASection from "@/components/CTASection";
 import HeroSlider from "@/components/HeroSlider";
 import Reveal from "@/components/Reveal";
 import SectionsCardStack from "@/components/SectionsCardStack";
@@ -24,9 +24,9 @@ export default function HomeEditorial() {
         poster="/video/cerbere-poster.jpg"
         title={
           <>
-            L&apos;Alchimie<br />entre l&apos;
-            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "none", color: "#D2E6DC" }}>image</span>
-            <br />et son <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "none", color: "#D2E6DC" }}>histoire</span>
+            L&apos;ALCHIMIE,<br />ENTRE L&apos;
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "uppercase", color: "#D2E6DC" }}>IMAGE</span>
+            <br />ET SON <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "uppercase", color: "#D2E6DC" }}>HISTOIRE</span>
           </>
         }
         subtitle="Agence de Communication et d'Événementiel au service des professionnels de l’Acte et Art de Bâtir, Institutions, Collectivités, Mairies, monde de la Culture et Associatif qui font vivre nos Territoires, notre Patrimoine."
@@ -67,7 +67,7 @@ export default function HomeEditorial() {
             margin: "24px auto 0",
           }}
         >
-          Deux associés complémentaires, l&apos;un à l'esprit numérique, l'autre à l&apos;esprit poétique,
+          Deux associés complémentaires, l&apos;un à l&apos;esprit numérique, l&apos;autre à l&apos;esprit poétique,
           au service d&apos;une communication authentique et d&apos;événements qui marquent les esprits.
         </p>
       </Reveal>
@@ -81,36 +81,11 @@ export default function HomeEditorial() {
       <A6EnBref />
 
       <Reveal>
-        <EventsMarquee />
+        <ServicesCarousel />
       </Reveal>
 
       <Reveal>
-        <CTABanner
-          title={
-            <>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/logo-a6-navy.svg"
-                alt="A6"
-                style={{
-                  height: "1.6em",
-                  width: "auto",
-                  display: "inline-block",
-                  verticalAlign: "-0.42em",
-                  marginRight: "0.08em",
-                }}
-              />{" "}
-              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                j&apos;osais commencer...
-              </span>
-            </>
-          }
-          titleStyle={{ textTransform: "none", fontSize: "clamp(2.4rem, 6vw, 4.2rem)" }}
-          compact
-          ctaVariant="bleu"
-          ctaLabel="Commencer"
-          ctaHref="/contact"
-        />
+        <CTASection sentence="nous osions…" buttonLabel="commencer" href="/contact" />
       </Reveal>
     </main>
   );

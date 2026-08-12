@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import CTABanner from "@/components/CTABanner";
+import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import { blogPosts } from "@/lib/blog";
@@ -184,19 +184,7 @@ export default function BlogPage() {
       </div>
 
       <Reveal>
-        <CTABanner
-          title={
-            <>
-              Un projet{" "}
-              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                en tête ?
-              </span>
-            </>
-          }
-          titleStyle={{ textTransform: "none" }}
-          ctaLabel="Nous contacter"
-          ctaHref="/contact"
-        />
+        <CTASection sentence="un projet en tête ?" buttonLabel="Nous contacter" />
       </Reveal>
     </main>
   );

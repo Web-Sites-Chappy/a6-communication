@@ -8,10 +8,7 @@ const navLinks = [
   {
     label: "Qui sommes-nous",
     href: "/qui-sommes-nous",
-    sub: [
-      { label: "Manuel & Eric", href: "/qui-sommes-nous#equipe" },
-      { label: "Nos 6 valeurs", href: "/qui-sommes-nous#valeurs" },
-    ],
+    sub: [],
   },
   {
     label: "Nos services",
@@ -28,7 +25,7 @@ const navLinks = [
     ],
   },
   {
-    label: "Réalisations",
+    label: "Nos réalisations",
     href: "/realisations",
     sub: [],
   },

@@ -27,11 +27,11 @@ export default function LogosMarquee() {
           fontSize: "0.72rem",
           textTransform: "uppercase",
           letterSpacing: "0.32em",
-          color: "var(--c-accent2)",
+          color: "var(--c-fond)",
           marginBottom: "clamp(26px, 3.2vw, 44px)",
         }}
       >
-        Nous avons créé l&apos;évidence ensemble...
+        Honoré d&apos;avoir créé l&apos;évidence ensemble :
       </p>
 
       <LogosTicker />

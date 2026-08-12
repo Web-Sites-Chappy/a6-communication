@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import CTABanner from "@/components/CTABanner";
+import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
@@ -62,7 +62,10 @@ export default function QuiSommesNousPage() {
             Manuel, animé par un esprit résolument numérique, imagine de nouvelles passerelles entre la technologie, les idées et les usages. Éric, profondément attaché à la poésie des mots, des images et des émotions, insuffle une dimension sensible à chaque projet.
           </p>
           <p style={{ margin: 0 }}>
-            Leur rencontre ne doit rien au hasard. Elle est née d’une même envie : faire dialoguer l’innovation et la créativité, la précision et l’émotion, afin de prendre pleinement part à la profonde métamorphose que connaît aujourd’hui le monde de la communication et de l’événementiel.
+            Leur rencontre ne doit rien au hasard. Elle est née d’une même envie : faire dialoguer l’innovation et la créativité, la précision et l’émotion. Une vision commune qui les a naturellement conduits à réunir leurs deux entreprises et leurs savoir-faire au sein d’une seule identité : A6 Communication &amp; Événementiel.
+          </p>
+          <p style={{ margin: 0 }}>
+            Une nouvelle aventure commune, pensée pour prendre pleinement part à la profonde métamorphose que connaît aujourd’hui le monde de la communication et de l’événementiel.
           </p>
         </div>
       </Reveal>
@@ -158,21 +161,7 @@ export default function QuiSommesNousPage() {
       </div>
 
       <Reveal>
-        <CTABanner
-          title={
-            <>
-              Envie de collaborer{" "}
-              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                avec notre équipe ?
-              </span>
-            </>
-          }
-          titleStyle={{ textTransform: "none", fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
-          compact
-          ctaVariant="bleu"
-          ctaLabel="Rencontrons-nous"
-          ctaHref="/contact"
-        />
+        <CTASection sentence="nous prenions le temps de…" buttonLabel="nous rencontrer" />
       </Reveal>
     </main>
   );

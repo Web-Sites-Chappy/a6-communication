@@ -114,7 +114,7 @@ export default function A6EnBref() {
           ce goût et cette volonté mutuels de participer à cette incontestable mutation, tant dans
           la communication que dans l’événementiel, où l’image et son histoire s’identifient dans
           les&nbsp;
-          <span style={{ fontWeight: 700, fontSize: "1.3em", color: "var(--c-rouge-fg)" }}>6&nbsp;A</span>.
+          <span style={{ fontWeight: 700, fontSize: "1.3em", color: "var(--c-rouge-fg)" }}>6&nbsp;A</span>&nbsp;:
         </p>
       </Reveal>
 

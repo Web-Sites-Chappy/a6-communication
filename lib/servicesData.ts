@@ -3,6 +3,12 @@ export interface ServiceDeliverable {
   description: string;
 }
 
+export interface ServiceCTA {
+  /** Le texte qui suit "A6" dans le CTA, ex. "nous construisions…" — voir CTASection. */
+  sentence: string;
+  buttonLabel: string;
+}
+
 export interface ServiceItem {
   slug: string;
   title: string;
@@ -14,6 +20,9 @@ export interface ServiceItem {
   color: string;
   badgeColor: string;
   deliverables: ServiceDeliverable[];
+  cta: ServiceCTA;
+  /** Image dédiée au carousel de services (bas de page) — jamais partagée entre deux services. */
+  carouselImage: string;
 }
 
 export const servicesData: ServiceItem[] = [
@@ -44,7 +53,9 @@ export const servicesData: ServiceItem[] = [
         title: "Mesure de performance & KPIs",
         description: "Mise en place d'indicateurs clés, tableaux de bord de suivi et recommandations d'optimisation en continu."
       }
-    ]
+    ],
+    cta: { sentence: "nous construisions…", buttonLabel: "votre stratégie" },
+    carouselImage: "/photos/services-test/strategie-digitale-1.webp"
   },
   {
     slug: "identite-visuelle",
@@ -73,7 +84,9 @@ export const servicesData: ServiceItem[] = [
         title: "Templates & Déclinaisons Web",
         description: "Gabarits personnalisés pour vos présentations (PowerPoint/Keynote), newsletters, et visuels pour réseaux sociaux."
       }
-    ]
+    ],
+    cta: { sentence: "nous façonnions…", buttonLabel: "votre image" },
+    carouselImage: "/photos/services-test/identite-visuelle-1.webp"
   },
   {
     slug: "production-de-contenus",
@@ -102,7 +115,9 @@ export const servicesData: ServiceItem[] = [
         title: "Rapports & Publications de marque",
         description: "Rédaction, mise en page et suivi de réalisation de vos rapports d'activité, livres blancs et journaux internes."
       }
-    ]
+    ],
+    cta: { sentence: "nous racontions…", buttonLabel: "votre histoire" },
+    carouselImage: "/photos/services-test/production-de-contenus-1.webp"
   },
   {
     slug: "impressions-signaletique",
@@ -131,7 +146,9 @@ export const servicesData: ServiceItem[] = [
         title: "Gestion de fabrication & Contrôle",
         description: "Pilotage complet auprès de nos imprimeurs partenaires, suivi des BÁT et livraison directement sur vos lieux d'action."
       }
-    ]
+    ],
+    cta: { sentence: "nous revêtions…", buttonLabel: "vos supports" },
+    carouselImage: "/photos/services-test/impressions-signaletique-1.webp"
   },
   {
     slug: "conception-et-scenographie",
@@ -160,7 +177,9 @@ export const servicesData: ServiceItem[] = [
         title: "Charte graphique événementielle",
         description: "Création du logo de l'événement, habillage vidéo des écrans de scène et déclinaison sur tous les supports."
       }
-    ]
+    ],
+    cta: { sentence: "nous concevions…", buttonLabel: "votre événement" },
+    carouselImage: "/photos/services-test/conception-et-scenographie-1.webp"
   },
   {
     slug: "logistique",
@@ -189,7 +208,9 @@ export const servicesData: ServiceItem[] = [
         title: "Gestion des invités & Emargement",
         description: "Accueil physique, remise des badges, orientation des flux et gestion des vestiaires."
       }
-    ]
+    ],
+    cta: { sentence: "nous orchestrions…", buttonLabel: "votre événement" },
+    carouselImage: "/photos/services-test/logistique-1.webp"
   },
   {
     slug: "animation",
@@ -218,7 +239,9 @@ export const servicesData: ServiceItem[] = [
         title: "Ateliers interactifs & Networking",
         description: "Mise en place de mécaniques d'interaction avec la salle (Q&R, sondages en direct) et séquences conviviales."
       }
-    ]
+    ],
+    cta: { sentence: "nous animions…", buttonLabel: "vos rendez-vous" },
+    carouselImage: "/photos/services-test/animation-1.webp"
   },
   {
     slug: "relations-presse",
@@ -247,7 +270,9 @@ export const servicesData: ServiceItem[] = [
         title: "Revue de presse & Bilan média",
         description: "Suivi des retombées médiatiques, création de la revue de presse et bilan d'impact quantitatif et qualitatif."
       }
-    ]
+    ],
+    cta: { sentence: "nous donnions de l’écho à…", buttonLabel: "votre voix" },
+    carouselImage: "/photos/services-test/relations-presse-1.webp"
   }
 ];
 

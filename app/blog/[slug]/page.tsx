@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import CTABanner from "@/components/CTABanner";
+import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import ArticleBody from "@/components/blog/ArticleBody";
 import { blogPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
@@ -426,25 +426,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
       </Reveal>
 
       <Reveal>
-        <CTABanner
-          title={
-            <>
-              Un projet{" "}
-              <span
-                style={{
-                  fontFamily: "var(--font-display-dmserif)",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                }}
-              >
-                en tête ?
-              </span>
-            </>
-          }
-          titleStyle={{ textTransform: "none" }}
-          ctaLabel="Nous contacter"
-          ctaHref="/contact"
-        />
+        <CTASection sentence="un projet en tête ?" buttonLabel="Nous contacter" />
       </Reveal>
     </main>
   );

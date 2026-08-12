@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import CTABanner from "@/components/CTABanner";
+import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
@@ -96,40 +96,25 @@ export default function NosServicesPage() {
         </Reveal>
       </div>
 
-      {/* Section Événementiel */}
-      <div id="evenementiel" style={{ backgroundColor: "var(--c-fond)", padding: "60px 0" }}>
-        <div style={{ width: "90vw", maxWidth: "1280px", margin: "0 auto", textAlign: "center" }}>
-          <Reveal>
-            <AccentHeading lead="Événementiel" style={{ color: "var(--c-rouge)" }} />
-            <p style={{ marginTop: "24px", fontSize: "1.05rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(var(--c-navy-rgb), 0.75)" }}>
-              Conception, organisation et coordination d&apos;événements : congrès, forums, journées
-              thématiques, assemblées générales, célébrations institutionnelles. A6 prend en charge
-              chaque étape, de la scénographie à la logistique, pour des événements qui marquent.
-            </p>
-          </Reveal>
+      {/* Section Événementiel — même structure que la section Communication ci-dessus
+          (pas de conteneur intermédiaire) pour garder une grille de cartes identique. */}
+      <div id="evenementiel" className="py-12" style={{ backgroundColor: "var(--c-fond)" }}>
+        <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "40px 0 20px", textAlign: "center" }}>
+          <AccentHeading lead="Événementiel" style={{ color: "var(--c-rouge)" }} />
+          <p style={{ marginTop: "24px", fontSize: "1.05rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(var(--c-navy-rgb), 0.75)" }}>
+            Conception, organisation et coordination d&apos;événements : congrès, forums, journées
+            thématiques, assemblées générales, célébrations institutionnelles. A6 prend en charge
+            chaque étape, de la scénographie à la logistique, pour des événements qui marquent.
+          </p>
+        </Reveal>
 
-          <Reveal>
-            <FeaturesSectionWithHoverEffects features={evenFeatures} />
-          </Reveal>
-        </div>
+        <Reveal>
+          <FeaturesSectionWithHoverEffects features={evenFeatures} />
+        </Reveal>
       </div>
 
       <Reveal>
-        <CTABanner
-          title={
-            <>
-              Un projet de{" "}
-              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                communication ou d&apos;événementiel ?
-              </span>
-            </>
-          }
-          titleStyle={{ textTransform: "none", fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
-          compact
-          ctaVariant="bleu"
-          ctaLabel="Parlons de votre projet"
-          ctaHref="/contact"
-        />
+        <CTASection sentence="nous imaginions ensemble…" buttonLabel="votre projet" />
       </Reveal>
     </main>
   );

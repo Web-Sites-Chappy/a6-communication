@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import CTABanner from "@/components/CTABanner";
+import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import { notFound, redirect } from "next/navigation";
@@ -238,20 +238,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       {/* CTA Section */}
       <Reveal>
-        <CTABanner
-          title={
-            <>
-              Un projet en{" "}
-              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                {service.title} ?
-              </span>
-            </>
-          }
-          titleStyle={{ textTransform: "none", fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
-          compact
-          ctaVariant="bleu"
-          ctaLabel="Contactez l'agence A6"
-          ctaHref={`/contact?service=${encodeURIComponent(service.title)}`}
+        <CTASection
+          sentence={service.cta.sentence}
+          buttonLabel={service.cta.buttonLabel}
+          href={`/contact?service=${encodeURIComponent(service.title)}`}
         />
       </Reveal>
     </main>

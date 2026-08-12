@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import CTABanner from "@/components/CTABanner";
+import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
@@ -9,11 +9,10 @@ export const metadata: Metadata = {
 };
 
 const targets = [
-  { title: "Artisans du Bâtiment", img: "/photos/DSC_0802.webp", desc: "Maçons, charpentiers, menuisiers, plombiers : tous ceux qui construisent et rénovent le patrimoine bâti ont besoin d'une communication qui valorise leur savoir-faire et leur ancrage local." },
   { title: "Professionnels de l'Acte et Art de Bâtir", img: "/photos/DSC_0836.webp", desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles : A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle." },
-  { title: "Mairies et collectivités", img: "/photos/DSC_0855.webp", desc: "Particulièrement les communes de moins de 1 000 habitants, les intercommunalités et collectivités qui ont besoin d'une communication de proximité, efficace et abordable." },
   { title: "Institution", img: "/photos/DSC_1019.webp", desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées." },
-  { title: "Monde Culturel et Associatif", img: "/photos/associatif-icon.svg", desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes." },
+  { title: "Mairies et collectivités", img: "/photos/DSC_0855.webp", desc: "Particulièrement les communes de moins de 1 000 habitants, les intercommunalités et collectivités qui ont besoin d'une communication de proximité, efficace et abordable." },
+  { title: "Monde culturel et associatif", img: "/photos/services-test/associatif-1.webp", desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes." },
 ];
 
 export default function NosClientsPage() {
@@ -84,19 +83,7 @@ export default function NosClientsPage() {
       </div>
 
       <Reveal>
-        <CTABanner
-          title={
-            <>
-              A6{" "}
-              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                c’était vous ?
-              </span>
-            </>
-          }
-          titleStyle={{ textTransform: "none" }}
-          ctaLabel="Contactez-nous"
-          ctaHref="/contact"
-        />
+        <CTASection sentence="c’était vous ?" buttonLabel="Contactez-nous" />
       </Reveal>
     </main>
   );

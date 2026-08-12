@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import CTABanner from "@/components/CTABanner";
+import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
@@ -33,7 +33,6 @@ export default function RealisationsPage() {
         height="half"
         ctaLabel="Nous contacter"
         ctaHref="/contact"
-        ctaVariant="bleu"
       />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
@@ -83,19 +82,7 @@ export default function RealisationsPage() {
       </div>
 
       <Reveal>
-        <CTABanner
-          title={
-            <>
-              Votre projet,{" "}
-              <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                nos idées
-              </span>
-            </>
-          }
-          titleStyle={{ textTransform: "none" }}
-          ctaLabel="Nous contacter"
-          ctaHref="/contact"
-        />
+        <CTASection sentence="votre idée devenait…" buttonLabel="une réalisation" />
       </Reveal>
     </main>
   );
