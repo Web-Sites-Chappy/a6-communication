@@ -30,23 +30,6 @@ const partners: PartnerLogo[] = [
     displayHeight: 48,
     href: "https://www.architectes.org/occitanie",
   },
-  {
-    id: "groupe-seuil",
-    name: "Groupe Seuil",
-    src: "/logos/groupe-seuil.png",
-    width: 620,
-    height: 891,
-    displayHeight: 96,
-  },
-  {
-    id: "archipreneurs",
-    name: "Archipreneurs",
-    src: "/logos/archipreneurs.png",
-    width: 425,
-    height: 438,
-    displayHeight: 84,
-    href: "https://archipreneurs.com/",
-  },
 ];
 
 function LogoMark({ partner }: { partner: PartnerLogo }) {
