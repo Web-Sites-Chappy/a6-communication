@@ -1,57 +1,18 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
+import { blogPosts } from "@/lib/blog";
+import { SITE_URL } from "@/lib/siteConfig";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog | A6 Communication",
   description:
-    "Coulisses de l'agence, événements à venir et temps forts d'A6 Communication.",
+    "Communication institutionnelle, événementiel et identité de marque : nos repères de méthode pour les institutions, collectivités et structures culturelles d’Occitanie.",
+  alternates: { canonical: `${SITE_URL}/blog` },
 };
-
-const articles = [
-  {
-    title: "A6 Communication accompagne le prochain Congrès des Architectes",
-    date: "Juillet 2026",
-    category: "Événementiel",
-    img: "/photos/DSC_0802.webp",
-    excerpt:
-      "Nous préparons l'édition 2026 du congrès régional : scénographie, communication digitale et logistique d'un événement qui réunira plus de 300 professionnels.",
-  },
-  {
-    title: "Nouvelle identité visuelle pour un domaine viticole du Sud",
-    date: "Juin 2026",
-    category: "Identité visuelle",
-    img: "/photos/DSC_1019.webp",
-    excerpt:
-      "De la charte graphique aux étiquettes, retour sur un projet de refonte complète mené main dans la main avec les vignerons.",
-  },
-  {
-    title: "Les coulisses des Journées du Patrimoine en Occitanie",
-    date: "Mai 2026",
-    category: "Communication",
-    img: "/photos/DSC_0855.webp",
-    excerpt:
-      "Comment nous avons imaginé la stratégie de contenus et l'animation des réseaux sociaux pour faire rayonner le patrimoine régional.",
-  },
-  {
-    title: "Forum Artisans du Bâtiment : les inscriptions sont ouvertes",
-    date: "Avril 2026",
-    category: "Événementiel",
-    img: "/photos/DSC_0836.webp",
-    excerpt:
-      "Rendez-vous incontournable des professionnels du bâtiment, le forum revient avec un format repensé et de nouveaux temps d'échange.",
-  },
-  {
-    title: "A6 s'engage auprès du monde associatif culturel",
-    date: "Mars 2026",
-    category: "Communication",
-    img: "/photos/DSC_1091.webp",
-    excerpt:
-      "Un accompagnement au long cours pour aider les associations culturelles à structurer et diffuser leur message.",
-  },
-];
 
 export default function BlogPage() {
   return (
@@ -81,7 +42,7 @@ export default function BlogPage() {
           textAlign: "center",
         }}
       >
-        <AccentHeading lead="Coulisses &" accent="temps forts" />
+        <AccentHeading lead="Repères &" accent="méthode" />
         <p
           style={{
             marginTop: "24px",
@@ -89,12 +50,13 @@ export default function BlogPage() {
             lineHeight: "1.6em",
             color: "var(--c-navy)",
             fontFamily: "var(--font-body)",
-            maxWidth: "600px",
+            maxWidth: "620px",
             margin: "24px auto 0",
           }}
         >
-          Événements à venir, projets en cours et regards sur le travail de
-          l&apos;agence, suivez la vie d&apos;A6 Communication.
+          Communication institutionnelle, événementiel, identité de marque : ce que nous avons
+          appris en travaillant avec des institutions, des collectivités et des structures
+          culturelles et associatives en Occitanie.
         </p>
       </Reveal>
 
@@ -109,91 +71,114 @@ export default function BlogPage() {
           gap: "40px",
         }}
       >
-        {articles.map((article, i) => (
-          <Reveal key={article.title} delay={i * 80} direction="up">
-            <article
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                backgroundColor: "rgba(var(--c-navy-rgb),0.03)",
-                borderBottom: "3px solid var(--c-rouge-fg)",
-              }}
-            >
-              <div style={{ width: "100%", height: "220px", flexShrink: 0, overflow: "hidden" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={article.img}
-                  alt={article.title}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
-              </div>
-
-              <div
+        {blogPosts.map((post, i) => (
+          <Reveal key={post.slug} delay={Math.min(i, 8) * 70} direction="up">
+            <Link href={`/blog/${post.slug}`} className="hub-card" style={{ display: "block", height: "100%" }}>
+              <article
                 style={{
-                  padding: "24px",
                   display: "flex",
                   flexDirection: "column",
-                  flex: 1,
+                  height: "100%",
+                  backgroundColor: "rgba(var(--c-navy-rgb),0.03)",
+                  borderBottom: "3px solid var(--c-rouge-fg)",
                 }}
               >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    marginBottom: "12px",
-                  }}
-                >
-                  <span
-                    style={{
-                      backgroundColor: "var(--c-btn-accent)",
-                      borderRadius: "4px",
-                      padding: "4px 11px 5px",
-                      color: "var(--c-on-accent)",
-                      fontFamily: "var(--font-display)",
-                      textTransform: "uppercase",
-                      fontWeight: 200,
-                      fontSize: "0.8rem",
-                      letterSpacing: "0.08em",
-                    }}
-                  >
-                    {article.category}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: "0.8rem",
-                      color: "rgba(var(--c-navy-rgb),0.6)",
-                    }}
-                  >
-                    {article.date}
-                  </span>
+                <div style={{ width: "100%", height: "220px", flexShrink: 0, overflow: "hidden" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={post.img}
+                    alt={post.imgAlt}
+                    loading={i < 3 ? undefined : "lazy"}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
                 </div>
 
-                <h3
+                <div
                   style={{
-                    fontSize: "clamp(1.4rem, 2.2vw, 1.8rem)",
-                    lineHeight: "0.95em",
-                    color: "var(--c-rouge-fg)",
-                    marginBottom: "14px",
+                    padding: "24px",
+                    display: "flex",
+                    flexDirection: "column",
+                    flex: 1,
                   }}
                 >
-                  {article.title}
-                </h3>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      alignItems: "center",
+                      gap: "12px",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        backgroundColor: "var(--c-btn-accent)",
+                        borderRadius: "4px",
+                        padding: "4px 11px 5px",
+                        color: "var(--c-on-accent)",
+                        fontFamily: "var(--font-display)",
+                        textTransform: "uppercase",
+                        fontWeight: 400,
+                        fontSize: "0.78rem",
+                        letterSpacing: "0.08em",
+                      }}
+                    >
+                      {post.category}
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: "0.8rem",
+                        color: "rgba(var(--c-navy-rgb),0.75)",
+                      }}
+                    >
+                      {post.dateLabel} · {post.readingMinutes} min
+                    </span>
+                  </div>
 
-                <p
-                  style={{
-                    fontSize: "0.9rem",
-                    lineHeight: "1.6em",
-                    fontFamily: "var(--font-body)",
-                    color: "rgba(var(--c-navy-rgb),0.75)",
-                  }}
-                >
-                  {article.excerpt}
-                </p>
-              </div>
-            </article>
+                  <h2
+                    style={{
+                      fontFamily: "var(--font-display-bricolage), sans-serif",
+                      fontWeight: 700,
+                      textTransform: "none",
+                      textAlign: "left",
+                      fontSize: "clamp(1.25rem, 2.2vw, 1.55rem)",
+                      lineHeight: "1.15em",
+                      color: "var(--c-rouge-fg)",
+                      marginBottom: "14px",
+                    }}
+                  >
+                    {post.title}
+                  </h2>
+
+                  <p
+                    style={{
+                      fontSize: "0.92rem",
+                      lineHeight: "1.65em",
+                      fontFamily: "var(--font-body)",
+                      color: "rgba(var(--c-navy-rgb),0.82)",
+                    }}
+                  >
+                    {post.excerpt}
+                  </p>
+
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      marginTop: "auto",
+                      paddingTop: "18px",
+                      fontFamily: "var(--font-display)",
+                      textTransform: "uppercase",
+                      fontSize: "0.75rem",
+                      letterSpacing: "0.14em",
+                      color: "var(--c-rouge-fg)",
+                    }}
+                  >
+                    Lire l’article →
+                  </span>
+                </div>
+              </article>
+            </Link>
           </Reveal>
         ))}
       </div>
