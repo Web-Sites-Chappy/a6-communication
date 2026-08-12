@@ -10,11 +10,10 @@ export const metadata: Metadata = {
 
 const targets = [
   { title: "Artisans du Bâtiment", img: "/photos/DSC_0802.webp", desc: "Maçons, charpentiers, menuisiers, plombiers : tous ceux qui construisent et rénovent le patrimoine bâti ont besoin d'une communication qui valorise leur savoir-faire et leur ancrage local." },
-  { title: "Architectes", img: "/photos/DSC_0836.webp", desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles : A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle." },
-  { title: "Communes & Mairies", img: "/photos/DSC_0855.webp", desc: "Particulièrement les communes de moins de 1 000 habitants, les intercommunalités et collectivités qui ont besoin d'une communication de proximité, efficace et abordable." },
-  { title: "Patrimoine & Culture", img: "/photos/DSC_1019.webp", desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées." },
-  { title: "Monde Associatif", img: "/photos/DSC_1091.webp", desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes." },
-  { title: "Domaines Viticoles", img: "/photos/DSC_0836.webp", desc: "Vignerons, coopératives, syndicats d'appellation : la communication au service du terroir, de la filière et des hommes et femmes qui font vivre le vin de nos régions." },
+  { title: "Professionnels de l'Acte et Art de Bâtir", img: "/photos/DSC_0836.webp", desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles : A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle." },
+  { title: "Mairies et collectivités", img: "/photos/DSC_0855.webp", desc: "Particulièrement les communes de moins de 1 000 habitants, les intercommunalités et collectivités qui ont besoin d'une communication de proximité, efficace et abordable." },
+  { title: "Institution", img: "/photos/DSC_1019.webp", desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées." },
+  { title: "Monde Culturel et Associatif", img: "/photos/associatif-icon.svg", desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes." },
 ];
 
 export default function NosClientsPage() {
