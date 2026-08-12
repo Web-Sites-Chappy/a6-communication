@@ -4,7 +4,6 @@ import HeroSlider from "@/components/HeroSlider";
 import Reveal from "@/components/Reveal";
 import SectionsCardStack from "@/components/SectionsCardStack";
 import A6EnBref from "@/components/A6EnBref";
-import TrustedByCloud from "@/components/TrustedByCloud";
 import AccentHeading from "@/components/AccentHeading";
 import LogosMarquee from "@/components/LogosMarquee";
 
@@ -40,7 +39,23 @@ export default function HomeEditorial() {
       <LogosMarquee />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
-        <AccentHeading lead="A6" accent="Communication & Événementiel" />
+        <AccentHeading
+          lead={
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src="/logo-a6-bleu.svg"
+              alt="A6"
+              style={{
+                height: "1.6em",
+                width: "auto",
+                display: "inline-block",
+                verticalAlign: "-0.42em",
+                marginRight: "0.08em",
+              }}
+            />
+          }
+          accent="Communication & Événementiel"
+        />
         <p
           style={{
             marginTop: "24px",
@@ -66,10 +81,6 @@ export default function HomeEditorial() {
       <A6EnBref />
 
       <Reveal>
-        <TrustedByCloud />
-      </Reveal>
-
-      <Reveal>
         <EventsMarquee />
       </Reveal>
 
@@ -77,9 +88,20 @@ export default function HomeEditorial() {
         <CTABanner
           title={
             <>
-              <span style={{ fontFamily: "var(--font-display-bricolage)", fontWeight: 700 }}>A6</span>{" "}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-a6-navy.svg"
+                alt="A6"
+                style={{
+                  height: "1.6em",
+                  width: "auto",
+                  display: "inline-block",
+                  verticalAlign: "-0.42em",
+                  marginRight: "0.08em",
+                }}
+              />{" "}
               <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-                j&apos;osais...
+                j&apos;osais commencer...
               </span>
             </>
           }

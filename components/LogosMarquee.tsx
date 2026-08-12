@@ -31,7 +31,7 @@ export default function LogosMarquee() {
           marginBottom: "clamp(26px, 3.2vw, 44px)",
         }}
       >
-        Ils nous font confiance
+        Nous avons créé l&apos;évidence ensemble...
       </p>
 
       <LogosTicker />
