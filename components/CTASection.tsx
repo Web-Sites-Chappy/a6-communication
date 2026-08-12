@@ -36,7 +36,14 @@ export default function CTASection({ sentence, buttonLabel, href = "/contact" }:
           </span>
         </>
       }
-      titleStyle={{ textTransform: "none", fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
+      titleStyle={{
+        textTransform: "none",
+        fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
+        // Les phrases longues ("nous donnions de l'écho à…") retombaient sur une
+        // deuxième ligne orpheline d'un seul mot. balance répartit les deux
+        // lignes de façon égale au lieu de laisser un mot isolé.
+        textWrap: "balance",
+      }}
       compact
       ctaVariant="bleu"
       ctaLabel={buttonLabel}
