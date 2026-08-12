@@ -36,7 +36,7 @@ export default function HomeEditorial() {
         interval={5000}
       />
 
-      {/* Carrusel de logos — inmediatamente después del hero */}
+      {/* Bande de logos clients — pleine largeur, juste après le héros */}
       <LogosMarquee />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
