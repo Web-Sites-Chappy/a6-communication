@@ -63,9 +63,14 @@ export default function Nav() {
         id="nav-gradient"
         className="fixed top-0 left-0 w-full z-40 pointer-events-none"
         style={{
-          height: shy ? "0px" : "140px",
+          /* Le voile s'efface en opacité, pas en hauteur : animer `height` à
+             chaque passage de seuil de scroll force un recalcul de layout, et
+             le fondu rend mieux qu'un écrasement du dégradé vers le haut.
+             La couche reste inoffensive une fois invisible (pointer-events-none). */
+          height: "140px",
+          opacity: shy ? 0 : 1,
           background: "linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0) 100%)",
-          transition: "height var(--e-basic)",
+          transition: "opacity var(--e-basic)",
         }}
       />
 
@@ -306,7 +311,11 @@ export default function Nav() {
                   fontFamily: "var(--font-display)",
                   textTransform: "uppercase",
                   fontWeight: 200,
-                  color: "var(--c-rouge)",
+                  /* Vert Eau et non Bleu Roi : sur le Bleu Nuit du panneau, le
+                     Bleu Roi ne donne que 1,99:1 (illisible). Le Vert Eau est
+                     la couleur de premier plan de la charte sur fond sombre —
+                     même logique que la variante logo-a6.svg — et monte à ~11:1. */
+                  color: "var(--c-fond)",
                   letterSpacing: "0.05em",
                 }}
               >
@@ -341,7 +350,7 @@ export default function Nav() {
                 fontFamily: "var(--font-display)",
                 textTransform: "uppercase",
                 fontWeight: 200,
-                color: "var(--c-rouge)",
+                color: "var(--c-fond)",
               }}
             >
               Contact

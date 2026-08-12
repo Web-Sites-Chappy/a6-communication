@@ -144,7 +144,10 @@ export default function A6EnBref() {
                       fontSize: "0.8rem",
                       fontWeight: 400,
                       letterSpacing: "0.3em",
-                      color: "rgba(var(--c-navy-rgb), 0.45)",
+                      /* 0.45 ne donnait que 2,6:1 sur le Vert Eau — sous le seuil
+                         de 4,5:1 pour du texte de 13px. Teinté depuis le navy
+                         (jamais un gris), 0.7 monte à ~5,1:1. */
+                      color: "rgba(var(--c-navy-rgb), 0.7)",
                     }}
                   >
                     {item.label}
