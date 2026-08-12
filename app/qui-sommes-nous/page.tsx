@@ -90,7 +90,7 @@ export default function QuiSommesNousPage() {
               style={{
                 width: "100%",
                 height: "360px",
-                objectFit: person.name === "Manuel" ? "contain" : "cover",
+                objectFit: "cover",
                 objectPosition: "center",
                 display: "block",
                 marginBottom: "20px",
