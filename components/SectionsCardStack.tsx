@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
 
@@ -60,13 +61,16 @@ export default function SectionsCardStack() {
           >
             {/* image */}
             <div style={{ position: "absolute", inset: 0 }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={item.imageSrc}
-                alt={item.title}
-                draggable={false}
-                style={{ height: "100%", width: "100%", objectFit: "cover", display: "block" }}
-              />
+              {item.imageSrc ? (
+                <Image
+                  src={item.imageSrc}
+                  alt={item.title}
+                  fill
+                  draggable={false}
+                  sizes="(max-width: 640px) 340px, (max-width: 1024px) 420px, 500px"
+                  style={{ objectFit: "cover" }}
+                />
+              ) : null}
             </div>
 
             {/* navy gradient overlay */}

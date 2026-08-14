@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -32,15 +33,13 @@ export default function Hero({
       }}
     >
       {/* Background image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={imageSrc}
         alt=""
+        fill
+        priority
+        sizes="100vw"
         style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
           objectFit: "cover",
           objectPosition: "center",
         }}

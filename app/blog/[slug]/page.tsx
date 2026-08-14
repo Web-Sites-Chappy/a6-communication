@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -207,18 +208,23 @@ export default async function BlogArticlePage({ params }: PageProps) {
           padding: "0 0 36px",
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={post.img}
-          alt={post.imgAlt}
+        <div
           style={{
+            position: "relative",
             width: "100%",
             height: "clamp(200px, 34vw, 420px)",
-            objectFit: "cover",
-            display: "block",
             marginTop: "-30px",
           }}
-        />
+        >
+          <Image
+            src={post.img}
+            alt={post.imgAlt}
+            fill
+            priority
+            sizes="(max-width: 1000px) 100vw, 1000px"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
       </div>
 
       <div

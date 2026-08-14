@@ -3,6 +3,7 @@
 import * as React from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { SquareArrowOutUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 function cn(...classes: Array<string | undefined | null | false>) {
@@ -383,13 +384,12 @@ function DefaultFanCard({ item }: { item: CardStackItem; active: boolean }) {
       {/* image */}
       <div className="absolute inset-0">
         {item.imageSrc ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={item.imageSrc}
             alt={item.title}
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
             draggable={false}
-            loading="eager"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-[var(--c-fond)] text-sm text-[rgba(var(--c-navy-rgb),0.6)]">

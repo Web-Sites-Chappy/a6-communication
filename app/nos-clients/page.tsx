@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
@@ -63,12 +64,13 @@ export default function NosClientsPage() {
                 borderBottom: "1px solid rgba(27,46,60,0.1)",
               }}
             >
-              <div className="alt-row-img" style={{ width: "40%", height: "260px", flexShrink: 0 }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="alt-row-img" style={{ position: "relative", width: "40%", height: "260px", flexShrink: 0 }}>
+                <Image
                   src={target.img}
                   alt={target.title}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  fill
+                  sizes="(max-width: 640px) 90vw, 400px"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="alt-row-text" style={{ flex: 1 }}>

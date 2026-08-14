@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -28,13 +29,13 @@ export function MarqueeCard({ item, className }: MarqueeCardProps) {
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003DDE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#D2E6DC]",
         )}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={item.image}
           alt={item.title}
-          className="h-full w-full object-cover"
+          fill
+          className="object-cover"
           draggable={false}
-          loading="lazy"
+          sizes="230px"
         />
 
         <span

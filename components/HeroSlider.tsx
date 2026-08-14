@@ -60,7 +60,7 @@ export default function HeroSlider({
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           poster={poster}
           style={{
             position: "absolute",

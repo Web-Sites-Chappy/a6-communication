@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
@@ -86,19 +87,15 @@ export default function QuiSommesNousPage() {
           <Reveal key={person.name} delay={i * 120} direction={i % 2 === 0 ? "left" : "right"}
             style={{ flex: 1, minWidth: "min(280px, 100%)", maxWidth: "400px" }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={person.img}
-              alt={person.name}
-              style={{
-                width: "100%",
-                height: "360px",
-                objectFit: "cover",
-                objectPosition: "center",
-                display: "block",
-                marginBottom: "20px",
-              }}
-            />
+            <div style={{ position: "relative", width: "100%", height: "360px", marginBottom: "20px" }}>
+              <Image
+                src={person.img}
+                alt={person.name}
+                fill
+                sizes="(max-width: 640px) 90vw, 400px"
+                style={{ objectFit: "cover", objectPosition: "center" }}
+              />
+            </div>
             <h3
               style={{
                 color: "var(--c-rouge-fg)",

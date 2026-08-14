@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
@@ -83,13 +84,14 @@ export default function BlogPage() {
                   borderBottom: "3px solid var(--c-rouge-fg)",
                 }}
               >
-                <div style={{ width: "100%", height: "220px", flexShrink: 0, overflow: "hidden" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div style={{ position: "relative", width: "100%", height: "220px", flexShrink: 0, overflow: "hidden" }}>
+                  <Image
                     src={post.img}
                     alt={post.imgAlt}
-                    loading={i < 3 ? undefined : "lazy"}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    fill
+                    priority={i < 3}
+                    sizes="(max-width: 640px) 90vw, 300px"
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
 
