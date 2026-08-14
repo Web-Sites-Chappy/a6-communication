@@ -108,8 +108,27 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     icon: getServiceIcon(rel.slug),
   }));
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.shortDescription,
+    serviceType: service.category,
+    areaServed: "Occitanie, France",
+    url: `${SITE_URL}/nos-services/${service.slug}`,
+    provider: {
+      "@type": "Organization",
+      name: "A6 Communication et Événementiel",
+      url: SITE_URL,
+    },
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero
         imageSrc={service.heroImage}
         title={
