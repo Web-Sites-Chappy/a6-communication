@@ -17,11 +17,13 @@ const outlineBtnStyle: React.CSSProperties = {
   borderRadius: "4px",
   color: "white",
   fontFamily: "var(--font-body), sans-serif",
-  fontSize: "0.85rem",
-  padding: "10px 18px",
+  // clamp au lieu d'une taille fixe : les 3 boutons tiennent sur une seule
+  // ligne dès 320px de large, au lieu de retomber sur une 2e ligne (le
+  // wrap ajoutait ~50px à la hauteur du bandeau, 270px mesurés en audit).
+  fontSize: "clamp(0.72rem, 2.4vw, 0.85rem)",
+  padding: "clamp(7px, 2vw, 10px) clamp(10px, 3vw, 18px)",
   cursor: "pointer",
   transition: "border-color 0.2s",
-  // Sans cela, les trois boutons débordaient du bord droit en 390px.
   flex: "1 1 auto",
   whiteSpace: "nowrap",
 };
@@ -89,11 +91,13 @@ export default function CookieBanner() {
         bottom: 0,
         left: 0,
         right: 0,
-        zIndex: 9999,
+        // Sous le panneau mobile (z-[999] dans Nav.tsx) : sinon le bandeau
+        // recouvre le menu ouvert et masque une partie de ses liens.
+        zIndex: 500,
         backgroundColor: "var(--c-navy)",
         color: "white",
         // 143px de haut mangeaient la place du hero : bandeau resserré.
-        padding: "16px clamp(20px, 5vw, 60px)",
+        padding: "clamp(12px, 3vw, 16px) clamp(20px, 5vw, 60px)",
         boxShadow: "0 -8px 30px rgba(0,0,0,0.35)",
       }}
     >
@@ -103,7 +107,7 @@ export default function CookieBanner() {
           margin: "0 auto",
           display: "flex",
           flexWrap: "wrap",
-          gap: "20px",
+          gap: "clamp(12px, 3vw, 20px)",
           alignItems: "center",
         }}
       >

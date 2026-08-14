@@ -59,6 +59,10 @@ body {
   line-height: 1.3em;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  /* Le bandeau cookies est position:fixed en bas — sans cette réserve,
+     le dernier élément de la page (ex: bouton d'envoi du formulaire de
+     contact) se retrouve sous le bandeau, inaccessible au clic. */
+  padding-bottom: var(--cookie-banner-h, 0px);
 }
 
 h1, h2, h3, h4, h5, h6 {
