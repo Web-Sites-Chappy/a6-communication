@@ -25,11 +25,6 @@ const navLinks = [
     ],
   },
   {
-    label: "Nos réalisations",
-    href: "/realisations",
-    sub: [],
-  },
-  {
     label: "Nos clients",
     href: "/nos-clients",
     sub: [],

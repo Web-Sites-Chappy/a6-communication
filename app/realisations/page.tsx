@@ -8,13 +8,11 @@ export const metadata: Metadata = {
   title: "Réalisations | A6 Communication",
 };
 
-const projects = [
-  { title: "Congrès de l'Ordre des Architectes d'Occitanie", dates: "Octobre 2025", category: "Événementiel", img: "/photos/DSC_0802.jpg", desc: "Organisation et communication complète du congrès annuel de l'Ordre des Architectes d'Occitanie, rassemblant plus de 300 professionnels." },
-  { title: "Forum Artisans du Bâtiment", dates: "Juin 2025", category: "Événementiel", img: "/photos/DSC_0836.jpg", desc: "Conception et mise en œuvre d'un forum dédié aux artisans du bâtiment : communication digitale, logistique et animation de journée." },
-  { title: "Journées du Patrimoine, Occitanie", dates: "Septembre 2024", category: "Communication", img: "/photos/DSC_0855.jpg", desc: "Stratégie de communication et production de contenus pour les Journées Européennes du Patrimoine en région Occitanie." },
-  { title: "Assemblée Domaines Viticoles Sud", dates: "Novembre 2024", category: "Événementiel", img: "/photos/DSC_1019.jpg", desc: "Organisation de l'assemblée générale annuelle d'un syndicat de vignerons, incluant communication interne et relations presse." },
-  { title: "Colloque Associations Culturelles", dates: "Mars 2024", category: "Communication", img: "/photos/colloque-associations-culturelles.webp", desc: "Accompagnement en communication pour une fédération d'associations culturelles de la région : identité visuelle et plan de communication annuel." },
-];
+// Les 5 projets qui figuraient ici etaient fabriques (PRODUCT.md du repo les
+// qualifie de "confirmed placeholder"), et l'un contredisait un evenement reel
+// deja documente (Clientes/A6/Blog/01-rendez-vous-architecture-2025-toulouse.md).
+// Page en attente des 4 references reelles du client, autorisation de citation
+// requise (SEO-LAUNCH-PLAN.md §7) — voir Auditorias/FULL-AUDIT-REPORT.md, critique #4.
 
 export default function RealisationsPage() {
   return (
@@ -40,45 +38,22 @@ export default function RealisationsPage() {
       </Reveal>
 
       <div style={{ width: "90vw", maxWidth: "1000px", margin: "0 auto", paddingBottom: "80px" }}>
-        {projects.map((project, i) => (
-          <Reveal key={project.title} delay={0} direction={i % 2 === 0 ? "left" : "right"}>
-            <div
-              className="alt-row"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "40px",
-                flexDirection: i % 2 === 0 ? "row" : "row-reverse",
-                marginBottom: "60px",
-                borderBottom: "1px solid rgba(27,46,60,0.1)",
-                paddingBottom: "60px",
-              }}
-            >
-              <div className="alt-row-img" style={{ width: "45%", height: "320px", flexShrink: 0 }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={project.img}
-                  alt={project.title}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
-              </div>
-              <div className="alt-row-text" style={{ flex: 1, padding: "20px" }}>
-                <p style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 200, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--c-navy)", marginBottom: "8px" }}>
-                  {project.dates}
-                </p>
-                <h3 style={{ color: "var(--c-rouge-fg)", marginBottom: "16px", lineHeight: "0.9em" }}>
-                  {project.title}
-                </h3>
-                <p style={{ fontSize: "0.9rem", lineHeight: "1.6em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)", marginBottom: "20px" }}>
-                  {project.desc}
-                </p>
-                <span style={{ display: "inline-block", backgroundColor: "var(--c-navy)", borderRadius: "4px", padding: "6px 14px 7px", color: "white", fontFamily: "var(--font-display)", textTransform: "uppercase", fontWeight: 200, fontSize: "0.95rem", letterSpacing: "0.08em" }}>
-                  {project.category}
-                </span>
-              </div>
-            </div>
-          </Reveal>
-        ))}
+        <Reveal style={{ textAlign: "center", padding: "20px 0 40px" }}>
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "1rem",
+              lineHeight: "1.7em",
+              color: "rgba(27,46,60,0.75)",
+              maxWidth: "560px",
+              margin: "0 auto",
+            }}
+          >
+            Cette page est en cours de mise à jour : nous y présenterons bientôt les projets
+            menés avec l&apos;Ordre des Architectes Occitanie, la Fondation Magos, les Compagnons
+            du Tour de France et le monde associatif.
+          </p>
+        </Reveal>
       </div>
 
       <Reveal>

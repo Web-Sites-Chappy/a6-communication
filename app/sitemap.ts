@@ -11,7 +11,9 @@ import { SITE_URL } from "@/lib/siteConfig";
 const STATIC_ROUTES: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
   { path: "/nos-services", priority: 0.9 },
-  { path: "/realisations", priority: 0.8 },
+  // /realisations volontairement absente : les projets qui y figuraient
+  // etaient fabriques (voir Auditorias/FULL-AUDIT-REPORT.md, critique #4).
+  // A reajouter une fois les 4 references reelles du client autorisees.
   { path: "/nos-clients", priority: 0.7 },
   { path: "/qui-sommes-nous", priority: 0.7 },
   { path: "/blog", priority: 0.7 },
