@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité | A6 Communication",
+  alternates: { canonical: `${SITE_URL}/politique-de-confidentialite` },
 };
 
 export default function PolitiqueConfidentialitePage() {

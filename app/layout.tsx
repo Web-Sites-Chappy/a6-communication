@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import CookieBanner from "@/components/CookieBanner";
+import { SITE_URL } from "@/lib/siteConfig";
 
 // Charte A6 — trois polices seulement :
 //  - Bricolage Grotesque : titres grotesque (var(--font-display-bricolage))
@@ -42,6 +43,7 @@ const fontVariables = [
 ].join(" ");
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "A6 Communication & Événementiel",
   description:
     "Agence de Communication et événementiel dirigée par Manuel et Eric. Alchimie, Audace, Acceptation, Agilité, Authenticité, Assurance.",

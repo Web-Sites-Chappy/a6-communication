@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Mentions légales | A6 Communication",
+  alternates: { canonical: `${SITE_URL}/mentions-legales` },
 };
 
 export default function MentionsLegalesPage() {

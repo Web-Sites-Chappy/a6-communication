@@ -4,9 +4,11 @@ import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Qui sommes-nous | A6 Communication",
+  alternates: { canonical: `${SITE_URL}/qui-sommes-nous` },
 };
 
 const values = [

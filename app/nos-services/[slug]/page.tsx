@@ -5,6 +5,7 @@ import AccentHeading from "@/components/AccentHeading";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { servicesData, getServiceBySlug } from "@/lib/servicesData";
+import { SITE_URL } from "@/lib/siteConfig";
 import { FeaturesSectionWithHoverEffects, FeatureItem } from "@/components/ui/feature-section-with-hover-effects";
 import {
   IconRouteAltLeft,
@@ -46,6 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${service.title} | ${service.category} | A6 Communication`,
     description: service.shortDescription,
+    alternates: { canonical: `${SITE_URL}/nos-services/${service.slug}` },
   };
 }
 

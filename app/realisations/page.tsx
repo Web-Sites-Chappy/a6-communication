@@ -3,9 +3,11 @@ import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Réalisations | A6 Communication",
+  alternates: { canonical: `${SITE_URL}/realisations` },
 };
 
 // Les 5 projets qui figuraient ici etaient fabriques (PRODUCT.md du repo les

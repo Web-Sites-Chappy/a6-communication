@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
 import type { Metadata } from "next";
 import { getServicesByCategory } from "@/lib/servicesData";
+import { SITE_URL } from "@/lib/siteConfig";
 import { FeaturesSectionWithHoverEffects, FeatureItem } from "@/components/ui/feature-section-with-hover-effects";
 import {
   IconRouteAltLeft,
@@ -19,6 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "Nos Services | A6 Communication",
   description: "Découvrez l'ensemble de nos expertises en Communication (stratégie digitale, identité visuelle, contenu, print) et Événementiel (conception, logistique, animation, promotion).",
+  alternates: { canonical: `${SITE_URL}/nos-services` },
 };
 
 function getServiceIcon(slug: string) {
