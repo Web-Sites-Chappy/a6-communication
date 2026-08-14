@@ -221,7 +221,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         />
       </div>
 
-      <Reveal
+      <div
         style={{
           width: "var(--w-max)",
           maxWidth: "var(--w-limit-text)",
@@ -230,6 +230,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         }}
       >
         {sections.length > 2 ? (
+          <Reveal>
           <nav
             aria-label="Sommaire"
             style={{
@@ -275,11 +276,13 @@ export default async function BlogArticlePage({ params }: PageProps) {
               )}
             </ol>
           </nav>
+          </Reveal>
         ) : null}
 
         <ArticleBody blocks={post.body} />
 
         {post.faq?.length ? (
+          <Reveal>
           <section aria-labelledby="faq-titre" style={{ marginTop: "56px" }}>
             <h2
               id="faq-titre"
@@ -324,9 +327,11 @@ export default async function BlogArticlePage({ params }: PageProps) {
               </div>
             ))}
           </section>
+          </Reveal>
         ) : null}
 
         {post.related?.length ? (
+          <Reveal>
           <section aria-labelledby="liens-titre" style={{ marginTop: "56px" }}>
             <h2
               id="liens-titre"
@@ -353,8 +358,9 @@ export default async function BlogArticlePage({ params }: PageProps) {
               ))}
             </ul>
           </section>
+          </Reveal>
         ) : null}
-      </Reveal>
+      </div>
 
       {/* Articles proches — maillage interne entre clusters. */}
       <Reveal
