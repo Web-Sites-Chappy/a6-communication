@@ -185,7 +185,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               fontSize: "1rem",
               lineHeight: "1.7em",
               fontFamily: "var(--font-body)",
-              color: "rgba(27,46,60,0.8)",
+              color: "rgba(var(--c-navy-rgb),0.8)",
             }}
           >
             {service.fullDescription}

@@ -63,7 +63,7 @@ export default function NosClientsPage() {
                 flexDirection: i % 2 === 0 ? "row" : "row-reverse",
                 marginBottom: "50px",
                 paddingBottom: "50px",
-                borderBottom: "1px solid rgba(27,46,60,0.1)",
+                borderBottom: "1px solid rgba(var(--c-navy-rgb),0.1)",
               }}
             >
               <div className="alt-row-img" style={{ position: "relative", width: "40%", height: "260px", flexShrink: 0 }}>
@@ -77,7 +77,7 @@ export default function NosClientsPage() {
               </div>
               <div className="alt-row-text" style={{ flex: 1 }}>
                 <h3 style={{ color: "var(--c-rouge-fg)", marginBottom: "16px" }}>{target.title}</h3>
-                <p style={{ fontSize: "0.9rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(27,46,60,0.75)" }}>
+                <p style={{ fontSize: "0.9rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(var(--c-navy-rgb),0.75)" }}>
                   {target.desc}
                 </p>
               </div>

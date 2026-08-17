@@ -15,7 +15,7 @@ const services: MarqueeCardData[] = servicesData.map((service, i) => ({
 
 export default function ServicesCarousel() {
   return (
-    <section style={{ width: "100%", margin: "60px 0 30px", padding: "48px 20px", backgroundColor: "#D2E6DC" }}>
+    <section style={{ width: "100%", margin: "60px 0 30px", padding: "48px 20px", backgroundColor: "var(--c-fond)" }}>
       <MarqueeCards items={services} ariaLabel="Nos services" />
     </section>
   );

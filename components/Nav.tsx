@@ -126,10 +126,22 @@ export default function Nav() {
               style={{ display: "flex", alignItems: "center" }}
               onMouseEnter={() => link.sub.length > 0 && setOpenDropdown(link.href)}
               onMouseLeave={() => setOpenDropdown(null)}
+              onFocus={() => link.sub.length > 0 && setOpenDropdown(link.href)}
+              onBlur={(e) => {
+                // Ferme seulement quand le focus quitte tout le <li> (lien + sous-menu),
+                // pas à chaque Tab entre le lien et son premier enfant.
+                if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                  setOpenDropdown(null);
+                }
+              }}
+              onKeyDown={(e) => { if (e.key === "Escape") setOpenDropdown(null); }}
             >
               <Link
                 href={link.href}
                 className={`nav-link${isActive ? " nav-link-active" : ""}`}
+                aria-current={isActive ? "page" : undefined}
+                aria-haspopup={link.sub.length > 0 ? "true" : undefined}
+                aria-expanded={link.sub.length > 0 ? openDropdown === link.href : undefined}
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "0.82rem",
@@ -177,7 +189,7 @@ export default function Nav() {
                         href={sub.href}
                         className="block text-center transition-colors duration-200"
                         style={{
-                          padding: "8px 15px",
+                          padding: "11px 15px",
                           backgroundColor: "var(--c-navy)",
                           fontFamily: "var(--font-body)",
                           fontSize: "0.8rem",
@@ -240,6 +252,8 @@ export default function Nav() {
         <button
           className="lg:hidden text-white"
           onClick={() => setMobileOpen(true)}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
           style={{
             backgroundColor: "var(--c-navy)",
             borderRadius: "4px",
@@ -262,6 +276,11 @@ export default function Nav() {
       <div
         id="mobile-menu"
         className="fixed z-[999] overflow-y-auto"
+        aria-hidden={!mobileOpen}
+        // Sans inert, ce panneau reste dans l'ordre de tabulation même hors écran
+        // (left: -100vw ne retire rien de l'arbre d'accessibilité) : un clavier
+        // continuerait à tomber sur ses liens invisibles, y compris sur desktop.
+        inert={!mobileOpen}
         style={{
           width: "90vw",
           height: "100vh",

@@ -275,13 +275,9 @@ a { color: inherit; text-decoration: none; }
   /* Footer padding */
   .footer-inner { padding-left: clamp(20px, 6vw, 60px) !important; padding-right: clamp(20px, 6vw, 60px) !important; }
 
-  /* Hub cards: 2 cols on mobile */
-  .hub-card-grid { grid-template-columns: 1fr 1fr !important; }
 }
 
 @media (max-width: 480px) {
-  /* Hub cards: 1 col on small phones */
-  .hub-card-grid { grid-template-columns: 1fr !important; }
   /* Alternating text row */
   .alt-row-text { padding: 16px 0 !important; }
 }
@@ -400,7 +396,12 @@ a { color: inherit; text-decoration: none; }
   outline: none;
   transition: border-color var(--e-basic);
 }
-.input-field:focus { border-color: var(--c-rouge-fg); }
+.input-field:focus {
+  border-color: var(--c-rouge-fg);
+  /* Un simple changement de couleur de bordure 1px est un indicateur de focus
+     trop faible pour la basse vision (WCAG 2.4.11) : on ajoute un halo visible. */
+  box-shadow: 0 0 0 3px rgba(0, 61, 222, 0.25);
+}
 
 /* Pages légales (mentions légales, confidentialité) — texte courant, pas les
    titres géants du reste du site. */

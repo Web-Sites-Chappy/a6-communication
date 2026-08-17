@@ -46,7 +46,7 @@ export default function RealisationsPage() {
               fontFamily: "var(--font-body)",
               fontSize: "1rem",
               lineHeight: "1.7em",
-              color: "rgba(27,46,60,0.75)",
+              color: "rgba(var(--c-navy-rgb),0.75)",
               maxWidth: "560px",
               margin: "0 auto",
             }}

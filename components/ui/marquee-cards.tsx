@@ -54,11 +54,11 @@ export function MarqueeCards({
       onBlur={resume}
     >
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#D2E6DC] to-transparent sm:w-20 lg:w-28"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[var(--c-fond)] to-transparent sm:w-20 lg:w-28"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#D2E6DC] to-transparent sm:w-20 lg:w-28"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[var(--c-fond)] to-transparent sm:w-20 lg:w-28"
         aria-hidden="true"
       />
 

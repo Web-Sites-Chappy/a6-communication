@@ -352,14 +352,21 @@ export function CardStack<T extends CardStackItem>({
                 <button
                   key={it.id}
                   onClick={() => setActive(idx)}
-                  className={cn(
-                    "h-2 w-2 rounded-full transition",
-                    on
-                      ? "bg-[var(--c-btn-accent)]"
-                      : "bg-[rgba(var(--c-navy-rgb),0.3)] hover:bg-[rgba(var(--c-navy-rgb),0.55)]",
-                  )}
+                  // Cible tactile 24x24 : la pastille visible (8px) reste centrée
+                  // dedans plutôt que d'être elle-même la zone cliquable.
+                  className="group flex h-6 w-6 items-center justify-center"
                   aria-label={`Aller à ${it.title}`}
-                />
+                  aria-current={on ? "true" : undefined}
+                >
+                  <span
+                    className={cn(
+                      "h-2 w-2 rounded-full transition",
+                      on
+                        ? "bg-[var(--c-btn-accent)]"
+                        : "bg-[rgba(var(--c-navy-rgb),0.3)] group-hover:bg-[rgba(var(--c-navy-rgb),0.55)]",
+                    )}
+                  />
+                </button>
               );
             })}
           </div>

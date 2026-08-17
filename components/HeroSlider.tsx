@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 interface HeroSliderProps {
@@ -89,21 +90,23 @@ export default function HeroSlider({
               zIndex: 0,
             }}
           >
-            {/* Ken Burns zoom */}
-            <motion.img
-              src={images[current]}
-              alt=""
+            {/* Ken Burns zoom — le scale s'applique au wrapper, pas à l'image :
+                next/image + fill a besoin d'un parent positionné à taille fixe. */}
+            <motion.div
               initial={{ scale: 1.08 }}
               animate={{ scale: 1 }}
               transition={{ duration: interval / 1000 + 1.4, ease: "linear" }}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center",
-                display: "block",
-              }}
-            />
+              style={{ position: "relative", width: "100%", height: "100%" }}
+            >
+              <Image
+                src={images[current]}
+                alt=""
+                fill
+                priority={current === 0}
+                sizes="100vw"
+                style={{ objectFit: "cover", objectPosition: "center" }}
+              />
+            </motion.div>
           </motion.div>
         </AnimatePresence>
       )}
@@ -214,17 +217,36 @@ export default function HeroSlider({
               key={i}
               onClick={() => setCurrent(i)}
               aria-label={`Slide ${i + 1}`}
+              aria-current={i === current ? "true" : undefined}
               style={{
-                width: i === current ? "28px" : "8px",
-                height: "8px",
-                borderRadius: "4px",
+                position: "relative",
+                // Largeur fixe : la pastille active grandit via un scaleX interne,
+                // pas via `width` (qui forçait un recalcul de layout à chaque tick).
+                // Hauteur du bouton = 24px (cible tactile), plus haute que la
+                // pastille visible de 8px, centrée dedans via le span.
+                width: "28px",
+                height: "24px",
                 border: "none",
-                backgroundColor: i === current ? "white" : "rgba(255,255,255,0.4)",
+                background: "none",
                 cursor: "pointer",
                 padding: 0,
-                transition: "width 0.4s cubic-bezier(0.22,1,0.36,1), background-color 0.3s",
               }}
-            />
+            >
+              <span
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: 0,
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "4px",
+                  backgroundColor: i === current ? "white" : "rgba(255,255,255,0.4)",
+                  transform: `translateY(-50%) ${i === current ? "scaleX(3.5)" : "scaleX(1)"}`,
+                  transformOrigin: "left center",
+                  transition: "transform 0.4s cubic-bezier(0.22,1,0.36,1), background-color 0.3s",
+                }}
+              />
+            </button>
           ))}
         </div>
         )}

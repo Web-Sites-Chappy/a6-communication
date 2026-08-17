@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-17T00:00:00.000Z",
+  "title": "Design System: A6 Communication & Événementiel",
+  "extensions": {
+    "colorMeta": {
+      "bleu-roi": {
+        "role": "primary",
+        "displayName": "Bleu Roi",
+        "canonical": "#003DDE",
+        "tonalRamp": ["#001243", "#001F6F", "#002B9B", "#003DDE", "#3364E5", "#668BEB", "#A6BBF3", "#D9E2FA"]
+      },
+      "bleu-nuit": {
+        "role": "neutral",
+        "displayName": "Bleu Nuit",
+        "canonical": "#112250",
+        "tonalRamp": ["#050A18", "#091128", "#0C1838", "#112250", "#414E73", "#707A96", "#ACB2C2", "#DBDEE5"]
+      },
+      "vert-eau": {
+        "role": "neutral",
+        "displayName": "Vert Eau",
+        "canonical": "#D2E6DC",
+        "tonalRamp": ["#3F4542", "#69736E", "#93A19A", "#B3C3BB", "#C7DACF", "#D2E6DC", "#E4F0EA", "#F2F8F5"]
+      },
+      "orange-cta": {
+        "role": "secondary",
+        "displayName": "Orange CTA",
+        "canonical": "#FB8500",
+        "tonalRamp": ["#4B2800", "#7D4300", "#B05D00", "#FB8500", "#FC9D33", "#FDB666", "#FED4A6", "#FEEDD9"]
+      },
+      "jaune": {
+        "role": "tertiary",
+        "displayName": "Jaune",
+        "canonical": "#FFE35B",
+        "tonalRamp": ["#4C441B", "#80722E", "#B39F40", "#FFE35B", "#FFE97C", "#FFEE9D", "#FFF5C6", "#FFFBE6"]
+      },
+      "on-accent": {
+        "role": "neutral",
+        "displayName": "On-Accent (Bleu Nuit)",
+        "canonical": "#112250"
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#FFFFFF"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (hero)", "purpose": "Hero h1 only, viewport-height-derived clamp() sizing." },
+      "heading-thin": { "displayName": "Headline Thin", "purpose": "Default global h2/h3 and CTABanner titles." },
+      "accent-italic": { "displayName": "Accent Italic", "purpose": "The one italic word per composed heading, or a 6 A title." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav links, form labels, footer headers." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy." }
+    },
+    "shadows": [
+      { "name": "button-lift", "value": "0px 4px 17px 0px rgba(0,0,0,0.3)", "purpose": "Resting-state shadow on all three button variants." },
+      { "name": "nav-cta-lift", "value": "0px 4px 17px 0px rgba(0,0,0,0.4)", "purpose": "Nav Contact pill and mobile menu buttons." },
+      { "name": "scrolled-nav-shadow", "value": "0 2px 20px rgba(0,0,0,0.35)", "purpose": "Fixed header once scrolled past 40px, paired with backdrop-filter blur(8px)." }
+    ],
+    "motion": [
+      { "name": "e-basic", "value": "500ms cubic-bezier(0.035, 0.625, 0.000, 1.000)", "purpose": "Default easing for nearly all transitions (buttons, nav, links)." },
+      { "name": "e-slow", "value": "1500ms cubic-bezier(0.035, 0.625, 0.000, 1.000)", "purpose": "Slow variant of the house easing for larger, slower transitions." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "767px" },
+      { "name": "sm", "value": "480px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Orange filled CTA button with a diagonal shimmer sweep on hover.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Envoyer le message</button>",
+      "css": ".ds-btn-primary { position: relative; overflow: hidden; background-color: #FB8500; color: #112250; font-family: 'Bricolage Grotesque', sans-serif; text-transform: uppercase; font-weight: 200; font-size: 1.25rem; letter-spacing: 0.08em; border-radius: 6px; padding: 13px 28px 14px; border: none; box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.3); cursor: pointer; transition: all 500ms cubic-bezier(0.035, 0.625, 0, 1); } .ds-btn-primary::after { content: ''; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent); transform: skewX(-15deg); pointer-events: none; } .ds-btn-primary:hover { background-color: #112250; color: #fff; } .ds-btn-primary:hover::after { animation: ds-shimmer 0.55s ease forwards; } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid #003DDE; outline-offset: 2px; } @keyframes ds-shimmer { from { left: -80%; } to { left: 130%; } }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White filled button, used against the orange CTABanner backdrop.",
+      "html": "<button class=\"ds-btn ds-btn-secondary\">Découvrir</button>",
+      "css": ".ds-btn-secondary { background-color: #FFFFFF; color: #003DDE; font-family: 'Bricolage Grotesque', sans-serif; text-transform: uppercase; font-weight: 200; font-size: 1.25rem; letter-spacing: 0.08em; border-radius: 6px; padding: 13px 28px 14px; border: none; box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.3); cursor: pointer; transition: all 500ms cubic-bezier(0.035, 0.625, 0, 1); } .ds-btn-secondary:hover { background-color: #112250; color: #fff; } .ds-btn-secondary:active { transform: scale(0.97); } .ds-btn-secondary:focus-visible { outline: 2px solid #003DDE; outline-offset: 2px; }"
+    },
+    {
+      "name": "Tertiary Button",
+      "kind": "button",
+      "refersTo": "button-tertiary",
+      "description": "Navy filled button that fully inverts to white/blue on hover.",
+      "html": "<button class=\"ds-btn ds-btn-tertiary\">Contactez-nous</button>",
+      "css": ".ds-btn-tertiary { background-color: #112250; color: #FFFFFF; font-family: 'Bricolage Grotesque', sans-serif; text-transform: uppercase; font-weight: 200; font-size: 1.35rem; letter-spacing: 0.08em; border-radius: 6px; padding: 14px 32px 15px; border: none; box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.3); cursor: pointer; transition: all 500ms cubic-bezier(0.035, 0.625, 0, 1); } .ds-btn-tertiary:hover { background-color: #FFFFFF; color: #003DDE; } .ds-btn-tertiary:active { transform: scale(0.97); } .ds-btn-tertiary:focus-visible { outline: 2px solid #FB8500; outline-offset: 2px; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form text input — white fill, thin navy-tinted border, blue focus border.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Manuel Dupont\" />",
+      "css": ".ds-input { width: 100%; padding: 12px 14px; border: 1px solid rgba(17,34,80,0.2); border-radius: 4px; font-family: 'Work Sans', sans-serif; font-size: 0.9rem; color: #112250; background-color: #FFFFFF; outline: none; transition: border-color 500ms cubic-bezier(0.035, 0.625, 0, 1); } .ds-input:focus { border-color: #003DDE; } .ds-input::placeholder { color: rgba(17,34,80,0.4); }"
+    },
+    {
+      "name": "Feature Hover Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Bordered grid cell (services grid) that reveals a gradient wash and nudges its icon/title on hover.",
+      "html": "<a class=\"ds-feature-card\" href=\"#\"><span class=\"ds-feature-icon\">&#9679;</span><span class=\"ds-feature-title\">Stratégie digitale</span><p class=\"ds-feature-desc\">Accompagnement digital sur-mesure pour votre visibilité.</p></a>",
+      "css": ".ds-feature-card { display: block; position: relative; padding: 40px 40px 30px; border-right: 1px solid #e5e5e5; text-decoration: none; color: inherit; transition: background 0.2s; } .ds-feature-card:hover { background: linear-gradient(to top, #f2f2f2, transparent); } .ds-feature-icon { display: block; margin-bottom: 16px; color: #666; font-size: 1.4rem; transition: color 0.2s; } .ds-feature-card:hover .ds-feature-icon { color: #003DDE; } .ds-feature-title { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; transition: transform 0.2s; } .ds-feature-card:hover .ds-feature-title { transform: translateX(8px); } .ds-feature-desc { font-family: 'Work Sans', sans-serif; font-size: 0.9rem; color: #555; max-width: 22em; }"
+    },
+    {
+      "name": "6 A Grid Item",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature numbered method item — navy top border, tracked number label, DM Serif italic title, body description.",
+      "html": "<div class=\"ds-sixa-item\"><div class=\"ds-sixa-head\"><span class=\"ds-sixa-num\">01</span><h3 class=\"ds-sixa-title\">Alchimie</h3></div><p class=\"ds-sixa-desc\">Les regards ont un langage que les mots ne peuvent pas capturer.</p></div>",
+      "css": ".ds-sixa-item { border-top: 2px solid #003DDE; padding-top: 20px; max-width: 420px; } .ds-sixa-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 10px; } .ds-sixa-num { font-family: 'Bricolage Grotesque', sans-serif; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.3em; color: rgba(17,34,80,0.7); } .ds-sixa-title { font-family: 'DM Serif Display', serif; font-style: italic; font-weight: 400; font-size: 2.2rem; line-height: 0.9em; color: #003DDE; margin: 0; } .ds-sixa-desc { font-family: 'Work Sans', sans-serif; font-size: 0.92rem; line-height: 1.7em; color: rgba(17,34,80,0.75); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Bleu Roi Éditorial",
+    "overview": "The site reads like a French institutional magazine, not a SaaS landing page: flat, saturated color fields (Bleu Roi, Vert Eau, Bleu Nuit) carry full-bleed reportage photography of real sites and real people, and every section title is set in a cold, thin, all-caps grotesque that is deliberately warmed by exactly one italic serif word per heading. That single italic word is the whole personality budget of the type system — it is never spent twice in the same title, and it is never used for body copy.\n\nThe palette itself is a doctrine, not a preference: Bleu Roi (#003DDE) and Vert Eau (#D2E6DC) were chosen and their contrast ratios engineered on purpose (documented inline in globals.css — accent 5.9:1 on ground, navy-on-orange 6.2:1 chosen deliberately over white's 2.5:1). Orange (#FB8500) is reserved for the single call-to-action gesture per view, and yellow (#FFE35B) appears only as a small warm counterpoint, never a field color. Nothing in the system is flat-and-shadowless: buttons, the fixed nav bar, and cards all carry a soft ambient drop-shadow that lifts them off the flat color ground.",
+    "keyCharacteristics": [
+      "Flat, saturated color fields (never gradients as backgrounds — gradients exist only as photo-legibility overlays)",
+      "Full-bleed photography with a bottom-heavy Bleu Nuit gradient overlay for text legibility",
+      "Bricolage Grotesque thin/bold + DM Serif Display italic pairing, uppercase by default",
+      "One italic accent word per heading — the system's only ornament",
+      "Soft ambient drop-shadows on all interactive surfaces (buttons, nav, cards) — the system's only depth cue",
+      "The 6 A grid and the two named associates are recurring, non-negotiable structural motifs, not decoration"
+    ],
+    "rules": [
+      { "name": "The Engineered Contrast Rule", "body": "Every text-on-color pairing in this system was chosen for a specific measured ratio, not for taste. Any new pairing must be checked against WCAG AA before shipping and commented inline.", "section": "colors" },
+      { "name": "The Single Accent Rule", "body": "Orange appears at most once per view as a filled surface. A second action uses .btn-blanc or .btn-bleu, never a second orange fill.", "section": "colors" },
+      { "name": "The One Italic Word Rule", "body": "DM Serif Display italic is reserved for exactly the accent portion of a composed heading or a 6 A title. Never upright, never in body copy, never twice in one heading.", "section": "typography" },
+      { "name": "The Reserved Header Rule", "body": "Any full-height or fixed-position content must account for --header-h and --cookie-banner-h in its own padding.", "section": "layout" },
+      { "name": "The Ambient-Not-Structural Rule", "body": "Shadows communicate 'this is a clickable/floating object,' not hierarchy or state depth. Present at rest, not only on hover.", "section": "elevation" },
+      { "name": "The Two-Radius Rule", "body": "Hand-styled components (buttons, inputs, badges) use the 4-6px scale; Tailwind-authored components use Tailwind's own radius scale. Don't mix them.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do use AccentHeading for section titles instead of a raw h2/h3 — the bold-lead + italic-accent pairing is the house rule, not a one-off choice.",
+      "Do wrap new sections in Reveal for the scroll-in entrance, and trust its built-in prefers-reduced-motion fallback rather than adding a second one.",
+      "Do keep a soft ambient drop-shadow (0px 4px 17px 0px rgba(0,0,0,0.3-0.4)) on any new clickable button-like surface — flat/shadowless buttons break the system's one depth cue.",
+      "Do check and comment the contrast ratio inline (as globals.css already does) whenever pairing a new text color against a background.",
+      "Do keep photography full-color and full-bleed with a Bleu Nuit gradient overlay for legibility, never a flat color block standing in for a missing photo."
+    ],
+    "donts": [
+      "Don't use DM Serif Display italic outside a heading's accent word or a 6 A title — never for body copy, never twice in one heading.",
+      "Don't introduce a fourth button variant or a new fill color for actions; the orange/white/navy trio already covers primary/secondary/tertiary.",
+      "Don't grayscale or desaturate partner/client logos — their brand color is the intended signal, not noise to normalize away.",
+      "Don't invent case-study numbers, client names, or testimonials to fill /realisations or /blog — every entry there today is confirmed placeholder.",
+      "Don't mix Tailwind's radius scale onto a hand-styled component or vice versa — see The Two-Radius Rule."
+    ]
+  }
+}
