@@ -68,7 +68,7 @@ export default function BlogPage() {
           maxWidth: "1100px",
           margin: "50px auto 80px",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fill, minmax(min(300px, 100%), 1fr))",
           gap: "40px",
         }}
       >

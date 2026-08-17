@@ -28,8 +28,11 @@ function useViewportWidth() {
 export default function SectionsCardStack() {
   const vw = useViewportWidth();
 
-  // Responsive card sizing (defaults tuned for desktop editorial look).
-  const isMobile = vw !== null && vw < 640;
+  // Responsive card sizing. Le défaut avant mesure (vw === null, pendant le
+  // rendu serveur et le premier paint client) doit être la taille mobile :
+  // partir du desktop (500px) provoquait un flash de carte surdimensionnée
+  // sur mobile avant que l'effet de resize ne corrige la taille.
+  const isMobile = vw === null || vw < 640;
   const isTablet = vw !== null && vw >= 640 && vw < 1024;
 
   const cardWidth = isMobile ? Math.min((vw ?? 360) - 48, 340) : isTablet ? 420 : 500;
