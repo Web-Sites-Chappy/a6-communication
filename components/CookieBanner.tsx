@@ -57,8 +57,11 @@ export default function CookieBanner() {
   }, [visible, customizing]);
 
   useEffect(() => {
+    // localStorage n'existe pas cote serveur : la lecture et le setState
+    // initial doivent rester dans l'effet.
     const consent = getCookieConsent();
     if (!consent) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisible(true);
     } else {
       setAnalytics(consent.analytics);

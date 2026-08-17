@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 type SubmitStatus = "idle" | "sending" | "sent" | "error";
@@ -39,15 +39,10 @@ const serviceOptions = [
 
 function ContactFormInner() {
   const [status, setStatus] = useState<SubmitStatus>("idle");
-  const [selectedService, setSelectedService] = useState<string>("");
   const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const serviceParam = searchParams.get("service");
-    if (serviceParam) {
-      setSelectedService(serviceParam);
-    }
-  }, [searchParams]);
+  const [selectedService, setSelectedService] = useState<string>(
+    () => searchParams.get("service") ?? "",
+  );
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();

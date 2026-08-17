@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, type PanInfo } from "framer-motion";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -126,10 +126,12 @@ export function CardStack<T extends CardStackItem>({
   );
   const [hovering, setHovering] = React.useState(false);
 
-  // keep active in bounds if items change
-  React.useEffect(() => {
+  // keep active in bounds if items change (ajuste pendant le render, pas un effet)
+  const [prevLen, setPrevLen] = React.useState(len);
+  if (len !== prevLen) {
+    setPrevLen(len);
     setActive((a) => wrapIndex(a, len));
-  }, [len]);
+  }
 
   React.useEffect(() => {
     if (!len) return;
@@ -257,8 +259,8 @@ export function CardStack<T extends CardStackItem>({
                     dragConstraints: { left: 0, right: 0 },
                     dragElastic: 0.18,
                     onDragEnd: (
-                      _e: any,
-                      info: { offset: { x: number }; velocity: { x: number } },
+                      _e: MouseEvent | TouchEvent | PointerEvent,
+                      info: PanInfo,
                     ) => {
                       if (reduceMotion) return;
                       const travel = info.offset.x;
