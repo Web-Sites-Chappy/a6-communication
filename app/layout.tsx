@@ -49,6 +49,27 @@ export const metadata: Metadata = {
     "Agence de Communication et événementiel dirigée par Manuel et Eric. Alchimie, Audace, Acceptation, Agilité, Authenticité, Assurance.",
 };
 
+// Donnees issues de /mentions-legales. Le telephone et les URLs LinkedIn des 2
+// dirigeants manquent encore (a demander au client, voir
+// Auditorias/FULL-AUDIT-REPORT.md critique #5) : on ne les invente pas, ils
+// sont omis du schema plutot que d'y mettre une valeur fausse.
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "A6 Communication et Événementiel",
+  legalName: "A6 Communication et Événementiel",
+  url: SITE_URL,
+  image: `${SITE_URL}/logo-a6.svg`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "73 Allée Kléber",
+    addressLocality: "Montpellier",
+    postalCode: "34000",
+    addressCountry: "FR",
+  },
+  areaServed: "Occitanie, France",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -57,6 +78,10 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${fontVariables} antialiased`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <Nav />
         {children}
         <Reveal direction="up" distance={30} threshold={0.05}>
