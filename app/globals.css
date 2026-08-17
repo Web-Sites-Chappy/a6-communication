@@ -390,7 +390,8 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(var(--c-navy-rgb),0.2);
   border-radius: 4px;
   font-family: var(--font-body), sans-serif;
-  font-size: 0.9rem;
+  /* 16px minimum : sous ce seuil, Safari iOS zoome la page au focus d'un champ. */
+  font-size: 1rem;
   color: var(--c-navy);
   background-color: white;
   outline: none;
