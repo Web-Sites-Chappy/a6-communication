@@ -67,9 +67,8 @@ export const metadata: Metadata = {
   },
 };
 
-// Donnees issues de /mentions-legales. Les URLs LinkedIn des 2 dirigeants
-// manquent encore (a demander au client) : on ne les invente pas, elles sont
-// omises du schema plutot que d'y mettre une valeur fausse.
+// Donnees issues de /mentions-legales et des profils LinkedIn communiques par
+// le client (Manuel Dalla Zanna, Eric Gibaja).
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -78,6 +77,10 @@ const localBusinessJsonLd = {
   url: SITE_URL,
   image: `${SITE_URL}/logo-a6.svg`,
   telephone: "+33610188747",
+  sameAs: [
+    "https://www.linkedin.com/in/manuel-dalla-zanna-70b027258/",
+    "https://www.linkedin.com/in/eric-gibaja-13351727b/",
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "73 Allée Kléber",

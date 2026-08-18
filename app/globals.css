@@ -187,6 +187,15 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-link:not(.nav-link-active):hover::after { transform: scaleX(1); }
 
+/* ─── LinkedIn link (équipe /qui-sommes-nous) ───────────────────── */
+.linkedin-link {
+  opacity: 0.7;
+  transition: opacity var(--e-basic);
+}
+.linkedin-link:hover {
+  opacity: 1;
+}
+
 /* ─── Footer link hover ──────────────────────────────────────── */
 .footer-link {
   position: relative;
