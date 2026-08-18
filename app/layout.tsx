@@ -42,17 +42,34 @@ const fontVariables = [
   workSans.variable,
 ].join(" ");
 
+const title = "A6 Communication & Événementiel";
+const description =
+  "Agence de Communication et événementiel dirigée par Manuel et Eric. Alchimie, Audace, Acceptation, Agilité, Authenticité, Assurance.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "A6 Communication & Événementiel",
-  description:
-    "Agence de Communication et événementiel dirigée par Manuel et Eric. Alchimie, Audace, Acceptation, Agilité, Authenticité, Assurance.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: SITE_URL,
+    siteName: title,
+    locale: "fr_FR",
+    type: "website",
+    images: [{ url: "/photos/DSC_0836.jpg", width: 1024, height: 681, alt: "A6 Communication et Événementiel" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/photos/DSC_0836.jpg"],
+  },
 };
 
-// Donnees issues de /mentions-legales. Le telephone et les URLs LinkedIn des 2
-// dirigeants manquent encore (a demander au client, voir
-// Auditorias/FULL-AUDIT-REPORT.md critique #5) : on ne les invente pas, ils
-// sont omis du schema plutot que d'y mettre une valeur fausse.
+// Donnees issues de /mentions-legales. Les URLs LinkedIn des 2 dirigeants
+// manquent encore (a demander au client) : on ne les invente pas, elles sont
+// omises du schema plutot que d'y mettre une valeur fausse.
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -60,6 +77,7 @@ const localBusinessJsonLd = {
   legalName: "A6 Communication et Événementiel",
   url: SITE_URL,
   image: `${SITE_URL}/logo-a6.svg`,
+  telephone: "+33610188747",
   address: {
     "@type": "PostalAddress",
     streetAddress: "73 Allée Kléber",
