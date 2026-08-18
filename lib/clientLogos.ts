@@ -75,4 +75,20 @@ export const clientLogos: ClientLogo[] = [
     height: 320,
     displayEm: 0.5,
   },
+  {
+    id: "educasium",
+    name: "Educasium — Formations IA",
+    src: "/logos/educasium.webp",
+    width: 1246,
+    height: 320,
+    displayEm: 0.46,
+  },
+  {
+    id: "chappygo",
+    name: "Chappygo — Agence IA",
+    src: "/logos/chappygo.webp",
+    width: 1337,
+    height: 320,
+    displayEm: 0.44,
+  },
 ];
