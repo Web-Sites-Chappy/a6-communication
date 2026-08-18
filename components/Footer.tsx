@@ -46,7 +46,7 @@ export default function Footer() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo-a6.svg"
-              alt="A6"
+              alt="Logo A6 Communication et Événementiel"
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />
           </div>
@@ -117,10 +117,17 @@ export default function Footer() {
         <p style={{ fontSize: "0.85rem", opacity: 0.7, fontFamily: "var(--font-body)", lineHeight: "1.7em" }}>
           Région Occitanie, France
           <br />
+          <a href="tel:+33610188747" style={{ color: "rgba(255,255,255,0.7)" }}>
+            06 10 18 87 47
+          </a>
+          <br />
           <a href="mailto:contact@a6communication.fr" style={{ color: "rgba(255,255,255,0.7)" }}>
             contact@a6communication.fr
           </a>
         </p>
+        <Link href="/contact" className="btn-rouge" style={{ display: "inline-block", marginTop: "16px", fontSize: "0.85rem" }}>
+          Nous contacter
+        </Link>
       </div>
 
       {/* Mention */}

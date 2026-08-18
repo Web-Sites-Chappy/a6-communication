@@ -92,7 +92,7 @@ export default function Nav() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo-a6.svg"
-              alt="A6"
+              alt="Logo A6 Communication et Événementiel"
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />
           </div>
@@ -249,28 +249,48 @@ export default function Nav() {
           </li>
         </ul>
 
-        {/* Mobile button */}
-        <button
-          className="lg:hidden text-white"
-          onClick={() => setMobileOpen(true)}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-menu"
-          style={{
-            backgroundColor: "var(--c-navy)",
-            borderRadius: "4px",
-            border: "none",
-            padding: "9px 20px 10px",
-            fontFamily: "var(--font-display)",
-            fontSize: "1.1rem",
-            fontWeight: 200,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            boxShadow: "0px 4px 17px 0px rgba(0,0,0,0.4)",
-            cursor: "pointer",
-          }}
-        >
-          Menu
-        </button>
+        {/* Mobile actions — Contact reste visible sans ouvrir le menu, comme sur desktop */}
+        <div className="lg:hidden flex items-center" style={{ gap: "10px" }}>
+          <Link
+            href="/contact"
+            style={{
+              backgroundColor: "var(--c-btn-accent)",
+              color: "var(--c-on-accent)",
+              borderRadius: "4px",
+              padding: "9px 16px 10px",
+              fontFamily: "var(--font-display)",
+              fontSize: "1rem",
+              fontWeight: 200,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              boxShadow: "0px 4px 17px 0px rgba(0,0,0,0.4)",
+              display: "inline-block",
+            }}
+          >
+            Contact
+          </Link>
+          <button
+            className="text-white"
+            onClick={() => setMobileOpen(true)}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+            style={{
+              backgroundColor: "var(--c-navy)",
+              borderRadius: "4px",
+              border: "none",
+              padding: "9px 20px 10px",
+              fontFamily: "var(--font-display)",
+              fontSize: "1.1rem",
+              fontWeight: 200,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              boxShadow: "0px 4px 17px 0px rgba(0,0,0,0.4)",
+              cursor: "pointer",
+            }}
+          >
+            Menu
+          </button>
+        </div>
       </header>
 
       {/* Mobile menu panel */}

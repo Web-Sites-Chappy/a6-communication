@@ -142,7 +142,7 @@ function ContactFormInner() {
 
       {status === "sent" && (
         <p role="status" aria-live="polite" style={{ marginTop: "16px", textAlign: "center", color: "var(--c-navy)", fontFamily: "var(--font-body)" }}>
-          Merci, votre message a bien été envoyé. Nous vous répondrons rapidement.
+          Merci, votre message a bien été envoyé. Nous vous répondrons sous 48h ouvrées.
         </p>
       )}
       {status === "error" && (

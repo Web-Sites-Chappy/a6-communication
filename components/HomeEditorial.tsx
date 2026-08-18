@@ -30,8 +30,8 @@ export default function HomeEditorial() {
           </>
         }
         subtitle="Agence de Communication et d'Événementiel au service des professionnels de l’Acte et Art de Bâtir, Institutions, Collectivités, Mairies, monde de la Culture et Associatif qui font vivre nos Territoires, notre Patrimoine."
-        ctaLabel="Nos réalisations"
-        ctaHref="/realisations"
+        ctaLabel="Discuter de votre projet"
+        ctaHref="/contact"
         interval={5000}
       />
 

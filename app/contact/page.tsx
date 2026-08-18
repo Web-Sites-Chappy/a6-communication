@@ -10,9 +10,10 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/contact` },
 };
 
-const info = [
+const info: { label: string; value: string; href?: string }[] = [
   { label: "Région",           value: "Occitanie, France" },
-  { label: "Email",            value: "contact@a6communication.fr" },
+  { label: "Téléphone",        value: "06 10 18 87 47", href: "tel:+33610188747" },
+  { label: "Email",            value: "contact@a6communication.fr", href: "mailto:contact@a6communication.fr" },
 ];
 
 export default function ContactPage() {
@@ -66,7 +67,13 @@ export default function ContactPage() {
                   {item.label}
                 </p>
                 <p style={{ fontSize: "0.85rem", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
-                  {item.value}
+                  {item.href ? (
+                    <a href={item.href} style={{ color: "inherit" }}>
+                      {item.value}
+                    </a>
+                  ) : (
+                    item.value
+                  )}
                 </p>
               </div>
             ))}
