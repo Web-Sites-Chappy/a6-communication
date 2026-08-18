@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
+import LogosMarquee from "@/components/LogosMarquee";
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/siteConfig";
 
@@ -15,7 +16,7 @@ const targets = [
   { title: "Professionnels de l'Acte et Art de Bâtir", img: "/photos/DSC_0836.webp", desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles : A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle." },
   { title: "Institution", img: "/photos/DSC_1019.webp", desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées." },
   { title: "Mairies et collectivités", img: "/photos/DSC_0855.webp", desc: "Particulièrement les communes de moins de 1 000 habitants, les intercommunalités et collectivités qui ont besoin d'une communication de proximité, efficace et abordable." },
-  { title: "Monde culturel et associatif", img: "/photos/services-test/associatif-1.webp", desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes." },
+  { title: "Monde culturel et associatif", img: "/photos/services/associatif-1.webp", desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes." },
 ];
 
 export default function NosClientsPage() {
@@ -38,6 +39,8 @@ export default function NosClientsPage() {
         ctaLabel="Nos services"
         ctaHref="/nos-services"
       />
+
+      <LogosMarquee />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
         <AccentHeading lead="Nos" accent="clients" />

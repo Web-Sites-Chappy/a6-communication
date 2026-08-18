@@ -53,7 +53,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     cta: { sentence: "nous construisions…", buttonLabel: "votre stratégie" },
-    carouselImage: "/photos/services-test/strategie-digitale-1.webp"
+    carouselImage: "/photos/services/strategie-digitale-1.webp"
   },
   {
     slug: "identite-visuelle",
@@ -83,7 +83,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     cta: { sentence: "nous façonnions…", buttonLabel: "votre image" },
-    carouselImage: "/photos/services-test/identite-visuelle-1.webp"
+    carouselImage: "/photos/services/identite-visuelle-1.webp"
   },
   {
     slug: "production-de-contenus",
@@ -113,7 +113,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     cta: { sentence: "nous racontions…", buttonLabel: "votre histoire" },
-    carouselImage: "/photos/services-test/production-de-contenus-1.webp"
+    carouselImage: "/photos/services/production-de-contenus-1.webp"
   },
   {
     slug: "impressions-signaletique",
@@ -143,7 +143,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     cta: { sentence: "nous revêtions…", buttonLabel: "vos supports" },
-    carouselImage: "/photos/services-test/impressions-signaletique-1.webp"
+    carouselImage: "/photos/services/impressions-signaletique-1.webp"
   },
   {
     slug: "conception-et-scenographie",
@@ -173,7 +173,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     cta: { sentence: "nous concevions…", buttonLabel: "votre événement" },
-    carouselImage: "/photos/services-test/conception-et-scenographie-1.webp"
+    carouselImage: "/photos/services/conception-et-scenographie-1.webp"
   },
   {
     slug: "logistique",
@@ -203,7 +203,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     cta: { sentence: "nous orchestrions…", buttonLabel: "votre événement" },
-    carouselImage: "/photos/services-test/logistique-1.webp"
+    carouselImage: "/photos/services/logistique-1.webp"
   },
   {
     slug: "animation",
@@ -233,7 +233,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     cta: { sentence: "nous animions…", buttonLabel: "vos rendez-vous" },
-    carouselImage: "/photos/services-test/animation-1.webp"
+    carouselImage: "/photos/services/animation-1.webp"
   },
   {
     slug: "relations-presse",
@@ -263,7 +263,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     cta: { sentence: "nous donnions de l’écho à…", buttonLabel: "votre voix" },
-    carouselImage: "/photos/services-test/relations-presse-1.webp"
+    carouselImage: "/photos/services/relations-presse-1.webp"
   }
 ];
 
