@@ -81,8 +81,9 @@ function ContactFormInner() {
         { label: "Organisation", type: "text", name: "org", placeholder: "Mairie de Saint-Drézéry" },
       ].map((field) => (
         <div key={field.name} style={{ marginBottom: "20px" }}>
-          <label style={labelStyle}>{field.label}</label>
+          <label style={labelStyle} htmlFor={field.name}>{field.label}</label>
           <input
+            id={field.name}
             type={field.type}
             name={field.name}
             placeholder={field.placeholder}
@@ -93,8 +94,9 @@ function ContactFormInner() {
       ))}
 
       <div style={{ marginBottom: "20px" }}>
-        <label style={labelStyle}>Service concerné</label>
+        <label style={labelStyle} htmlFor="service">Service concerné</label>
         <select
+          id="service"
           name="service"
           className="input-field"
           value={selectedService}
@@ -117,8 +119,9 @@ function ContactFormInner() {
       </div>
 
       <div style={{ marginBottom: "28px" }}>
-        <label style={labelStyle}>Votre message</label>
+        <label style={labelStyle} htmlFor="message">Votre message</label>
         <textarea
+          id="message"
           name="message"
           rows={6}
           placeholder="Décrivez votre projet..."
@@ -138,12 +141,12 @@ function ContactFormInner() {
       </button>
 
       {status === "sent" && (
-        <p style={{ marginTop: "16px", textAlign: "center", color: "var(--c-navy)", fontFamily: "var(--font-body)" }}>
+        <p role="status" aria-live="polite" style={{ marginTop: "16px", textAlign: "center", color: "var(--c-navy)", fontFamily: "var(--font-body)" }}>
           Merci, votre message a bien été envoyé. Nous vous répondrons rapidement.
         </p>
       )}
       {status === "error" && (
-        <p style={{ marginTop: "16px", textAlign: "center", color: "var(--c-rouge-fg)", fontFamily: "var(--font-body)" }}>
+        <p role="alert" style={{ marginTop: "16px", textAlign: "center", color: "var(--c-rouge-fg)", fontFamily: "var(--font-body)" }}>
           Une erreur est survenue. Merci de réessayer ou de nous écrire directement à contact@a6communication.fr.
         </p>
       )}
