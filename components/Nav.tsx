@@ -89,6 +89,7 @@ export default function Nav() {
               transition: "all var(--e-basic)",
             }}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo-a6.svg"
               alt="A6"
@@ -278,19 +279,20 @@ export default function Nav() {
         className="fixed z-[999] overflow-y-auto"
         aria-hidden={!mobileOpen}
         // Sans inert, ce panneau reste dans l'ordre de tabulation même hors écran
-        // (left: -100vw ne retire rien de l'arbre d'accessibilité) : un clavier
+        // (translateX(-100%) ne retire rien de l'arbre d'accessibilité) : un clavier
         // continuerait à tomber sur ses liens invisibles, y compris sur desktop.
         inert={!mobileOpen}
         style={{
           width: "90vw",
           height: "100vh",
           top: 0,
-          left: mobileOpen ? 0 : "-100vw",
+          left: 0,
+          transform: mobileOpen ? "translateX(0)" : "translateX(-100%)",
           backgroundColor: "var(--c-navy)",
           color: "white",
           textAlign: "center",
           padding: "90px 5vw",
-          transition: "left 0.4s cubic-bezier(0.035, 0.625, 0.000, 1.000)",
+          transition: "transform 0.4s cubic-bezier(0.035, 0.625, 0.000, 1.000)",
         }}
       >
         <button
