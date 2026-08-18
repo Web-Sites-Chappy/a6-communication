@@ -43,6 +43,7 @@ export default function Footer() {
               marginBottom: "12px",
             }}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo-a6.svg"
               alt="A6"

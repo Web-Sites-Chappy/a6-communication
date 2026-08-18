@@ -21,7 +21,9 @@ const outlineBtnStyle: React.CSSProperties = {
   // ligne dès 320px de large, au lieu de retomber sur une 2e ligne (le
   // wrap ajoutait ~50px à la hauteur du bandeau, 270px mesurés en audit).
   fontSize: "clamp(0.72rem, 2.4vw, 0.85rem)",
-  padding: "clamp(7px, 2vw, 10px) clamp(10px, 3vw, 18px)",
+  // Padding vertical remonté vers ~44px de cible tactile (AA reste a 24px) sans
+  // reprendre la largeur qui forçait le wrap a 320px — seul le vertical bouge.
+  padding: "clamp(12px, 3vw, 14px) clamp(10px, 3vw, 18px)",
   cursor: "pointer",
   transition: "border-color 0.2s",
   flex: "1 1 auto",
