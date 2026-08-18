@@ -25,8 +25,8 @@ export default function HomeEditorial() {
         title={
           <>
             L&apos;ALCHIMIE,<br />ENTRE L&apos;
-            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "uppercase", color: "#D2E6DC" }}>IMAGE</span>
-            <br />ET SON <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "uppercase", color: "#D2E6DC" }}>HISTOIRE</span>
+            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "uppercase", color: "var(--c-fond)" }}>IMAGE</span>
+            <br />ET SON <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "uppercase", color: "var(--c-fond)" }}>HISTOIRE</span>
           </>
         }
         subtitle="Agence de Communication et d'Événementiel au service des professionnels de l’Acte et Art de Bâtir, Institutions, Collectivités, Mairies, monde de la Culture et Associatif qui font vivre nos Territoires, notre Patrimoine."

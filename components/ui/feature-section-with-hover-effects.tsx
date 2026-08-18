@@ -106,11 +106,11 @@ const Feature = ({
       {index >= 4 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-neutral-600 group-hover/feature:text-[var(--c-rouge,#003DDE)] transition-colors duration-200">
+      <div className="mb-4 relative z-10 px-10 text-neutral-600 group-hover/feature:text-[var(--c-rouge)] transition-colors duration-200">
         {icon}
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 group-hover/feature:bg-[var(--c-rouge,#003DDE)] transition-all duration-200 origin-center" />
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 group-hover/feature:bg-[var(--c-rouge)] transition-all duration-200 origin-center" />
         <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800">
           {title}
         </span>
@@ -119,7 +119,7 @@ const Feature = ({
         {description}
       </p>
       {href && (
-        <span className="mt-4 px-10 relative z-10 text-xs font-semibold text-[var(--c-rouge,#003DDE)] inline-flex items-center gap-1 group-hover/feature:translate-x-1 transition-transform duration-200">
+        <span className="mt-4 px-10 relative z-10 text-xs font-semibold text-[var(--c-rouge)] inline-flex items-center gap-1 group-hover/feature:translate-x-1 transition-transform duration-200">
           En savoir plus &rarr;
         </span>
       )}

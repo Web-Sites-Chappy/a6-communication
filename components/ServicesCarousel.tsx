@@ -2,7 +2,7 @@ import { MarqueeCards } from "@/components/ui/marquee-cards";
 import type { MarqueeCardData } from "@/components/ui/marquee-card";
 import { servicesData } from "@/lib/servicesData";
 
-const ACCENT_CYCLE = ["#003DDE", "#FFE35B", "#FB8500", "#D2E6DC"];
+const ACCENT_CYCLE = ["var(--c-rouge)", "var(--c-accent2)", "var(--c-btn-accent)", "var(--c-fond)"];
 
 const services: MarqueeCardData[] = servicesData.map((service, i) => ({
   id: service.slug,

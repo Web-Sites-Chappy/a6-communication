@@ -26,7 +26,7 @@ export function MarqueeCard({ item, className }: MarqueeCardProps) {
           "h-[280px] w-[180px] sm:h-[310px] sm:w-[210px] lg:h-[330px] lg:w-[230px]",
           "shadow-sm transition-all duration-[350ms] ease-out will-change-transform",
           "hover:scale-[0.92] hover:shadow-2xl",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003DDE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#D2E6DC]",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-rouge)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--c-fond)]",
         )}
       >
         <Image
@@ -40,14 +40,14 @@ export function MarqueeCard({ item, className }: MarqueeCardProps) {
 
         <span
           className="absolute inset-x-0 top-0 h-1 opacity-90"
-          style={{ backgroundColor: item.accentColor ?? "#003DDE" }}
+          style={{ backgroundColor: item.accentColor ?? "var(--c-rouge)" }}
           aria-hidden="true"
         />
 
         <div
           className={cn(
             "absolute inset-0 flex flex-col items-start justify-end gap-1 p-5",
-            "bg-[#112250]/75 opacity-0 backdrop-blur-md",
+            "bg-[var(--c-navy)]/75 opacity-0 backdrop-blur-md",
             "transition-opacity duration-[350ms] ease-out",
             "group-hover:opacity-100 group-focus-visible:opacity-100",
           )}

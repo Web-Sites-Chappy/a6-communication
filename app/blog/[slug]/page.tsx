@@ -180,7 +180,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
               textAlign: "left",
               fontSize: "clamp(2rem, 4.6vw, 3.2rem)",
               lineHeight: "1.05em",
-              color: "#ffffff",
+              color: "white",
             }}
           >
             {post.title}
