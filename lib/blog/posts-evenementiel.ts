@@ -22,9 +22,9 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-08-06",
     dateLabel: "Août 2026",
     readingMinutes: 10,
-    img: "/photos/DSC_0802.webp",
+    img: "/photos/blog/choisir-agence-evenementielle-montpellier-1.webp",
     imgAlt:
-      "Régie et coordination d’un événement professionnel organisé à Montpellier par l’agence A6",
+      "Deux professionnels relisant un document dans une salle de réception, illustration du choix d’une agence événementielle",
     excerpt:
       "Le marché événementiel montpelliérain est dense et peu lisible : beaucoup d’agences généralistes annoncent la même chose. Voici les sept critères qui séparent une agence capable de tenir un jour J d’un prestataire qui vend une intention.",
     body: [
@@ -241,9 +241,9 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-07-28",
     dateLabel: "Juillet 2026",
     readingMinutes: 10,
-    img: "/photos/DSC_0836.webp",
+    img: "/photos/blog/budget-evenement-corporate-1.webp",
     imgAlt:
-      "Mise en place technique et mobilier d’un événement corporate produit par A6 en Occitanie",
+      "Calcul d’un budget avec calculatrice, billets et tickets de caisse, illustration du budget d’un événement corporate",
     excerpt:
       "Personne ne peut chiffrer votre événement sans en connaître le format. En revanche, on peut expliquer précisément ce qui fait monter ou descendre un devis, et quels arbitrages font gagner du budget sans dégrader l’expérience.",
     body: [
@@ -460,9 +460,9 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-07-15",
     dateLabel: "Juillet 2026",
     readingMinutes: 9,
-    img: "/photos/DSC_0855.webp",
+    img: "/photos/blog/organiser-congres-federation-1.webp",
     imgAlt:
-      "Plénière d’un congrès professionnel organisé en Occitanie avec scénographie et régie A6",
+      "Rangées de sièges d’un auditorium vide, illustration de l’organisation d’un congrès",
     excerpt:
       "Un congrès d’ordre ou de fédération n’est pas un séminaire d’entreprise avec plus de monde : la gouvernance, la parole et la légitimité y fonctionnent autrement. Voici le déroulé que nous appliquons, dans l’ordre.",
     body: [
@@ -674,9 +674,9 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-06-24",
     dateLabel: "Juin 2026",
     readingMinutes: 10,
-    img: "/photos/DSC_1019.webp",
+    img: "/photos/blog/agence-evenementielle-toulouse-1.webp",
     imgAlt:
-      "Préparation d’un événement professionnel à Toulouse coordonné par l’agence A6",
+      "Jeux de lumières sur une scène événementielle",
     excerpt:
       "Montpellier et Toulouse sont dans la même région et ne se produisent pas de la même façon. Tissu économique, typologie de lieux, logistique : ce qui change concrètement quand un événement se déplace vers la Haute-Garonne.",
     body: [
@@ -863,9 +863,9 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-06-10",
     dateLabel: "Juin 2026",
     readingMinutes: 9,
-    img: "/photos/DSC_1091.webp",
+    img: "/photos/blog/evenementiel-responsable-reperes-1.webp",
     imgAlt:
-      "Supports de signalétique événementielle conçus pour être réutilisés d’une édition à l’autre",
+      "Semis en pots biodégradables arrosés à la main, illustration de l’événementiel responsable",
     excerpt:
       "L’événementiel responsable se joue sur trois ou quatre postes précis, pas sur des gobelets. Ce qui pèse vraiment, ce qui relève de l’affichage, et à quoi engage une démarche de labellisation.",
     body: [

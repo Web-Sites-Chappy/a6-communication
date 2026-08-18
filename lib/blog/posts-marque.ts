@@ -18,9 +18,9 @@ export const postsMarque: BlogPost[] = [
     date: "2026-08-11",
     dateLabel: "Août 2026",
     readingMinutes: 11,
-    img: "/photos/DSC_1019.webp",
+    img: "/photos/blog/creation-identite-marque-etapes-1.webp",
     imgAlt:
-      "Recherches graphiques et déclinaisons d’une identité de marque conçue par l’agence A6",
+      "Planche de recherche graphique et palette de couleurs, étapes de création d’une identité de marque",
     excerpt:
       "Une identité de marque ne commence pas par un logo et ne finit pas par un logo. Voici les cinq étapes réelles, ce qui se décide à chacune, et le moment précis où la plupart des projets déraillent.",
     body: [
@@ -251,9 +251,9 @@ export const postsMarque: BlogPost[] = [
     date: "2026-07-08",
     dateLabel: "Juillet 2026",
     readingMinutes: 9,
-    img: "/photos/DSC_0856.webp",
+    img: "/photos/blog/identite-visuelle-agence-attendre-1.webp",
     imgAlt:
-      "Déclinaisons de papeterie et supports institutionnels issus d’une identité visuelle A6",
+      "Mockup de carte de visite vierge, illustration d’une identité visuelle en cours de conception",
     excerpt:
       "Beaucoup de projets d’identité se terminent sans que le client sache ce qu’il possède. Voici la liste précise de ce qu’une agence doit livrer, et les trois questions à poser avant de signer.",
     body: [
@@ -457,9 +457,9 @@ export const postsMarque: BlogPost[] = [
     date: "2026-05-19",
     dateLabel: "Mai 2026",
     readingMinutes: 9,
-    img: "/photos/DSC_1091.webp",
+    img: "/photos/blog/charte-graphique-utile-1.webp",
     imgAlt:
-      "Pages d’une charte graphique documentant l’usage d’une identité de marque",
+      "Nuancier de couleurs RAL consulté avec des plans, illustration d’une charte graphique",
     excerpt:
       "Une charte graphique n’est pas un objet de prestige : c’est un mode d’emploi. Son seul juge est la personne qui doit produire un support un vendredi soir sans pouvoir appeler personne.",
     body: [
@@ -638,9 +638,9 @@ export const postsMarque: BlogPost[] = [
     date: "2026-04-22",
     dateLabel: "Avril 2026",
     readingMinutes: 9,
-    img: "/photos/DSC_0855.webp",
+    img: "/photos/blog/refonte-logo-institution-1.webp",
     imgAlt:
-      "Étapes de refonte de l’identité visuelle d’une institution professionnelle",
+      "Esquisses de pistes de logo sur papier, illustration d’une refonte d’identité visuelle",
     excerpt:
       "Refondre le logo d’une institution ancienne n’est pas un projet créatif mais un exercice d’équilibre : ce qui paraît vieilli à l’interne est souvent ce qui la rend reconnaissable à l’extérieur.",
     body: [
@@ -832,9 +832,9 @@ export const postsMarque: BlogPost[] = [
     date: "2026-04-08",
     dateLabel: "Avril 2026",
     readingMinutes: 9,
-    img: "/photos/DSC_0802.webp",
+    img: "/photos/blog/identite-marque-institutionnelle-1.webp",
     imgAlt:
-      "Application d’une identité de marque institutionnelle sur des supports professionnels",
+      "Documents de marque institutionnelle imprimés et présentés sur un bureau",
     excerpt:
       "Une marque commerciale peut être audacieuse, saisonnière, clivante. Une marque institutionnelle doit tenir dix ans devant des publics qui ne s’accordent sur rien. Ce sont deux métiers.",
     body: [

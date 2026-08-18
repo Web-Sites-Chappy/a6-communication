@@ -19,9 +19,9 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-08-04",
     dateLabel: "Août 2026",
     readingMinutes: 8,
-    img: "/photos/DSC_0855.webp",
+    img: "/photos/blog/communication-institutionnelle-enjeux-1.webp",
     imgAlt:
-      "Prise de parole institutionnelle lors d’un événement professionnel en Occitanie",
+      "Prise de parole avec microphone lors d’une conférence professionnelle",
     excerpt:
       "La communication institutionnelle ne vend rien : elle établit une légitimité. Cette différence d’objectif change tout : le ton, le rythme, les preuves acceptables et la définition même de la réussite.",
     body: [
@@ -317,9 +317,9 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-07-21",
     dateLabel: "Juillet 2026",
     readingMinutes: 8,
-    img: "/photos/DSC_0836.webp",
+    img: "/photos/blog/agence-communication-publique-collectivites-1.webp",
     imgAlt:
-      "Supports de communication publique conçus pour une collectivité territoriale en Occitanie",
+      "Salle du conseil d’une collectivité, illustration de la communication publique",
     excerpt:
       "Une collectivité ne choisit pas son agence comme une entreprise : le cadre est réglementaire, l’exigence de neutralité constante et la continuité du service prime sur l’effet. Ce que cela implique concrètement.",
     body: [
@@ -555,9 +555,9 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-06-30",
     dateLabel: "Juin 2026",
     readingMinutes: 7,
-    img: "/photos/DSC_1091.webp",
+    img: "/photos/blog/communication-associations-moyens-limites-1.webp",
     imgAlt:
-      "Supports de communication réalisés pour une association culturelle en Occitanie",
+      "Membres d’une équipe réunis autour d’une table, illustration de la communication associative",
     excerpt:
       "Une association ne manque pas d’idées mais de temps et de continuité. La bonne stratégie n’est pas de faire plus avec moins : c’est de choisir moins de canaux et de les tenir vraiment.",
     body: [
@@ -787,9 +787,9 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-06-17",
     dateLabel: "Juin 2026",
     readingMinutes: 8,
-    img: "/photos/DSC_5640.webp",
+    img: "/photos/blog/evenementiel-culturel-patrimoine-1.webp",
     imgAlt:
-      "Événement culturel mis en scène dans un site patrimonial en Occitanie",
+      "Fronton sculpté d’un théâtre municipal, illustration de l’événementiel culturel et patrimonial",
     excerpt:
       "Un événement dans un site patrimonial obéit à une règle qui inverse les réflexes de l’événementiel classique : ce n’est pas le lieu qui sert l’événement, c’est l’événement qui doit servir le lieu.",
     body: [
@@ -1009,9 +1009,9 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-05-27",
     dateLabel: "Mai 2026",
     readingMinutes: 7,
-    img: "/photos/DSC_0856.webp",
+    img: "/photos/blog/marche-public-communication-repondre-1.webp",
     imgAlt:
-      "Dossier de réponse à un marché public de communication préparé par l’agence A6",
+      "Signature d’un dossier de réponse, illustration d’un marché public de communication",
     excerpt:
       "Un marché public ne se gagne pas avec la plus belle idée mais avec l’offre qui répond le mieux aux critères annoncés. Comment les lire, et comment structurer un mémoire technique qui se laisse noter.",
     body: [

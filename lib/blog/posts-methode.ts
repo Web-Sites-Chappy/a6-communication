@@ -18,9 +18,9 @@ export const postsMethode: BlogPost[] = [
     date: "2026-07-02",
     dateLabel: "Juillet 2026",
     readingMinutes: 11,
-    img: "/photos/DSC_0836.webp",
+    img: "/photos/blog/choisir-agence-communication-1.webp",
     imgAlt:
-      "Réunion de cadrage entre une organisation et son agence de communication à Montpellier",
+      "Réunion d’équipe autour d’une table de travail, illustration du choix d’une agence de communication",
     excerpt:
       "Toutes les agences présentent de beaux projets et disent la même chose. La sélection se joue ailleurs : sur la façon dont vous cadrez votre besoin et sur trois ou quatre questions que peu de clients posent.",
     body: [
@@ -261,9 +261,9 @@ export const postsMethode: BlogPost[] = [
     date: "2026-05-13",
     dateLabel: "Mai 2026",
     readingMinutes: 10,
-    img: "/photos/DSC_1091.webp",
+    img: "/photos/blog/signaletique-evenementielle-regles-1.webp",
     imgAlt:
-      "Signalétique directionnelle et totems d’accueil installés pour un événement professionnel",
+      "Stands et signalétique d’un salon professionnel, illustration de la signalétique événementielle",
     excerpt:
       "La signalétique est le poste où l’on économise en dernier et où l’on se trompe en premier. Ce qui relève de l’obligation, ce qui relève du confort, et comment dimensionner sans réimprimer chaque année.",
     body: [
@@ -514,9 +514,9 @@ export const postsMethode: BlogPost[] = [
     date: "2026-03-25",
     dateLabel: "Mars 2026",
     readingMinutes: 10,
-    img: "/photos/DSC_0856.webp",
+    img: "/photos/blog/communication-interne-entreprise-1.webp",
     imgAlt:
-      "Support de communication interne conçu pour une organisation en Occitanie",
+      "Échange entre collègues dans un bureau, illustration de la communication interne en entreprise",
     excerpt:
       "La communication interne échoue rarement par manque d’outils : elle échoue par manque de rythme et par confusion entre informer et faire adhérer. Le point de départ, dans l’ordre.",
     body: [
@@ -762,9 +762,9 @@ export const postsMethode: BlogPost[] = [
     date: "2026-03-11",
     dateLabel: "Mars 2026",
     readingMinutes: 11,
-    img: "/photos/DSC_5640.webp",
+    img: "/photos/blog/captation-video-evenement-1.webp",
     imgAlt:
-      "Dispositif de captation vidéo installé lors d’un événement professionnel en Occitanie",
+      "Caméra professionnelle en configuration de tournage, illustration de la captation vidéo d’événement",
     excerpt:
       "Une captation ratée ne se rattrape pas au montage. Les cinq décisions qui déterminent le résultat se prennent avant l’événement, et la plus importante concerne le son, pas l’image.",
     body: [
@@ -1011,9 +1011,9 @@ export const postsMethode: BlogPost[] = [
     date: "2026-02-25",
     dateLabel: "Février 2026",
     readingMinutes: 10,
-    img: "/photos/DSC_1019.webp",
+    img: "/photos/blog/agence-communication-digitale-montpellier-1.webp",
     imgAlt:
-      "Travail sur la stratégie digitale et les réseaux sociaux d’une organisation montpelliéraine",
+      "Présentation d’une stratégie de marketing digital en réunion d’agence",
     excerpt:
       "La proximité géographique n’améliore pas un algorithme. Elle change en revanche trois choses très concrètes : la visibilité locale, la qualité des contenus produits sur place, et la vitesse de décision.",
     body: [
