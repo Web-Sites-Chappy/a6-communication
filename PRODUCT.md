@@ -51,6 +51,7 @@ The site is French-only and single-locale. Copy is hardcoded in components and p
 - Cookie consent records an `analytics` flag in `localStorage`; **no analytics script is actually wired up yet.**
 - Route renames are absorbed by redirects in `next.config.ts` (`/nos-cibles`→`/nos-clients`, `/actualites`→`/blog`, `communication-evenementielle`→`relations-presse`).
 - **Open decision — partner/client logos:** real, showable clients exist; the logo files are pending from the client. Until they arrive the trusted-by banner deliberately shows client *categories* rather than brands. Do not invent logos, client names, or brand marks to fill it.
+- **Pending — nofollow links on client logos:** each entry in `lib/clientLogos.ts` (rendered by `LogosMarquee`/`LogosTicker`) should link its logo to that company's own website with `rel="nofollow"` (outbound courtesy link, not an SEO endorsement). Add **Educasium** and **Chappygo** to `clientLogos.ts` once their logo files and exact site URLs are confirmed — do not guess the URLs.
 
 Legal and company facts (from `/mentions-legales`, treat as authoritative):
 
