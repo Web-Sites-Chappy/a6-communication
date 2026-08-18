@@ -16,6 +16,8 @@ export interface ClientLogo {
   height: number;
   /** Hauteur d'affichage en em. */
   displayEm: number;
+  /** Site du client — lien de courtoisie en rel="nofollow", pas une caution SEO. */
+  url?: string;
 }
 
 export const clientLogos: ClientLogo[] = [
@@ -26,6 +28,7 @@ export const clientLogos: ClientLogo[] = [
     width: 1400,
     height: 214,
     displayEm: 0.34,
+    url: "https://www.architectes.org/",
   },
   {
     id: "eva-beaute",
@@ -42,6 +45,7 @@ export const clientLogos: ClientLogo[] = [
     width: 665,
     height: 320,
     displayEm: 0.6,
+    url: "https://www.portassau-peinture.com/",
   },
   {
     id: "oma",
@@ -50,6 +54,7 @@ export const clientLogos: ClientLogo[] = [
     width: 1400,
     height: 186,
     displayEm: 0.34,
+    url: "https://octaviomestre.com/",
   },
   {
     id: "compagnons-tour-de-france",
@@ -58,6 +63,7 @@ export const clientLogos: ClientLogo[] = [
     width: 1245,
     height: 320,
     displayEm: 0.46,
+    url: "https://compagnonsdutourdefrance.org/",
   },
   {
     id: "le-petit-tarbais",
@@ -74,6 +80,7 @@ export const clientLogos: ClientLogo[] = [
     width: 863,
     height: 320,
     displayEm: 0.5,
+    url: "https://fondationmagos.com/",
   },
   {
     id: "educasium",
@@ -82,6 +89,7 @@ export const clientLogos: ClientLogo[] = [
     width: 1246,
     height: 320,
     displayEm: 0.46,
+    url: "https://educasium.com/",
   },
   {
     id: "chappygo",
@@ -90,5 +98,6 @@ export const clientLogos: ClientLogo[] = [
     width: 1337,
     height: 320,
     displayEm: 0.44,
+    url: "https://chappygo.com/",
   },
 ];

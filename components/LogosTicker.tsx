@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { motion, useAnimationFrame, useMotionValue, useReducedMotion } from "framer-motion";
 import { clientLogos, type ClientLogo } from "@/lib/clientLogos";
 
@@ -83,13 +83,14 @@ export default function LogosTicker({
         {doubled.map((logo, i) => {
           /* La seconde moitié n'est qu'un clone visuel pour boucler : on la
              masque aux lecteurs d'écran, sinon chaque client est annoncé deux
-             fois. La première moitié porte le nom réel en alt. */
+             fois. La première moitié porte le nom réel en alt. Les clones ne
+             sont jamais liens, cliquables ou non : un doublon décoratif n'a
+             rien à faire dans l'ordre de tabulation. */
           const isClone = i >= logos.length;
 
-          return (
+          const img = (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              key={`${logo.id}-${i}`}
               src={logo.src}
               alt={isClone ? "" : logo.name}
               aria-hidden={isClone || undefined}
@@ -106,6 +107,23 @@ export default function LogosTicker({
               }}
             />
           );
+
+          if (logo.url && !isClone) {
+            return (
+              <a
+                key={`${logo.id}-${i}`}
+                href={logo.url}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                aria-label={logo.name}
+                style={{ display: "block", flexShrink: 0 }}
+              >
+                {img}
+              </a>
+            );
+          }
+
+          return <Fragment key={`${logo.id}-${i}`}>{img}</Fragment>;
         })}
       </motion.div>
     </div>
