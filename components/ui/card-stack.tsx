@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion, AnimatePresence, useReducedMotion, type PanInfo } from "framer-motion";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { IconArrowUpRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -378,7 +378,7 @@ export function CardStack<T extends CardStackItem>({
               className="text-[rgba(var(--c-navy-rgb),0.5)] hover:text-[var(--c-rouge-fg)] transition"
               aria-label={`Ouvrir ${activeItem.title}`}
             >
-              <SquareArrowOutUpRight className="h-4 w-4" />
+              <IconArrowUpRight className="h-4 w-4" />
             </Link>
           ) : null}
         </div>
