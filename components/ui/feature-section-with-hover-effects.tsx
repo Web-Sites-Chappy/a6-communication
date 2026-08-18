@@ -95,7 +95,7 @@ const Feature = ({
   const content = (
     <div
       className={cn(
-        "flex flex-col lg:border-r py-10 relative group/feature transition-colors duration-200",
+        "flex flex-col h-full lg:border-r py-10 relative group/feature transition-colors duration-200",
         (index === 0 || index % 4 === 0) && "lg:border-l",
         index < 4 && "lg:border-b"
       )}
