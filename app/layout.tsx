@@ -91,6 +91,15 @@ const localBusinessJsonLd = {
   areaServed: "Occitanie, France",
 };
 
+// Pas de SearchAction : le site n'a pas de recherche interne.
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: title,
+  url: SITE_URL,
+  inLanguage: "fr-FR",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -102,6 +111,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <Nav />
         {children}

@@ -3,6 +3,11 @@ export interface ServiceDeliverable {
   description: string;
 }
 
+export interface ServiceFaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface ServiceCTA {
   /** Le texte qui suit "A6" dans le CTA, ex. "nous construisions…" — voir CTASection. */
   sentence: string;
@@ -23,6 +28,7 @@ export interface ServiceItem {
   approach: string[];
   /** Slugs d'articles de blog en lien direct avec ce service (maillage services → blog). */
   relatedArticleSlugs: string[];
+  faq: ServiceFaqItem[];
   cta: ServiceCTA;
   /** Image dédiée au carousel de services (bas de page) — jamais partagée entre deux services. */
   carouselImage: string;
@@ -61,6 +67,18 @@ export const servicesData: ServiceItem[] = [
       "Le plan de communication qui en résulte fixe des priorités claires plutôt qu'une présence tous azimuts : quels canaux, avec quelle fréquence, pour quels objectifs mesurables. L'animation des réseaux sociaux et le suivi des KPIs s'inscrivent ensuite dans cette feuille de route, avec des ajustements réguliers plutôt qu'un plan figé pour l'année.",
     ],
     relatedArticleSlugs: ["agence-communication-digitale-montpellier", "choisir-agence-communication"],
+    faq: [
+      {
+        question: "Faut-il déjà avoir une présence en ligne pour commencer ?",
+        answer:
+          "Non. L'audit d'écosystème part de ce qui existe, même une présence minimale ou inexistante, et sert justement à établir un point de départ objectif plutôt que de supposer un niveau de maturité digitale.",
+      },
+      {
+        question: "Gérez-vous l'animation au quotidien ou seulement la stratégie ?",
+        answer:
+          "Les deux si besoin : le plan de communication digital fixe le cap, et l'animation des réseaux sociaux peut être assurée en continu par nos équipes ou transmise aux vôtres selon votre organisation interne.",
+      },
+    ],
     cta: { sentence: "nous construisions…", buttonLabel: "votre stratégie" },
     carouselImage: "/photos/services/strategie-digitale-1.webp"
   },
@@ -96,6 +114,18 @@ export const servicesData: ServiceItem[] = [
       "La charte graphique qui suit n'est pas un document décoratif : elle fixe des règles précises (typographies, palette, usages autorisés et interdits) pour que votre image reste cohérente que ce soit vous, un imprimeur ou un partenaire qui l'applique, sur un support papier comme sur un écran.",
     ],
     relatedArticleSlugs: ["creation-identite-marque-etapes", "identite-visuelle-agence-attendre", "charte-graphique-utile"],
+    faq: [
+      {
+        question: "Créez-vous un logo, ou aussi toute l'identité qui va avec ?",
+        answer:
+          "Les deux : le logo n'est que le point de départ. La charte graphique complète (typographies, palette, règles de composition) est ce qui garantit que l'identité reste cohérente sur tous vos supports, bien après notre intervention.",
+      },
+      {
+        question: "Que se passe-t-il si nous avons déjà un logo mais pas de charte ?",
+        answer:
+          "C'est une situation fréquente : nous pouvons formaliser une charte graphique à partir d'un logo existant, sans forcément le refondre, si son socle reste solide.",
+      },
+    ],
     cta: { sentence: "nous façonnions…", buttonLabel: "votre image" },
     carouselImage: "/photos/services/identite-visuelle-1.webp"
   },
@@ -131,6 +161,18 @@ export const servicesData: ServiceItem[] = [
       "Côté image, qu'il s'agisse d'un reportage photo sur un chantier, d'un portrait d'équipe ou d'une captation vidéo d'événement, nous privilégions le terrain réel à la banque d'images : vos publics reconnaissent la différence, et c'est elle qui construit la confiance.",
     ],
     relatedArticleSlugs: ["captation-video-evenement"],
+    faq: [
+      {
+        question: "Faut-il fournir nos propres photos ou pouvez-vous les réaliser ?",
+        answer:
+          "Nous réalisons nos propres reportages photographiques sur le terrain plutôt que de nous appuyer sur une banque d'images : portraits d'équipe, chantiers, lieux, aménagement du territoire adaptés au public de l'architecture et du bâtiment.",
+      },
+      {
+        question: "Produisez-vous aussi de la vidéo, ou seulement de l'écrit ?",
+        answer:
+          "Les trois formats (rédaction, photo, vidéo) sont couverts par ce service, du reportage métier à la captation d'événement, avec la possibilité de ne mobiliser qu'un seul format si c'est votre besoin réel.",
+      },
+    ],
     cta: { sentence: "nous racontions…", buttonLabel: "votre histoire" },
     carouselImage: "/photos/services/production-de-contenus-1.webp"
   },
@@ -166,6 +208,18 @@ export const servicesData: ServiceItem[] = [
       "Nous pilotons la fabrication de bout en bout auprès de nos imprimeurs partenaires : choix des papiers et tissus, validation des BAT, livraison directement sur le lieu de votre événement ou de votre structure, pour que la partie matérielle de votre image ne repose pas sur vos épaules.",
     ],
     relatedArticleSlugs: ["signaletique-evenementielle-regles"],
+    faq: [
+      {
+        question: "Gérez-vous la fabrication ou seulement le design des supports ?",
+        answer:
+          "Nous pilotons l'ensemble, de la conception graphique à la livraison, en passant par le choix des papiers et tissus et le suivi des BAT auprès de nos imprimeurs partenaires.",
+      },
+      {
+        question: "Pouvez-vous intervenir sur un site patrimonial où l'affichage est contraint ?",
+        answer:
+          "Oui, un bâtiment classé interdit en général toute fixation murale : nous travaillons alors sur pied (totems lestés, chevalets, potences autoportantes), en repérant la contrainte avant la fabrication plutôt qu'à la livraison.",
+      },
+    ],
     cta: { sentence: "nous revêtions…", buttonLabel: "vos supports" },
     carouselImage: "/photos/services/impressions-signaletique-1.webp"
   },
@@ -201,6 +255,18 @@ export const servicesData: ServiceItem[] = [
       "Le déroulé heure par heure vient ensuite fixer l'alternance entre temps institutionnels, ateliers et moments de convivialité, en gardant à l'esprit qu'un rythme trop dense fatigue une salle aussi sûrement qu'un rythme trop lâche la perd.",
     ],
     relatedArticleSlugs: ["organiser-congres-federation", "evenementiel-culturel-patrimoine"],
+    faq: [
+      {
+        question: "Intervenez-vous sur des lieux patrimoniaux ou classés ?",
+        answer:
+          "Oui, c'est un terrain que nous connaissons bien : la scénographie y doit composer avec des contraintes de conservation et de circulation qu'un lieu neutre n'impose pas, sans jamais sacrifier l'une à l'autre.",
+      },
+      {
+        question: "À partir de quand faut-il vous solliciter pour un congrès ou une inauguration ?",
+        answer:
+          "Le plus tôt possible : le concept créatif et le déroulé heure par heure conditionnent ensuite la logistique et la signalétique, un cadrage tardif réduit toujours les options disponibles.",
+      },
+    ],
     cta: { sentence: "nous concevions…", buttonLabel: "votre événement" },
     carouselImage: "/photos/services/conception-et-scenographie-1.webp"
   },
@@ -236,6 +302,18 @@ export const servicesData: ServiceItem[] = [
       "Le jour J, un régisseur dédié suit le déroulé en temps réel et absorbe les imprévus (retard d'un intervenant, changement de salle, problème technique) sans que vos équipes ou vos invités n'aient à s'en préoccuper.",
     ],
     relatedArticleSlugs: ["budget-evenement-corporate", "organiser-congres-federation"],
+    faq: [
+      {
+        question: "Gérez-vous aussi les autorisations administratives ?",
+        answer:
+          "Oui, la coordination des autorisations (occupation du domaine public, sécurité, débits de boissons temporaires selon la programmation) fait partie du pilotage, pas une démarche annexe laissée à votre charge.",
+      },
+      {
+        question: "Y a-t-il quelqu'un sur place le jour de l'événement ?",
+        answer:
+          "Oui, un régisseur dédié suit le déroulé en temps réel pour absorber les imprévus, plutôt qu'un simple point de contact joignable par téléphone.",
+      },
+    ],
     cta: { sentence: "nous orchestrions…", buttonLabel: "votre événement" },
     carouselImage: "/photos/services/logistique-1.webp"
   },
@@ -271,6 +349,18 @@ export const servicesData: ServiceItem[] = [
       "Le briefing des grands témoins ou conférenciers spécialisés fait partie du même travail : s'assurer que leur intervention réponde à ce que le public est venu chercher, et non à ce qu'il serait commode de dire.",
     ],
     relatedArticleSlugs: ["organiser-congres-federation"],
+    faq: [
+      {
+        question: "Fournissez-vous aussi les intervenants ou seulement l'animation ?",
+        answer:
+          "Nous pouvons faire les deux : identifier et briefer des grands témoins ou conférenciers spécialisés en amont, puis assurer l'animation le jour même, ou simplement animer des intervenants que vous avez déjà choisis.",
+      },
+      {
+        question: "Préparez-vous les questions à l'avance avec les intervenants ?",
+        answer:
+          "Oui, toujours : la trame d'interrogation d'une table ronde se construit avec les intervenants en amont, jamais dans l'improvisation totale devant le public.",
+      },
+    ],
     cta: { sentence: "nous animions…", buttonLabel: "vos rendez-vous" },
     carouselImage: "/photos/services/animation-1.webp"
   },
@@ -306,6 +396,18 @@ export const servicesData: ServiceItem[] = [
       "Après l'événement, la revue de presse et le bilan média servent à mesurer ce qui a réellement porté, pour ajuster la stratégie de la prochaine prise de parole plutôt que de reconduire la même approche par habitude.",
     ],
     relatedArticleSlugs: [],
+    faq: [
+      {
+        question: "Rédigez-vous les communiqués ou seulement la diffusion ?",
+        answer:
+          "Les deux : la conception et la rédaction des communiqués de presse font partie du service, pas seulement leur envoi à une liste de contacts médias.",
+      },
+      {
+        question: "Faites-vous le bilan des retombées après l'événement ?",
+        answer:
+          "Oui, la revue de presse et le bilan média mesurent ce qui a réellement porté, pour ajuster la prochaine prise de parole plutôt que reconduire la même approche par habitude.",
+      },
+    ],
     cta: { sentence: "nous donnions de l’écho à…", buttonLabel: "votre voix" },
     carouselImage: "/photos/services/relations-presse-1.webp"
   }

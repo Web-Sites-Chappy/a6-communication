@@ -165,9 +165,24 @@ export function CardStack<T extends CardStackItem>({
     if (e.key === "ArrowRight") next();
   };
 
+  // Le cycle automatique ne doit demarrer qu'une fois la page chargee : sinon
+  // chaque transition (opacite/scale pleins) rejoue un paint plus grand que le
+  // precedent, et Chrome le compte comme un nouveau candidat LCP tardif — le
+  // carrousel se mesurait lui-meme comme le "Largest Contentful Paint" du site.
+  const [pageLoaded, setPageLoaded] = React.useState(
+    () => typeof document !== "undefined" && document.readyState === "complete",
+  );
+  React.useEffect(() => {
+    if (pageLoaded) return;
+    const onLoad = () => setPageLoaded(true);
+    window.addEventListener("load", onLoad);
+    return () => window.removeEventListener("load", onLoad);
+  }, [pageLoaded]);
+
   // autoplay
   React.useEffect(() => {
     if (!autoAdvance) return;
+    if (!pageLoaded) return;
     if (reduceMotion) return;
     if (!len) return;
     if (pauseOnHover && hovering) return;
@@ -182,6 +197,7 @@ export function CardStack<T extends CardStackItem>({
     return () => window.clearInterval(id);
   }, [
     autoAdvance,
+    pageLoaded,
     intervalMs,
     hovering,
     pauseOnHover,

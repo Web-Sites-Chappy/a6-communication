@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
+import Breadcrumb from "@/components/Breadcrumb";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { clientSegments, getClientSegmentBySlug } from "@/lib/nosClientsData";
@@ -56,9 +57,20 @@ export default async function ClientSegmentPage({ params }: PageProps) {
     },
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: segment.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Hero
         imageSrc={segment.img}
         title={
@@ -86,15 +98,13 @@ export default async function ClientSegmentPage({ params }: PageProps) {
       />
 
       <section style={{ width: "90vw", maxWidth: "900px", margin: "0 auto", padding: "70px 0 40px" }}>
-        <Reveal style={{ marginBottom: "8px" }}>
-          <Link
-            href="/nos-clients"
-            className="article-related-link"
-            style={{ fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.08em" }}
-          >
-            ← Tous nos clients
-          </Link>
-        </Reveal>
+        <Breadcrumb
+          items={[
+            { label: "Nos clients", href: "/nos-clients" },
+            { label: segment.title, href: `/nos-clients/${segment.slug}` },
+          ]}
+          style={{ marginBottom: "30px" }}
+        />
         <Reveal delay={40} style={{ textAlign: "center", margin: "24px 0 40px" }}>
           <AccentHeading lead="Une méthode," accent="pas une offre générique" style={{ color: "var(--c-rouge-fg)" }} />
         </Reveal>
@@ -187,6 +197,52 @@ export default async function ClientSegmentPage({ params }: PageProps) {
           </div>
         </section>
       )}
+
+      <section style={{ width: "90vw", maxWidth: "800px", margin: "0 auto", padding: "60px 0" }}>
+        <Reveal>
+          <h2
+            style={{
+              fontFamily: "var(--font-display-bricolage), sans-serif",
+              fontWeight: 700,
+              textTransform: "none",
+              textAlign: "left",
+              fontSize: "clamp(1.6rem, 3vw, 2.1rem)",
+              lineHeight: "1.1em",
+              color: "var(--c-rouge-fg)",
+              marginBottom: "10px",
+            }}
+          >
+            Questions fréquentes
+          </h2>
+          {segment.faq.map((item) => (
+            <div key={item.question} style={{ marginTop: "26px" }}>
+              <h3
+                style={{
+                  fontFamily: "var(--font-display-bricolage), sans-serif",
+                  fontWeight: 700,
+                  textTransform: "none",
+                  fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)",
+                  lineHeight: "1.3em",
+                  color: "var(--c-navy)",
+                }}
+              >
+                {item.question}
+              </h3>
+              <p
+                style={{
+                  marginTop: "10px",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "1rem",
+                  lineHeight: "1.75em",
+                  color: "rgba(var(--c-navy-rgb), 0.86)",
+                }}
+              >
+                {item.answer}
+              </p>
+            </div>
+          ))}
+        </Reveal>
+      </section>
 
       <Reveal>
         <CTASection

@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
+import Breadcrumb from "@/components/Breadcrumb";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { servicesData, getServiceBySlug } from "@/lib/servicesData";
@@ -129,8 +130,22 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     },
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -170,6 +185,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           padding: "70px 0 50px",
         }}
       >
+        <Breadcrumb
+          items={[
+            { label: "Nos services", href: "/nos-services" },
+            { label: service.title, href: `/nos-services/${service.slug}` },
+          ]}
+          style={{ marginBottom: "30px" }}
+        />
         <Reveal style={{ textAlign: "center", marginBottom: "50px", maxWidth: "900px", margin: "0 auto 50px" }}>
           <AccentHeading lead={`Pôle ${service.category}`} accent={service.title} style={{ color: service.color }} />
           <p
@@ -283,6 +305,52 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </ul>
             </div>
           )}
+        </Reveal>
+      </section>
+
+      <section style={{ width: "90vw", maxWidth: "800px", margin: "0 auto", padding: "0 0 60px" }}>
+        <Reveal>
+          <h2
+            style={{
+              fontFamily: "var(--font-display-bricolage), sans-serif",
+              fontWeight: 700,
+              textTransform: "none",
+              textAlign: "left",
+              fontSize: "clamp(1.6rem, 3vw, 2.1rem)",
+              lineHeight: "1.1em",
+              color: service.color,
+              marginBottom: "10px",
+            }}
+          >
+            Questions fréquentes
+          </h2>
+          {service.faq.map((item) => (
+            <div key={item.question} style={{ marginTop: "26px" }}>
+              <h3
+                style={{
+                  fontFamily: "var(--font-display-bricolage), sans-serif",
+                  fontWeight: 700,
+                  textTransform: "none",
+                  fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)",
+                  lineHeight: "1.3em",
+                  color: "var(--c-navy)",
+                }}
+              >
+                {item.question}
+              </h3>
+              <p
+                style={{
+                  marginTop: "10px",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "1rem",
+                  lineHeight: "1.75em",
+                  color: "rgba(var(--c-navy-rgb), 0.86)",
+                }}
+              >
+                {item.answer}
+              </p>
+            </div>
+          ))}
         </Reveal>
       </section>
 

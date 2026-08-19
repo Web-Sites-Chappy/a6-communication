@@ -70,6 +70,13 @@ export default function SectionsCardStack() {
                   alt={item.title}
                   fill
                   draggable={false}
+                  priority={active}
+                  // Les 5 cartes défilent automatiquement (autoAdvance, 4s) : celle
+                  // qui devient "active" en cours de chargement était en lazy et
+                  // Chrome la mesurait comme LCP tardif (elementRenderDelay ~1s).
+                  // Le jeu est fixe et minuscule (5 images), toutes chargées
+                  // eagerly plutôt que de dépendre du lazy-loading natif.
+                  loading="eager"
                   sizes="(max-width: 640px) 340px, (max-width: 1024px) 420px, 500px"
                   style={{ objectFit: "cover" }}
                 />
