@@ -10,7 +10,6 @@ const legalNav = [
 const footerNav = [
   { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
   { label: "Nos services", href: "/nos-services" },
-  { label: "Nos secteurs", href: "/secteurs" },
   { label: "Réalisations", href: "/realisations" },
   { label: "Nos clients", href: "/nos-clients" },
   { label: "Blog", href: "/blog" },

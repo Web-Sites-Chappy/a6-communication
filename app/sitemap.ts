@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { servicesData } from "@/lib/servicesData";
-import { secteursData } from "@/lib/secteursData";
 import { blogPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/siteConfig";
 
@@ -18,9 +17,8 @@ import { SITE_URL } from "@/lib/siteConfig";
 const STATIC_ROUTES: { path: string; priority: number; lastModified: string }[] = [
   { path: "/", priority: 1, lastModified: "2026-08-18" },
   { path: "/nos-services", priority: 0.9, lastModified: "2026-08-18" },
-  { path: "/secteurs", priority: 0.8, lastModified: "2026-08-19" },
   { path: "/realisations", priority: 0.7, lastModified: "2026-08-19" },
-  { path: "/nos-clients", priority: 0.7, lastModified: "2026-08-18" },
+  { path: "/nos-clients", priority: 0.7, lastModified: "2026-08-19" },
   { path: "/qui-sommes-nous", priority: 0.7, lastModified: "2026-08-18" },
   { path: "/blog", priority: 0.7, lastModified: "2026-08-18" },
   { path: "/contact", priority: 0.8, lastModified: "2026-08-18" },
@@ -43,12 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(SERVICES_LAST_MODIFIED),
       changeFrequency: "monthly" as const,
       priority: 0.8,
-    })),
-    ...secteursData.map((secteur) => ({
-      url: `${SITE_URL}/secteurs/${secteur.slug}`,
-      lastModified: new Date("2026-08-19"),
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
     })),
     ...blogPosts.map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,
