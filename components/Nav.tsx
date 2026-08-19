@@ -370,6 +370,9 @@ export default function Nav() {
                           fontFamily: "var(--font-body)",
                           fontWeight: 500,
                           color: "white",
+                          display: "block",
+                          // Cible tactile >=44px : le texte seul ne faisait que 27px de haut.
+                          padding: "9px 0",
                         }}
                       >
                         {sub.label}

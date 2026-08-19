@@ -91,8 +91,13 @@ export default function Footer() {
         </p>
         <ul style={{ listStyle: "none", padding: 0 }}>
           {footerNav.map((link) => (
-            <li key={link.href} style={{ marginBottom: "6px" }}>
-              <Link href={link.href} className="footer-link">
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="footer-link"
+                // Cible tactile >=44px : le texte seul ne faisait que 22px de haut.
+                style={{ display: "block", padding: "11px 0" }}
+              >
                 {link.label}
               </Link>
             </li>

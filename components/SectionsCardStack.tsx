@@ -39,7 +39,10 @@ export default function SectionsCardStack() {
   const cardHeight = isMobile ? 380 : isTablet ? 320 : 340;
 
   return (
-    <div style={{ width: "94vw", maxWidth: "1320px", margin: "40px auto 60px" }}>
+    // overflow hidden : les cartes du deck en offset (-2..+2) depassent du
+    // conteneur par design (effet d'eventail), mais sans cette clip elles
+    // provoquaient un vrai scroll horizontal de toute la page en mobile.
+    <div style={{ width: "94vw", maxWidth: "1320px", margin: "40px auto 60px", overflow: "hidden" }}>
       <CardStack
         items={sections}
         initialIndex={0}
