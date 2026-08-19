@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { servicesData } from "@/lib/servicesData";
+import { clientSegments } from "@/lib/nosClientsData";
 import { blogPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/siteConfig";
 
@@ -41,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(SERVICES_LAST_MODIFIED),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...clientSegments.map((segment) => ({
+      url: `${SITE_URL}/nos-clients/${segment.slug}`,
+      lastModified: new Date("2026-08-19"),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
     })),
     ...blogPosts.map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,
