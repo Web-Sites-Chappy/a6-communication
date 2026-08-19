@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
@@ -13,17 +14,41 @@ export const metadata: Metadata = {
 };
 
 const targets = [
-  { title: "Professionnels de l'Acte et Art de Bâtir", img: "/photos/DSC_0836.webp", desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles : A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle." },
-  { title: "Institution", img: "/photos/DSC_1019.webp", desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées." },
-  { title: "Mairies et collectivités", img: "/photos/DSC_0855.webp", desc: "Particulièrement les communes de moins de 1 000 habitants, les intercommunalités et collectivités qui ont besoin d'une communication de proximité, efficace et abordable." },
-  { title: "Monde culturel et associatif", img: "/photos/services/associatif-1.webp", desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes." },
+  {
+    title: "Professionnels de l'Acte et Art de Bâtir",
+    img: "/photos/nos-clients/professionnels-batir.webp",
+    imgAlt: "Deux professionnels du bâtiment échangent autour d'un plan architectural",
+    desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles : A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle.",
+    secteurSlug: "institutionnel",
+  },
+  {
+    title: "Institution",
+    img: "/photos/nos-clients/institution-carcassonne.webp",
+    imgAlt: "Le château comtal de la cité de Carcassonne, en Occitanie",
+    desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées.",
+    secteurSlug: "culturel",
+  },
+  {
+    title: "Mairies et collectivités",
+    img: "/photos/nos-clients/mairies-collectivites.webp",
+    imgAlt: "Façade d'une mairie de village française",
+    desc: "Particulièrement les communes de moins de 1 000 habitants, les intercommunalités et collectivités qui ont besoin d'une communication de proximité, efficace et abordable.",
+    secteurSlug: "collectivites",
+  },
+  {
+    title: "Monde culturel et associatif",
+    img: "/photos/nos-clients/monde-associatif.webp",
+    imgAlt: "Mains jointes en signe d'unité, symbole du monde associatif",
+    desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes.",
+    secteurSlug: "associations",
+  },
 ];
 
 export default function NosClientsPage() {
   return (
     <main>
       <Hero
-        imageSrc="/photos/DSC_1091.webp"
+        imageSrc="/photos/nos-clients/hero-toulouse-capitole.webp"
         title={
           <>
             Ceux pour
@@ -72,7 +97,7 @@ export default function NosClientsPage() {
               <div className="alt-row-img" style={{ position: "relative", width: "40%", height: "260px", flexShrink: 0 }}>
                 <Image
                   src={target.img}
-                  alt={target.title}
+                  alt={target.imgAlt}
                   fill
                   sizes="(max-width: 640px) 90vw, 400px"
                   style={{ objectFit: "cover" }}
@@ -83,6 +108,13 @@ export default function NosClientsPage() {
                 <p style={{ fontSize: "0.9rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "rgba(var(--c-navy-rgb),0.75)" }}>
                   {target.desc}
                 </p>
+                <Link
+                  href={`/secteurs/${target.secteurSlug}`}
+                  className="article-related-link"
+                  style={{ display: "inline-block", marginTop: "12px", fontSize: "0.85rem" }}
+                >
+                  En savoir plus →
+                </Link>
               </div>
             </div>
           </Reveal>

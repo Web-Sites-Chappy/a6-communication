@@ -338,7 +338,7 @@ export const postsInstitutionnel: BlogPost[] = [
       },
       {
         kind: "p",
-        text: "Une collectivité ne peut pas choisir librement son prestataire au-delà de certains seuils : elle doit passer par une procédure de mise en concurrence, avec des critères annoncés et pondérés. Pour l’agence, cela signifie répondre à un cahier des charges plutôt que proposer une vision, et être jugée sur des critères explicites dont le prix n’est qu’une composante.",
+        text: "Une collectivité ne peut pas choisir librement son prestataire au-delà de certains seuils : elle doit passer par une procédure de mise en concurrence encadrée par le [code de la commande publique](https://www.legifrance.gouv.fr/codes/id/LEGITEXT000037701019/), avec des critères annoncés et pondérés. Pour l’agence, cela signifie répondre à un cahier des charges plutôt que proposer une vision, et être jugée sur des critères explicites dont le prix n’est qu’une composante.",
       },
       {
         kind: "p",
@@ -413,7 +413,7 @@ export const postsInstitutionnel: BlogPost[] = [
       },
       {
         kind: "p",
-        text: "Pour un site ou une application, l’accessibilité se vérifie au regard du référentiel général d’amélioration de l’accessibilité (RGAA), qui décrit des critères techniques testables un par un : structure des titres, alternatives, navigation au clavier, gestion du focus, contrastes. Le résultat s’écrit dans une déclaration d’accessibilité publiée sur le site. Pour l’imprimé, il n’existe pas d’équivalent aussi normé, mais les mêmes principes se transposent : corps de texte suffisant, contraste réel, alignement lisible, absence de texte posé sur une photographie chargée. Une collectivité qui commande un support doit demander explicitement lequel des deux régimes s’applique, car une agence qui n’a jamais produit pour le secteur public suppose souvent qu’aucun ne s’applique.",
+        text: "Pour un site ou une application, l’accessibilité se vérifie au regard du [référentiel général d’amélioration de l’accessibilité (RGAA)](https://accessibilite.numerique.gouv.fr/), qui décrit des critères techniques testables un par un : structure des titres, alternatives, navigation au clavier, gestion du focus, contrastes. Le résultat s’écrit dans une déclaration d’accessibilité publiée sur le site. Pour l’imprimé, il n’existe pas d’équivalent aussi normé, mais les mêmes principes se transposent : corps de texte suffisant, contraste réel, alignement lisible, absence de texte posé sur une photographie chargée. Une collectivité qui commande un support doit demander explicitement lequel des deux régimes s’applique, car une agence qui n’a jamais produit pour le secteur public suppose souvent qu’aucun ne s’applique.",
       },
       {
         kind: "h3",
@@ -850,7 +850,7 @@ export const postsInstitutionnel: BlogPost[] = [
       },
       {
         kind: "p",
-        text: "Il est utile de cartographier les interlocuteurs avant la première esquisse, car ils ne se prononcent pas sur les mêmes objets. Le propriétaire ou l’affectataire autorise l’occupation et fixe ses propres conditions d’usage. Les services de l’État chargés du patrimoine, en particulier l’unité départementale de l’architecture et du patrimoine, se prononcent sur ce qui touche à un immeuble protégé ou à ses abords. La commune intervient pour l’occupation du domaine public, la circulation et le stationnement. La commission de sécurité compétente se prononce sur l’aménagement d’un établissement recevant du public, l’effectif admissible et les dégagements. Enfin, selon la programmation, s’ajoutent la déclaration des débits de boissons temporaires ou les obligations liées à la diffusion d’œuvres.",
+        text: "Il est utile de cartographier les interlocuteurs avant la première esquisse, car ils ne se prononcent pas sur les mêmes objets. Le propriétaire ou l’affectataire autorise l’occupation et fixe ses propres conditions d’usage. Les services de l’État chargés du patrimoine, en particulier l’unité départementale de l’architecture et du patrimoine, placée sous l’autorité du [ministère de la Culture](https://www.culture.gouv.fr/), se prononcent sur ce qui touche à un immeuble protégé ou à ses abords. La commune intervient pour l’occupation du domaine public, la circulation et le stationnement. La commission de sécurité compétente se prononce sur l’aménagement d’un établissement recevant du public, l’effectif admissible et les dégagements. Enfin, selon la programmation, s’ajoutent la déclaration des débits de boissons temporaires ou les obligations liées à la diffusion d’œuvres.",
       },
       {
         kind: "h3",
@@ -1017,7 +1017,7 @@ export const postsInstitutionnel: BlogPost[] = [
     body: [
       {
         kind: "p",
-        text: "Répondre à un marché public de communication demande un travail différent d’une réponse à un appel d’offres privé. L’acheteur public est tenu par les critères qu’il a publiés : il ne peut pas retenir une offre séduisante qui note mal. Comprendre ce cadre est utile aux deux parties : aux agences pour bâtir une offre notable, aux collectivités pour rédiger des critères qui font remonter les bonnes propositions.",
+        text: "Répondre à un marché public de communication demande un travail différent d’une réponse à un appel d’offres privé. L’acheteur public est tenu par les critères qu’il a publiés, dans le cadre fixé par le [code de la commande publique](https://www.legifrance.gouv.fr/codes/id/LEGITEXT000037701019/) : il ne peut pas retenir une offre séduisante qui note mal. Comprendre ce cadre est utile aux deux parties : aux agences pour bâtir une offre notable, aux collectivités pour rédiger des critères qui font remonter les bonnes propositions.",
       },
       {
         kind: "h2",
@@ -1106,7 +1106,7 @@ export const postsInstitutionnel: BlogPost[] = [
       },
       {
         kind: "p",
-        text: "De plus en plus de consultations comportent un critère lié aux considérations environnementales ou à l’insertion. Il est souvent traité en dernier et rempli de généralités, alors qu’il porte des points faciles à sécuriser. Les éléments qui se notent sont ceux qui se vérifient : le choix des supports et des imprimeurs, la gestion des fichiers de fin de vie d’un dispositif, la limitation des déplacements sur des réunions récurrentes, le recours à des prestataires locaux quand le marché l’autorise. Les mêmes logiques structurent un [événementiel responsable](/blog/evenementiel-responsable-reperes), et un candidat qui les applique déjà n’a qu’à les décrire.",
+        text: "De plus en plus de consultations comportent un critère lié aux considérations environnementales ou à l’insertion, dans la lignée des repères publiés par l’[ADEME](https://www.ademe.fr/) sur l’écoconception événementielle. Il est souvent traité en dernier et rempli de généralités, alors qu’il porte des points faciles à sécuriser. Les éléments qui se notent sont ceux qui se vérifient : le choix des supports et des imprimeurs, la gestion des fichiers de fin de vie d’un dispositif, la limitation des déplacements sur des réunions récurrentes, le recours à des prestataires locaux quand le marché l’autorise. Les mêmes logiques structurent un [événementiel responsable](/blog/evenementiel-responsable-reperes), et un candidat qui les applique déjà n’a qu’à les décrire.",
       },
       {
         kind: "h2",

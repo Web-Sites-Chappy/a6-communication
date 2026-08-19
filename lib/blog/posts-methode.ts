@@ -172,7 +172,7 @@ export const postsMethode: BlogPost[] = [
       },
       {
         kind: "p",
-        text: "Quand l’acheteur est une collectivité, un établissement public ou un opérateur soumis au code de la commande publique, la sélection obéit à des règles de publicité et de mise en concurrence qui encadrent tout ce qui précède sans le rendre inutile. Le cadrage du besoin devient un cahier des charges, les questions à poser deviennent des critères de jugement pondérés, et la grille de comparaison devient la méthode de notation. L’erreur la plus fréquente consiste à pondérer le prix trop lourdement sur une prestation intellectuelle, ce qui sélectionne la proposition la moins ambitieuse plutôt que la mieux-disante.",
+        text: "Quand l’acheteur est une collectivité, un établissement public ou un opérateur soumis au [code de la commande publique](https://www.legifrance.gouv.fr/codes/id/LEGITEXT000037701019/), la sélection obéit à des règles de publicité et de mise en concurrence qui encadrent tout ce qui précède sans le rendre inutile. Le cadrage du besoin devient un cahier des charges, les questions à poser deviennent des critères de jugement pondérés, et la grille de comparaison devient la méthode de notation. L’erreur la plus fréquente consiste à pondérer le prix trop lourdement sur une prestation intellectuelle, ce qui sélectionne la proposition la moins ambitieuse plutôt que la mieux-disante.",
       },
       {
         kind: "p",
@@ -300,7 +300,7 @@ export const postsMethode: BlogPost[] = [
       { kind: "h3", text: "L’accessibilité, souvent oubliée du lot signalétique" },
       {
         kind: "p",
-        text: "Une signalétique conforme aux règles de sécurité n’est pas pour autant accessible. Les points à traiter sont concrets : une hauteur de lecture compatible avec une personne assise, un contraste suffisant entre le texte et son fond, une taille de caractère qui reste lisible pour une personne malvoyante, et des informations essentielles (accueil, sanitaires, ascenseur, sortie) qui ne reposent pas uniquement sur une couleur ou sur un pictogramme non standard. Les règles applicables aux établissements recevant du public donnent une base de travail utile, y compris quand la manifestation n’y est pas formellement soumise.",
+        text: "Une signalétique conforme aux règles de sécurité n’est pas pour autant accessible. Les points à traiter sont concrets : une hauteur de lecture compatible avec une personne assise, un contraste suffisant entre le texte et son fond, une taille de caractère qui reste lisible pour une personne malvoyante, et des informations essentielles (accueil, sanitaires, ascenseur, sortie) qui ne reposent pas uniquement sur une couleur ou sur un pictogramme non standard. Les règles d’accessibilité du [code de la construction et de l’habitation](https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006074096/) applicables aux établissements recevant du public donnent une base de travail utile, y compris quand la manifestation n’y est pas formellement soumise.",
       },
       { kind: "h3", text: "L’affichage extérieur et les autorisations d’occupation" },
       {

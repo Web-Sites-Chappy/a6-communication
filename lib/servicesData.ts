@@ -19,6 +19,10 @@ export interface ServiceItem {
   heroImage: string;
   color: string;
   deliverables: ServiceDeliverable[];
+  /** Paragraphes détaillant notre méthode pour ce service — affichés sous les livrables. */
+  approach: string[];
+  /** Slugs d'articles de blog en lien direct avec ce service (maillage services → blog). */
+  relatedArticleSlugs: string[];
   cta: ServiceCTA;
   /** Image dédiée au carousel de services (bas de page) — jamais partagée entre deux services. */
   carouselImage: string;
@@ -52,6 +56,11 @@ export const servicesData: ServiceItem[] = [
         description: "Mise en place d'indicateurs clés, tableaux de bord de suivi et recommandations d'optimisation en continu."
       }
     ],
+    approach: [
+      "Nous commençons toujours par regarder ce qui existe déjà : vos canaux actuels, votre concurrence directe et la façon dont vos publics parlent réellement de vous en ligne. Cet audit d'écosystème sert de socle à tout ce qui suit, plutôt que de partir d'une page blanche ou d'un modèle générique.",
+      "Le plan de communication qui en résulte fixe des priorités claires plutôt qu'une présence tous azimuts : quels canaux, avec quelle fréquence, pour quels objectifs mesurables. L'animation des réseaux sociaux et le suivi des KPIs s'inscrivent ensuite dans cette feuille de route, avec des ajustements réguliers plutôt qu'un plan figé pour l'année.",
+    ],
+    relatedArticleSlugs: ["agence-communication-digitale-montpellier", "choisir-agence-communication"],
     cta: { sentence: "nous construisions…", buttonLabel: "votre stratégie" },
     carouselImage: "/photos/services/strategie-digitale-1.webp"
   },
@@ -82,6 +91,11 @@ export const servicesData: ServiceItem[] = [
         description: "Gabarits personnalisés pour vos présentations (PowerPoint/Keynote), newsletters, et visuels pour réseaux sociaux."
       }
     ],
+    approach: [
+      "Une identité visuelle qui tient dans le temps se construit à partir de ce que votre structure est réellement, pas d'une tendance graphique du moment. Nous prenons le temps de comprendre votre histoire, vos valeurs et votre positionnement avant la première esquisse de logo.",
+      "La charte graphique qui suit n'est pas un document décoratif : elle fixe des règles précises (typographies, palette, usages autorisés et interdits) pour que votre image reste cohérente que ce soit vous, un imprimeur ou un partenaire qui l'applique, sur un support papier comme sur un écran.",
+    ],
+    relatedArticleSlugs: ["creation-identite-marque-etapes", "identite-visuelle-agence-attendre", "charte-graphique-utile"],
     cta: { sentence: "nous façonnions…", buttonLabel: "votre image" },
     carouselImage: "/photos/services/identite-visuelle-1.webp"
   },
@@ -112,6 +126,11 @@ export const servicesData: ServiceItem[] = [
         description: "Rédaction, mise en page et suivi de réalisation de vos rapports d'activité, livres blancs et journaux internes."
       }
     ],
+    approach: [
+      "Un bon contenu institutionnel ne cherche pas à impressionner, il cherche à être compris et retenu. Nos rédactions partent toujours d'un entretien réel avec les personnes concernées, jamais d'un remplissage générique autour d'un mot-clé.",
+      "Côté image, qu'il s'agisse d'un reportage photo sur un chantier, d'un portrait d'équipe ou d'une captation vidéo d'événement, nous privilégions le terrain réel à la banque d'images : vos publics reconnaissent la différence, et c'est elle qui construit la confiance.",
+    ],
+    relatedArticleSlugs: ["captation-video-evenement"],
     cta: { sentence: "nous racontions…", buttonLabel: "votre histoire" },
     carouselImage: "/photos/services/production-de-contenus-1.webp"
   },
@@ -142,6 +161,11 @@ export const servicesData: ServiceItem[] = [
         description: "Pilotage complet auprès de nos imprimeurs partenaires, suivi des BÁT et livraison directement sur vos lieux d'action."
       }
     ],
+    approach: [
+      "La signalétique d'un événement se pense avant l'impression, pas après : flux de circulation, points de repère, distance de lecture. Une bannière posée au mauvais endroit ou dans une taille de police illisible à 3 mètres ne sert à rien, quelle que soit la qualité du visuel.",
+      "Nous pilotons la fabrication de bout en bout auprès de nos imprimeurs partenaires : choix des papiers et tissus, validation des BAT, livraison directement sur le lieu de votre événement ou de votre structure, pour que la partie matérielle de votre image ne repose pas sur vos épaules.",
+    ],
+    relatedArticleSlugs: ["signaletique-evenementielle-regles"],
     cta: { sentence: "nous revêtions…", buttonLabel: "vos supports" },
     carouselImage: "/photos/services/impressions-signaletique-1.webp"
   },
@@ -172,6 +196,11 @@ export const servicesData: ServiceItem[] = [
         description: "Création du logo de l'événement, habillage vidéo des écrans de scène et déclinaison sur tous les supports."
       }
     ],
+    approach: [
+      "Un congrès de fédération, une inauguration patrimoniale ou une assemblée générale n'obéissent pas aux mêmes codes : la scénographie que nous concevons part toujours du public réel de l'événement et de ce qu'il attend, pas d'un modèle de plateau standard.",
+      "Le déroulé heure par heure vient ensuite fixer l'alternance entre temps institutionnels, ateliers et moments de convivialité, en gardant à l'esprit qu'un rythme trop dense fatigue une salle aussi sûrement qu'un rythme trop lâche la perd.",
+    ],
+    relatedArticleSlugs: ["organiser-congres-federation", "evenementiel-culturel-patrimoine"],
     cta: { sentence: "nous concevions…", buttonLabel: "votre événement" },
     carouselImage: "/photos/services/conception-et-scenographie-1.webp"
   },
@@ -202,6 +231,11 @@ export const servicesData: ServiceItem[] = [
         description: "Accueil physique, remise des badges, orientation des flux et gestion des vestiaires."
       }
     ],
+    approach: [
+      "La logistique est la partie invisible d'un événement réussi : quand tout se passe bien, personne n'y pense. Nous repérons les lieux en amont, négocions les conditions techniques et anticipons les autorisations administratives plutôt que de les découvrir la semaine précédente.",
+      "Le jour J, un régisseur dédié suit le déroulé en temps réel et absorbe les imprévus (retard d'un intervenant, changement de salle, problème technique) sans que vos équipes ou vos invités n'aient à s'en préoccuper.",
+    ],
+    relatedArticleSlugs: ["budget-evenement-corporate", "organiser-congres-federation"],
     cta: { sentence: "nous orchestrions…", buttonLabel: "votre événement" },
     carouselImage: "/photos/services/logistique-1.webp"
   },
@@ -232,6 +266,11 @@ export const servicesData: ServiceItem[] = [
         description: "Mise en place de mécaniques d'interaction avec la salle (Q&R, sondages en direct) et séquences conviviales."
       }
     ],
+    approach: [
+      "Animer une table ronde institutionnelle demande un équilibre précis : relancer le débat sans monopoliser la parole, respecter le temps imparti sans couper une réponse en plein élan. Nous préparons chaque trame d'interrogation avec les intervenants en amont, jamais dans l'improvisation totale.",
+      "Le briefing des grands témoins ou conférenciers spécialisés fait partie du même travail : s'assurer que leur intervention réponde à ce que le public est venu chercher, et non à ce qu'il serait commode de dire.",
+    ],
+    relatedArticleSlugs: ["organiser-congres-federation"],
     cta: { sentence: "nous animions…", buttonLabel: "vos rendez-vous" },
     carouselImage: "/photos/services/animation-1.webp"
   },
@@ -262,6 +301,11 @@ export const servicesData: ServiceItem[] = [
         description: "Suivi des retombées médiatiques, création de la revue de presse et bilan d'impact quantitatif et qualitatif."
       }
     ],
+    approach: [
+      "Une bonne relation presse ne se limite pas à l'envoi d'un communiqué : elle suppose de connaître les journalistes régionaux et spécialisés qui couvrent réellement votre secteur, et de leur apporter une information utile plutôt qu'une sollicitation de plus.",
+      "Après l'événement, la revue de presse et le bilan média servent à mesurer ce qui a réellement porté, pour ajuster la stratégie de la prochaine prise de parole plutôt que de reconduire la même approche par habitude.",
+    ],
+    relatedArticleSlugs: [],
     cta: { sentence: "nous donnions de l’écho à…", buttonLabel: "votre voix" },
     carouselImage: "/photos/services/relations-presse-1.webp"
   }

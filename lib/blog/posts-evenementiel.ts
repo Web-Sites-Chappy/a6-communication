@@ -981,7 +981,7 @@ export const postsEvenementiel: BlogPost[] = [
       },
       {
         kind: "p",
-        text: "Une démarche qui commence par un bilan carbone complet s’enlise presque toujours : la collecte est lourde, les hypothèses sont contestables et le résultat arrive après l’édition suivante. Quatre indicateurs simples, relevés d’une année sur l’autre, servent davantage la décision qu’un rapport unique et exhaustif que personne ne rouvrira.",
+        text: "Une démarche qui commence par un bilan carbone complet s’enlise presque toujours : la collecte est lourde, les hypothèses sont contestables et le résultat arrive après l’édition suivante. Les repères que publie l’[ADEME](https://www.ademe.fr/) sur l’événementiel responsable vont dans le même sens : mieux vaut un suivi simple et régulier qu’un audit exhaustif. Quatre indicateurs simples, relevés d’une année sur l’autre, servent davantage la décision qu’un rapport unique et exhaustif que personne ne rouvrira.",
       },
       {
         kind: "ul",

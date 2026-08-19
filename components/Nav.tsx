@@ -25,8 +25,23 @@ const navLinks = [
     ],
   },
   {
+    label: "Nos secteurs",
+    href: "/secteurs",
+    sub: [
+      { label: "Institutionnel", href: "/secteurs/institutionnel" },
+      { label: "Collectivités", href: "/secteurs/collectivites" },
+      { label: "Culturel & Patrimoine", href: "/secteurs/culturel" },
+      { label: "Monde associatif", href: "/secteurs/associations" },
+    ],
+  },
+  {
     label: "Nos clients",
     href: "/nos-clients",
+    sub: [],
+  },
+  {
+    label: "Nos réalisations",
+    href: "/realisations",
     sub: [],
   },
   {

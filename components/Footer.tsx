@@ -10,6 +10,8 @@ const legalNav = [
 const footerNav = [
   { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
   { label: "Nos services", href: "/nos-services" },
+  { label: "Nos secteurs", href: "/secteurs" },
+  { label: "Réalisations", href: "/realisations" },
   { label: "Nos clients", href: "/nos-clients" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -121,8 +123,8 @@ export default function Footer() {
             06 10 18 87 47
           </a>
           <br />
-          <a href="mailto:contact@a6communication.fr" style={{ color: "rgba(255,255,255,0.7)" }}>
-            contact@a6communication.fr
+          <a href="mailto:contact@a6agence.com" style={{ color: "rgba(255,255,255,0.7)" }}>
+            contact@a6agence.com
           </a>
         </p>
         <Link href="/contact" className="btn-rouge" style={{ display: "inline-block", marginTop: "16px", fontSize: "0.85rem" }}>

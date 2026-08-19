@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
@@ -5,6 +6,7 @@ import AccentHeading from "@/components/AccentHeading";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { servicesData, getServiceBySlug } from "@/lib/servicesData";
+import { getPostBySlug } from "@/lib/blog";
 import { SITE_URL } from "@/lib/siteConfig";
 import { FeaturesSectionWithHoverEffects, FeatureItem } from "@/components/ui/feature-section-with-hover-effects";
 import {
@@ -87,6 +89,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   // Get other services in the same category for navigation
   const relatedServices = servicesData.filter((s) => s.slug !== service.slug);
+
+  const relatedArticles = service.relatedArticleSlugs
+    .map((slug) => getPostBySlug(slug))
+    .filter((post): post is NonNullable<typeof post> => Boolean(post));
 
   const deliverableIcons = [
     <IconSparkles key="1" className="w-7 h-7" />,
@@ -219,6 +225,64 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
             <FeaturesSectionWithHoverEffects features={deliverableFeatures} />
           </div>
+        </Reveal>
+
+        {/* Notre méthode — contenu unique par service, au-delà des livrables */}
+        <Reveal delay={150} style={{ marginTop: "60px", maxWidth: "820px", margin: "60px auto 0" }}>
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "2rem",
+              fontWeight: 200,
+              textTransform: "uppercase",
+              color: "var(--c-navy)",
+              letterSpacing: "0.04em",
+              marginBottom: "20px",
+              textAlign: "center",
+            }}
+          >
+            Notre méthode
+          </h2>
+          {service.approach.map((paragraph, i) => (
+            <p
+              key={i}
+              style={{
+                fontSize: "1rem",
+                lineHeight: "1.75em",
+                fontFamily: "var(--font-body)",
+                color: "rgba(var(--c-navy-rgb),0.82)",
+                marginBottom: i < service.approach.length - 1 ? "16px" : 0,
+              }}
+            >
+              {paragraph}
+            </p>
+          ))}
+
+          {relatedArticles.length > 0 && (
+            <div style={{ marginTop: "30px", paddingTop: "24px", borderTop: "1px solid rgba(var(--c-navy-rgb),0.12)" }}>
+              <p
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "0.85rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  color: service.color,
+                  marginBottom: "10px",
+                }}
+              >
+                Pour aller plus loin
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+                {relatedArticles.map((post) => (
+                  <li key={post.slug}>
+                    <Link href={`/blog/${post.slug}`} className="article-related-link">
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </Reveal>
       </section>
 
