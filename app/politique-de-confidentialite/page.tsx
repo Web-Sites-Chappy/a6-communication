@@ -28,7 +28,7 @@ export default function PolitiqueConfidentialitePage() {
               Le responsable du traitement des données collectées via ce site est A6
               COMMUNICATION ET EVENEMENTIEL (SAS), 73 Allée Kléber, 34000 Montpellier, SIREN 105
               781 751, joignable à{" "}
-              <a href="mailto:contact@a6communication.fr">contact@a6communication.fr</a>.
+              <a href="mailto:contact@a6agence.com">contact@a6agence.com</a>.
             </p>
 
             <h2>2. Données collectées</h2>
@@ -84,7 +84,7 @@ export default function PolitiqueConfidentialitePage() {
               Informatique et Libertés, vous disposez d&apos;un droit d&apos;accès, de rectification,
               d&apos;effacement, de limitation, d&apos;opposition et de portabilité sur vos données
               personnelles. Vous pouvez exercer ces droits en nous écrivant à{" "}
-              <a href="mailto:contact@a6communication.fr">contact@a6communication.fr</a>. Vous
+              <a href="mailto:contact@a6agence.com">contact@a6agence.com</a>. Vous
               disposez également du droit d&apos;introduire une réclamation auprès de la CNIL
               (
               <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">

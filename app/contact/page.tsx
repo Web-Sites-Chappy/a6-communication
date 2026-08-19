@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const info: { label: string; value: string; href?: string }[] = [
   { label: "Région",           value: "Occitanie, France" },
   { label: "Téléphone",        value: "06 10 18 87 47", href: "tel:+33610188747" },
-  { label: "Email",            value: "contact@a6communication.fr", href: "mailto:contact@a6communication.fr" },
+  { label: "Email",            value: "contact@a6agence.com", href: "mailto:contact@a6agence.com" },
 ];
 
 export default function ContactPage() {

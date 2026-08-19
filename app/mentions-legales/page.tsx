@@ -36,7 +36,7 @@ export default function MentionsLegalesPage() {
               <li>Président : Manuel Dalla Zanna</li>
               <li>Directeur général : Eric Gibaja</li>
               <li>
-                Contact : <a href="mailto:contact@a6communication.fr">contact@a6communication.fr</a>
+                Contact : <a href="mailto:contact@a6agence.com">contact@a6agence.com</a>
               </li>
             </ul>
 

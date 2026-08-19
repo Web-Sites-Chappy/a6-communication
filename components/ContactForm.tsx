@@ -147,7 +147,7 @@ function ContactFormInner() {
       )}
       {status === "error" && (
         <p role="alert" style={{ marginTop: "16px", textAlign: "center", color: "var(--c-rouge-fg)", fontFamily: "var(--font-body)" }}>
-          Une erreur est survenue. Merci de réessayer ou de nous écrire directement à contact@a6communication.fr.
+          Une erreur est survenue. Merci de réessayer ou de nous écrire directement à contact@a6agence.com.
         </p>
       )}
     </form>

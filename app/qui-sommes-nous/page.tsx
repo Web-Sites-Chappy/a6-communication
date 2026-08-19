@@ -22,13 +22,41 @@ const values = [
 ];
 
 const team = [
-  { name: "Manuel", subtitle: "L'esprit numérique", img: "/photos/manuel.webp", linkedin: "https://www.linkedin.com/in/manuel-dalla-zanna-70b027258/" },
-  { name: "Eric",   subtitle: "L'esprit poétique",  img: "/photos/eric.webp",   linkedin: "https://www.linkedin.com/in/eric-gibaja-13351727b/" },
+  {
+    name: "Manuel Dalla Zanna",
+    role: "Président",
+    subtitle: "L'esprit numérique",
+    img: "/photos/manuel.webp",
+    linkedin: "https://www.linkedin.com/in/manuel-dalla-zanna-70b027258/",
+  },
+  {
+    name: "Eric Gibaja",
+    role: "Directeur général",
+    subtitle: "L'esprit poétique",
+    img: "/photos/eric.webp",
+    linkedin: "https://www.linkedin.com/in/eric-gibaja-13351727b/",
+  },
 ];
+
+const teamJsonLd = team.map((person) => ({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: person.name,
+  jobTitle: person.role,
+  sameAs: [person.linkedin],
+  worksFor: { "@type": "Organization", name: "A6 Communication et Événementiel" },
+}));
 
 export default function QuiSommesNousPage() {
   return (
     <main>
+      {teamJsonLd.map((person) => (
+        <script
+          key={person.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }}
+        />
+      ))}
       <Hero
         imageSrc="/photos/DSC_0802.webp"
         title={
@@ -112,6 +140,20 @@ export default function QuiSommesNousPage() {
             >
               {person.name}
             </h3>
+            <p
+              style={{
+                color: "var(--c-navy)",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.85rem",
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                opacity: 0.65,
+                marginTop: "0",
+                marginBottom: "6px",
+              }}
+            >
+              {person.role}
+            </p>
             <p
               style={{
                 color: "var(--c-navy)",

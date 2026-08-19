@@ -95,9 +95,9 @@ export default function A6EnBref() {
             margin: "24px auto 0",
           }}
         >
-          A6 Communication &amp; Événementiel se targue d’être dirigée par deux associés
-          complémentaires et atypiques. Manuel, pas encore la trentaine et son incontournable
-          esprit numérique, et Eric, la cinquantaine passée et son indéfectible esprit poétique.
+          A6 Communication &amp; Événementiel est dirigée par deux associés complémentaires et
+          atypiques. Manuel, pas encore la trentaine, porte l’esprit numérique de l’agence ; Eric,
+          la cinquantaine passée, en porte l’esprit poétique.
         </p>
         <p
           style={{
@@ -111,7 +111,7 @@ export default function A6EnBref() {
           }}
         >
           Leurs parcours respectifs et leur association n’appartiennent pas au hasard, mais bien à
-          ce goût et cette volonté mutuels de participer à cette incontestable mutation, tant dans
+          ce goût et cette volonté mutuels de participer à cette mutation profonde, tant dans
           la communication que dans l’événementiel, où l’image et son histoire s’identifient dans
           les&nbsp;
           <span style={{ fontWeight: 700, fontSize: "1.3em", color: "var(--c-rouge-fg)" }}>6&nbsp;A</span>&nbsp;:
