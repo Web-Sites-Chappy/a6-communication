@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { IconBrandLinkedin } from "@tabler/icons-react";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
@@ -27,14 +26,12 @@ const team = [
     role: "Président",
     subtitle: "L'esprit numérique",
     img: "/photos/manuel.webp",
-    linkedin: "https://www.linkedin.com/in/manuel-dalla-zanna-70b027258/",
   },
   {
     name: "Eric Gibaja",
     role: "Directeur général",
     subtitle: "L'esprit poétique",
     img: "/photos/eric.webp",
-    linkedin: "https://www.linkedin.com/in/eric-gibaja-13351727b/",
   },
 ];
 
@@ -43,7 +40,6 @@ const teamJsonLd = team.map((person) => ({
   "@type": "Person",
   name: person.name,
   jobTitle: person.role,
-  sameAs: [person.linkedin],
   worksFor: { "@type": "Organization", name: "A6 Communication et Événementiel" },
 }));
 
@@ -166,16 +162,6 @@ export default function QuiSommesNousPage() {
             >
               {person.subtitle}
             </p>
-            <a
-              href={person.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Profil LinkedIn de ${person.name}`}
-              className="linkedin-link"
-              style={{ display: "inline-flex", alignItems: "center", marginTop: "10px", color: "var(--c-rouge-fg)" }}
-            >
-              <IconBrandLinkedin size={22} stroke={1.5} />
-            </a>
           </Reveal>
         ))}
       </div>
