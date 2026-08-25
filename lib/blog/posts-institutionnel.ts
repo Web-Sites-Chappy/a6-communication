@@ -1259,7 +1259,7 @@ export const postsInstitutionnel: BlogPost[] = [
     body: [
       {
         kind: "p",
-        text: "BFM, BFM Locales et RMC ouvrent, en partenariat avec l’Association des Maires de France, les candidatures de la 9ᵉ édition du Grand Prix des Maires. Le concours distingue les maires et élus locaux qui portent des projets ambitieux au service de leurs administrés, dans six catégories.",
+        text: "BFM, BFM Locales et RMC ouvrent, en partenariat avec l’Association des Maires de France, les candidatures de la 9ᵉ édition du [Grand Prix des Maires](https://www.grandprixdesmaires-candidatures.fr/). Le concours distingue les maires et élus locaux qui portent des projets ambitieux au service de leurs administrés, dans six catégories.",
       },
       {
         kind: "ul",
@@ -1305,7 +1305,7 @@ export const postsInstitutionnel: BlogPost[] = [
     body: [
       {
         kind: "p",
-        text: "Frédéric Carré a été élu président de la Fédération Française du Bâtiment (FFB) le 20 mars 2026, à l’issue d’un conseil d’administration. Il a pris ses fonctions le 19 juin 2026, succédant à Olivier Salleron, qui présidait la fédération depuis 2020. Âgé de 51 ans, Frédéric Carré dirige le Groupe Carré, entreprise de métallerie et de construction métallique de 150 salariés basée à Tournefeuille, en Haute-Garonne. Il occupait jusque-là la présidence du conseil des régions de la FFB et la présidence de la Fédération régionale FFB Occitanie.",
+        text: "Frédéric Carré a été [élu président de la Fédération Française du Bâtiment](https://www.ffbatiment.fr/actualites-batiment/presse/communique-presse-election-mars-2026-frederic-carre) (FFB) le 20 mars 2026, à l’issue d’un conseil d’administration. Il a pris ses fonctions le 19 juin 2026, succédant à Olivier Salleron, qui présidait la fédération depuis 2020. Âgé de 51 ans, Frédéric Carré dirige le Groupe Carré, entreprise de métallerie et de construction métallique de 150 salariés basée à Tournefeuille, en Haute-Garonne. Il occupait jusque-là la présidence du conseil des régions de la FFB et la présidence de la Fédération régionale FFB Occitanie.",
       },
       {
         kind: "p",
