@@ -37,7 +37,7 @@ export const clientSegments: ClientSegment[] = [
     metaDescription:
       "A6 accompagne cabinets d'architecture, ordres régionaux et associations professionnelles dans leur communication et leurs événements institutionnels.",
     img: "/photos/nos-clients/professionnels-batir.webp",
-    imgAlt: "Deux professionnels du bâtiment échangent autour d'un plan architectural",
+    imgAlt: "Un artisan taille un bloc de pierre au maillet et au ciseau",
     desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles : A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle.",
     intro: [
       "Un ordre professionnel ou une fédération ne parle jamais en son seul nom : chaque prise de parole engage ses membres, ses tutelles et parfois des confrères qui attendent l'erreur. La communication institutionnelle demande une rigueur différente de la communication commerciale, une rigueur que nous pratiquons avec les acteurs de l'Acte et Art de Bâtir depuis notre activité antérieure documentée.",
@@ -76,8 +76,8 @@ export const clientSegments: ClientSegment[] = [
     metaTitle: "Agence événementiel culturel patrimoine | A6",
     metaDescription:
       "A6 accompagne fondations du patrimoine, associations culturelles, musées et lieux de mémoire dans des événements qui font vivre un lieu sans le trahir.",
-    img: "/photos/nos-clients/institution-carcassonne.webp",
-    imgAlt: "Le château comtal de la cité de Carcassonne, en Occitanie",
+    img: "/photos/nos-clients/institution-institut-de-france.webp",
+    imgAlt: "L'Institut de France vu depuis le Pont des Arts, à Paris",
     desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées.",
     intro: [
       "Un site patrimonial, un musée ou un lieu de mémoire n'est jamais un simple décor : c'est le sujet de l'événement, et il impose ses propres contraintes de conservation, d'occupation et de circulation. Une scénographie mal pensée peut réussir l'événement et abîmer le patrimoine — l'équilibre entre les deux est au cœur de notre pratique événementielle.",
@@ -152,7 +152,7 @@ export const clientSegments: ClientSegment[] = [
     metaDescription:
       "A6 accompagne associations politiques, sportives, sociales et compagnonnages dans une communication et des événements à la hauteur de leurs moyens réels.",
     img: "/photos/nos-clients/monde-associatif.webp",
-    imgAlt: "Mains jointes en signe d'unité, symbole du monde associatif",
+    imgAlt: "Groupe de membres échangeant lors d'un événement associatif",
     desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes.",
     intro: [
       "Une association ne dispose ni du budget d'une entreprise ni de la neutralité obligée d'une collectivité : elle porte une cause, un métier ou une tradition avec des moyens réels, souvent bénévoles, qu'il faut respecter plutôt que contourner par des recommandations hors de portée.",

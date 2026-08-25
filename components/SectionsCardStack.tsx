@@ -7,10 +7,10 @@ import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
 
 const sections: CardStackItem[] = [
   { id: "qui", title: "Qui sommes-nous", description: "Manuel & Eric, deux esprits complémentaires, six valeurs fondatrices.", imageSrc: "/photos/DSC_0836.webp", href: "/qui-sommes-nous" },
-  { id: "services", title: "Nos services", description: "Communication digitale, identité visuelle, organisation d'événements.", imageSrc: "/photos/DSC_1019.webp", href: "/nos-services" },
-  { id: "real", title: "Réalisations", description: "Congrès, forums, journées thématiques : des événements qui marquent.", imageSrc: "/photos/DSC_0855.webp", href: "/realisations" },
+  { id: "services", title: "Nos services", description: "Communication digitale, identité visuelle, organisation d'événements.", imageSrc: "/photos/cardstack-services.webp", href: "/nos-services" },
+  { id: "real", title: "Réalisations", description: "Congrès, forums, journées thématiques : des événements qui marquent.", imageSrc: "/photos/cardstack-realisations.webp", href: "/realisations" },
   { id: "cibles", title: "Nos clients", description: "Artisans, architectes, communes, culture et monde associatif.", imageSrc: "/photos/DSC_1091.webp", href: "/nos-clients" },
-  { id: "blog", title: "Blog", description: "Coulisses, événements à venir et temps forts de l'agence.", imageSrc: "/photos/DSC_0802.webp", href: "/blog" },
+  { id: "blog", title: "Blog", description: "Coulisses, événements à venir et temps forts de l'agence.", imageSrc: "/photos/cardstack-blog.webp", href: "/blog" },
 ];
 
 /** Track viewport width to scale the fan on small screens. */
