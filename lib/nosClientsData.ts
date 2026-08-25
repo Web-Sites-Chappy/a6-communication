@@ -38,7 +38,7 @@ export const clientSegments: ClientSegment[] = [
       "A6 accompagne cabinets d'architecture, ordres régionaux et associations professionnelles dans leur communication et leurs événements institutionnels.",
     img: "/photos/nos-clients/professionnels-batir.webp",
     imgAlt: "Un artisan taille un bloc de pierre au maillet et au ciseau",
-    desc: "Cabinets d'architecture, ordres régionaux, associations professionnelles : A6 accompagne les acteurs de l'acte de bâtir dans leur communication institutionnelle et événementielle.",
+    desc: "Architectes, PME, PMI, Artisans : A6 accompagne les acteurs de l'acte de bâtir dans leur communication et leurs événements.",
     intro: [
       "Un ordre professionnel ou une fédération ne parle jamais en son seul nom : chaque prise de parole engage ses membres, ses tutelles et parfois des confrères qui attendent l'erreur. La communication institutionnelle demande une rigueur différente de la communication commerciale, une rigueur que nous pratiquons avec les acteurs de l'Acte et Art de Bâtir depuis notre activité antérieure documentée.",
       "Cabinets d'architecture, ordres régionaux, associations professionnelles du bâtiment : nous connaissons les contraintes propres à ce secteur, de la neutralité éditoriale à la nécessité de tenir un discours cohérent sur plusieurs mandatures.",
@@ -153,7 +153,7 @@ export const clientSegments: ClientSegment[] = [
       "A6 accompagne associations politiques, sportives, sociales et compagnonnages dans une communication et des événements à la hauteur de leurs moyens réels.",
     img: "/photos/nos-clients/monde-associatif.webp",
     imgAlt: "Groupe de membres échangeant lors d'un événement associatif",
-    desc: "Associations politiques, sportives, sociales : A6 met sa capacité à créer du lien et de la mobilisation au service du monde associatif sous toutes ses formes.",
+    desc: "Associations culturelles, politiques, sociales et sportives : A6 met sa capacité à créer du lien et de la mobilisation au service du monde culturel et associatif sous toutes ses formes.",
     intro: [
       "Une association ne dispose ni du budget d'une entreprise ni de la neutralité obligée d'une collectivité : elle porte une cause, un métier ou une tradition avec des moyens réels, souvent bénévoles, qu'il faut respecter plutôt que contourner par des recommandations hors de portée.",
       "Nous accompagnons des associations politiques, sportives, sociales et des compagnonnages traditionnels dans des projets calibrés à leurs moyens véritables, en valorisant ce qui fait leur force : des parcours et des savoir-faire humains qu'aucune grande agence généraliste ne peut raconter de l'intérieur.",
