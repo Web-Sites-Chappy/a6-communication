@@ -26,6 +26,34 @@ interface Realisation {
 
 const realisations: Realisation[] = [
   {
+    title: "Inauguration de la Fondation Magos à Málaga",
+    service: { label: "Conception & scénographie", href: "/nos-services/conception-et-scenographie" },
+    meta: "Fondation Magos · Málaga, 15-16 novembre 2024",
+    img: "/photos/realisations/fondation-magos-malaga.webp",
+    imgAlt: "Affiche de l’inauguration de la Fondation Magos à Málaga, les 15 et 16 novembre 2024",
+    paragraphs: [
+      "Des royaumes anciens, une spiritualité partagée entre trois textes fondateurs, une exposition pensée pour résonner bien au-delà de Málaga : les 15 et 16 novembre 2024, A6 a accompagné l’inauguration de la Fondation Magos, portée par l’exposition « Tesoro de los Magos » consacrée aux royaumes et à la spiritualité anciens, en partenariat avec le Centre UNESCO d’Andalousie, la Nobel Women’s Initiative et la Diputación de Málaga.",
+      "Notre mission a consisté à accompagner l’organisation de cet événement d’ouverture, entre mise en récit patrimoniale et rayonnement international.",
+    ],
+    link: { label: "Voir la publication", href: "https://www.facebook.com/reel/895377812443350" },
+  },
+  {
+    title: "Les Rendez-vous de l’Architecture 2025 : « Architecture, Dessein de la Mémoire »",
+    service: { label: "Logistique", href: "/nos-services/logistique" },
+    meta: "Conseil régional de l’Ordre des Architectes d’Occitanie · Toulouse, 2025",
+    img: "/photos/realisations/rendez-vous-architecture-2025.webp",
+    imgAlt: "Table ronde des Rendez-vous de l’Architecture 2025 au Centre des Congrès Pierre Baudis à Toulouse, sur le thème « Architecture, Dessein de la Mémoire »",
+    paragraphs: [
+      "Une journée pour interroger les liens entre architecture et mémoire, réunissant historiens, Compagnons du Devoir et grandes figures de la profession : pour l’édition 2025 des Rendez-vous de l’Architecture, organisée au Centre des Congrès Pierre Baudis à Toulouse autour du thème « Architecture, Dessein de la Mémoire », notre agence a accompagné le Conseil régional de l’Ordre des Architectes d’Occitanie dans l’organisation et la mise en œuvre de l’événement.",
+      "Pensée comme une journée de rencontres, de réflexion et de transmission, cette édition a réuni les acteurs de l’architecture, historiens et Compagnons du Devoir et du Tour de France, autour des liens entre architecture, mémoire, matière et création — avec la présence de l’architecte Rudy Ricciotti en invité d’honneur.",
+      "De la préparation à la coordination de l’événement, notre mission a été de contribuer à créer une expérience fluide, forte et fédératrice, à la hauteur de ce rendez-vous majeur pour l’architecture en Occitanie.",
+    ],
+    link: {
+      label: "En savoir plus",
+      href: "https://www.architectes.org/actualites/les-rendez-vous-de-larchitecture-2025-architecture-dessein-de-la-memoire-129313",
+    },
+  },
+  {
     title: "Conférence de Clément Gaillard et promotion de son livre « Habiter un climat »",
     service: { label: "Conception & scénographie", href: "/nos-services/conception-et-scenographie" },
     meta: "CROA Occitanie · Montpellier",
@@ -62,18 +90,6 @@ const realisations: Realisation[] = [
       "Au programme : des temps d’échanges entre architectes français et catalans, ainsi que la projection du film « Penser l’incertitude », consacré à une nouvelle génération de professionnels engagés face aux grands enjeux contemporains de l’architecture.",
       "De la préparation à la coordination de cette rencontre, notre mission a été de créer un moment convivial, inspirant et fédérateur, favorisant les échanges professionnels et renforçant les liens entre l’Occitanie et la Catalogne, à l’occasion de Barcelone, Capitale mondiale de l’Architecture 2026.",
     ],
-  },
-  {
-    title: "Inauguration de la Fondation Magos à Málaga",
-    service: { label: "Conception & scénographie", href: "/nos-services/conception-et-scenographie" },
-    meta: "Fondation Magos · Málaga, 15-16 novembre 2024",
-    img: "/photos/realisations/fondation-magos-malaga.webp",
-    imgAlt: "Affiche de l’inauguration de la Fondation Magos à Málaga, les 15 et 16 novembre 2024",
-    paragraphs: [
-      "Des royaumes anciens, une spiritualité partagée entre trois textes fondateurs, une exposition pensée pour résonner bien au-delà de Málaga : les 15 et 16 novembre 2024, A6 a accompagné l’inauguration de la Fondation Magos, portée par l’exposition « Tesoro de los Magos » consacrée aux royaumes et à la spiritualité anciens, en partenariat avec le Centre UNESCO d’Andalousie, la Nobel Women’s Initiative et la Diputación de Málaga.",
-      "Notre mission a consisté à accompagner l’organisation de cet événement d’ouverture, entre mise en récit patrimoniale et rayonnement international.",
-    ],
-    link: { label: "Voir la publication", href: "https://www.facebook.com/reel/895377812443350" },
   },
 ];
 

@@ -123,6 +123,10 @@ export default function Footer() {
         <p style={{ fontSize: "0.85rem", opacity: 0.7, fontFamily: "var(--font-body)", lineHeight: "1.7em" }}>
           Région Occitanie, France
           <br />
+          <a href="tel:+33782136190" style={{ color: "rgba(255,255,255,0.7)" }}>
+            07 82 13 61 90
+          </a>
+          {" · "}
           <a href="tel:+33610188747" style={{ color: "rgba(255,255,255,0.7)" }}>
             06 10 18 87 47
           </a>
