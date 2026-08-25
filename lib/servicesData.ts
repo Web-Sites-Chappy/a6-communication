@@ -42,7 +42,7 @@ export const servicesData: ServiceItem[] = [
     categorySlug: "communication",
     shortDescription: "Audit, plan de communication, présence sur les réseaux sociaux adaptée à vos cibles.",
     fullDescription: "Une stratégie digitale réussie repose sur une compréhension fine de vos enjeux, de vos publics et de votre écosystème. A6 Communication vous accompagne dans la formalisation d'un plan d'action numérique structuré, orienté résultats et parfaitement aligné avec l'identité de votre organisation.",
-    heroImage: "/photos/DSC_1019.webp",
+    heroImage: "/photos/services/strategie-digitale-hero.webp",
     color: "var(--c-rouge-fg)",
     deliverables: [
       {
@@ -89,7 +89,7 @@ export const servicesData: ServiceItem[] = [
     categorySlug: "communication",
     shortDescription: "Création ou refonte de logo, charte graphique, supports de communication print et web.",
     fullDescription: "Votre identité visuelle est la première empreinte de votre marque. Nous concevons des univers graphiques forts, cohérents et pérennes qui expriment votre singularité, valorisent votre message et renforcent votre notoriété sur tous vos supports physiques et numériques.",
-    heroImage: "/photos/DSC_0855.webp",
+    heroImage: "/photos/services/identite-visuelle-hero.webp",
     color: "var(--c-rouge-fg)",
     deliverables: [
       {
@@ -136,7 +136,7 @@ export const servicesData: ServiceItem[] = [
     categorySlug: "communication",
     shortDescription: "Rédaction, photographie, vidéo : des contenus qui racontent votre histoire.",
     fullDescription: "Le contenu est le cœur battant de toute stratégie de communication efficace. A6 crée des récits authentiques et captivants. Qu'il s'agisse de mots, d'images fixes ou en mouvement, nos productions mettent en lumière votre savoir-faire et engagent vos publics.",
-    heroImage: "/photos/DSC_1091.webp",
+    heroImage: "/photos/services/production-de-contenus-hero.webp",
     color: "var(--c-rouge-fg)",
     deliverables: [
       {
@@ -183,7 +183,7 @@ export const servicesData: ServiceItem[] = [
     categorySlug: "communication",
     shortDescription: "Supports imprimés, panneaux, habillage de sites et signalétique événementielle.",
     fullDescription: "Du papier aux grands formats d'exposition, nous donnons une réalité matérielle à votre image de marque. A6 supervise la fabrication de l'ensemble de vos supports imprimés et de votre signalétique pour assurer une présence physique impeccable et impactante.",
-    heroImage: "/photos/DSC_0802.webp",
+    heroImage: "/photos/services/impressions-signaletique-hero.webp",
     color: "var(--c-rouge-fg)",
     deliverables: [
       {
@@ -230,7 +230,7 @@ export const servicesData: ServiceItem[] = [
     categorySlug: "evenementiel",
     shortDescription: "Création du concept, du programme et de l'identité visuelle de l'événement.",
     fullDescription: "Un événement marquant s'appuie sur une narration forte et un univers visuel immersif. Nous concevons l'architecture globale de votre rassemblement : de l'idée créative originale à l'aménagement des espaces scéniques, en passant par le rythme de vos temps forts.",
-    heroImage: "/photos/DSC_0836.webp",
+    heroImage: "/photos/services/conception-et-scenographie-hero.webp",
     color: "var(--c-rouge)",
     deliverables: [
       {
@@ -277,7 +277,7 @@ export const servicesData: ServiceItem[] = [
     categorySlug: "evenementiel",
     shortDescription: "Gestion des prestataires, des espaces, de la technique, de l'accueil et des autorisations administratives.",
     fullDescription: "Une organisation sans faille pour garantir le succès de votre événement et votre tranquillité. A6 orchestre l'ensemble de la chaîne opérationnelle : repérage des lieux, coordination des équipes techniques, traiteurs, sécurité, accueil du public et gestion des autorisations administratives.",
-    heroImage: "/photos/DSC_1019.webp",
+    heroImage: "/photos/services/logistique-hero.webp",
     color: "var(--c-rouge)",
     deliverables: [
       {
@@ -324,7 +324,7 @@ export const servicesData: ServiceItem[] = [
     categorySlug: "evenementiel",
     shortDescription: "Modération, animation de tables rondes, intervenants, moments conviviaux.",
     fullDescription: "L'animation est le moteur de l'engagement de votre audience. Nous rythmons vos interventions, animons vos tables rondes avec clarté et bienveillance, et concevons des moments d'échange et de convivialité qui favorisent le réseautage et la cohésion.",
-    heroImage: "/photos/DSC_0855.webp",
+    heroImage: "/photos/services/animation-hero.webp",
     color: "var(--c-rouge)",
     deliverables: [
       {
@@ -371,7 +371,7 @@ export const servicesData: ServiceItem[] = [
     categorySlug: "evenementiel",
     shortDescription: "Relations presse, communiqués et dossiers de presse, médiatisation avant, pendant et après l'événement.",
     fullDescription: "Une couverture médiatique ciblée et impactante pour amplifier votre visibilité. A6 élabore vos stratégies de relations presse, dossiers de presse, communiqués et accueil des journalistes pour des retombées régionales et nationales à la hauteur de vos ambitions.",
-    heroImage: "/photos/DSC_1091.webp",
+    heroImage: "/photos/services/relations-presse-hero.webp",
     color: "var(--c-rouge)",
     deliverables: [
       {
