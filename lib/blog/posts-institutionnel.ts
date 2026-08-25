@@ -1240,4 +1240,81 @@ export const postsInstitutionnel: BlogPost[] = [
       { label: "Comment choisir une agence de communication", href: "/blog/choisir-agence-communication" },
     ],
   },
+
+  {
+    slug: "grand-prix-des-maires-2026",
+    title: "Grand Prix des Maires 2026 : candidatures ouvertes pour les projets locaux innovants",
+    metaTitle: "Grand Prix des Maires 2026 | A6",
+    metaDescription:
+      "BFM, RMC et l’Association des Maires de France ouvrent la 9e édition du Grand Prix des Maires. Ce que ce concours change pour la communication d’une collectivité.",
+    keyword: "grand prix des maires",
+    category: "Institutionnel",
+    date: "2026-08-25",
+    dateLabel: "Août 2026",
+    readingMinutes: 3,
+    img: "/photos/blog/agence-communication-publique-collectivites-1.webp",
+    imgAlt: "Salle du conseil d’une collectivité, illustration du Grand Prix des Maires 2026",
+    excerpt:
+      "BFM, BFM Locales, RMC et l’Association des Maires de France ouvrent la 9e édition du Grand Prix des Maires. Six catégories, une cérémonie au Théâtre du Lido le 24 novembre 2026 : ce qu’une collectivité candidate a intérêt à préparer dès maintenant.",
+    body: [
+      {
+        kind: "p",
+        text: "BFM, BFM Locales et RMC ouvrent, en partenariat avec l’Association des Maires de France, les candidatures de la 9ᵉ édition du Grand Prix des Maires. Le concours distingue les maires et élus locaux qui portent des projets ambitieux au service de leurs administrés, dans six catégories.",
+      },
+      {
+        kind: "ul",
+        items: [
+          "Ville / commune sociale et solidaire",
+          "Prix spécial santé MNT (nouveau)",
+          "Aménagement et bâti responsable",
+          "Environnement et mobilités",
+          "Sport et culture",
+          "Agriculture et alimentation",
+        ],
+      },
+      {
+        kind: "note",
+        text: "La cérémonie de remise des prix se tient le mardi 24 novembre 2026 au Théâtre du Lido, à Paris. L’an dernier, plus de 380 candidatures avaient été déposées.",
+      },
+      {
+        kind: "p",
+        text: "Pour une commune ou une intercommunalité, ce type de concours n’est jamais qu’une case à cocher. Une candidature qui retient l’attention d’un jury raconte un projet avec les mêmes exigences qu’un dossier de presse ou qu’un rapport d’activité : un chiffre sourcé, un avant/après concret, un impact vérifiable pour les habitants plutôt qu’une promesse. C’est aussi l’occasion de mobiliser en interne les équipes et les partenaires qui ont porté le projet, et de préparer en amont les visuels et le récit qui serviront ensuite, prix ou non.",
+      },
+      {
+        kind: "p",
+        text: "Notre agence accompagne des institutions et collectivités d’Occitanie dans la valorisation de leurs projets et leurs [relations presse](/nos-services/relations-presse). Si vous portez un projet qui mériterait d’être candidaté, [échangeons](/contact).",
+      },
+    ],
+  },
+
+  {
+    slug: "frederic-carre-president-ffb",
+    title: "Frédéric Carré à la présidence de la FFB : ce que change une nouvelle présidence",
+    metaTitle: "Frédéric Carré, président de la FFB | A6",
+    metaDescription:
+      "Frédéric Carré, dirigeant du Groupe Carré à Tournefeuille, préside la Fédération Française du Bâtiment depuis juin 2026. Les enjeux de communication d’une passation.",
+    keyword: "élection président FFB",
+    category: "Institutionnel",
+    date: "2026-08-25",
+    dateLabel: "Août 2026",
+    readingMinutes: 3,
+    img: "/photos/blog/organiser-congres-federation-1.webp",
+    imgAlt: "Rangées de sièges d’un auditorium vide, illustration de l’élection à la présidence d’une fédération professionnelle",
+    excerpt:
+      "Frédéric Carré, dirigeant du Groupe Carré à Tournefeuille, préside la Fédération Française du Bâtiment depuis le 19 juin 2026. Ce qu’une passation de ce type engage pour la communication d’une organisation professionnelle.",
+    body: [
+      {
+        kind: "p",
+        text: "Frédéric Carré a été élu président de la Fédération Française du Bâtiment (FFB) le 20 mars 2026, à l’issue d’un conseil d’administration. Il a pris ses fonctions le 19 juin 2026, succédant à Olivier Salleron, qui présidait la fédération depuis 2020. Âgé de 51 ans, Frédéric Carré dirige le Groupe Carré, entreprise de métallerie et de construction métallique de 150 salariés basée à Tournefeuille, en Haute-Garonne. Il occupait jusque-là la présidence du conseil des régions de la FFB et la présidence de la Fédération régionale FFB Occitanie.",
+      },
+      {
+        kind: "p",
+        text: "Une présidence occitane à la tête d’une fédération nationale, c’est un repère qui compte pour les acteurs du bâtiment de la région — et un rappel de ce que change, en communication, une passation à la tête d’une organisation professionnelle. Le nouveau président hérite d’une parole qui engage l’ensemble d’une profession, y compris ceux qui n’ont pas voté pour lui ; le premier travail consiste à distinguer ce qui relève d’une position déjà actée par la fédération de ce qui reste à construire sous ce nouveau mandat, avant toute prise de parole publique.",
+      },
+      {
+        kind: "p",
+        text: "C’est un exercice que nous connaissons bien aux côtés d’ordres professionnels et de fédérations en Occitanie : voir notre article sur la [communication institutionnelle](/blog/communication-institutionnelle-enjeux) et [échanger avec nous](/contact).",
+      },
+    ],
+  },
 ];
