@@ -54,7 +54,7 @@ export default function QuiSommesNousPage() {
         />
       ))}
       <Hero
-        imageSrc="/photos/DSC_0802.webp"
+        imageSrc="/photos/manuel-eric-hero.webp"
         title={
           <>
             Qui<br />
