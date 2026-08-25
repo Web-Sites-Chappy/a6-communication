@@ -44,8 +44,8 @@ const realisations: Realisation[] = [
     img: "/photos/realisations/rendez-vous-architecture-2025.webp",
     imgAlt: "Table ronde des Rendez-vous de l’Architecture 2025 au Centre des Congrès Pierre Baudis à Toulouse, sur le thème « Architecture, Dessein de la Mémoire »",
     paragraphs: [
-      "Une journée pour interroger les liens entre architecture et mémoire, réunissant historiens, Compagnons du Devoir et grandes figures de la profession : pour l’édition 2025 des Rendez-vous de l’Architecture, organisée au Centre des Congrès Pierre Baudis à Toulouse autour du thème « Architecture, Dessein de la Mémoire », notre agence a accompagné le Conseil régional de l’Ordre des Architectes d’Occitanie dans l’organisation et la mise en œuvre de l’événement.",
-      "Pensée comme une journée de rencontres, de réflexion et de transmission, cette édition a réuni les acteurs de l’architecture, historiens et Compagnons du Devoir et du Tour de France, autour des liens entre architecture, mémoire, matière et création — avec la présence de l’architecte Rudy Ricciotti en invité d’honneur.",
+      "Une journée pour interroger les liens entre architecture et mémoire, réunissant historiens, Compagnons du Devoir et du Tour de France et grandes figures de la profession : pour l’édition 2025 des Rendez-vous de l’Architecture, organisée au Centre des Congrès Pierre Baudis à Toulouse autour du thème « Architecture, Dessein de la Mémoire », notre agence a accompagné le Conseil régional de l’Ordre des Architectes d’Occitanie dans l’organisation et la mise en œuvre de l’événement.",
+      "Pensée comme une journée de rencontres, de réflexion et de transmission, cette édition a réuni les acteurs de l’architecture, historiens et Compagnons du Devoir et du Tour de France, autour des liens entre architecture, mémoire, matière et création, avec la présence de l’architecte Rudy Ricciotti en invité d’honneur.",
       "De la préparation à la coordination de l’événement, notre mission a été de contribuer à créer une expérience fluide, forte et fédératrice, à la hauteur de ce rendez-vous majeur pour l’architecture en Occitanie.",
     ],
     link: {
@@ -60,21 +60,21 @@ const realisations: Realisation[] = [
     img: "/photos/realisations/clement-gaillard-conference-dedicace.webp",
     imgAlt: "Clément Gaillard dédicace son livre « Habiter un climat » lors de sa conférence au CROA Occitanie à Montpellier",
     paragraphs: [
-      "Un essai qui interroge notre manière d’habiter le climat, un architecte-urbaniste venu en discuter en personne : à l’occasion de la parution de son ouvrage « Habiter un climat », notre agence a accompagné l’organisation d’une conférence de Clément Gaillard dans les locaux du CROA Occitanie à Montpellier.",
+      "Un essai qui interroge notre manière d’habiter le climat, un docteur en urbanisme venu en discuter en personne : à l’occasion de la parution de son ouvrage « Habiter un climat », notre agence a accompagné l’organisation d’une conférence de Clément Gaillard dans les locaux du CROA Occitanie à Montpellier.",
       "Cette rencontre a permis d’explorer une question centrale pour l’architecture contemporaine : comment renouer avec le climat et concevoir des manières d’habiter plus résilientes ?",
       "À travers une approche historique, engagée et nourrie d’exemples venus du monde entier, Clément Gaillard a invité les participants à repenser les pratiques architecturales et urbaines en s’appuyant sur des savoir-faire capables de mieux composer avec les milieux.",
       "Notre mission : contribuer à créer un temps d’échange inspirant, accessible et fédérateur, autour des grands enjeux climatiques qui transforment aujourd’hui nos territoires et nos façons d’habiter.",
     ],
   },
   {
-    title: "Animation de la table ronde des Compagnons du Devoir",
+    title: "Animation de la table ronde des Compagnons du Devoir et du Tour de France",
     service: { label: "Animation", href: "/nos-services/animation" },
-    meta: "Compagnons du Devoir · 80 ans de la fusion",
+    meta: "Compagnons du Devoir et du Tour de France · 80 ans de la fusion",
     img: "/photos/realisations/compagnons-du-devoir-table-ronde.webp",
     imgAlt: "Table ronde animée par A6 pour les 80 ans de la fusion des Compagnons Charpentiers des Devoirs du Tour de France",
     paragraphs: [
       "Passé, présent et avenir d’un métier ancestral, débattus devant un public de charpentiers, d’artisans et de compagnons : pour les 80 ans de la fusion des Compagnons Charpentiers des Devoirs du Tour de France, le directeur général d’A6 a eu l’honneur d’animer la table ronde « Le métier de charpentier, son passé, son avenir… » aux côtés de François Calame, président des Charpentiers sans frontières, Guillaume Niel, directeur associé chez Terrel, et Julien Fournier, dirigeant de Wood&Co.",
-      "Un travail d’animation pensé pour rendre les discussions vivantes, accessibles et engageantes, tout en valorisant les expertises, les parcours et les savoir-faire portés par les Compagnons du Devoir.",
+      "Un travail d’animation pensé pour rendre les discussions vivantes, accessibles et engageantes, tout en valorisant les expertises, les parcours et les savoir-faire portés par les Compagnons du Devoir et du Tour de France.",
       "Une expérience où prise de parole, écoute et spontanéité étaient au cœur de notre accompagnement.",
     ],
   },
