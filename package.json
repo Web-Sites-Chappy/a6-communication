@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start:hostinger": "NODE_ENV=production node server.js",
     "lint": "eslint",
     "fetch:pexels": "node --env-file=.env.local scripts/fetch-pexels.mjs"
   },
