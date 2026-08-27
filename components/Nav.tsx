@@ -45,6 +45,7 @@ export default function Nav() {
   const [shy, setShy] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileSubOpen, setMobileSubOpen] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -339,27 +340,65 @@ export default function Nav() {
         >
           Fermer
         </button>
-        <ul style={{ listStyle: "none", padding: 0, fontSize: "3em", lineHeight: "1.1em" }}>
-          {navLinks.map((link) => (
+        <ul
+          style={{
+            listStyle: "none",
+            padding: 0,
+            // Plafonné en vw pour éviter qu'un intitulé long ("Nos réalisations")
+            // ne déborde du panneau sur les petits écrans — un 3em fixe faisait
+            // presque toucher le bord droit.
+            fontSize: "clamp(1.6rem, 9vw, 2.6rem)",
+            lineHeight: "1.15em",
+          }}
+        >
+          {navLinks.map((link) => {
+            const hasSub = link.sub.length > 0;
+            const subOpen = mobileSubOpen === link.href;
+            return (
             <li key={link.href} style={{ marginBottom: "0.3em" }}>
-              <Link
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                style={{
-                  fontFamily: "var(--font-display)",
-                  textTransform: "uppercase",
-                  fontWeight: 200,
-                  /* Vert Eau et non Bleu Roi : sur le Bleu Nuit du panneau, le
-                     Bleu Roi ne donne que 1,99:1 (illisible). Le Vert Eau est
-                     la couleur de premier plan de la charte sur fond sombre —
-                     même logique que la variante logo-a6.svg — et monte à ~11:1. */
-                  color: "var(--c-fond)",
-                  letterSpacing: "0.05em",
-                }}
-              >
-                {link.label}
-              </Link>
-              {link.sub.length > 0 && (
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.3em" }}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    textTransform: "uppercase",
+                    fontWeight: 200,
+                    /* Vert Eau et non Bleu Roi : sur le Bleu Nuit du panneau, le
+                       Bleu Roi ne donne que 1,99:1 (illisible). Le Vert Eau est
+                       la couleur de premier plan de la charte sur fond sombre —
+                       même logique que la variante logo-a6.svg — et monte à ~11:1. */
+                    color: "var(--c-fond)",
+                    letterSpacing: "0.05em",
+                    overflowWrap: "anywhere",
+                  }}
+                >
+                  {link.label}
+                </Link>
+                {hasSub && (
+                  <button
+                    type="button"
+                    onClick={() => setMobileSubOpen(subOpen ? null : link.href)}
+                    aria-expanded={subOpen}
+                    aria-label={`${subOpen ? "Fermer" : "Ouvrir"} le sous-menu ${link.label}`}
+                    style={{
+                      background: "none",
+                      border: "none",
+                      color: "var(--c-fond)",
+                      fontSize: "0.5em",
+                      // Cible tactile >=44px malgré la petite icône.
+                      padding: "0.5em",
+                      cursor: "pointer",
+                      transform: subOpen ? "rotate(180deg)" : "none",
+                      transition: "transform 0.25s var(--e-basic)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    ▾
+                  </button>
+                )}
+              </div>
+              {hasSub && subOpen && (
                 <ul style={{ listStyle: "none", padding: 0, fontSize: "0.45em", marginTop: "0.3em" }}>
                   {link.sub.map((sub) => (
                     <li key={sub.href}>
@@ -382,7 +421,8 @@ export default function Nav() {
                 </ul>
               )}
             </li>
-          ))}
+          );
+          })}
           <li style={{ marginTop: "1em" }}>
             <Link
               href="/contact"

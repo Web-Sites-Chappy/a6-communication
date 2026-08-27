@@ -67,7 +67,7 @@ export default function NosServicesPage() {
   return (
     <main>
       <Hero
-        imageSrc="/photos/DSC_1019.webp"
+        imageSrc="/photos/cardstack-services.webp"
         title={
           <>
             Nos
