@@ -14,12 +14,16 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // Pas de "immutable" : les fichiers de /public/photos ne sont pas versionnés
+        // (même nom réutilisé quand une photo est remplacée), donc un cache "immutable"
+        // sur 1 an empêchait toute mise à jour de se propager — d'où d'anciennes photos
+        // qui réapparaissaient selon l'appareil/le cache déjà rempli.
         source: "/photos/:path*",
-        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+        headers: [{ key: "Cache-Control", value: "public, max-age=3600, must-revalidate" }],
       },
       {
         source: "/video/:path*",
-        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+        headers: [{ key: "Cache-Control", value: "public, max-age=3600, must-revalidate" }],
       },
     ];
   },
