@@ -3,7 +3,6 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
-import AccentHeading from "@/components/AccentHeading";
 import { blogPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/siteConfig";
 import type { Metadata } from "next";
@@ -33,33 +32,6 @@ export default function BlogPage() {
         ctaLabel="Nous contacter"
         ctaHref="/contact"
       />
-
-      <Reveal
-        style={{
-          width: "var(--w-max)",
-          maxWidth: "var(--w-limit-text)",
-          margin: "0 auto",
-          padding: "60px 0 20px",
-          textAlign: "center",
-        }}
-      >
-        <AccentHeading lead="Repères &" accent="méthode" />
-        <p
-          style={{
-            marginTop: "24px",
-            fontSize: "1rem",
-            lineHeight: "1.6em",
-            color: "var(--c-navy)",
-            fontFamily: "var(--font-body)",
-            maxWidth: "620px",
-            margin: "24px auto 0",
-          }}
-        >
-          Communication institutionnelle, événementiel, identité de marque : ce que nous avons
-          appris en travaillant avec des institutions, des collectivités et des structures
-          culturelles et associatives en Occitanie.
-        </p>
-      </Reveal>
 
       <div
         className="actu-grid"

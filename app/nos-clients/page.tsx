@@ -44,7 +44,7 @@ export default function NosClientsPage() {
             A6 œuvre au cœur des secteurs qui façonnent, préservent et font rayonner les territoires : bâtisseurs, gardiens du patrimoine, artisans et élus locaux.
           </p>
           <p style={{ margin: 0 }}>
-            Des femmes et des hommes engagés, porteurs de savoir-faire, d’histoires et de projets essentiels, qui méritent une communication et des événements fidèles à leurs valeurs, à la hauteur de leur engagement indispensable à la préservation et au rayonnement de nos territoires.
+            Des femmes et des hommes engagés, porteurs de savoir-faire, qui méritent une communication et des événements à la hauteur de leurs valeurs, de leur engagement indispensable à la préservation et au rayonnement de nos territoires.
           </p>
         </div>
       </Reveal>
