@@ -9,6 +9,130 @@ import type { BlogPost } from "@/lib/blog/types";
  */
 export const postsInstitutionnel: BlogPost[] = [
   {
+    // Article d'actualité (cas réel commenté), pas un cluster KEYWORD-MAP validé
+    // par DataForSEO : le mot-clé "médiation du patrimoine" est informationnel,
+    // volume non mesuré. Ajouté le 2026-08-29 sur la base d'une actualité
+    // Toulouse Métropole vérifiée (voir sources en commentaire de fin d'article).
+    slug: "noviciat-toulouse-mediation-patrimoniale",
+    title: "Le Noviciat à Toulouse : une leçon grandeur nature de médiation patrimoniale",
+    metaTitle: "Médiation du patrimoine à Toulouse | A6",
+    metaDescription:
+      "Le Noviciat, nouveau centre du patrimoine toulousain, ouvre le 19 septembre 2026. Ce que ses choix de médiation apprennent sur la communication patrimoniale.",
+    keyword: "médiation du patrimoine",
+    category: "Institutionnel",
+    date: "2026-08-29",
+    dateLabel: "Août 2026",
+    readingMinutes: 8,
+    img: "/photos/blog/noviciat-toulouse-mediation-patrimoniale-1.webp",
+    imgAlt:
+      "Passage voûté en pierre d’un ancien cloître, illustration du Noviciat, nouveau centre du patrimoine toulousain",
+    excerpt:
+      "Le 19 septembre 2026, Toulouse Métropole ouvre le Noviciat dans un ancien couvent du XVIe siècle. Au-delà de l’exposition, ce lancement illustre plusieurs choix de médiation qui distinguent un lieu patrimonial vivant d’un lieu simplement conservé.",
+    body: [
+      {
+        kind: "p",
+        text: "Le samedi 19 septembre 2026, à l’occasion des Journées européennes du patrimoine, Toulouse Métropole ouvre au public le Noviciat, Centre de l’Architecture et du Patrimoine de Toulouse, au 17 place de la Daurade. Le lieu remplace l’ancien Espace Patrimoine installé de l’autre côté de la placette. Au-delà de l’annonce, ce lancement est un cas d’école pour qui travaille la communication institutionnelle et culturelle : il condense en un seul projet la plupart des arbitrages qui séparent un lieu patrimonial vivant d’un lieu simplement conservé.",
+      },
+      {
+        kind: "h2",
+        text: "Un bâtiment qui a déjà changé quatre fois de fonction",
+        id: "batiment-histoire",
+      },
+      {
+        kind: "p",
+        text: "Le Noviciat occupe un bâtiment construit au XVIe siècle comme noviciat des Jésuites. Il a ensuite servi de caserne militaire, puis d’école, avant de devenir l’atelier de couture du Théâtre du Capitole. Les travaux de restauration ont mis au jour, au premier étage, une fresque du XVIIe siècle restée invisible jusque-là.",
+      },
+      {
+        kind: "p",
+        text: "Cette succession d’usages n’est pas un détail anecdotique pour la communication du projet : c’est le matériau principal du récit. Un bâtiment qui n’a jamais changé de fonction se raconte en une phrase ; un bâtiment qui en a traversé quatre offre autant d’angles pour des publics différents (les passionnés d’histoire militaire, les anciens du Capitole, les riverains qui ont connu l’Espace Patrimoine d’en face). La fresque redécouverte joue le même rôle que la trouvaille inattendue dans n’importe quel projet de valorisation patrimoniale : elle donne une preuve tangible que le bâtiment a encore des choses à révéler, ce qui justifie une visite plutôt qu’une simple prise de connaissance.",
+      },
+      {
+        kind: "h2",
+        text: "300 m² : le choix de l’immersif plutôt que de la vitrine",
+        id: "mediation-immersive",
+      },
+      {
+        kind: "p",
+        text: "Le centre déploie environ 300 m² d’exposition sur deux niveaux, avec maquettes 3D, dioramas, panneaux pédagogiques et tables lumineuses. Le parcours ne suit pas une chronologie de la ville mais des figures et des flux qui l’ont façonnée : pêcheurs de sable de la Garonne, marchands de marbre pyrénéen, pèlerins de Compostelle, Canal du Midi.",
+      },
+      {
+        kind: "h3",
+        text: "Pourquoi un parcours thématique plutôt que chronologique",
+      },
+      {
+        kind: "p",
+        text: "Une frise chronologique protège un commissaire d’exposition de l’oubli d’un siècle, mais elle ne dit rien à un visiteur qui n’a pas de repère préalable sur l’histoire de la ville. Un parcours organisé par figures et par flux fait l’inverse : chaque section répond à une question implicite (« qui a bâti cette ville, avec quoi, en échange de quoi ») et peut se visiter dans le désordre sans perdre son sens. C’est le même principe qui structure un événement dans un lieu patrimonial plutôt qu’une exposition permanente : voir notre article sur l’[événementiel culturel et patrimonial](/blog/evenementiel-culturel-patrimoine), où l’équilibre entre médiation et conservation se pose dans des termes proches.",
+      },
+      {
+        kind: "h2",
+        text: "Un guichet-ressource, pas seulement un lieu d’exposition",
+        id: "guichet-ressource",
+      },
+      {
+        kind: "p",
+        text: "Le Noviciat consacre un espace à l’accompagnement des Toulousains qui envisagent des travaux sur un bâtiment patrimonial : un guichet-ressource pour des projets de rénovation respectueux du bâti ancien, adossé à une vue sur la Garonne et à une chapelle aux volumes généreux qui fait partie du parcours.",
+      },
+      {
+        kind: "note",
+        text: "Ce doublement de fonction (exposition + service public) est ce qui distingue une communication patrimoniale d’une communication culturelle pure : le lieu doit à la fois faire rêver et répondre à une question pratique d’habitant. Les deux registres cohabitent rarement bien sans être pensés ensemble dès la conception.",
+      },
+      {
+        kind: "h2",
+        text: "Une programmation à l’année : l’enjeu réel de la communication patrimoniale",
+        id: "programmation-continuite",
+      },
+      {
+        kind: "p",
+        text: "Toulouse Métropole prévoit une programmation à l’année : ateliers artistiques, visites guidées de la ville, actions à destination des scolaires, et participation aux grands rendez-vous du calendrier patrimonial national (Journées européennes du patrimoine, Journées européennes des métiers d’art, Journées européennes de l’archéologie).",
+      },
+      {
+        kind: "p",
+        text: "C’est le point le plus significatif du dossier, et le plus souvent sous-traité dans les lancements de lieux culturels : une ouverture réussie se mesure à sa couverture presse du jour J, une communication patrimoniale réussie se mesure à ce qui reste visible six mois plus tard. Nous développons ce principe de continuité, qui vaut aussi pour la communication d’une collectivité au sens large, dans notre article sur la [communication publique des collectivités](/blog/agence-communication-publique-collectivites).",
+      },
+      {
+        kind: "h2",
+        text: "Ce que ce lancement dit du positionnement de Toulouse Métropole",
+        id: "positionnement-collectivite",
+      },
+      {
+        kind: "p",
+        text: "L’ouverture du Noviciat s’inscrit dans la démarche portée par Toulouse Métropole depuis l’obtention, en 2019, du label « Ville d’art et d’histoire ». Le choix de remplacer l’ancien Espace Patrimoine plutôt que de le faire évoluer sur place confirme une chose que les acteurs de la communication institutionnelle observent depuis plusieurs éditions des Rendez-vous de l’Architecture organisés par l’Ordre des Architectes d’Occitanie : à Toulouse, la question du patrimoine ne se limite pas à la conservation, elle se traduit en lieux, en programmation et en médiation vivante, ouverts à un public large.",
+      },
+      {
+        kind: "p",
+        text: "C’est précisément le terrain sur lequel A6 accompagne ses clients institutionnels et culturels en Occitanie : voir [nos clients](/nos-clients). Si vous portez un projet de valorisation ou de médiation patrimoniale, [échangeons](/contact).",
+      },
+    ],
+    faq: [
+      {
+        question: "Qu’est-ce que le Noviciat, le nouveau centre du patrimoine de Toulouse ?",
+        answer:
+          "Le Noviciat est le nouveau Centre de l’Architecture et du Patrimoine de Toulouse Métropole, ouvert au public le 19 septembre 2026 au 17 place de la Daurade. Il remplace l’ancien Espace Patrimoine installé de l’autre côté de la placette et propose environ 300 m² d’exposition sur deux niveaux, avec maquettes 3D, dioramas et panneaux pédagogiques. Il fait aussi office de guichet-ressource pour les habitants qui envisagent des travaux sur un bâtiment patrimonial.",
+      },
+      {
+        question: "Où se trouve le Noviciat et depuis quand le bâtiment existe-t-il ?",
+        answer:
+          "Le bâtiment date du XVIe siècle : construit comme noviciat des Jésuites, il a ensuite servi de caserne militaire, puis d’école, avant de devenir l’atelier de couture du Théâtre du Capitole. Les travaux de restauration ont révélé une fresque du XVIIe siècle au premier étage, restée invisible jusqu’à ce chantier. Il se situe au 17 place de la Daurade, à Toulouse.",
+      },
+      {
+        question: "Pourquoi un parcours thématique plutôt qu’une frise chronologique classique ?",
+        answer:
+          "Un parcours organisé par figures et par flux (pêcheurs de sable, marchands de marbre pyrénéen, pèlerins de Compostelle, Canal du Midi) répond à une question implicite du visiteur plutôt que d’exiger de lui un repère chronologique préalable. Chaque section se comprend indépendamment des autres, ce qui permet une visite dans le désordre sans perte de sens. C’est un choix de médiation courant dans les lieux patrimoniaux récents, qui privilégient l’accès immédiat à la compréhension savante exhaustive.",
+      },
+      {
+        question: "Qu’est-ce qui distingue une communication patrimoniale réussie d’un simple lancement d’exposition ?",
+        answer:
+          "La couverture presse du jour d’ouverture se pilote assez facilement ; ce qui distingue une communication patrimoniale réussie, c’est la programmation qui suit dans les mois suivants. Le Noviciat prévoit des ateliers, des visites guidées et des actions scolaires à l’année, en plus de sa participation aux rendez-vous nationaux du patrimoine. Un lieu qui redevient silencieux après son inauguration perd l’essentiel du bénéfice de communication qu’il vient de gagner.",
+      },
+    ],
+    related: [
+      { label: "Événementiel culturel et patrimoine : faire vivre un lieu sans le trahir", href: "/blog/evenementiel-culturel-patrimoine" },
+      { label: "Communication publique : comment une collectivité choisit son agence", href: "/blog/agence-communication-publique-collectivites" },
+      { label: "Communication institutionnelle : les enjeux", href: "/blog/communication-institutionnelle-enjeux" },
+    ],
+  },
+
+  {
     slug: "communication-institutionnelle-enjeux",
     title: "Communication institutionnelle : définition, enjeux et ce qui la distingue",
     metaTitle: "Communication institutionnelle | A6",
