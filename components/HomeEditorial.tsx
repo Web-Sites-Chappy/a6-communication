@@ -29,8 +29,8 @@ export default function HomeEditorial() {
             <br />ET SON <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "uppercase", color: "var(--c-fond)" }}>HISTOIRE</span>
           </>
         }
-        subtitle="Agence de Communication et d'Événementiel au service des professionnels de l’Acte et Art de Bâtir, Institutions, Collectivités, Mairies, monde de la Culture et Associatif qui font vivre nos Territoires, notre Patrimoine."
-        ctaLabel="Discuter de votre projet"
+        subtitle="Agence de Communication et d'Événementiel au service des professionnels de l'Acte et de l'Art de Bâtir, Institutions, Collectivités, Mairies, ainsi que du monde de la Culture et de l'Associatif qui font vivre nos territoires et notre patrimoine."
+        ctaLabel="Parlez-nous de vos besoins"
         ctaHref="/contact"
         interval={5000}
       />
@@ -56,20 +56,6 @@ export default function HomeEditorial() {
           }
           accent="Communication & Événementiel"
         />
-        <p
-          style={{
-            marginTop: "24px",
-            fontSize: "1rem",
-            lineHeight: "1.6em",
-            color: "var(--c-navy)",
-            fontFamily: "var(--font-body)",
-            maxWidth: "600px",
-            margin: "24px auto 0",
-          }}
-        >
-          Deux associés complémentaires, l&apos;un à l&apos;esprit numérique, l&apos;autre à l&apos;esprit poétique,
-          au service d&apos;une communication authentique et d&apos;événements qui marquent les esprits.
-        </p>
       </Reveal>
 
       {/* Navigation hub — interactive fanned card stack */}

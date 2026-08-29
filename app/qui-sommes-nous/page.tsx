@@ -22,23 +22,27 @@ const values = [
 
 const team = [
   {
-    name: "Manuel Dalla Zanna",
+    name: "Manuel",
+    fullName: "Manuel Dalla Zanna",
     role: "Président",
     subtitle: "L'esprit numérique",
     img: "/photos/manuel.webp",
   },
   {
-    name: "Eric Gibaja",
+    name: "Eric",
+    fullName: "Eric Gibaja",
     role: "Directeur général",
     subtitle: "L'esprit poétique",
     img: "/photos/eric.webp",
   },
 ];
 
+// Le nom complet reste utilisé dans le schema.org Person (SEO) même si l'affichage
+// à l'écran ne montre que le prénom.
 const teamJsonLd = team.map((person) => ({
   "@context": "https://schema.org",
   "@type": "Person",
-  name: person.name,
+  name: person.fullName,
   jobTitle: person.role,
   worksFor: { "@type": "Organization", name: "A6 Communication et Événementiel" },
 }));
@@ -48,7 +52,7 @@ export default function QuiSommesNousPage() {
     <main>
       {teamJsonLd.map((person) => (
         <script
-          key={person.name}
+          key={person.jobTitle}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }}
         />
@@ -64,8 +68,6 @@ export default function QuiSommesNousPage() {
           </>
         }
         height="half"
-        ctaLabel="Nos réalisations"
-        ctaHref="/realisations"
       />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 40px", textAlign: "center" }}>

@@ -18,8 +18,8 @@ export default function Hero({
   imageSrc = "/photos/DSC_0836.jpg",
   title,
   subtitle,
-  ctaLabel = "Découvrir",
-  ctaHref = "/realisations",
+  ctaLabel,
+  ctaHref,
   height = "full",
   ctaVariant = "rouge",
 }: HeroProps) {
@@ -118,13 +118,15 @@ export default function Hero({
           </p>
         )}
 
-        <Link
-          href={ctaHref}
-          className={ctaVariant === "bleu" ? "btn-bleu" : "btn-rouge"}
-          style={{ animation: "fadeInUp 0.9s var(--e-basic) 0.55s both" }}
-        >
-          {ctaLabel}
-        </Link>
+        {ctaLabel && ctaHref && (
+          <Link
+            href={ctaHref}
+            className={ctaVariant === "bleu" ? "btn-bleu" : "btn-rouge"}
+            style={{ animation: "fadeInUp 0.9s var(--e-basic) 0.55s both" }}
+          >
+            {ctaLabel}
+          </Link>
+        )}
       </div>
     </section>
   );

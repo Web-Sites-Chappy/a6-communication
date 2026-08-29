@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
-    label: "Qui sommes-nous",
+    label: "Qui sommes-nous ?",
     href: "/qui-sommes-nous",
     sub: [],
   },
@@ -47,12 +47,43 @@ export default function Nav() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileSubOpen, setMobileSubOpen] = useState<string | null>(null);
   const pathname = usePathname();
+  const mobileMenuTriggerRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuPanelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setShy(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    // Copié dès l'ouverture : au nettoyage React a déjà réappliqué `inert` sur le
+    // bouton "Menu" via le re-rendu, donc lire mobileMenuTriggerRef.current à ce
+    // moment-là pointerait potentiellement sur le mauvais état.
+    const trigger = mobileMenuTriggerRef.current;
+
+    // Verrouille le scroll du fond pendant que le panneau modal est ouvert.
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    // Déplace le focus dans le panneau à l'ouverture (bouton "Fermer", premier
+    // élément focusable) plutôt que de le laisser sur le déclencheur masqué.
+    mobileMenuPanelRef.current?.querySelector<HTMLElement>("button, a")?.focus();
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+      // Rend le focus au bouton "Menu" qui a ouvert le panneau.
+      trigger?.focus();
+    };
+  }, [mobileOpen]);
 
   return (
     <>
@@ -77,7 +108,9 @@ export default function Nav() {
         className="fixed top-0 left-0 z-50 flex justify-between items-center"
         style={{
           width: "100%",
-          padding: shy ? "12px 30px" : "28px 30px",
+          // Le padding horizontal se resserre sous 375px : "Nous contacter" + "Menu"
+          // dans la zone mobile (lg:hidden) débordait à 320px avec 30px fixes de chaque côté.
+          padding: shy ? "12px clamp(14px, 4vw, 30px)" : "28px clamp(14px, 4vw, 30px)",
           backgroundColor: shy ? "rgba(var(--c-navy-rgb),0.97)" : "transparent",
           backdropFilter: shy ? "blur(8px)" : "none",
           boxShadow: shy ? "0 2px 20px rgba(0,0,0,0.35)" : "none",
@@ -250,7 +283,7 @@ export default function Nav() {
                 (e.currentTarget as HTMLAnchorElement).style.color = "var(--c-on-accent)";
               }}
             >
-              Contact
+              Nous contacter
             </Link>
           </li>
         </ul>
@@ -273,9 +306,10 @@ export default function Nav() {
               display: "inline-block",
             }}
           >
-            Contact
+            Nous contacter
           </Link>
           <button
+            ref={mobileMenuTriggerRef}
             className="text-white"
             onClick={() => setMobileOpen(true)}
             aria-expanded={mobileOpen}
@@ -302,6 +336,7 @@ export default function Nav() {
       {/* Mobile menu panel */}
       <div
         id="mobile-menu"
+        ref={mobileMenuPanelRef}
         className="fixed z-[999] overflow-y-auto"
         aria-hidden={!mobileOpen}
         // Sans inert, ce panneau reste dans l'ordre de tabulation même hors écran
@@ -434,7 +469,7 @@ export default function Nav() {
                 color: "var(--c-fond)",
               }}
             >
-              Contact
+              Nous contacter
             </Link>
           </li>
         </ul>
