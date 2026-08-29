@@ -19,6 +19,36 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+// Une note associée au contact garantit que chaque message reste visible dans le
+// CRM : contrairement à la propriété "message" sur le contact, elle n'est jamais
+// écrasée par la soumission suivante du même email (upsert remplace la propriété).
+async function createContactNote(token: string, contactId: string, message: string): Promise<void> {
+  const response = await fetch("https://api.hubapi.com/crm/v3/objects/notes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      properties: {
+        hs_note_body: message,
+        hs_timestamp: Date.now(),
+      },
+      associations: [
+        {
+          to: { id: contactId },
+          types: [{ associationCategory: "HUBSPOT_DEFINED", associationTypeId: 202 }],
+        },
+      ],
+    }),
+  });
+
+  if (!response.ok) {
+    const errorBody = await response.text();
+    console.error("HubSpot note creation failed", response.status, errorBody);
+  }
+}
+
 export async function POST(request: Request) {
   const token = process.env.HUBSPOT_PRIVATE_APP_TOKEN;
   if (!token) {
@@ -68,6 +98,15 @@ export async function POST(request: Request) {
     const errorBody = await hubspotResponse.text();
     console.error("HubSpot upsert failed", hubspotResponse.status, errorBody);
     return NextResponse.json({ error: "Échec de l'envoi. Réessayez plus tard." }, { status: 502 });
+  }
+
+  const upsertResult = (await hubspotResponse.json()) as { results?: Array<{ id?: string }> };
+  const contactId = upsertResult.results?.[0]?.id;
+
+  if (contactId) {
+    await createContactNote(token, contactId, message);
+  } else {
+    console.error("HubSpot upsert succeeded without a contact id in the response", upsertResult);
   }
 
   return NextResponse.json({ ok: true });
