@@ -8,11 +8,11 @@ import AccentHeading from "@/components/AccentHeading";
 import LogosMarquee from "@/components/LogosMarquee";
 
 const heroImages = [
-  "/photos/DSC_0836.webp",
-  "/photos/DSC_0802.webp",
-  "/photos/DSC_0855.webp",
-  "/photos/DSC_1019.webp",
-  "/photos/DSC_1091.webp",
+  "/photos/DSC_0836-v2.webp",
+  "/photos/DSC_0802-v2.webp",
+  "/photos/DSC_0855-v2.webp",
+  "/photos/DSC_1019-v2.webp",
+  "/photos/DSC_1091-v2.webp",
 ];
 
 export default function HomeEditorial() {

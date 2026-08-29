@@ -23,7 +23,7 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-08-29",
     dateLabel: "Août 2026",
     readingMinutes: 8,
-    img: "/photos/blog/noviciat-toulouse-mediation-patrimoniale-1.webp",
+    img: "/photos/blog/noviciat-toulouse-mediation-patrimoniale-1-v2.webp",
     imgAlt:
       "Passage voûté en pierre d’un ancien cloître, illustration du Noviciat, nouveau centre du patrimoine toulousain",
     excerpt:
@@ -143,7 +143,7 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-08-04",
     dateLabel: "Août 2026",
     readingMinutes: 8,
-    img: "/photos/blog/communication-institutionnelle-enjeux-1.webp",
+    img: "/photos/blog/communication-institutionnelle-enjeux-1-v2.webp",
     imgAlt:
       "Prise de parole avec microphone lors d’une conférence professionnelle",
     excerpt:
@@ -441,7 +441,7 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-07-21",
     dateLabel: "Juillet 2026",
     readingMinutes: 8,
-    img: "/photos/blog/agence-communication-publique-collectivites-1.webp",
+    img: "/photos/blog/agence-communication-publique-collectivites-1-v2.webp",
     imgAlt:
       "Salle du conseil d’une collectivité, illustration de la communication publique",
     excerpt:
@@ -679,7 +679,7 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-06-30",
     dateLabel: "Juin 2026",
     readingMinutes: 7,
-    img: "/photos/blog/communication-associations-moyens-limites-1.webp",
+    img: "/photos/blog/communication-associations-moyens-limites-1-v2.webp",
     imgAlt:
       "Membres d’une équipe réunis autour d’une table, illustration de la communication associative",
     excerpt:
@@ -911,7 +911,7 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-06-17",
     dateLabel: "Juin 2026",
     readingMinutes: 8,
-    img: "/photos/blog/evenementiel-culturel-patrimoine-1.webp",
+    img: "/photos/blog/evenementiel-culturel-patrimoine-1-v2.webp",
     imgAlt:
       "Fronton sculpté d’un théâtre municipal, illustration de l’événementiel culturel et patrimonial",
     excerpt:
@@ -1133,7 +1133,7 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-05-27",
     dateLabel: "Mai 2026",
     readingMinutes: 7,
-    img: "/photos/blog/marche-public-communication-repondre-1.webp",
+    img: "/photos/blog/marche-public-communication-repondre-1-v2.webp",
     imgAlt:
       "Signature d’un dossier de réponse, illustration d’un marché public de communication",
     excerpt:
@@ -1376,7 +1376,7 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-08-25",
     dateLabel: "Août 2026",
     readingMinutes: 3,
-    img: "/photos/blog/agence-communication-publique-collectivites-1.webp",
+    img: "/photos/blog/agence-communication-publique-collectivites-1-v2.webp",
     imgAlt: "Salle du conseil d’une collectivité, illustration du Grand Prix des Maires 2026",
     excerpt:
       "BFM, BFM Locales, RMC et l’Association des Maires de France ouvrent la 9e édition du Grand Prix des Maires. Six catégories, une cérémonie au Théâtre du Lido le 24 novembre 2026 : ce qu’une collectivité candidate a intérêt à préparer dès maintenant.",
@@ -1422,7 +1422,7 @@ export const postsInstitutionnel: BlogPost[] = [
     date: "2026-08-25",
     dateLabel: "Août 2026",
     readingMinutes: 3,
-    img: "/photos/blog/organiser-congres-federation-1.webp",
+    img: "/photos/blog/organiser-congres-federation-1-v2.webp",
     imgAlt: "Rangées de sièges d’un auditorium vide, illustration de l’élection à la présidence d’une fédération professionnelle",
     excerpt:
       "Frédéric Carré, dirigeant du Groupe Carré à Tournefeuille, préside la Fédération Française du Bâtiment depuis le 19 juin 2026. Ce qu’une passation de ce type engage pour la communication d’une organisation professionnelle.",

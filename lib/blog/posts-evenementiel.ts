@@ -22,7 +22,7 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-08-06",
     dateLabel: "Août 2026",
     readingMinutes: 10,
-    img: "/photos/blog/choisir-agence-evenementielle-montpellier-1.webp",
+    img: "/photos/blog/choisir-agence-evenementielle-montpellier-1-v2.webp",
     imgAlt:
       "Deux professionnels relisant un document dans une salle de réception, illustration du choix d’une agence événementielle",
     excerpt:
@@ -241,7 +241,7 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-07-28",
     dateLabel: "Juillet 2026",
     readingMinutes: 10,
-    img: "/photos/blog/budget-evenement-corporate-1.webp",
+    img: "/photos/blog/budget-evenement-corporate-1-v2.webp",
     imgAlt:
       "Calcul d’un budget avec calculatrice, billets et tickets de caisse, illustration du budget d’un événement corporate",
     excerpt:
@@ -460,7 +460,7 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-07-15",
     dateLabel: "Juillet 2026",
     readingMinutes: 9,
-    img: "/photos/blog/organiser-congres-federation-1.webp",
+    img: "/photos/blog/organiser-congres-federation-1-v2.webp",
     imgAlt:
       "Rangées de sièges d’un auditorium vide, illustration de l’organisation d’un congrès",
     excerpt:
@@ -674,7 +674,7 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-06-24",
     dateLabel: "Juin 2026",
     readingMinutes: 10,
-    img: "/photos/blog/agence-evenementielle-toulouse-1.webp",
+    img: "/photos/blog/agence-evenementielle-toulouse-1-v2.webp",
     imgAlt:
       "Jeux de lumières sur une scène événementielle",
     excerpt:
@@ -863,7 +863,7 @@ export const postsEvenementiel: BlogPost[] = [
     date: "2026-06-10",
     dateLabel: "Juin 2026",
     readingMinutes: 9,
-    img: "/photos/blog/evenementiel-responsable-reperes-1.webp",
+    img: "/photos/blog/evenementiel-responsable-reperes-1-v2.webp",
     imgAlt:
       "Semis en pots biodégradables arrosés à la main, illustration de l’événementiel responsable",
     excerpt:

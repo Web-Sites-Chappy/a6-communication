@@ -36,7 +36,7 @@ export const clientSegments: ClientSegment[] = [
     metaTitle: "Agence communication institutionnelle | A6",
     metaDescription:
       "A6 accompagne cabinets d'architecture, ordres régionaux et associations professionnelles dans leur communication et leurs événements institutionnels.",
-    img: "/photos/nos-clients/professionnels-batir.webp",
+    img: "/photos/nos-clients/professionnels-batir-v2.webp",
     imgAlt: "Un artisan taille un bloc de pierre au maillet et au ciseau",
     desc: "Bâtisseurs, créateurs, constructeurs : architectes, artisans, ingénieurs…",
     intro: [
@@ -76,7 +76,7 @@ export const clientSegments: ClientSegment[] = [
     metaTitle: "Agence événementiel culturel patrimoine | A6",
     metaDescription:
       "A6 accompagne fondations du patrimoine, associations culturelles, musées et lieux de mémoire dans des événements qui font vivre un lieu sans le trahir.",
-    img: "/photos/nos-clients/institution-institut-de-france.webp",
+    img: "/photos/nos-clients/institution-institut-de-france-v2.webp",
     imgAlt: "L'Institut de France vu depuis le Pont des Arts, à Paris",
     desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées.",
     intro: [
@@ -116,7 +116,7 @@ export const clientSegments: ClientSegment[] = [
     metaTitle: "Agence communication publique collectivités | A6",
     metaDescription:
       "A6 accompagne les mairies, intercommunalités et collectivités territoriales dans une communication de proximité, efficace et adaptée à leur budget.",
-    img: "/photos/nos-clients/mairies-collectivites.webp",
+    img: "/photos/nos-clients/mairies-collectivites-v2.webp",
     imgAlt: "Façade d'une mairie de village française",
     desc: "Les petites et moyennes communes, les intercommunalités et collectivités qui ont besoin d'une communication de proximité.",
     intro: [
@@ -151,7 +151,7 @@ export const clientSegments: ClientSegment[] = [
     metaTitle: "Agence communication associations | A6",
     metaDescription:
       "A6 accompagne associations politiques, sportives, sociales et compagnonnages dans une communication et des événements à la hauteur de leurs moyens réels.",
-    img: "/photos/nos-clients/monde-associatif.webp",
+    img: "/photos/nos-clients/monde-associatif-v2.webp",
     imgAlt: "Groupe de membres échangeant lors d'un événement associatif",
     desc: "Associations culturelles, politiques, sociales et sportives…",
     intro: [

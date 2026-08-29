@@ -18,7 +18,7 @@ export const postsMethode: BlogPost[] = [
     date: "2026-07-02",
     dateLabel: "Juillet 2026",
     readingMinutes: 11,
-    img: "/photos/blog/choisir-agence-communication-1.webp",
+    img: "/photos/blog/choisir-agence-communication-1-v2.webp",
     imgAlt:
       "Réunion d’équipe autour d’une table de travail, illustration du choix d’une agence de communication",
     excerpt:
@@ -261,7 +261,7 @@ export const postsMethode: BlogPost[] = [
     date: "2026-05-13",
     dateLabel: "Mai 2026",
     readingMinutes: 10,
-    img: "/photos/blog/signaletique-evenementielle-regles-1.webp",
+    img: "/photos/blog/signaletique-evenementielle-regles-1-v2.webp",
     imgAlt:
       "Stands et signalétique d’un salon professionnel, illustration de la signalétique événementielle",
     excerpt:
@@ -514,7 +514,7 @@ export const postsMethode: BlogPost[] = [
     date: "2026-03-25",
     dateLabel: "Mars 2026",
     readingMinutes: 10,
-    img: "/photos/blog/communication-interne-entreprise-1.webp",
+    img: "/photos/blog/communication-interne-entreprise-1-v2.webp",
     imgAlt:
       "Échange entre collègues dans un bureau, illustration de la communication interne en entreprise",
     excerpt:
@@ -762,7 +762,7 @@ export const postsMethode: BlogPost[] = [
     date: "2026-03-11",
     dateLabel: "Mars 2026",
     readingMinutes: 11,
-    img: "/photos/blog/captation-video-evenement-1.webp",
+    img: "/photos/blog/captation-video-evenement-1-v2.webp",
     imgAlt:
       "Caméra professionnelle en configuration de tournage, illustration de la captation vidéo d’événement",
     excerpt:
@@ -1011,7 +1011,7 @@ export const postsMethode: BlogPost[] = [
     date: "2026-02-25",
     dateLabel: "Février 2026",
     readingMinutes: 10,
-    img: "/photos/blog/agence-communication-digitale-montpellier-1.webp",
+    img: "/photos/blog/agence-communication-digitale-montpellier-1-v2.webp",
     imgAlt:
       "Présentation d’une stratégie de marketing digital en réunion d’agence",
     excerpt:

@@ -18,7 +18,7 @@ export default function BlogPage() {
   return (
     <main>
       <Hero
-        imageSrc="/photos/cardstack-blog.webp"
+        imageSrc="/photos/cardstack-blog-v2.webp"
         title={
           <>
             Notre

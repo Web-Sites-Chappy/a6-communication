@@ -57,13 +57,13 @@ export const metadata: Metadata = {
     siteName: title,
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "/photos/DSC_0836.jpg", width: 1024, height: 681, alt: "A6 Communication et Événementiel" }],
+    images: [{ url: "/photos/DSC_0836-v2.jpg", width: 1024, height: 681, alt: "A6 Communication et Événementiel" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/photos/DSC_0836.jpg"],
+    images: ["/photos/DSC_0836-v2.jpg"],
   },
 };
 

@@ -26,14 +26,14 @@ const team = [
     fullName: "Manuel Dalla Zanna",
     role: "Président",
     subtitle: "L'esprit numérique",
-    img: "/photos/manuel.webp",
+    img: "/photos/manuel-v2.webp",
   },
   {
     name: "Eric",
     fullName: "Eric Gibaja",
     role: "Directeur général",
     subtitle: "L'esprit poétique",
-    img: "/photos/eric.webp",
+    img: "/photos/eric-v2.webp",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function QuiSommesNousPage() {
         />
       ))}
       <Hero
-        imageSrc="/photos/manuel-eric-hero.webp"
+        imageSrc="/photos/manuel-eric-hero-v2.webp"
         title={
           <>
             Qui<br />

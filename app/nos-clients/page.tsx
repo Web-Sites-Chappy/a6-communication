@@ -18,7 +18,7 @@ export default function NosClientsPage() {
   return (
     <main>
       <Hero
-        imageSrc="/photos/nos-clients/hero-toulouse-capitole.webp"
+        imageSrc="/photos/nos-clients/hero-toulouse-capitole-v2.webp"
         title={
           <>
             Ceux pour

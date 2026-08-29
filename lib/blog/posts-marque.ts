@@ -18,7 +18,7 @@ export const postsMarque: BlogPost[] = [
     date: "2026-08-11",
     dateLabel: "Août 2026",
     readingMinutes: 11,
-    img: "/photos/blog/creation-identite-marque-etapes-1.webp",
+    img: "/photos/blog/creation-identite-marque-etapes-1-v2.webp",
     imgAlt:
       "Planche de recherche graphique et palette de couleurs, étapes de création d’une identité de marque",
     excerpt:
@@ -251,7 +251,7 @@ export const postsMarque: BlogPost[] = [
     date: "2026-07-08",
     dateLabel: "Juillet 2026",
     readingMinutes: 9,
-    img: "/photos/blog/identite-visuelle-agence-attendre-1.webp",
+    img: "/photos/blog/identite-visuelle-agence-attendre-1-v2.webp",
     imgAlt:
       "Mockup de carte de visite vierge, illustration d’une identité visuelle en cours de conception",
     excerpt:
@@ -457,7 +457,7 @@ export const postsMarque: BlogPost[] = [
     date: "2026-05-19",
     dateLabel: "Mai 2026",
     readingMinutes: 9,
-    img: "/photos/blog/charte-graphique-utile-1.webp",
+    img: "/photos/blog/charte-graphique-utile-1-v2.webp",
     imgAlt:
       "Nuancier de couleurs RAL consulté avec des plans, illustration d’une charte graphique",
     excerpt:
@@ -638,7 +638,7 @@ export const postsMarque: BlogPost[] = [
     date: "2026-04-22",
     dateLabel: "Avril 2026",
     readingMinutes: 9,
-    img: "/photos/blog/refonte-logo-institution-1.webp",
+    img: "/photos/blog/refonte-logo-institution-1-v2.webp",
     imgAlt:
       "Esquisses de pistes de logo sur papier, illustration d’une refonte d’identité visuelle",
     excerpt:
@@ -832,7 +832,7 @@ export const postsMarque: BlogPost[] = [
     date: "2026-04-08",
     dateLabel: "Avril 2026",
     readingMinutes: 9,
-    img: "/photos/blog/identite-marque-institutionnelle-1.webp",
+    img: "/photos/blog/identite-marque-institutionnelle-1-v2.webp",
     imgAlt:
       "Documents de marque institutionnelle imprimés et présentés sur un bureau",
     excerpt:

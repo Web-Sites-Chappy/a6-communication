@@ -15,7 +15,7 @@ interface HeroProps {
 }
 
 export default function Hero({
-  imageSrc = "/photos/DSC_0836.jpg",
+  imageSrc = "/photos/DSC_0836-v2.jpg",
   title,
   subtitle,
   ctaLabel,

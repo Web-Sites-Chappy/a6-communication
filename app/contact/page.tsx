@@ -20,7 +20,7 @@ export default function ContactPage() {
   return (
     <main>
       <Hero
-        imageSrc="/photos/DSC_0836.jpg"
+        imageSrc="/photos/DSC_0836-v2.jpg"
         title={
           <>
             Parlons de

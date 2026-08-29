@@ -29,7 +29,7 @@ const realisations: Realisation[] = [
     title: "Inauguration de la Fondation Magos à Málaga",
     service: { label: "Conception & scénographie", href: "/nos-services/conception-et-scenographie" },
     meta: "Fondation Magos · Málaga, 15-16 novembre 2024",
-    img: "/photos/realisations/fondation-magos-malaga.webp",
+    img: "/photos/realisations/fondation-magos-malaga-v2.webp",
     imgAlt: "Affiche de l’inauguration de la Fondation Magos à Málaga, les 15 et 16 novembre 2024",
     paragraphs: [
       "Des royaumes anciens, une spiritualité partagée entre trois textes fondateurs, une exposition pensée pour résonner bien au-delà de Málaga : les 15 et 16 novembre 2024, A6 a accompagné l’inauguration de la Fondation Magos, portée par l’exposition « Tesoro de los Magos » consacrée aux royaumes et à la spiritualité anciens, en partenariat avec le Centre UNESCO d’Andalousie, la Nobel Women’s Initiative et la Diputación de Málaga.",
@@ -41,7 +41,7 @@ const realisations: Realisation[] = [
     title: "Les Rendez-vous de l’Architecture 2025 : « Architecture, Dessein de la Mémoire »",
     service: { label: "Logistique", href: "/nos-services/logistique" },
     meta: "Conseil régional de l’Ordre des Architectes d’Occitanie · Toulouse, 2025",
-    img: "/photos/realisations/rendez-vous-architecture-2025.webp",
+    img: "/photos/realisations/rendez-vous-architecture-2025-v2.webp",
     imgAlt: "Table ronde des Rendez-vous de l’Architecture 2025 au Centre des Congrès Pierre Baudis à Toulouse, sur le thème « Architecture, Dessein de la Mémoire »",
     paragraphs: [
       "Une journée pour interroger les liens entre architecture et mémoire, réunissant historiens, Compagnons du Devoir et du Tour de France et grandes figures de la profession : pour l’édition 2025 des Rendez-vous de l’Architecture, organisée au Centre des Congrès Pierre Baudis à Toulouse autour du thème « Architecture, Dessein de la Mémoire », notre agence a accompagné le Conseil régional de l’Ordre des Architectes d’Occitanie dans l’organisation et la mise en œuvre de l’événement.",
@@ -57,7 +57,7 @@ const realisations: Realisation[] = [
     title: "Conférence de Clément Gaillard et promotion de son livre « Habiter un climat »",
     service: { label: "Conception & scénographie", href: "/nos-services/conception-et-scenographie" },
     meta: "CROA Occitanie · Montpellier",
-    img: "/photos/realisations/clement-gaillard-conference-dedicace.webp",
+    img: "/photos/realisations/clement-gaillard-conference-dedicace-v2.webp",
     imgAlt: "Clément Gaillard dédicace son livre « Habiter un climat » lors de sa conférence au CROA Occitanie à Montpellier",
     paragraphs: [
       "Un essai qui interroge notre manière d’habiter le climat, un docteur en urbanisme venu en discuter en personne : à l’occasion de la parution de son ouvrage « Habiter un climat », notre agence a accompagné l’organisation d’une conférence de Clément Gaillard dans les locaux du CROA Occitanie à Montpellier.",
@@ -70,7 +70,7 @@ const realisations: Realisation[] = [
     title: "Animation de la table ronde des Compagnons du Devoir et du Tour de France",
     service: { label: "Animation", href: "/nos-services/animation" },
     meta: "Compagnons du Devoir et du Tour de France · 80 ans de la fusion",
-    img: "/photos/realisations/compagnons-du-devoir-table-ronde.webp",
+    img: "/photos/realisations/compagnons-du-devoir-table-ronde-v2.webp",
     imgAlt: "Table ronde animée par A6 pour les 80 ans de la fusion des Compagnons Charpentiers des Devoirs du Tour de France",
     paragraphs: [
       "Passé, présent et avenir d’un métier ancestral, débattus devant un public de charpentiers, d’artisans et de compagnons : pour les 80 ans de la fusion des Compagnons Charpentiers des Devoirs du Tour de France, le directeur général d’A6 a eu l’honneur d’animer la table ronde « Le métier de charpentier, son passé, son avenir… » aux côtés de François Calame, président des Charpentiers sans frontières, Guillaume Niel, directeur associé chez Terrel, et Julien Fournier, dirigeant de Wood&Co.",
@@ -82,7 +82,7 @@ const realisations: Realisation[] = [
     title: "Diffusion du film « Penser l’incertitude » à Barcelone",
     service: { label: "Logistique", href: "/nos-services/logistique" },
     meta: "CROA Occitanie · Barcelone",
-    img: "/photos/realisations/penser-incertitude-affiche.webp",
+    img: "/photos/realisations/penser-incertitude-affiche-v2.webp",
     imgAlt: "Affiche du film « Penser l’incertitude » de Christian Barani, Albums 2023 des Jeunes Architectes et Paysagistes",
     imgPosition: "top",
     paragraphs: [
@@ -97,7 +97,7 @@ export default function RealisationsPage() {
   return (
     <main>
       <Hero
-        imageSrc="/photos/cardstack-realisations.webp"
+        imageSrc="/photos/cardstack-realisations-v2.webp"
         title={
           <>
             Nos
