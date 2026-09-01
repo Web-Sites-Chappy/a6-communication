@@ -31,8 +31,6 @@ export default function NosClientsPage() {
           </>
         }
         height="half"
-        ctaLabel="Nos services"
-        ctaHref="/nos-services"
       />
 
       <LogosMarquee />

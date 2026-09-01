@@ -20,8 +20,8 @@ export default function HomeEditorial() {
     <main>
       <HeroSlider
         images={heroImages}
-        video="/video/cerbere.mp4"
-        poster="/video/cerbere-poster.jpg"
+        video={process.env.NEXT_PUBLIC_HERO_VIDEO_URL || "/video/cerbere.mp4"}
+        poster="/video/cerbere-poster.webp"
         title={
           <>
             L&apos;ALCHIMIE,<br />ENTRE L&apos;
@@ -29,7 +29,7 @@ export default function HomeEditorial() {
             <br />ET SON <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400, textTransform: "uppercase", color: "var(--c-fond)" }}>HISTOIRE</span>
           </>
         }
-        subtitle="Agence de Communication et d'Événementiel au service des professionnels de l'Acte et de l'Art de Bâtir, Institutions, Collectivités, Mairies, ainsi que du monde de la Culture et de l'Associatif qui font vivre nos territoires et notre patrimoine."
+        subtitle="Agence de Communication et d'Événementiel au service des professionnels de l'Acte et de l'Art de Bâtir, Institutions, Collectivités, Mairies, ainsi que du monde culturel et associatif qui font vivre nos territoires et notre patrimoine."
         ctaLabel="Parlez-nous de vos besoins"
         ctaHref="/contact"
         interval={5000}

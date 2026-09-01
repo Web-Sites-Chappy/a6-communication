@@ -6,11 +6,11 @@ import Link from "next/link";
 import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
 
 const sections: CardStackItem[] = [
-  { id: "qui", title: "Qui sommes-nous", description: "Manuel & Eric, deux esprits complémentaires, six valeurs fondatrices.", imageSrc: "/photos/cardstack-qui-v2.webp", href: "/qui-sommes-nous" },
+  { id: "qui", title: "Qui sommes-nous ?", description: "Manuel & Eric, deux esprits complémentaires, six valeurs fondatrices.", imageSrc: "/photos/cardstack-qui-v2.webp", href: "/qui-sommes-nous" },
   { id: "services", title: "Nos services", description: "Communication digitale, identité visuelle, organisation d'événements.", imageSrc: "/photos/cardstack-services-v2.webp", href: "/nos-services" },
   { id: "real", title: "Réalisations", description: "Congrès, forums, journées thématiques : des événements qui marquent.", imageSrc: "/photos/cardstack-realisations-v2.webp", href: "/realisations" },
   { id: "cibles", title: "Nos clients", description: "Artisans, architectes, communes, culture et monde associatif.", imageSrc: "/photos/nos-clients/institution-institut-de-france-v2.webp", href: "/nos-clients" },
-  { id: "blog", title: "Blog", description: "Coulisses, événements à venir et temps forts de l'agence.", imageSrc: "/photos/cardstack-blog-v2.webp", href: "/blog" },
+  { id: "blog", title: "Blog", description: "Coulisses, actualités, etc.", imageSrc: "/photos/cardstack-blog-v2.webp", href: "/blog" },
 ];
 
 /** Track viewport width to scale the fan on small screens. */

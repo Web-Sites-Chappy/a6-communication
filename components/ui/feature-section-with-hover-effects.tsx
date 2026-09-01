@@ -95,7 +95,7 @@ const Feature = ({
   const content = (
     <div
       className={cn(
-        "flex flex-col h-full lg:border-r py-10 relative group/feature transition-colors duration-200",
+        "service-feature flex flex-col h-full lg:border-r py-10 relative group/feature transition-all duration-300",
         (index === 0 || index % 4 === 0) && "lg:border-l",
         index < 4 && "lg:border-b"
       )}
@@ -106,12 +106,12 @@ const Feature = ({
       {index >= 4 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-neutral-600 group-hover/feature:text-[var(--c-rouge)] transition-colors duration-200">
+      <div className="mb-4 relative z-10 px-10 text-[var(--c-rouge)] group-hover/feature:scale-110 transition-all duration-300 origin-left">
         {icon}
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 group-hover/feature:bg-[var(--c-rouge)] transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-9 w-1 rounded-tr-full rounded-br-full bg-[var(--c-rouge)] transition-all duration-300 origin-center" />
+        <span className="service-feature-title group-hover/feature:translate-x-2 transition duration-300 inline-block text-[var(--c-rouge)]">
           {title}
         </span>
       </div>
@@ -119,7 +119,7 @@ const Feature = ({
         {description}
       </p>
       {href && (
-        <span className="mt-4 px-10 relative z-10 text-xs font-semibold text-[var(--c-rouge)] inline-flex items-center gap-1 group-hover/feature:translate-x-1 transition-transform duration-200">
+        <span className="mt-4 px-10 relative z-10 text-xs font-semibold text-[var(--c-rouge)] inline-flex items-center gap-1 group-hover/feature:translate-x-2 transition-transform duration-300">
           En savoir plus &rarr;
         </span>
       )}

@@ -27,6 +27,7 @@ export default function HeroSlider({
   poster,
 }: HeroSliderProps) {
   const [current, setCurrent] = useState(0);
+  const [videoFailed, setVideoFailed] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -36,12 +37,12 @@ export default function HeroSlider({
   const fadeOverlayOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   useEffect(() => {
-    if (video) return; // no slideshow when a background video is used
+    if (video && !videoFailed) return; // no slideshow while the video is healthy
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, interval);
     return () => clearInterval(timer);
-  }, [images.length, interval, video]);
+  }, [images.length, interval, video, videoFailed]);
 
   return (
     <section
@@ -55,14 +56,15 @@ export default function HeroSlider({
       }}
     >
       {/* Background: video (if provided) or image slideshow */}
-      {video ? (
+      {video && !videoFailed ? (
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           poster={poster}
+          onError={() => setVideoFailed(true)}
           style={{
             position: "absolute",
             inset: 0,
@@ -123,7 +125,7 @@ export default function HeroSlider({
       />
 
       {/* Scroll-linked fade to dark — the video sinks into black as you scroll past the hero */}
-      {video && (
+      {video && !videoFailed && (
         <motion.div
           style={{
             position: "absolute",

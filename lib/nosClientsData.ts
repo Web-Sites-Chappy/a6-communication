@@ -78,7 +78,7 @@ export const clientSegments: ClientSegment[] = [
       "A6 accompagne fondations du patrimoine, associations culturelles, musées et lieux de mémoire dans des événements qui font vivre un lieu sans le trahir.",
     img: "/photos/nos-clients/institution-institut-de-france-v2.webp",
     imgAlt: "L'Institut de France vu depuis le Pont des Arts, à Paris",
-    desc: "Fondations du patrimoine, associations culturelles, institutions, musées et lieux de mémoire : partout où l'histoire et la culture méritent d'être racontées et valorisées.",
+    desc: "Fondations du patrimoine, associations culturelles, musées, lieux de mémoire partout où l'histoire et la culture méritent d'être racontées et valorisées.",
     intro: [
       "Un site patrimonial, un musée ou un lieu de mémoire n'est jamais un simple décor : c'est le sujet de l'événement, et il impose ses propres contraintes de conservation, d'occupation et de circulation. Une scénographie mal pensée peut réussir l'événement et abîmer le patrimoine — l'équilibre entre les deux est au cœur de notre pratique événementielle.",
       "Nous accompagnons fondations, associations culturelles, institutions et lieux de mémoire dans des projets qui donnent à voir leur histoire sans jamais la dénaturer, en coordination avec les interlocuteurs multiples qu'implique un immeuble ou un site protégé.",
@@ -153,7 +153,7 @@ export const clientSegments: ClientSegment[] = [
       "A6 accompagne associations politiques, sportives, sociales et compagnonnages dans une communication et des événements à la hauteur de leurs moyens réels.",
     img: "/photos/nos-clients/monde-associatif-v2.webp",
     imgAlt: "Groupe de membres échangeant lors d'un événement associatif",
-    desc: "Associations culturelles, politiques, sociales et sportives…",
+    desc: "Culturels, politiques, sociaux, sportifs",
     intro: [
       "Une association ne dispose ni du budget d'une entreprise ni de la neutralité obligée d'une collectivité : elle porte une cause, un métier ou une tradition avec des moyens réels, souvent bénévoles, qu'il faut respecter plutôt que contourner par des recommandations hors de portée.",
       "Nous accompagnons des associations politiques, sportives, sociales et des compagnonnages traditionnels dans des projets calibrés à leurs moyens véritables, en valorisant ce qui fait leur force : des parcours et des savoir-faire humains qu'aucune grande agence généraliste ne peut raconter de l'intérieur.",

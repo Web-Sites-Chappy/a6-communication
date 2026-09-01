@@ -108,8 +108,6 @@ export default function RealisationsPage() {
           </>
         }
         height="half"
-        ctaLabel="Nous contacter"
-        ctaHref="/contact"
       />
 
       <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>

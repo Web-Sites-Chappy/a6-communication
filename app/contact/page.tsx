@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
+import ServicesRibbon from "@/components/ServicesRibbon";
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/siteConfig";
 
@@ -31,9 +32,9 @@ export default function ContactPage() {
           </>
         }
         height="half"
-        ctaLabel="Nous écrire"
-        ctaHref="#form"
       />
+
+      <ServicesRibbon />
 
       <div
         id="form"

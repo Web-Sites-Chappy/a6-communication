@@ -3,6 +3,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
+import AccentHeading from "@/components/AccentHeading";
 import { blogPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/siteConfig";
 import type { Metadata } from "next";
@@ -29,9 +30,11 @@ export default function BlogPage() {
           </>
         }
         height="half"
-        ctaLabel="Nous contacter"
-        ctaHref="/contact"
       />
+
+      <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "60px 0 20px", textAlign: "center" }}>
+        <AccentHeading lead="Coulisses," accent="actualités, etc." />
+      </Reveal>
 
       <div
         className="actu-grid"
