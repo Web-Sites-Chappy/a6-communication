@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Qui sommes-nous | A6 Communication",
+  title: "Qui sommes-nous ? | A6 Communication",
   alternates: { canonical: `${SITE_URL}/qui-sommes-nous` },
 };
 

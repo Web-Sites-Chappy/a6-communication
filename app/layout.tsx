@@ -51,9 +51,11 @@ export const metadata: Metadata = {
   title,
   description,
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/icon.png",
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
     title,
@@ -80,8 +82,8 @@ const localBusinessJsonLd = {
   name: "A6 Communication et Événementiel",
   legalName: "A6 Communication et Événementiel",
   url: SITE_URL,
-  image: `${SITE_URL}/icon.svg`,
-  logo: `${SITE_URL}/logo-a6.svg`,
+  image: `${SITE_URL}/icon.png`,
+  logo: `${SITE_URL}/icon.png`,
   telephone: "+33610188747",
   sameAs: [
     "https://www.linkedin.com/in/manuel-dalla-zanna-70b027258/",

@@ -1,8 +1,7 @@
-import Hero from "@/components/Hero";
+import ContactServicesHero from "@/components/ContactServicesHero";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import AccentHeading from "@/components/AccentHeading";
-import ServicesRibbon from "@/components/ServicesRibbon";
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/siteConfig";
 
@@ -20,21 +19,7 @@ const info: { label: string; value: string; href?: string }[] = [
 export default function ContactPage() {
   return (
     <main>
-      <Hero
-        imageSrc="/photos/DSC_0836-v2.jpg"
-        title={
-          <>
-            Parlons de
-            <br />
-            <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-              votre projet
-            </span>
-          </>
-        }
-        height="half"
-      />
-
-      <ServicesRibbon />
+      <ContactServicesHero />
 
       <div
         id="form"
