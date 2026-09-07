@@ -63,7 +63,7 @@ export default function QuiSommesNousPage() {
           <>
             Qui<br />
             <span style={{ fontFamily: "var(--font-display-dmserif)", fontStyle: "italic", fontWeight: 400 }}>
-              sommes-nous
+              sommes-nous&nbsp;?
             </span>
           </>
         }
