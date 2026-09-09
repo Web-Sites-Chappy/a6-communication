@@ -9,11 +9,11 @@ interface RevealProps {
   direction?: "up" | "down" | "left" | "right" | "scale" | "none";
   style?: CSSProperties;
   className?: string;
-  /** How far in px the element travels before settling. Default 40. */
+  /** How far in px the element travels before settling. Default 24. */
   distance?: number;
   /** Fraction of element visible before triggering [0-1]. Default 0.08. */
   threshold?: number;
-  /** Override animation duration in seconds. Default 0.7. */
+  /** Override animation duration in seconds. Default 0.48. */
   duration?: number;
 }
 
@@ -25,9 +25,9 @@ export default function Reveal({
   direction = "up",
   style,
   className,
-  distance = 44,
+  distance = 24,
   threshold = 0.08,
-  duration = 0.72,
+  duration = 0.48,
 }: RevealProps) {
   const prefersReducedMotion = useReducedMotion();
 

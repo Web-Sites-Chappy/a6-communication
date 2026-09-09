@@ -6,16 +6,6 @@ import type { Metadata } from "next";
 import { getServicesByCategory } from "@/lib/servicesData";
 import { SITE_URL } from "@/lib/siteConfig";
 import { FeaturesSectionWithHoverEffects, FeatureItem } from "@/components/ui/feature-section-with-hover-effects";
-import {
-  IconRouteAltLeft,
-  IconAdjustmentsBolt,
-  IconTerminal2,
-  IconCloud,
-  IconEaseInOut,
-  IconCurrencyDollar,
-  IconHeart,
-  IconHelp,
-} from "@tabler/icons-react";
 
 export const metadata: Metadata = {
   title: "Nos Services | A6 Communication",
@@ -23,28 +13,6 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/nos-services` },
 };
 
-function getServiceIcon(slug: string) {
-  switch (slug) {
-    case "strategie-digitale":
-      return <IconRouteAltLeft className="w-7 h-7" />;
-    case "identite-visuelle":
-      return <IconAdjustmentsBolt className="w-7 h-7" />;
-    case "production-de-contenus":
-      return <IconTerminal2 className="w-7 h-7" />;
-    case "impressions-signaletique":
-      return <IconCloud className="w-7 h-7" />;
-    case "conception-et-scenographie":
-      return <IconEaseInOut className="w-7 h-7" />;
-    case "logistique":
-      return <IconCurrencyDollar className="w-7 h-7" />;
-    case "animation":
-      return <IconHeart className="w-7 h-7" />;
-    case "relations-presse":
-      return <IconHelp className="w-7 h-7" />;
-    default:
-      return <IconTerminal2 className="w-7 h-7" />;
-  }
-}
 
 export default function NosServicesPage() {
   const communicationServices = getServicesByCategory("Communication");
@@ -54,14 +22,14 @@ export default function NosServicesPage() {
     title: service.title,
     description: service.shortDescription,
     href: `/nos-services/${service.slug}`,
-    icon: getServiceIcon(service.slug),
+    image: service.carouselImage,
   }));
 
   const evenFeatures: FeatureItem[] = evenementielServices.map((service) => ({
     title: service.title,
     description: service.shortDescription,
     href: `/nos-services/${service.slug}`,
-    icon: getServiceIcon(service.slug),
+    image: service.carouselImage,
   }));
 
   return (

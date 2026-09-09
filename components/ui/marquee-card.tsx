@@ -22,10 +22,8 @@ export function MarqueeCard({ item, className }: MarqueeCardProps) {
       <Link
         href={item.href}
         className={cn(
-          "group relative block overflow-hidden rounded-2xl",
+          "marquee-depth-card group relative block overflow-hidden rounded-2xl",
           "h-[280px] w-[180px] sm:h-[310px] sm:w-[210px] lg:h-[330px] lg:w-[230px]",
-          "shadow-sm transition-all duration-[350ms] ease-out will-change-transform",
-          "hover:scale-[0.92] hover:shadow-2xl",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-rouge)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--c-fond)]",
         )}
       >

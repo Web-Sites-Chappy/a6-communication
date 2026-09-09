@@ -64,7 +64,7 @@ export function MarqueeCards({
 
       <ul
         className={cn(
-          "flex w-fit list-none gap-4 py-2 sm:gap-5 lg:gap-6",
+          "flex w-fit list-none gap-4 py-6 sm:gap-5 lg:gap-6",
           !reducedMotion && "a6-marquee-animate",
           reducedMotion && "overflow-x-auto",
         )}

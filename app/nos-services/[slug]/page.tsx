@@ -112,7 +112,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     title: rel.title,
     description: rel.shortDescription,
     href: `/nos-services/${rel.slug}`,
-    icon: getServiceIcon(rel.slug),
+    icon: getServiceIcon(rel.slug), image: rel.carouselImage,
   }));
 
   const jsonLd = {

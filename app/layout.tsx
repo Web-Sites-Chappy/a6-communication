@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import CookieBanner from "@/components/CookieBanner";
+import PageTransition from "@/components/PageTransition";
 import { SITE_URL } from "@/lib/siteConfig";
 
 // Charte A6 — trois polices seulement :
@@ -125,7 +126,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <Nav />
-        {children}
+        <PageTransition>{children}</PageTransition>
         <Reveal direction="up" distance={30} threshold={0.05}>
           <Footer />
         </Reveal>
