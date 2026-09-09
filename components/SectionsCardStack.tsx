@@ -42,7 +42,20 @@ export default function SectionsCardStack() {
     // overflow hidden : les cartes du deck en offset (-2..+2) depassent du
     // conteneur par design (effet d'eventail), mais sans cette clip elles
     // provoquaient un vrai scroll horizontal de toute la page en mobile.
-    <div style={{ width: "94vw", maxWidth: "1320px", margin: "40px auto 60px", overflow: "hidden" }}>
+    <>
+    <div className="mobile-section-cards" aria-label="Découvrir l’agence">
+      {sections.map((item) => (
+        <Link key={item.id} href={item.href!} className="mobile-section-card">
+          <Image src={item.imageSrc!} alt="" fill sizes="(max-width: 767px) 85vw, 340px" style={{ objectFit: "cover" }} />
+          <div className="mobile-section-card-copy">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+            <span>Découvrir →</span>
+          </div>
+        </Link>
+      ))}
+    </div>
+    <div className="desktop-section-cards" style={{ width: "94vw", maxWidth: "1320px", margin: "40px auto 60px", overflow: "hidden" }}>
       <CardStack
         items={sections}
         initialIndex={0}
@@ -53,7 +66,7 @@ export default function SectionsCardStack() {
         // 40° débordait du conteneur : les titres des cartes latérales
         // étaient rognés par les bords de la fenêtre.
         spreadDeg={isMobile ? 26 : 30}
-        autoAdvance
+        autoAdvance={!isMobile && vw !== null && vw >= 768}
         intervalMs={4000}
         pauseOnHover
         showDots
@@ -62,6 +75,7 @@ export default function SectionsCardStack() {
             href={item.href ?? "#"}
             aria-label={item.title}
             className="block h-full w-full"
+            tabIndex={active ? 0 : -1}
             style={{ pointerEvents: active ? "auto" : "none" }}
             draggable={false}
           >
@@ -156,5 +170,6 @@ export default function SectionsCardStack() {
         )}
       />
     </div>
+    </>
   );
 }

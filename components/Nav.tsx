@@ -74,6 +74,13 @@ export default function Nav() {
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setMobileOpen(false);
+      if (e.key === "Tab") {
+        const items = mobileMenuPanelRef.current?.querySelectorAll<HTMLElement>("a[href], button");
+        if (!items?.length) return;
+        const first = items[0], last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     };
     window.addEventListener("keydown", onKeyDown);
 
@@ -105,7 +112,7 @@ export default function Nav() {
 
       {/* Nav bar */}
       <header
-        className="fixed top-0 left-0 z-50 flex justify-between items-center"
+        className="site-header fixed top-0 left-0 z-50 flex justify-between items-center"
         style={{
           width: "100%",
           // Le padding horizontal se resserre sous 375px : "Nous contacter" + "Menu"
@@ -114,18 +121,18 @@ export default function Nav() {
           backgroundColor: shy ? "rgba(var(--c-navy-rgb),0.97)" : "transparent",
           backdropFilter: shy ? "blur(8px)" : "none",
           boxShadow: shy ? "0 2px 20px rgba(0,0,0,0.35)" : "none",
-          transition: "all var(--e-basic)",
+          transition: "background-color 200ms ease, box-shadow 200ms ease",
         }}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 flex-shrink-0">
           <div
-            className="flex-shrink-0"
+            className="nav-logo flex-shrink-0"
             style={{
               height: shy ? "50px" : "58px",
               width: "auto",
               aspectRatio: "632 / 580",
-              transition: "all var(--e-basic)",
+              transition: "background-color 200ms ease, box-shadow 200ms ease",
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -289,7 +296,7 @@ export default function Nav() {
         </ul>
 
         {/* Mobile actions — Contact reste visible sans ouvrir le menu, comme sur desktop */}
-        <div className="lg:hidden flex items-center" style={{ gap: "10px" }}>
+        <div className="mobile-nav-actions lg:hidden flex items-center" style={{ gap: "10px" }}>
           <Link
             href="/contact"
             style={{
@@ -338,14 +345,17 @@ export default function Nav() {
         id="mobile-menu"
         ref={mobileMenuPanelRef}
         className="fixed z-[999] overflow-y-auto"
+        role="dialog"
+        aria-modal={mobileOpen || undefined}
+        aria-label="Navigation principale"
         aria-hidden={!mobileOpen}
         // Sans inert, ce panneau reste dans l'ordre de tabulation même hors écran
         // (translateX(-100%) ne retire rien de l'arbre d'accessibilité) : un clavier
         // continuerait à tomber sur ses liens invisibles, y compris sur desktop.
         inert={!mobileOpen}
         style={{
-          width: "90vw",
-          height: "100vh",
+          width: "100%",
+          height: "100dvh",
           top: 0,
           left: 0,
           transform: mobileOpen ? "translateX(0)" : "translateX(-100%)",

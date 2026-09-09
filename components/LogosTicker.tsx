@@ -1,7 +1,7 @@
 "use client";
 
-import { Fragment, useRef, useState } from "react";
-import { motion, useAnimationFrame, useMotionValue, useReducedMotion } from "framer-motion";
+import { Fragment, useEffect, useRef, useState } from "react";
+import { motion, useAnimationFrame, useMotionValue, useReducedMotion, useInView } from "framer-motion";
 import { clientLogos, type ClientLogo } from "@/lib/clientLogos";
 
 interface LogosTickerProps {
@@ -39,16 +39,27 @@ export default function LogosTicker({
   const trackRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
   const reduceMotion = useReducedMotion();
+  const inView = useInView(trackRef);
+  const periodRef = useRef(0);
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const measure = () => { periodRef.current = track.scrollWidth / 2; };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(track);
+    return () => observer.disconnect();
+  }, []);
 
   useAnimationFrame((_, delta) => {
-    if (paused || reduceMotion) return;
+    if (paused || reduceMotion || !inView || document.hidden) return;
     const track = trackRef.current;
     if (!track) return;
 
-    const period = track.scrollWidth / 2;
+    const period = periodRef.current;
     if (!period) return;
 
-    let next = x.get() - (speed * delta) / 1000;
+    let next = x.get() - (speed * Math.min(delta, 50)) / 1000;
     if (next <= -period) next += period;
     x.set(next);
   });
@@ -57,6 +68,9 @@ export default function LogosTicker({
 
   return (
     <div
+      className="logos-ticker"
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       style={{
@@ -71,6 +85,7 @@ export default function LogosTicker({
     >
       <motion.div
         ref={trackRef}
+        className="logos-ticker-track"
         style={{
           x,
           display: "flex",

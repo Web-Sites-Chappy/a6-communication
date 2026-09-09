@@ -47,24 +47,24 @@ export function MarqueeCards({
   return (
     <section
       aria-label={ariaLabel}
-      className={cn("relative mx-auto w-full max-w-6xl overflow-hidden", className)}
+      className={cn("services-gallery relative mx-auto w-full max-w-6xl overflow-hidden", className)}
       onMouseEnter={pause}
       onMouseLeave={resume}
       onFocus={pause}
       onBlur={resume}
     >
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[var(--c-fond)] to-transparent sm:w-20 lg:w-28"
+        className="services-gallery-mask pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[var(--c-fond)] to-transparent sm:w-20 lg:w-28"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[var(--c-fond)] to-transparent sm:w-20 lg:w-28"
+        className="services-gallery-mask pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[var(--c-fond)] to-transparent sm:w-20 lg:w-28"
         aria-hidden="true"
       />
 
       <ul
         className={cn(
-          "flex w-fit list-none gap-4 py-6 sm:gap-5 lg:gap-6",
+          "services-gallery-track flex w-fit list-none gap-4 py-6 sm:gap-5 lg:gap-6",
           !reducedMotion && "a6-marquee-animate",
           reducedMotion && "overflow-x-auto",
         )}
@@ -75,7 +75,7 @@ export function MarqueeCards({
         }
       >
         {(reducedMotion ? items : track).map((item, i) => (
-          <MarqueeCard key={reducedMotion ? item.id : `${item.id}-c${Math.floor(i / items.length)}`} item={item} />
+          <MarqueeCard key={reducedMotion ? item.id : `${item.id}-c${Math.floor(i / items.length)}`} item={item} duplicate={i >= items.length} />
         ))}
       </ul>
 
@@ -87,7 +87,7 @@ export function MarqueeCards({
         }
         @keyframes a6-marquee-scroll {
           from { transform: translateX(0%); }
-          to   { transform: translateX(-50%); }
+          to   { transform: translateX(calc(-50% - var(--marquee-half-gap, 8px))); }
         }
       `}</style>
     </section>

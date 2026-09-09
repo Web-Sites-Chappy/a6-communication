@@ -14,13 +14,15 @@ export interface MarqueeCardData {
 interface MarqueeCardProps {
   item: MarqueeCardData;
   className?: string;
+  duplicate?: boolean;
 }
 
-export function MarqueeCard({ item, className }: MarqueeCardProps) {
+export function MarqueeCard({ item, className, duplicate = false }: MarqueeCardProps) {
   return (
-    <li className={cn("shrink-0 list-none", className)}>
+    <li aria-hidden={duplicate || undefined} className={cn("shrink-0 list-none", duplicate && "services-gallery-clone", className)}>
       <Link
         href={item.href}
+        tabIndex={duplicate ? -1 : undefined}
         className={cn(
           "marquee-depth-card group relative block overflow-hidden rounded-2xl",
           "h-[280px] w-[180px] sm:h-[310px] sm:w-[210px] lg:h-[330px] lg:w-[230px]",
@@ -44,7 +46,7 @@ export function MarqueeCard({ item, className }: MarqueeCardProps) {
 
         <div
           className={cn(
-            "absolute inset-0 flex flex-col items-start justify-end gap-1 p-5",
+            "service-card-copy absolute inset-0 flex flex-col items-start justify-end gap-1 p-5",
             "bg-[var(--c-navy)]/75 opacity-0 backdrop-blur-md",
             "transition-opacity duration-[350ms] ease-out",
             "group-hover:opacity-100 group-focus-visible:opacity-100",

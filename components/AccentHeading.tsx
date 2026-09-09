@@ -16,7 +16,7 @@ interface AccentHeadingProps {
  */
 export default function AccentHeading({ lead, accent, as: Tag = "h2", id, style }: AccentHeadingProps) {
   return (
-    <Tag id={id} style={{ textTransform: "none", ...style }}>
+    <Tag className="accent-heading" id={id} style={{ textTransform: "none", ...style }}>
       <span style={{ fontFamily: "var(--font-display-bricolage)", fontWeight: 700 }}>{lead}</span>
       {accent ? (
         <>

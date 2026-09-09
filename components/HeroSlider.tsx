@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, type ReactNode } from "react";
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useTransform, useReducedMotion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,6 +29,20 @@ export default function HeroSlider({
   const [current, setCurrent] = useState(0);
   const [videoFailed, setVideoFailed] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const reducedMotion = useReducedMotion();
+  const inView = useInView(sectionRef);
+  useEffect(() => {
+    const element = videoRef.current;
+    if (!element) return;
+    const sync = () => {
+      if (reducedMotion || !inView || document.hidden) element.pause();
+      else void element.play().catch(() => {});
+    };
+    sync();
+    document.addEventListener("visibilitychange", sync);
+    return () => document.removeEventListener("visibilitychange", sync);
+  }, [inView, reducedMotion, videoFailed]);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -37,28 +51,29 @@ export default function HeroSlider({
   const fadeOverlayOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   useEffect(() => {
+    if (reducedMotion || !inView || images.length < 2) return;
     if (video && !videoFailed) return; // no slideshow while the video is healthy
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+      if (!document.hidden) setCurrent((prev) => (prev + 1) % images.length);
     }, interval);
     return () => clearInterval(timer);
-  }, [images.length, interval, video, videoFailed]);
+  }, [images.length, interval, video, videoFailed, reducedMotion, inView]);
 
   return (
     <section
       ref={sectionRef}
+      className="site-hero home-hero"
       style={{
         position: "relative",
         overflow: "hidden",
-        width: "100vw",
-        height: "100vh",
-        minHeight: "600px",
+        width: "100%",
+        minHeight: "max(640px, 100svh)",
       }}
     >
       {/* Background: video (if provided) or image slideshow */}
       {video && !videoFailed ? (
         <video
-          autoPlay
+          ref={videoRef}
           muted
           loop
           playsInline
@@ -95,7 +110,7 @@ export default function HeroSlider({
             {/* Ken Burns zoom — le scale s'applique au wrapper, pas à l'image :
                 next/image + fill a besoin d'un parent positionné à taille fixe. */}
             <motion.div
-              initial={{ scale: 1.08 }}
+              initial={{ scale: reducedMotion ? 1 : 1.04 }}
               animate={{ scale: 1 }}
               transition={{ duration: interval / 1000 + 1.4, ease: "linear" }}
               style={{ position: "relative", width: "100%", height: "100%" }}
@@ -115,6 +130,7 @@ export default function HeroSlider({
 
       {/* Dark gradient overlay */}
       <div
+        className="hero-shade"
         style={{
           position: "absolute",
           inset: 0,
@@ -125,7 +141,7 @@ export default function HeroSlider({
       />
 
       {/* Scroll-linked fade to dark — the video sinks into black as you scroll past the hero */}
-      {video && !videoFailed && (
+      {video && !videoFailed && !reducedMotion && (
         <motion.div
           style={{
             position: "absolute",
@@ -140,9 +156,10 @@ export default function HeroSlider({
 
       {/* Content */}
       <div
+        className="site-hero-content"
         style={{
-          position: "absolute",
-          inset: 0,
+          position: "relative",
+          minHeight: "inherit",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -150,9 +167,9 @@ export default function HeroSlider({
           textAlign: "center",
           // Dégage la hauteur du bandeau cookies quand il est affiché, sinon il
           // recouvre le CTA à la première visite.
-          paddingBottom: "calc(10vh + var(--cookie-banner-h, 0px))",
+          paddingBottom: "calc(8svh + var(--cookie-banner-h, 0px))",
           // Réserve la hauteur exacte du header fixe.
-          paddingTop: "var(--header-h)",
+          paddingTop: "calc(var(--header-h) + 40px)",
           paddingLeft: "5vw",
           paddingRight: "5vw",
           zIndex: 2,
@@ -174,7 +191,7 @@ export default function HeroSlider({
             color: "white",
             overflowWrap: "break-word",
             marginBottom: subtitle ? "0.4em" : "0.6em",
-            animation: "fadeInUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s both",
+            animation: "fadeInUp 0.5s cubic-bezier(0.22,1,0.36,1) 0.1s both",
           }}
         >
           {title}
@@ -190,7 +207,7 @@ export default function HeroSlider({
               maxWidth: "620px",
               lineHeight: "1.55em",
               marginBottom: "1.3em",
-              animation: "fadeInUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s both",
+              animation: "fadeInUp 0.5s cubic-bezier(0.22,1,0.36,1) 0.3s both",
             }}
           >
             {subtitle}
@@ -200,7 +217,7 @@ export default function HeroSlider({
         <Link
           href={ctaHref}
           className="btn-rouge"
-          style={{ animation: "fadeInUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.5s both" }}
+          style={{ animation: "fadeInUp 0.5s cubic-bezier(0.22,1,0.36,1) 0.5s both" }}
         >
           {ctaLabel}
         </Link>

@@ -25,11 +25,10 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section
-      className="relative overflow-hidden"
+      className={`site-hero relative overflow-hidden ${height === "half" ? "half-hero" : "full-hero"}`}
       style={{
-        width: "100vw",
-        height: height === "full" ? "100svh" : "max(55svh, 480px)",
-        minHeight: height === "full" ? "600px" : "480px",
+        width: "100%",
+        minHeight: height === "full" ? "max(640px, 100svh)" : "max(55svh, 480px)",
       }}
     >
       {/* Background image */}
@@ -57,19 +56,20 @@ export default function Hero({
 
       {/* Content container — vertically centered bottom */}
       <div
+        className="site-hero-content"
         style={{
-          position: "absolute",
-          inset: 0,
+          position: "relative",
+          minHeight: "inherit",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "flex-end",
           textAlign: "center",
           // Voir CookieBanner : évite que le bandeau fixe recouvre le CTA.
-          paddingBottom: "calc(10vh + var(--cookie-banner-h, 0px))",
+          paddingBottom: "calc(8svh + var(--cookie-banner-h, 0px))",
           // Réserve la hauteur exacte du header fixe. Critique sur les héros
           // "half" : 55vh de haut, le titre passait sous la navigation.
-          paddingTop: "var(--header-h)",
+          paddingTop: "calc(var(--header-h) + 40px)",
           paddingLeft: "5vw",
           paddingRight: "5vw",
         }}
@@ -95,7 +95,7 @@ export default function Hero({
             letterSpacing: "0.02em",
             overflowWrap: "break-word",
             marginBottom: subtitle ? "0.4em" : "0.6em",
-            animation: "fadeInUp 0.9s var(--e-basic) 0.1s both",
+            animation: "fadeInUp 0.5s cubic-bezier(0.22,1,0.36,1) 0.1s both",
           }}
         >
           {title}
@@ -111,7 +111,7 @@ export default function Hero({
               maxWidth: "520px",
               lineHeight: "1.5em",
               marginBottom: "1.8em",
-              animation: "fadeInUp 0.9s var(--e-basic) 0.35s both",
+              animation: "fadeInUp 0.5s cubic-bezier(0.22,1,0.36,1) 0.35s both",
             }}
           >
             {subtitle}
@@ -122,7 +122,7 @@ export default function Hero({
           <Link
             href={ctaHref}
             className={ctaVariant === "bleu" ? "btn-bleu" : "btn-rouge"}
-            style={{ animation: "fadeInUp 0.9s var(--e-basic) 0.55s both" }}
+            style={{ animation: "fadeInUp 0.5s cubic-bezier(0.22,1,0.36,1) 0.55s both" }}
           >
             {ctaLabel}
           </Link>

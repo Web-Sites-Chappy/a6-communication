@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, AnimatePresence, useReducedMotion, type PanInfo } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, useInView, type PanInfo } from "framer-motion";
 import { IconArrowUpRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -119,6 +119,8 @@ export function CardStack<T extends CardStackItem>({
   renderCard,
 }: CardStackProps<T>) {
   const reduceMotion = useReducedMotion();
+  const stageRef = React.useRef<HTMLDivElement>(null);
+  const inView = useInView(stageRef);
   const len = items.length;
 
   const [active, setActive] = React.useState(() =>
@@ -181,7 +183,7 @@ export function CardStack<T extends CardStackItem>({
 
   // autoplay
   React.useEffect(() => {
-    if (!autoAdvance) return;
+    if (!autoAdvance || !inView) return;
     if (!pageLoaded) return;
     if (reduceMotion) return;
     if (!len) return;
@@ -189,7 +191,7 @@ export function CardStack<T extends CardStackItem>({
 
     const id = window.setInterval(
       () => {
-        if (loop || active < len - 1) next();
+        if (!document.hidden && (loop || active < len - 1)) next();
       },
       Math.max(700, intervalMs),
     );
@@ -197,6 +199,7 @@ export function CardStack<T extends CardStackItem>({
     return () => window.clearInterval(id);
   }, [
     autoAdvance,
+    inView,
     pageLoaded,
     intervalMs,
     hovering,
@@ -217,6 +220,7 @@ export function CardStack<T extends CardStackItem>({
 
   return (
     <div
+      ref={stageRef}
       className={cn("w-full overflow-visible", className)}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
@@ -305,6 +309,7 @@ export function CardStack<T extends CardStackItem>({
                     height: cardHeight,
                     zIndex,
                     transformStyle: "preserve-3d",
+                    touchAction: "pan-y",
                   }}
                   initial={
                     reduceMotion

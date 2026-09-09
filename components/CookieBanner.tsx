@@ -89,6 +89,7 @@ export default function CookieBanner() {
   return (
     <div
       ref={bannerRef}
+      className="cookie-banner"
       role="dialog"
       aria-label="Gestion des cookies"
       style={{

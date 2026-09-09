@@ -3,22 +3,22 @@ import Image from "next/image";
 const services = [
   {
     label: "Stratégie digitale",
-    image: "/photos/services/strategie-digitale-hero.webp",
+    image: "/photos/services/strategie-digitale-1-v2.webp",
     position: "center",
   },
   {
     label: "Identité visuelle",
-    image: "/photos/services/identite-visuelle-hero.webp",
+    image: "/photos/services/identite-visuelle-1-v2.webp",
     position: "center",
   },
   {
     label: "Événementiel",
-    image: "/photos/services/conception-et-scenographie-hero.webp",
+    image: "/photos/services/conception-et-scenographie-1-v2.webp",
     position: "center",
   },
   {
     label: "Production de contenus",
-    image: "/photos/services/production-de-contenus-hero.webp",
+    image: "/photos/services/production-de-contenus-1-v2.webp",
     position: "center 38%",
   },
 ];

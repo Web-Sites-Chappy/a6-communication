@@ -115,7 +115,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${fontVariables} antialiased`}>
+    <html lang="fr" data-scroll-behavior="smooth" className={`${fontVariables} antialiased`}>
       <body>
         <script
           type="application/ld+json"
