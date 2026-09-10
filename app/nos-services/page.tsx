@@ -53,7 +53,7 @@ export default function NosServicesPage() {
         <Reveal style={{ width: "var(--w-max)", maxWidth: "var(--w-limit-text)", margin: "0 auto", padding: "40px 0 20px", textAlign: "center" }} className="communication-section">
           <AccentHeading lead="Communication" />
           <p style={{ marginTop: "24px", fontSize: "1.05rem", lineHeight: "1.7em", fontFamily: "var(--font-body)", color: "var(--c-navy)" }}>
-            A6 accompagne votre structure vers une communication authentique et percutante.
+            Action numérique structurée vers une stratégie parfaitement alignée à l&apos;identité de votre organisation.
           </p>
         </Reveal>
 
@@ -83,4 +83,3 @@ export default function NosServicesPage() {
     </main>
   );
 }
-

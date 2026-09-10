@@ -438,7 +438,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
       </Reveal>
 
       <Reveal>
-        <CTASection sentence="un projet en tête ?" buttonLabel="Nous contacter" />
+        <CTASection sentence="Nous étions votre écho ?" buttonLabel="Go" />
       </Reveal>
     </main>
   );

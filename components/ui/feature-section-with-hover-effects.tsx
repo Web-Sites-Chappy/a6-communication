@@ -24,7 +24,6 @@ export function FeaturesSectionWithHoverEffects({ features }: { features: Featur
               <h3 className="expertise-title">{feature.title}</h3>
               {feature.image && <span className="expertise-photo" aria-hidden="true">
                 <Image src={feature.image} alt="" fill sizes="(max-width: 700px) 120px, 220px" />
-                <span className="expertise-photo-label">A6 / Savoir-faire</span>
               </span>}
               <span className="expertise-details">
                 <span className="expertise-description">{feature.description}</span>

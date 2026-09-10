@@ -6,11 +6,11 @@ import Link from "next/link";
 import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
 
 const sections: CardStackItem[] = [
-  { id: "qui", title: "Qui sommes-nous ?", description: "Manuel & Eric, deux esprits complémentaires, six valeurs fondatrices.", imageSrc: "/photos/cardstack-qui-v2.webp", href: "/qui-sommes-nous" },
-  { id: "services", title: "Nos services", description: "Communication digitale, identité visuelle, organisation d'événements.", imageSrc: "/photos/cardstack-services-v2.webp", href: "/nos-services" },
-  { id: "real", title: "Réalisations", description: "Congrès, forums, journées thématiques : des événements qui marquent.", imageSrc: "/photos/cardstack-realisations-v2.webp", href: "/realisations" },
-  { id: "cibles", title: "Nos clients", description: "Artisans, architectes, communes, culture et monde associatif.", imageSrc: "/photos/nos-clients/institution-institut-de-france-v2.webp", href: "/nos-clients" },
-  { id: "blog", title: "Blog", description: "Coulisses, actualités, etc.", imageSrc: "/photos/cardstack-blog-v2.webp", href: "/blog" },
+  { id: "qui", title: "Qui sommes-nous ?", description: "Deux esprits complémentaires animés par 6 valeurs fondatrices.", imageSrc: "/photos/cardstack-qui-v2.webp", href: "/qui-sommes-nous" },
+  { id: "services", title: "Nos services", description: "De la refonte de votre logo à l'organisation de votre événement.", imageSrc: "/photos/cardstack-services-v2.webp", href: "/nos-services" },
+  { id: "real", title: "Réalisations", description: "Congrès, séminaires, inaugurations : des événements qui vous révèlent.", imageSrc: "/photos/cardstack-realisations-v2.webp", href: "/realisations" },
+  { id: "cibles", title: "Nos clients", description: "Professionnels de l'acte et de l'art de bâtir, institutions, mairies, acteurs du monde associatif et culturel.", imageSrc: "/photos/nos-clients/institution-institut-de-france-v2.webp", href: "/nos-clients" },
+  { id: "blog", title: "Blog", description: "Actualités, temps forts & coups de projecteur.", imageSrc: "/photos/cardstack-blog-v2.webp", href: "/blog" },
 ];
 
 /** Track viewport width to scale the fan on small screens. */
@@ -37,11 +37,14 @@ export default function SectionsCardStack() {
 
   const cardWidth = isMobile ? Math.min((vw ?? 360) - 48, 340) : isTablet ? 420 : 500;
   const cardHeight = isMobile ? 380 : isTablet ? 320 : 340;
+  // Reserve the complete rotated fan, including perspective and shadow margins.
+  const fanWidth = cardWidth * 2 + Math.hypot(cardWidth, cardHeight) * 1.15 + 64;
+  const availableWidth = Math.min((vw ?? 360) * 0.94, 1320);
+  const fanScale = Math.min(1, availableWidth / fanWidth);
+  const bottomClearance = Math.ceil(cardWidth * 0.3);
+  const fanHeight = Math.max(420, cardHeight + 90) + bottomClearance + 48;
 
   return (
-    // overflow hidden : les cartes du deck en offset (-2..+2) depassent du
-    // conteneur par design (effet d'eventail), mais sans cette clip elles
-    // provoquaient un vrai scroll horizontal de toute la page en mobile.
     <>
     <div className="mobile-section-cards" aria-label="Découvrir l’agence">
       {sections.map((item) => (
@@ -55,16 +58,16 @@ export default function SectionsCardStack() {
         </Link>
       ))}
     </div>
-    <div className="desktop-section-cards" style={{ width: "94vw", maxWidth: "1320px", margin: "40px auto 60px", overflow: "hidden" }}>
+    <div className="desktop-section-cards" style={{ width: "94vw", maxWidth: "1320px", height: fanHeight * fanScale, margin: "40px auto 60px", position: "relative", overflow: "visible" }}>
+      <div style={{ position: "absolute", left: "50%", width: fanWidth, transform: `translateX(-50%) scale(${fanScale})`, transformOrigin: "top center" }}>
       <CardStack
         items={sections}
         initialIndex={0}
         maxVisible={5}
         cardWidth={cardWidth}
         cardHeight={cardHeight}
+        bottomClearance={bottomClearance}
         overlap={isMobile ? 0.62 : 0.5}
-        // 40° débordait du conteneur : les titres des cartes latérales
-        // étaient rognés par les bords de la fenêtre.
         spreadDeg={isMobile ? 26 : 30}
         autoAdvance={!isMobile && vw !== null && vw >= 768}
         intervalMs={4000}
@@ -169,6 +172,7 @@ export default function SectionsCardStack() {
           </Link>
         )}
       />
+      </div>
     </div>
     </>
   );

@@ -32,6 +32,8 @@ export type CardStackProps<T extends CardStackItem> = {
   /** Card sizing */
   cardWidth?: number;
   cardHeight?: number;
+  /** Space below the cards for rotated corners, before the navigation. */
+  bottomClearance?: number;
 
   /** How much cards overlap each other (0..0.8). Higher = more overlap */
   overlap?: number;
@@ -92,6 +94,7 @@ export function CardStack<T extends CardStackItem>({
 
   cardWidth = 520,
   cardHeight = 320,
+  bottomClearance = 0,
 
   overlap = 0.48,
   spreadDeg = 48,
@@ -228,7 +231,7 @@ export function CardStack<T extends CardStackItem>({
       {/* Stage */}
       <div
         className="relative w-full overflow-visible"
-        style={{ height: Math.max(420, cardHeight + 90) }}
+        style={{ height: Math.max(420, cardHeight + 90) + bottomClearance }}
         tabIndex={0}
         onKeyDown={onKeyDown}
       >
@@ -246,6 +249,7 @@ export function CardStack<T extends CardStackItem>({
           className="absolute inset-0 flex items-end justify-center"
           style={{
             perspective: `${perspectivePx}px`,
+            bottom: bottomClearance,
           }}
         >
           <AnimatePresence initial={false}>

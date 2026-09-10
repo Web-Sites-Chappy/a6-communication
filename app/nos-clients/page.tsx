@@ -68,7 +68,7 @@ export default function NosClientsPage() {
                   alt={segment.imgAlt}
                   fill
                   sizes="(max-width: 640px) 90vw, 400px"
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "cover", borderRadius: "24px" }}
                 />
               </div>
               <div className="alt-row-text" style={{ flex: 1 }}>

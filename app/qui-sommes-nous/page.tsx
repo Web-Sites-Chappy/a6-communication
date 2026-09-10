@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 const values = [
   { name: "Alchimie", text: "Les regards ont un langage que les mots ne peuvent pas capturer et quand ces mots quittent le silence par une réelle connexion, ils coulent naturellement vers une Alchimie intellectuelle, émotionnelle et créatrice qui va bien au-delà des apparences." },
   { name: "Audace", text: "Le courage est de croire en ce qui n'est pas encore visible mais aussi celui d'examiner la vérité sans se fier aux idées reçues et ainsi l'Audace propulse à l'évidence d'être soi-même, dans ses doutes, ses décisions, sa sensibilité." },
-  { name: "Acceptation", text: "L'Acceptation ne se commande pas, elle ne se force pas, elle fait simplement partie du chemin qu'il faut emprunter pour avancer. Conscientiser et accueillir qu'on est dans la résistance libère, allège et nous remet en contact avec nos ressources." },
-  { name: "Agilité", text: "Perçue comme un accélérateur d'innovation, l'Agilité est une évidence de nos jours et doit être un facteur proactif, collaboratif et fondamentalement numérique. L'entreprise doit mener sa transition culturelle et s'appuyer sur un socle technologique capable." },
-  { name: "Authenticité", text: "Communiquer avec honnêteté et ouverture pour accepter sa vulnérabilité procure une transparence constructive en accord avec son identité et ses valeurs. Cette authenticité génère l'efficacité et l'éthique et crée des relations humaines et durables." },
+  { name: "Acceptation", text: "Conscientiser et accueillir le fait d’être dans la résistance libère, allège et nous remet en contact avec nos ressources et notre pouvoir d’action, tout en acceptant de lâcher prise pour créer." },
+  { name: "Agilité", text: "Perçue comme accélérateur d’innovation, l’agilité est une évidence et doit être un facteur proactif." },
+  { name: "Authenticité", text: "Cette authenticité relie l’efficacité à l’éthique et crée des relations humaines et durables." },
   { name: "Assurance", text: "Au service de l'humain avant tout, l'Assurance se positionne dans l'évidence de rapprocher la théorie de la pratique. En gardant un œil dans le réel et un autre dans le numérique : un outil digital n'est qu'un outil, ce qui compte c'est l'usage." },
 ];
 
@@ -122,7 +122,7 @@ export default function QuiSommesNousPage() {
                 alt={person.name}
                 fill
                 sizes="(max-width: 640px) 90vw, 400px"
-                style={{ objectFit: "cover", objectPosition: "center" }}
+                style={{ objectFit: "cover", objectPosition: "center", borderRadius: "24px" }}
               />
             </div>
             <h3
@@ -201,7 +201,7 @@ export default function QuiSommesNousPage() {
       </div>
 
       <Reveal>
-        <CTASection sentence="nous prenions le temps de…" buttonLabel="nous rencontrer" />
+        <CTASection sentence={<span style={{ whiteSpace: "nowrap" }}>nous prenions le temps de</span>} buttonLabel="nous rencontrer" />
       </Reveal>
     </main>
   );

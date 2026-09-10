@@ -28,21 +28,21 @@ const sixA: SixAItem[] = [
     title: "Acceptation",
     label: "03",
     description:
-      "L’Acceptation ne se commande pas, elle ne se force pas, elle fait simplement partie du chemin qu’il faut emprunter pour avancer. Conscientiser et accueillir qu’on est dans la résistance libère, allège, nous remet en contact avec nos ressources et notre pouvoir d’action, et permet de lâcher prise pour créer.",
+      "Conscientiser et accueillir le fait d’être dans la résistance libère, allège et nous remet en contact avec nos ressources et notre pouvoir d’action, tout en acceptant de lâcher prise pour créer.",
   },
   {
     id: "agilite",
     title: "Agilité",
     label: "04",
     description:
-      "Perçue comme un accélérateur d’innovation, l’Agilité est une évidence de nos jours et doit être un facteur proactif, collaboratif et fondamentalement numérique. L’entreprise mène sa transition culturelle en s’appuyant sur un socle technologique capable de faciliter cette gestion du changement.",
+      "Perçue comme accélérateur d’innovation, l’agilité est une évidence et doit être un facteur proactif.",
   },
   {
     id: "authenticite",
     title: "Authenticité",
     label: "05",
     description:
-      "Communiquer avec honnêteté et ouverture pour accepter sa vulnérabilité procure une transparence constructive, en accord avec son identité et ses valeurs. Cette authenticité génère l’efficacité et l’éthique, et crée des relations humaines et durables.",
+      "Cette authenticité relie l’efficacité à l’éthique et crée des relations humaines et durables.",
   },
   {
     id: "assurance",

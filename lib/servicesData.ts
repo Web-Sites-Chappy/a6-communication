@@ -134,8 +134,8 @@ export const servicesData: ServiceItem[] = [
     title: "Production de contenus",
     category: "Communication",
     categorySlug: "communication",
-    shortDescription: "Rédaction, photographie, vidéo : des contenus qui racontent votre histoire.",
-    fullDescription: "Le contenu est le cœur battant de toute stratégie de communication efficace. A6 crée des récits authentiques et captivants. Qu'il s'agisse de mots, d'images fixes ou en mouvement, nos productions mettent en lumière votre savoir-faire et engagent vos publics.",
+    shortDescription: "Rédactions, photographies, vidéos : des contenus qui racontent votre histoire.",
+    fullDescription: "Rédactions, photographies, vidéos : des contenus qui racontent votre histoire. Ils mettent en lumière, engagent votre public et amplifient votre présence.",
     heroImage: "/photos/services/production-de-contenus-hero-v2.webp",
     color: "var(--c-rouge-fg)",
     deliverables: [
@@ -145,27 +145,27 @@ export const servicesData: ServiceItem[] = [
       },
       {
         title: "Reportages photographiques",
-        description: "Prises de vues professionnelles sur le terrain : portraits d'équipe, reportages métiers, infrastructures, villages, lieux et aménagement du territoire adaptés au public de l'architecture."
+        description: "Prises de vues professionnelles sur le terrain : portraits d'équipe, reportages métiers, infrastructures, villages, lieux et aménagement du territoire adaptés."
       },
       {
-        title: "Production vidéo & Motion Design",
-        description: "Réalisation de capsules vidéo promotionnelles, interviews croisées, teasers et animations graphiques pédagogiques."
+        title: "Productions vidéos",
+        description: "Réalisation de capsules vidéo promotionnelles, interviews croisées, teasers, podcasts et animations graphiques pédagogiques."
       },
       {
         title: "Rapports & Publications de marque",
-        description: "Rédaction, mise en page et suivi de réalisation de vos rapports d'activité, livres blancs et journaux internes."
+        description: "Rédaction, mise en page et suivi de réalisation de vos événements, de vos rapports d'activité, livres blancs et journaux internes."
       }
     ],
     approach: [
       "Un bon contenu institutionnel ne cherche pas à impressionner, il cherche à être compris et retenu. Nos rédactions partent toujours d'un entretien réel avec les personnes concernées, jamais d'un remplissage générique autour d'un mot-clé.",
-      "Côté image, qu'il s'agisse d'un reportage photo sur un chantier, d'un portrait d'équipe ou d'une captation vidéo d'événement, nous privilégions le terrain réel à la banque d'images : vos publics reconnaissent la différence, et c'est elle qui construit la confiance.",
+      "Côté image, qu'il s'agisse d'un reportage photo, d'un portrait d'équipe ou d'une captation vidéo d'événement, nous privilégions le terrain réel à la banque d'images : vos publics reconnaissent la différence, et c'est elle qui construit la confiance.",
     ],
     relatedArticleSlugs: ["captation-video-evenement"],
     faq: [
       {
         question: "Faut-il fournir nos propres photos ou pouvez-vous les réaliser ?",
         answer:
-          "Nous réalisons nos propres reportages photographiques sur le terrain plutôt que de nous appuyer sur une banque d'images : portraits d'équipe, chantiers, lieux, aménagement du territoire adaptés au public de l'architecture et du bâtiment.",
+          "Nous réalisons nos propres reportages photographiques sur le terrain plutôt que de nous appuyer sur une banque d'images.",
       },
       {
         question: "Produisez-vous aussi de la vidéo, ou seulement de l'écrit ?",
