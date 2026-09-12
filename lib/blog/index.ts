@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/lib/blog/types";
+import { postsActualites } from "@/lib/blog/posts-actualites";
 import { postsEvenementiel } from "@/lib/blog/posts-evenementiel";
 import { postsInstitutionnel } from "@/lib/blog/posts-institutionnel";
 import { postsMarque } from "@/lib/blog/posts-marque";
@@ -14,6 +15,7 @@ export type { BlogPost, BlogBlock, BlogCategory } from "@/lib/blog/types";
  * page liste, la page article, le sitemap et les liens connexes.
  */
 export const blogPosts: BlogPost[] = [
+  ...postsActualites,
   ...postsEvenementiel,
   ...postsInstitutionnel,
   ...postsMarque,
