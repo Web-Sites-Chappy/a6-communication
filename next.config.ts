@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    qualities: [75, 90],
+  },
   // Keep development away from the existing OneDrive-conflicted cache.
   distDir: process.env.NEXT_DIST_DIR || (process.env.NODE_ENV === "development" ? ".next-local/mobile" : ".next"),
   async headers() {

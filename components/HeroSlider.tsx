@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { AnimatePresence, motion, useScroll, useTransform, useReducedMotion, useInView } from "framer-motion";
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 
 interface HeroSliderProps {

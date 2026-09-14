@@ -20,7 +20,7 @@ export default function HomeEditorial() {
     <main>
       <HeroSlider
         images={heroImages}
-        video={process.env.NEXT_PUBLIC_HERO_VIDEO_URL || "/video/cerbere.mp4"}
+        video={process.env.NEXT_PUBLIC_HERO_VIDEO_URL || "/video/cerbere-hq.mp4"}
         poster="/video/cerbere-poster.webp"
         title={
           <>
