@@ -3,7 +3,7 @@
 import * as React from "react";
 import { motion, AnimatePresence, useReducedMotion, useInView, type PanInfo } from "framer-motion";
 import { IconArrowUpRight } from "@tabler/icons-react";
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 
 function cn(...classes: Array<string | undefined | null | false>) {

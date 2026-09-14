@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
@@ -65,7 +65,7 @@ export default function BlogPage() {
                     alt={post.imgAlt}
                     fill
                     priority={i < 3}
-                    sizes="(max-width: 640px) 90vw, 300px"
+                    sizes="(max-width: 767px) max(90vw, 440px), (max-width: 1200px) 50vw, 440px"
                     style={{ objectFit: "cover" }}
                   />
                 </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
+import Image from "@/components/SiteImage";
+import { coverImageWidth } from "@/lib/imageSizing";
 import Link from "next/link";
 import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
 
@@ -49,7 +50,7 @@ export default function SectionsCardStack() {
     <div className="mobile-section-cards" aria-label="Découvrir l’agence">
       {sections.map((item) => (
         <Link key={item.id} href={item.href!} className="mobile-section-card">
-          <Image src={item.imageSrc!} alt="" fill sizes="(max-width: 767px) 85vw, 340px" style={{ objectFit: "cover" }} />
+          <Image src={item.imageSrc!} alt="" fill sizes={`${coverImageWidth(item.imageSrc!, 500, 380)}px`} style={{ objectFit: "cover" }} />
           <div className="mobile-section-card-copy">
             <h3>{item.title}</h3>
             <p>{item.description}</p>
@@ -97,7 +98,7 @@ export default function SectionsCardStack() {
                   // Le jeu est fixe et minuscule (5 images), toutes chargées
                   // eagerly plutôt que de dépendre du lazy-loading natif.
                   loading="eager"
-                  sizes="(max-width: 640px) 340px, (max-width: 1024px) 420px, 500px"
+                  sizes={`${coverImageWidth(item.imageSrc, 500, 380)}px`}
                   style={{ objectFit: "cover" }}
                 />
               ) : null}

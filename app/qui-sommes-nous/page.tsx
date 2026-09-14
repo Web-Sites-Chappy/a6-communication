@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
@@ -122,7 +122,7 @@ export default function QuiSommesNousPage() {
                 alt={person.name}
                 fill
                 sizes="(max-width: 640px) 90vw, 400px"
-                style={{ objectFit: "cover", objectPosition: "center", borderRadius: "24px" }}
+                style={{ objectFit: "contain", objectPosition: "center", borderRadius: "24px" }}
               />
             </div>
             <h3

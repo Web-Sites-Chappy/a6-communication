@@ -14,7 +14,13 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "**/*-WIN-*",
   ]),
+  {
+    // Hostinger loads this custom server as a CommonJS entry point.
+    files: ["server.js"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
 ]);
 
 export default eslintConfig;

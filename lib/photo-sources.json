@@ -1,0 +1,44 @@
+{
+  "/photos/hq/pexels-6647041-original.jpg": {
+    "url": "https://www.pexels.com/photo/volunteer-men-in-white-shirt-standing-on-the-entrance-door-6647041/",
+    "photographer": "RDNE Stock project",
+    "width": 6424,
+    "height": 4283
+  },
+  "/photos/hq/pexels-30753301-original.jpg": {
+    "url": "https://www.pexels.com/photo/bustling-street-in-historic-toulouse-30753301/",
+    "photographer": "TBD Traveller",
+    "width": 7677,
+    "height": 5120
+  },
+  "/photos/hq/pexels-37116225-original.jpg": {
+    "url": "https://www.pexels.com/photo/professional-video-camera-setup-in-studio-37116225/",
+    "photographer": "Jakub Zerdzicki",
+    "width": 2930,
+    "height": 1953
+  },
+  "/photos/hq/pexels-1181738-original.jpg": {
+    "url": "https://www.pexels.com/photo/five-people-having-conversation-1181738/",
+    "photographer": "Christina Morillo",
+    "width": 5760,
+    "height": 3840
+  },
+  "/photos/hq/pexels-12903168-original.jpg": {
+    "url": "https://www.pexels.com/photo/employees-cooperating-in-office-12903168/",
+    "photographer": "Mizuno K",
+    "width": 4000,
+    "height": 6000
+  },
+  "/photos/hq/pexels-8815843-original.jpg": {
+    "url": "https://www.pexels.com/photo/a-person-s-hand-holding-a-black-and-silver-pen-8815843/",
+    "photographer": "Kampus Production",
+    "width": 4016,
+    "height": 6016
+  },
+  "/photos/hq/services-6322367-original.jpg": {
+    "url": "https://www.pexels.com/photo/designers-working-on-laptop-in-office-6322367/",
+    "photographer": "Antoni Shkraba",
+    "width": 4000,
+    "height": 6000
+  }
+}

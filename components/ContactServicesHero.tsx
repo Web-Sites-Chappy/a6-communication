@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 
 const services = [
   {
@@ -35,7 +35,7 @@ export default function ContactServicesHero() {
               fill
               priority={index < 2}
               sizes="(max-width: 700px) 50vw, 25vw"
-              style={{ objectFit: "cover", objectPosition: service.position }}
+              style={{ objectFit: "contain", objectPosition: service.position }}
             />
             <span>{service.label}</span>
           </div>

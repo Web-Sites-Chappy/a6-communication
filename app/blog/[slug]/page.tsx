@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from "@/components/SiteImage";
+import { getPhotoDimensions } from "@/lib/imageSizing";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -222,7 +223,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
             fill
             priority
             sizes="(max-width: 1000px) 100vw, 1000px"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: getPhotoDimensions(post.img).width < 2000 ? "contain" : "cover" }}
           />
         </div>
       </div>

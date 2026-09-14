@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from "@/components/SiteImage";
+import { coverImageWidth } from "@/lib/imageSizing";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +36,7 @@ export function MarqueeCard({ item, className, duplicate = false }: MarqueeCardP
           fill
           className="object-cover"
           draggable={false}
-          sizes="230px"
+          sizes={`(max-width: 767px) ${coverImageWidth(item.image, 240, 310)}px, (max-width: 1023px) ${coverImageWidth(item.image, 210, 310)}px, ${coverImageWidth(item.image, 230, 330)}px`}
         />
 
         <span
@@ -47,7 +48,7 @@ export function MarqueeCard({ item, className, duplicate = false }: MarqueeCardP
         <div
           className={cn(
             "service-card-copy absolute inset-0 flex flex-col items-start justify-end gap-1 p-5",
-            "bg-[var(--c-navy)]/75 opacity-0 backdrop-blur-md",
+            "bg-gradient-to-t from-[var(--c-navy)]/95 via-[var(--c-navy)]/15 to-transparent opacity-0",
             "transition-opacity duration-[350ms] ease-out",
             "group-hover:opacity-100 group-focus-visible:opacity-100",
           )}

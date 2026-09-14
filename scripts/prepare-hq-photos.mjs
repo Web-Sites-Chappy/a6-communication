@@ -1,4 +1,4 @@
-import { readdir, mkdir, writeFile } from "node:fs/promises";
+import { readdir, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import sharp from "sharp";
@@ -7,7 +7,7 @@ const originalDirectory = process.argv[2];
 if (!originalDirectory) throw new Error("Usage: node scripts/prepare-hq-photos.mjs <original photos directory>");
 const directory = path.resolve("public/photos");
 const originals = new Set(await readdir(originalDirectory));
-const mapping = {};
+const mapping = JSON.parse(await readFile("lib/hq-photos.json", "utf8"));
 await mkdir(path.join(directory, "hq"), { recursive: true });
 for (const name of await readdir(directory)) {
   const match = /^(DSC_\d+)-v2\.(webp|jpg)$/.exec(name);

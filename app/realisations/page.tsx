@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from "@/components/SiteImage";
+import { getPhotoDimensions } from "@/lib/imageSizing";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
@@ -135,7 +136,7 @@ export default function RealisationsPage() {
                   alt={item.imgAlt}
                   fill
                   sizes="(max-width: 640px) 90vw, 400px"
-                  style={{ objectFit: "cover", objectPosition: item.imgPosition ?? "center" }}
+                  style={{ objectFit: "contain", objectPosition: item.imgPosition ?? "center", maxWidth: `${getPhotoDimensions(item.img).width / 2}px`, margin: "0 auto" }}
                 />
               </div>
               <div className="alt-row-text" style={{ flex: 1 }}>

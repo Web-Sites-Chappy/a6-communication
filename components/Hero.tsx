@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "@/components/SiteImage";
+import { getPhotoDimensions, heroImageSizes } from "@/lib/imageSizing";
+import FramedHero from "@/components/FramedHero";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -23,6 +25,9 @@ export default function Hero({
   height = "full",
   ctaVariant = "rouge",
 }: HeroProps) {
+  if (height === "half" && getPhotoDimensions(imageSrc).width < 3000) {
+    return <FramedHero imageSrc={imageSrc} title={title} subtitle={subtitle} ctaLabel={ctaLabel} ctaHref={ctaHref} ctaVariant={ctaVariant} />;
+  }
   return (
     <section
       className={`site-hero relative overflow-hidden ${height === "half" ? "half-hero" : "full-hero"}`}
@@ -37,7 +42,7 @@ export default function Hero({
         alt=""
         fill
         priority
-        sizes="100vw"
+        sizes={heroImageSizes(imageSrc, height === "half")}
         style={{
           objectFit: "cover",
           objectPosition: "center",

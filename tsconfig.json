@@ -35,12 +35,13 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    ".next-local/mobile/types/**/*.ts",
-    ".next-local/mobile/dev/types/**/*.ts",
-    ".next-local/production/types/**/*.ts",
-    ".next-local/production/dev/types/**/*.ts"
+    ".next-local/**/types/**/*.ts",
+    ".next-local/quality-build/types/**/*.ts",
+    ".next-local/quality-build/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    ".comparison",
+    "**/*-WIN-*"
   ]
 }
